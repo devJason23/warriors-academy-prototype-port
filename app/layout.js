@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
             <div>
               <h4 className="text-white font-bold mb-2">Contact</h4>
               <a href="mailto:missouriwarriorsbasketball@gmail.com" className="hover:text-green-400">missouriwarriorsbasketball@gmail.com</a>
-              <p className="mt-2 text-xs">Design by JMDIGITAL | Privacy Policy 2025</p>
+                          <p className="mt-2 text-xs">Privacy Policy 2026</p>
             </div>
           </div>
         </footer>
