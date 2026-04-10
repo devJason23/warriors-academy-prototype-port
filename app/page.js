@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Warriors Academy | Homeschool Athletic Basketball Program",
-  description: "A 4-day homeschool co-op in Springfield, Missouri focused on athletic development, basketball training, and entrepreneurship education.",
+  title: "Warriors Academy | Faith-Based Homeschool Athletic Program",
+  description: "A Christ-centered 4-day homeschool co-op in Springfield, Missouri building elite athletes, entrepreneurs, and leaders.",
 };
 
 export default function Home() {
@@ -11,12 +11,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-24 px-4">
         <div className="max-w-5xl mx-auto text-center">
+          <p className="text-green-400 font-semibold tracking-wide mb-4 text-sm uppercase">Faith. Performance. Entrepreneurship.</p>
           <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
             Train Like a <span className="text-green-500">Warrior</span>.
             <br />Learn Like a <span className="text-green-500">Champion</span>.
           </h1>
+          <p className="text-lg md:text-xl text-gray-300 mb-4 max-w-3xl mx-auto italic">
+            "Whatever you do, work at it with all your heart, as working for the Lord." - Colossians 3:23
+          </p>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            A revolutionary 4-day homeschool co-op in Springfield, Missouri where athletes focus on basketball training, entrepreneurship, and academic excellence — without sitting in a chair for 7-8 hours a day.
+            A Christ-centered 4-day homeschool co-op in Springfield, Missouri where athletes get up to 4 hours of elite training daily, launch real businesses, and reclaim family time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#apply" className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
@@ -29,122 +33,188 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problem Section */}
+      {/* Problem vs Solution */}
       <section className="bg-gray-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-            The Traditional School System Is <span className="text-red-500">Failing</span> Student Athletes
+            The Traditional System Is <span className="text-red-500">Failing</span> Student Athletes
           </h2>
           <p className="text-gray-300 text-lg text-center mb-12 max-w-3xl mx-auto">
-            Student athletes spend 7-8 hours sitting in classrooms, leaving little time or energy for serious athletic development. The rigid schedule of public schools was designed for the industrial age — not for developing the next generation of elite athletes and entrepreneurs.
+            The modern school system forces kids to sit in class all day, followed by exhausting after-school practices, homework, and chores, leaving zero time for family connection. Meanwhile, 45% of high school seniors test below basic in math despite nearly a trillion dollars in annual government spending.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-              <div className="text-4xl mb-4">⏰</div>
-              <h3 className="text-xl font-bold mb-2">Wasted Time</h3>
-              <p className="text-gray-400">Traditional schools demand 7-8 hours of seat time daily, leaving athletes exhausted with minimal training time.</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-red-900/20 border border-red-800/30 p-6 rounded-xl">
+              <h3 className="text-xl font-bold mb-3 text-red-400">The Traditional Model</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li>7-8 hours of seat time daily</li>
+                <li>Exhausted by practice time</li>
+                <li>Homework kills family evenings</li>
+                <li>Zero entrepreneurship training</li>
+                <li>System designed for factory workers, not athletes</li>
+              </ul>
             </div>
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-              <div className="text-4xl mb-4">📉</div>
-              <h3 className="text-xl font-bold mb-2">One-Size-Fits-All</h3>
-              <p className="text-gray-400">Cookie-cutter curriculum ignores the unique needs of student athletes who need flexible, personalized learning.</p>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-              <div className="text-4xl mb-4">🏀</div>
-              <h3 className="text-xl font-bold mb-2">Missed Potential</h3>
-              <p className="text-gray-400">Elite basketball development requires dedicated training time that the traditional school schedule simply cannot provide.</p>
+            <div className="bg-green-900/20 border border-green-800/30 p-6 rounded-xl">
+              <h3 className="text-xl font-bold mb-3 text-green-400">The Warriors Way</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li>4-day focused academic schedule</li>
+                <li>Up to 4 hours of elite training daily</li>
+                <li>Families get their evenings back</li>
+                <li>Every student launches a real business</li>
+                <li>Christ-centered mentorship and discipleship</li>
+              </ul>
             </div>
           </div>
           <div className="text-center mt-10">
             <Link href="/why-homeschool" className="text-green-400 hover:text-green-300 font-semibold text-lg underline">
-              Deep dive: The history of our school system and why it fails athletes →
+              Deep dive: The hidden history of public school and why our model wins
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Solution Section */}
+      {/* Athletic Edge */}
       <section className="bg-gray-800 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-            The <span className="text-green-500">Warriors Academy</span> Difference
+            The <span className="text-green-500">Warriors Academy</span> Athletic Edge
           </h2>
           <p className="text-gray-300 text-lg text-center mb-12">
-            Our 4-day co-op model is built for serious athletes who want to compete at the highest level while getting a superior education.
+            We are the only ATG-certified training center within a 200-mile radius. Our knees-over-toes, joint-first approach builds bulletproof, explosive athletes who stay injury-free.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex gap-4">
-              <div className="text-green-500 text-3xl">✓</div>
+              <div className="text-green-500 text-3xl">&#10003;</div>
               <div>
-                <h3 className="text-xl font-bold mb-2">4-Day Academic Schedule</h3>
-                <p className="text-gray-400">Compact, focused academics 4 days a week under Missouri homeschool co-op compliance. More learning in less time.</p>
+                <h3 className="text-xl font-bold mb-2">ATG Certified Training</h3>
+                <p className="text-gray-400">The only ATG-certified hub within 200 miles. We bulletproof knees, ankles, and the posterior chain to increase vertical jump and speed while reducing non-contact injuries.</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="text-green-500 text-3xl">✓</div>
+              <div className="text-green-500 text-3xl">&#10003;</div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Elite Basketball Training</h3>
-                <p className="text-gray-400">Daily skill development, film review sessions, and competitive play designed to get athletes recruited to the next level.</p>
+                <h3 className="text-xl font-bold mb-2">Elite Basketball Development</h3>
+                <p className="text-gray-400">Up to 4 hours daily of basketball practice, conditioning, film study, strength and agility training built into the school week, not crammed into exhausting after-school sessions.</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="text-green-500 text-3xl">✓</div>
+              <div className="text-green-500 text-3xl">&#10003;</div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Entrepreneur Education</h3>
-                <p className="text-gray-400">Real-world business skills, financial literacy, and entrepreneurship training so athletes build wealth beyond the court.</p>
+                <h3 className="text-xl font-bold mb-2">Entrepreneur Unschool</h3>
+                <p className="text-gray-400">Every student launches and operates their own business, plus participates in a team fundraising venture. We teach students to leverage AI to build applications, marketing platforms, and real wealth.</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="text-green-500 text-3xl">✓</div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Film & Analytics App</h3>
-                <p className="text-gray-400">Our exclusive app turns every game into a learning experience with AI-generated highlights, player stats, and visual coaching tools.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="text-green-500 text-3xl">✓</div>
+              <div className="text-green-500 text-3xl">&#10003;</div>
               <div>
                 <h3 className="text-xl font-bold mb-2">College Recruitment Ready</h3>
-                <p className="text-gray-400">Player profiles with highlight reels, season stats, and bios built specifically to help college coaches find and recruit our athletes.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="text-green-500 text-3xl">✓</div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Missouri Compliant</h3>
-                <p className="text-gray-400">Fully compliant with Missouri homeschool regulations including 1,000 hours of instruction and required core subjects.</p>
+                <p className="text-gray-400">Custom profile pages for every athlete featuring highlight films, verified stats, and personalized interview videos. The most high-tech homeschool recruiting platform in the country.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Film Review Section */}
+      {/* Golf & Mental Toughness - Caitlin Clark */}
+      <section className="bg-gray-900 text-white py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+            Why Basketball Players <span className="text-green-500">Play Golf</span>
+          </h2>
+          <p className="text-gray-300 text-lg text-center mb-8 max-w-3xl mx-auto">
+            Caitlin Clark, the record-breaking Iowa basketball star, credits golf with building her clutch mental performance. When it is just you, the ball, and your clubs, there are no teammates to pass to if your shot is not falling. That is why every Warriors athlete completes a mandatory 6-week golf season.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            <div className="bg-gray-800 p-6 rounded-xl text-center">
+              <div className="text-4xl mb-3">&#9971;</div>
+              <h3 className="text-lg font-bold mb-2">Mental Toughness</h3>
+              <p className="text-gray-400 text-sm">Golf teaches athletes to perform under pressure when it is just them and the moment. No teammates, no excuses.</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-xl text-center">
+              <div className="text-4xl mb-3">&#129309;</div>
+              <h3 className="text-lg font-bold mb-2">Lifelong Networking</h3>
+              <p className="text-gray-400 text-sm">Golf is the sport of business. Our athletes learn a game they can play with friends, family, and future business partners for life.</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-xl text-center">
+              <div className="text-4xl mb-3">&#127947;</div>
+              <h3 className="text-lg font-bold mb-2">ATG Golf Performance</h3>
+              <p className="text-gray-400 text-sm">Our ATG training builds hip and spinal robustness, allowing greater clubhead speed with less strain. Better bodies, better swings.</p>
+            </div>
+          </div>
+          <p className="text-gray-400 text-center text-sm">Competitive cheer/stunt also available. Football coming soon.</p>
+        </div>
+      </section>
+
+      {/* Real Stats */}
+      <section className="bg-gray-800 text-white py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+            Homeschoolers <span className="text-green-500">Dominate</span> the Numbers
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-12">
+            <div className="bg-gray-700 p-5 rounded-xl">
+              <div className="text-3xl font-black text-green-500">65-80th</div>
+              <p className="text-gray-400 mt-2 text-sm">Percentile on standardized tests vs 50th for public school</p>
+            </div>
+            <div className="bg-gray-700 p-5 rounded-xl">
+              <div className="text-3xl font-black text-green-500">1190</div>
+              <p className="text-gray-400 mt-2 text-sm">Average SAT score vs 1060 for public school students</p>
+            </div>
+            <div className="bg-gray-700 p-5 rounded-xl">
+              <div className="text-3xl font-black text-green-500">87%</div>
+              <p className="text-gray-400 mt-2 text-sm">College acceptance rate vs 68% for public school</p>
+            </div>
+            <div className="bg-gray-700 p-5 rounded-xl">
+              <div className="text-3xl font-black text-green-500">66.7%</div>
+              <p className="text-gray-400 mt-2 text-sm">4-year college graduation rate vs 57.5% public school</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 text-center">
+            <div className="bg-gray-700 p-5 rounded-xl">
+              <div className="text-3xl font-black text-green-500">3.41</div>
+              <p className="text-gray-400 mt-2 text-sm">First-year college GPA vs 3.12 for public school students</p>
+            </div>
+            <div className="bg-gray-700 p-5 rounded-xl">
+              <div className="text-3xl font-black text-green-500">87%</div>
+              <p className="text-gray-400 mt-2 text-sm">Of peer-reviewed studies show homeschoolers have superior social and emotional development</p>
+            </div>
+          </div>
+          <p className="text-gray-500 text-center text-xs mt-6">Homeschoolers achieve these results studying just 3-5 hours per day compared to 6-8 hours in public school.</p>
+        </div>
+      </section>
+
+      {/* Elite Homeschooled Athletes */}
       <section className="bg-gray-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Film Review: The <span className="text-green-500">Secret Weapon</span> of Elite Programs
+            Elite Athletes Who Were <span className="text-green-500">Homeschooled</span>
           </h2>
-          <p className="text-gray-300 text-lg mb-8 max-w-3xl mx-auto">
-            Research shows that athletes who regularly review game film improve decision-making by up to 30%. Visual learning allows players to see exactly what coaches are asking them to do — bridging the gap between instruction and execution.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            <div className="bg-gray-800 p-6 rounded-xl">
-              <div className="text-5xl font-black text-green-500 mb-2">30%</div>
-              <p className="text-gray-400">Improvement in on-court decision making with consistent film study</p>
+          <p className="text-gray-300 text-lg mb-10">The best athletes in the world escaped the classroom to train. So do Warriors.</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="bg-gray-800 p-4 rounded-xl">
+              <p className="font-bold">Tim Tebow</p>
+              <p className="text-gray-400 text-sm">Heisman Trophy Winner, NFL QB</p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-xl">
-              <div className="text-5xl font-black text-green-500 mb-2">2x</div>
-              <p className="text-gray-400">Faster skill acquisition when athletes visually review their performance</p>
+            <div className="bg-gray-800 p-4 rounded-xl">
+              <p className="font-bold">Blake Griffin</p>
+              <p className="text-gray-400 text-sm">#1 NBA Draft Pick, 6x All-Star</p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-xl">
-              <div className="text-5xl font-black text-green-500 mb-2">85%</div>
-              <p className="text-gray-400">Of D1 programs use film review as a core part of player development</p>
+            <div className="bg-gray-800 p-4 rounded-xl">
+              <p className="font-bold">Simone Biles</p>
+              <p className="text-gray-400 text-sm">Most Decorated US Gymnast, 11 Olympic Medals</p>
+            </div>
+            <div className="bg-gray-800 p-4 rounded-xl">
+              <p className="font-bold">Venus & Serena Williams</p>
+              <p className="text-gray-400 text-sm">23 Combined Grand Slam Titles</p>
+            </div>
+            <div className="bg-gray-800 p-4 rounded-xl">
+              <p className="font-bold">Shaun White</p>
+              <p className="text-gray-400 text-sm">3x Olympic Gold Medalist</p>
+            </div>
+            <div className="bg-gray-800 p-4 rounded-xl">
+              <p className="font-bold">Michelle Kwan</p>
+              <p className="text-gray-400 text-sm">5x World Champion Figure Skater</p>
             </div>
           </div>
-          <p className="text-gray-400">
-            Our exclusive Warriors app uploads game footage and uses AI to automatically generate highlights, detailed player and team statistics, turning every single game into a powerful learning and growth experience.
-          </p>
         </div>
       </section>
 
@@ -164,9 +234,12 @@ export default function Home() {
       {/* Apply Section */}
       <section id="apply" className="bg-gradient-to-br from-green-900 to-gray-900 text-white py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Become a Warrior?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Become a Warrior?</h2>
+          <p className="text-gray-300 text-lg mb-3 italic">
+            "Whatever you do, work at it with all your heart, as working for the Lord." - Colossians 3:23
+          </p>
           <p className="text-gray-300 text-lg mb-8">
-            We are looking for dedicated athletes and families who want more from education. If you are ready to train harder, learn smarter, and compete at the highest level, Warriors Academy is for you.
+            We honor God in everything we do on and off the court. If you are a dedicated athlete and family seeking Christ-centered mentorship, elite training, and real entrepreneurship education, Warriors Academy is your home.
           </p>
           <a href="mailto:missouriwarriorsbasketball@gmail.com" className="bg-white text-gray-900 font-bold py-4 px-8 rounded-lg text-lg hover:bg-gray-200 transition inline-block">
             Contact Us to Apply
