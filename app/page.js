@@ -115,6 +115,71 @@ export default function Home() {
       </section>
 
       {/* Golf & Mental Toughness - Caitlin Clark */}
+
+      {/* Shooting Technology */}
+      <section className="bg-gray-900 text-white py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+            Shooting <span className="text-green-500">Technology</span> That Builds Elite Scorers
+          </h2>
+          <p className="text-gray-300 text-lg text-center mb-12 max-w-3xl mx-auto">
+            Warriors Academy leverages the same shooting technology used by NBA players to develop elite scorers. Our athletes do not just practice, they train with data.
+          </p>
+
+          {/* Dr. Dish CT */}
+          <div className="bg-gray-800 rounded-2xl p-8 mb-8 border border-gray-700">
+            <h3 className="text-2xl font-bold mb-4">Dr. Dish CT <span className="text-green-500">Rebounding Machine</span></h3>
+            <p className="text-gray-300 mb-6">
+              Every Warriors player is required to hit a weekly shot count on our Dr. Dish CT. Research shows it takes 20,000 correct repetitions for a jump shot to become automatic. With the Dr. Dish, players get up to 1,500 shots per hour compared to just 50-100 without a machine. Stephen Curry takes 500 shots per day to maintain his stroke. Our athletes train the same way.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              <div className="bg-gray-700 p-4 rounded-xl">
+                <div className="text-2xl font-black text-green-500">1,500</div>
+                <p className="text-gray-400 text-xs mt-1">Shots per hour with Dr. Dish vs 50-100 without</p>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-xl">
+                <div className="text-2xl font-black text-green-500">8-12%</div>
+                <p className="text-gray-400 text-xs mt-1">Shooting percentage increase for HS teams in one season</p>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-xl">
+                <div className="text-2xl font-black text-green-500">15-20%</div>
+                <p className="text-gray-400 text-xs mt-1">Three-point accuracy improvement at the college level</p>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-xl">
+                <div className="text-2xl font-black text-green-500">20,000</div>
+                <p className="text-gray-400 text-xs mt-1">Correct reps needed to make your shot automatic</p>
+              </div>
+            </div>
+            <p className="text-gray-500 text-xs mt-4">Real-time stat tracking with heatmaps, progress charts, and custom drills for every player.</p>
+          </div>
+
+          {/* Shoot 360 */}
+          <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+            <h3 className="text-2xl font-bold mb-4">Shoot 360 <span className="text-green-500">Immersive Training</span></h3>
+            <p className="text-gray-300 mb-6">
+              Shoot 360 just opened in Springfield, MO, and Warriors Academy athletes will train there as part of our program. The same technology Damian Lillard used to post 1,000 makes out of 1,090 shots. The same system the Golden State Warriors Basketball Academy uses. Shoot 360 is the world's leading immersive basketball training system with 60 locations worldwide.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-gray-700 p-4 rounded-xl text-center">
+                <div className="text-3xl mb-2">&#127919;</div>
+                <h4 className="font-bold mb-1">Splash Meter&#8482;</h4>
+                <p className="text-gray-400 text-sm">Motion-tracking cameras measure arc, depth, and alignment on every single shot with instant feedback.</p>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-xl text-center">
+                <div className="text-3xl mb-2">&#128200;</div>
+                <h4 className="font-bold mb-1">AI Shot Analytics</h4>
+                <p className="text-gray-400 text-sm">Every rep is recorded, every improvement measured, all synced to the mobile app to track progress over time.</p>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-xl text-center">
+                <div className="text-3xl mb-2">&#127942;</div>
+                <h4 className="font-bold mb-1">Proven Results</h4>
+                <p className="text-gray-400 text-sm">Players report shooting percentage improvements of up to 18%. Three core training areas: shooting, passing, and ball handling.</p>
+              </div>
+            </div>
+            <p className="text-gray-400 text-sm text-center">Shoot 360 Springfield | 4136 E. Kearney St. | Warriors athletes train with minimum 2 sessions per week.</p>
+          </div>
+        </div>
+      </section>
       <section className="bg-gray-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
