@@ -16,7 +16,9 @@ export default function RootLayout({ children }) {
             <div className="hidden md:flex gap-6 text-sm font-medium">
               <Link href="/" className="text-gray-300 hover:text-green-400 transition">Home</Link>
               <Link href="/why-homeschool" className="text-gray-300 hover:text-green-400 transition">Why Homeschool?</Link>
+              <Link href="/entrepreneur" className="text-gray-300 hover:text-green-400 transition">Entrepreneur</Link>
               <Link href="/player" className="text-gray-300 hover:text-green-400 transition">Player Profile</Link>
+              <Link href="/faq" className="text-gray-300 hover:text-green-400 transition">FAQ</Link>
               <a href="https://wearewarriorsapparel.com" target="_blank" className="text-gray-300 hover:text-green-400 transition">Shop</a>
             </div>
             <a href="#contact" className="bg-green-600 hover:bg-green-500 text-white text-sm font-bold px-4 py-2 rounded transition">Join Us</a>
@@ -33,16 +35,20 @@ export default function RootLayout({ children }) {
             <div>
               <h4 className="text-white font-bold mb-2">Links</h4>
               <div className="flex flex-col gap-1">
-                <Link href="/" className="hover:text-green-400">Home</Link>
-                <Link href="/why-homeschool" className="hover:text-green-400">Why Homeschool?</Link>
-                <Link href="/player" className="hover:text-green-400">Player Profiles</Link>
+                <Link href="/" className="hover:text-green-400 transition">Home</Link>
+                <Link href="/why-homeschool" className="hover:text-green-400 transition">Why Homeschool?</Link>
+                <Link href="/entrepreneur" className="hover:text-green-400 transition">Entrepreneur</Link>
+                <Link href="/player" className="hover:text-green-400 transition">Player Profiles</Link>
+                <Link href="/faq" className="hover:text-green-400 transition">FAQ</Link>
               </div>
             </div>
             <div>
               <h4 className="text-white font-bold mb-2">Contact</h4>
-              <a href="mailto:missouriwarriorsbasketball@gmail.com" className="hover:text-green-400">missouriwarriorsbasketball@gmail.com</a>
-                          <p className="mt-2 text-xs">Privacy Policy 2026</p>
+              <a href="mailto:missouriwarriorsbasketball@gmail.com" className="hover:text-green-400 transition">missouriwarriorsbasketball@gmail.com</a>
             </div>
+          </div>
+          <div className="max-w-7xl mx-auto px-4 mt-8 pt-4 border-t border-gray-800 text-center text-xs text-gray-500">
+            Privacy Policy 2026
           </div>
         </footer>
       </body>
