@@ -72,8 +72,93 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Athletic Edge */}
+      {/* Proof This Works */}
       <section className="py-16 px-4 bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
+            This Model Is <span className="text-green-500">Already Working</span>
+          </h2>
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+            Warriors Academy is not an experiment. Schools across the country are proving that when you replace the outdated factory model with focused academics, real-world business, and elite training, kids do not just keep up. They dominate.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-green-400">Acton Academy</h3>
+                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 2009</span>
+              </div>
+              <p className="text-3xl font-black text-white mb-1">300+ Campuses</p>
+              <p className="text-sm text-gray-400 mb-4">31 states and 25+ countries worldwide</p>
+              <p className="text-gray-300 text-sm">Student-led micro-school model where learners set their own goals and run real businesses. Students consistently perform 3 to 5 grade levels above the national average. Started with one campus in Austin, Texas and became a global movement.</p>
+            </div>
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-green-400">Alpha School</h3>
+                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 2022</span>
+              </div>
+              <p className="text-3xl font-black text-white mb-1">Top 1-2% Nationally</p>
+              <p className="text-sm text-gray-400 mb-4">AI-powered academics completed in 2 hours</p>
+              <p className="text-gray-300 text-sm">Students complete core academics using AI in just two hours each morning, freeing the rest of the day for projects, athletics, and real-world learning. Despite spending a fraction of the time on academics, their students score in the top 1 to 2 percent on national standardized tests.</p>
+            </div>
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-green-400">Combine Academy</h3>
+                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 2012</span>
+              </div>
+              <p className="text-3xl font-black text-white mb-1">500+ College Scholarships</p>
+              <p className="text-sm text-gray-400 mb-4">Founded by NBA player Trevor Booker</p>
+              <p className="text-gray-300 text-sm">International boarding school on a 70-acre campus in Charlotte, NC with students from 50+ countries. Launched a School of Business and Entrepreneurship in 2025 with tracks in sports management, digital marketing, real estate, and sales. Students intern with real VC firms.</p>
+            </div>
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-green-400">IMG Academy</h3>
+                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 1978</span>
+              </div>
+              <p className="text-3xl font-black text-white mb-1">100% College Acceptance</p>
+              <p className="text-sm text-gray-400 mb-4">311 D1+ commitments from 71 countries</p>
+              <p className="text-gray-300 text-sm">The gold standard for athletic academies. IMG has produced multiple first-round NBA and NFL draft picks. Their model proves that when training is the priority, academics do not suffer. Every single graduate is accepted to college. Warriors Academy brings this same training-first mentality to Springfield.</p>
+            </div>
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-green-400">Colossal Academy</h3>
+                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Florida</span>
+              </div>
+              <p className="text-3xl font-black text-white mb-1">Featured in Forbes</p>
+              <p className="text-sm text-gray-400 mb-4">Students work with Shark Tank investors</p>
+              <p className="text-gray-300 text-sm">Students launch and operate real businesses with mentorship from investors who have appeared on Shark Tank. This is not a simulation or a class project. Kids build actual companies that generate real revenue. Forbes featured their model as the future of education.</p>
+            </div>
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-green-400">Iowa BIG</h3>
+                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Public School</span>
+              </div>
+              <p className="text-3xl font-black text-white mb-1">97% Feel Prepared</p>
+              <p className="text-sm text-gray-400 mb-4">500+ educators have visited to study the model</p>
+              <p className="text-gray-300 text-sm">A public half-day program where high school students work on real projects for local businesses and nonprofits instead of sitting in traditional classes. 97 percent of seniors say they feel prepared for life after school. Educators from around the country visit to study why it works.</p>
+            </div>
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-green-400">Elizabeth City</h3>
+                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 2025</span>
+              </div>
+              <p className="text-3xl font-black text-white mb-1">Real Airbnb Property</p>
+              <p className="text-sm text-gray-400 mb-4">26 middle schoolers running a real business</p>
+              <p className="text-gray-300 text-sm">Twenty-six middle school students use AI-powered academics and spend the rest of their day actually operating a real Airbnb property. They handle bookings, guest communications, property management, and financials. If middle schoolers can run a real business, imagine what our high school athletes can build.</p>
+            </div>
+          </div>
+          <div className="bg-green-900/20 border border-green-500/30 rounded-2xl p-8 md:p-10 text-center">
+            <p className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Warriors Academy is bringing this <span className="text-green-500">proven model</span> to Springfield, Missouri.
+            </p>
+            <p className="text-lg text-gray-300">
+              Elite basketball training. Real entrepreneurship. Christ-centered formation. The schools above proved it works. We are building it here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Athletic Edge */}
+      <section className="py-16 px-4 bg-gray-800">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
             The <span className="text-green-500">Warriors Academy</span> Athletic Edge
