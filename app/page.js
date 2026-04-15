@@ -414,25 +414,25 @@ export default function Home() {
               <p className="text-gray-300">Warriors Academy operates as a Missouri-compliant homeschool co-op. Missouri law requires parents to be responsible for at least 51 percent of their child's education. Parents handle core academics like math, English, reading, and science. Warriors Academy handles the enrichment: marketing, sales, AI, coding, finance, entrepreneurship, and elite athletic training. Students have a dedicated study hour each day to work on parent or teacher assignments. Parents can issue diplomas under Missouri homeschool law.</p>
             </div>
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
+              <h3 className="text-lg font-bold text-green-400 mb-2">Does this model actually work? Who else is doing it?</h3>
+              <p className="text-gray-300">This is not an experiment. Acton Academy has over 300 campuses in 31 states and 25-plus countries with students performing 3 to 5 grade levels above average. Alpha School delivers core academics via AI in two hours each morning and their students score in the top 1 to 2 percent nationally. Colossal Academy in Florida was featured in Forbes with students running live businesses alongside Shark Tank investors. Warriors Academy is bringing this proven model to Springfield, Missouri.</p>
+            </div>
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold text-green-400 mb-2">Can my child play sports at their public school?</h3>
-              <p className="text-gray-300">Yes. Missouri has passed the Tim Tebow law, which allows homeschool students to participate in sports at their local public school district. Warriors Academy students are welcome to play any sport that Warriors Academy does not offer at their public school in their district. This is a major advantage for multi-sport athletes who want the best of both worlds.</p>
+              <p className="text-gray-300">Yes. Missouri Governor Mike Kehoe signed Senate Bill 63, the Homeschoolers Sports Act, into law on July 9, 2025. As of August 28, 2025, all public schools in Missouri are required to allow homeschool students to try out for sports teams and extracurricular activities. Warriors Academy students are welcome to play any sport that we do not offer at their local public school. This is a major advantage for multi-sport athletes who want the best of both worlds.</p>
             </div>
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold text-green-400 mb-2">How does the 4-day schedule work?</h3>
-              <p className="text-gray-300">Two days per week focus on enrichment including athletics, entrepreneurship, financial literacy, and AI education at the academy. Two additional days are structured for parent-led core academics at home completed in focused 2-3 hour blocks. Students also have a dedicated study hour during academy days to work on parent-assigned or teacher-assigned work. This model gives athletes up to 4 hours of training daily while exceeding academic standards. Children do not need to sit in classrooms all day to learn.</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold text-green-400 mb-2">Do colleges accept homeschooled athletes?</h3>
-              <p className="text-gray-300">Absolutely. Homeschoolers have an 87% college acceptance rate compared to 68% for public school students. Our custom recruiting profile pages with highlight films, verified stats, and interview videos give our athletes a significant edge. Multiple NCAA Division I athletes were homeschooled including Tim Tebow and Blake Griffin.</p>
+              <h3 className="text-lg font-bold text-green-400 mb-2">What is the parent's role versus the academy's role?</h3>
+              <p className="text-gray-300">Parents are required to be responsible for at least 51 percent of their child's schooling. This means parents handle core subjects: math, English, reading, science, and social studies. Warriors Academy handles the enrichment that public schools completely ignore: marketing, sales, AI, coding, finance, entrepreneurship, and elite athletic training. Students have a dedicated study hour each day at the academy to work on parent or teacher assignments. This is still homeschooling. Parents are actively involved.</p>
             </div>
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold text-green-400 mb-2">What if my child does not have a business idea yet?</h3>
-              <p className="text-gray-300">That is completely normal. We offer a Digital Marketing Track as the perfect entry point. Students learn affiliate marketing, content creation, and digital advertising through school-managed accounts. As a Christ-centered school, students never manage their own social media. The school creates business accounts, AI assists with content creation, and all posts go through teacher approval before publishing. Students learn the business strategy without ever scrolling a feed.</p>
+              <p className="text-gray-300">That is completely normal. We offer a Digital Marketing Track as the perfect entry point. Students learn affiliate marketing, content creation, and digital advertising through school-managed accounts. As a Christ-centered school, students never manage their own social media. The school creates business accounts, AI assists with content creation, and all posts go through teacher and coach approval before publishing. Students learn the business strategy without ever scrolling a feed.</p>
             </div>
           </div>
           <div className="text-center mt-8">
             <Link href="/faq" className="text-green-400 hover:text-green-300 underline text-lg">
-              View All Frequently Asked Questions
+              View All 22 Questions Answered
             </Link>
           </div>
         </div>

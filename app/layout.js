@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
               <Link href="/entrepreneur" className="text-gray-300 hover:text-green-400 transition">Entrepreneur</Link>
               <Link href="/player" className="text-gray-300 hover:text-green-400 transition">Player Profile</Link>
               <Link href="/faq" className="text-gray-300 hover:text-green-400 transition">FAQ</Link>
+              <a href="https://hoopsmith.vercel.app" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition">HoopSmith</a>
               <a href="https://wearewarriorsapparel.com" target="_blank" className="text-gray-300 hover:text-green-400 transition">Shop</a>
             </div>
             <a href="#contact" className="bg-green-600 hover:bg-green-500 text-white text-sm font-bold px-4 py-2 rounded transition">Join Us</a>
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
                 <Link href="/entrepreneur" className="hover:text-green-400 transition">Entrepreneur</Link>
                 <Link href="/player" className="hover:text-green-400 transition">Player Profiles</Link>
                 <Link href="/faq" className="hover:text-green-400 transition">FAQ</Link>
+                <a href="https://hoopsmith.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition">HoopSmith</a>
               </div>
             </div>
             <div>

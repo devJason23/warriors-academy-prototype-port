@@ -9,23 +9,39 @@ export default function FAQ() {
   const faqs = [
     {
       q: "Is this a real school? Will my child get a diploma?",
-      a: "Warriors Academy operates as a Missouri-compliant homeschool co-op. Our 4-day model meets all Missouri requirements including 1,000 hours of instruction covering math, reading, social studies, English, and science. Parents remain the primary educators and can issue diplomas under Missouri homeschool law."
+      a: "Warriors Academy operates as a Missouri-compliant homeschool co-op. Missouri law requires parents to be responsible for at least 51 percent of their child's education. Parents handle core academics like math, English, reading, and science. Warriors Academy handles the enrichment: marketing, sales, AI, coding, finance, entrepreneurship, and elite athletic training. Students have a dedicated study hour each day to work on parent or teacher assignments. Parents can issue diplomas under Missouri homeschool law."
     },
     {
-      q: "Can my child still play for their public school sports team?",
-      a: "Missouri does not currently have a Tim Tebow law allowing homeschoolers to play public school sports. However, our athletes compete in NCHC-sanctioned national homeschool tournaments and have access to elite-level competition and college recruiting exposure that most public school athletes never get."
+      q: "Can my child play sports at their public school?",
+      a: "Yes. Missouri Governor Mike Kehoe signed Senate Bill 63, the Homeschoolers Sports Act, into law on July 9, 2025. This is Missouri's version of the Tim Tebow law. As of August 28, 2025, all public schools in Missouri are required to allow homeschool students to try out for sports teams and extracurricular activities. Students are treated the same as any enrolled student and must meet the same eligibility standards. Warriors Academy students are welcome to play any sport that we do not offer at their local public school. This is a major advantage for multi-sport athletes who want the best of both worlds."
+    },
+    {
+      q: "What ages do you accept?",
+      a: "Warriors Academy serves student athletes ages 10u through 18u. Our program is designed for athletes in that age range who are serious about competitive basketball, entrepreneurship, and Christ-centered development. Contact us to discuss your athlete's specific situation."
     },
     {
       q: "How does the 4-day schedule work?",
-      a: "Two days per week focus on core academics (math, reading, English, science, social studies) completed in focused 2-3 hour blocks. Two additional days are dedicated to enrichment including athletics, entrepreneurship, financial literacy, and AI education. This model gives athletes up to 4 hours of training daily while exceeding academic standards."
+      a: "Two days per week focus on enrichment including athletics, entrepreneurship, financial literacy, and AI education at the academy. Two additional days are structured for parent-led core academics at home completed in focused 2-3 hour blocks. Students also have a dedicated study hour during academy days to work on parent-assigned or teacher-assigned work. This model gives athletes up to 4 hours of training daily while exceeding academic standards. Children do not need to sit in classrooms all day to learn."
     },
     {
       q: "Do colleges accept homeschooled athletes?",
-      a: "Absolutely. Homeschoolers have an 87% college acceptance rate compared to 68% for public school students. Our custom recruiting profile pages with highlight films, verified stats, and interview videos give our athletes a significant edge. Multiple NCAA Division I athletes were homeschooled including Tim Tebow, Blake Griffin, and Simone Biles."
+      a: "Absolutely. Homeschoolers have an 87 percent college acceptance rate compared to 68 percent for public school students. Our custom recruiting profile pages with highlight films, verified stats, and interview videos give our athletes a significant edge. Multiple NCAA Division I athletes were homeschooled including Tim Tebow, Blake Griffin, and Simone Biles."
     },
     {
-      q: "What ages and grades do you accept?",
-      a: "Warriors Academy serves student athletes in middle school and high school. Contact us to discuss your specific situation and how we can build a program around your athlete."
+      q: "Does this model actually work? Who else is doing it?",
+      a: "This is not an experiment. Acton Academy has over 300 campuses in 31 states and 25-plus countries, with students performing 3 to 5 grade levels above the national average. Alpha School delivers core academics via AI in two hours each morning so athletes train all afternoon, and their students score in the top 1 to 2 percent nationally. Colossal Academy in Florida was featured in Forbes with students running live businesses alongside Shark Tank investors. Warriors Academy is bringing this proven model to Springfield, Missouri."
+    },
+    {
+      q: "Do I need to be a certified teacher to homeschool my child?",
+      a: "No. Missouri has zero teacher qualification requirements for homeschool parents. There is no certification, degree, or training required. Missouri is one of the most homeschool-friendly states in the country. You do not need to notify anyone, submit to testing, or seek approval. You simply need to provide 1,000 hours of instruction per year with at least 600 hours in core subjects: reading, math, social studies, language arts, and science."
+    },
+    {
+      q: "What is the parent's role versus the academy's role?",
+      a: "Parents are required to be responsible for at least 51 percent of their child's schooling. This means parents handle core subjects: math, English, reading, science, and social studies. Warriors Academy handles the enrichment that public schools completely ignore: marketing, sales, AI, coding, finance, trusts, cryptocurrency, blockchain, entrepreneurship, and elite athletic training. Students have a dedicated study hour each day at the academy to work on parent or teacher assignments. This is still homeschooling. Parents are actively involved."
+    },
+    {
+      q: "How is the program structured and what about discipline?",
+      a: "Warriors Academy runs a tight ship. Our 4-day model has two days at the academy for enrichment and athletics and two days at home for parent-led core academics. Academy days include structured training blocks, entrepreneurship sessions, film study, and a dedicated study hour. We hold our athletes to high standards of conduct, respect, and effort. This is a Christ-centered program and we expect our students to carry themselves with discipline and integrity on and off the court."
     },
     {
       q: "What is the ATG training program?",
@@ -36,16 +52,28 @@ export default function FAQ() {
       a: "Every student is required to launch and operate their own real business, which directly impacts their grade. Students also participate in a team business to fundraise for the school. Our curriculum covers AI and app development, financial literacy, marketing, sales, and coding. Students learn to leverage technology and build real wealth."
     },
     {
+      q: "What if my child does not have a business idea yet?",
+      a: "That is completely normal and we have a solution. We offer a Digital Marketing Track as the perfect entry point. Students learn affiliate marketing, content creation, and digital advertising through school-managed accounts. As a Christ-centered school, students never manage their own social media. The school creates business accounts, AI assists with content creation, and all posts go through teacher and coach approval before publishing. Students learn the business strategy without ever scrolling a feed."
+    },
+    {
+      q: "Why golf? What does that have to do with basketball?",
+      a: "Everything. Caitlin Clark credits golf with sharpening her mental toughness, saying when she has a bad shot on the course it is all on her with no teammates to lean on. Steph Curry famously hit the golf course after a tough playoff loss instead of the gym, then dropped 45 points the next game. Research from Frontiers in Psychology shows individual sports build self-efficacy and autonomous emotional regulation, while the APA found mental resilience can boost performance by 23 percent. Golf demands 4-plus hours of sustained concentration, training the same full-game awareness needed in the fourth quarter. That is why every Warriors athlete completes a mandatory golf season."
+    },
+    {
+      q: "What is the difference between Dr. Dish and Shoot 360?",
+      a: "Both are elite shooting technology, but they serve different purposes. The Dr. Dish CT is our in-house rebounding machine that allows players to get up to 1,000 shots per hour compared to just 50 to 100 without a machine. It is used for high-volume repetition and developing muscle memory. Shoot 360 is an immersive training facility at 4136 E. Kearney St. in Springfield that uses motion-tracking cameras and AI analytics to measure arc, depth, and alignment on every shot. Our athletes train at Shoot 360 with a minimum of 2 sessions per week. Dr. Dish builds volume and consistency. Shoot 360 builds precision and analytics."
+    },
+    {
       q: "Is this program only for basketball players?",
-      a: "While basketball is our primary sport, we also offer a competitive Cheer and Stunt program. Every student also completes a mandatory 6-week golf season to build mental toughness. The entrepreneurship and academic curriculum benefits any student regardless of sport."
+      a: "While basketball is our primary sport, we also offer a competitive Cheer and Stunt program. Every student also completes a mandatory golf season to build mental toughness. The entrepreneurship and academic curriculum benefits any student regardless of sport. With Missouri's new Homeschoolers Sports Act, our athletes can also play any sport their local public school offers that Warriors Academy does not."
     },
     {
       q: "How do homeschoolers do compared to public school students academically?",
-      a: "Homeschoolers consistently outperform public school peers. They score in the 65th to 80th percentile on standardized tests versus the 50th percentile for public school. Average SAT scores are 1190 versus 1060. College acceptance rates are 87% versus 68%. And 87% of peer-reviewed studies show homeschoolers have superior social and emotional development."
+      a: "Homeschoolers consistently outperform public school peers. They score in the 65th to 80th percentile on standardized tests versus the 50th percentile for public school. Average SAT scores are 1190 versus 1060. College acceptance rates are 87 percent versus 68 percent. And 87 percent of peer-reviewed studies show homeschoolers have superior social and emotional development."
     },
     {
       q: "What about socialization?",
-      a: "The socialization myth has been thoroughly debunked. 87% of peer-reviewed studies prove homeschool students perform significantly better than public school peers in social, emotional, and psychological development. Our athletes train together daily, compete in tournaments, participate in community outreach and mission projects, and build deep relationships through shared faith and competition."
+      a: "The socialization myth has been thoroughly debunked. 87 percent of peer-reviewed studies prove homeschool students perform significantly better than public school peers in social, emotional, and psychological development. Our athletes train together daily, compete in tournaments, participate in community outreach and mission projects, and build deep relationships through shared faith and competition. They are not isolated. They are surrounded by like-minded athletes and mentors."
     },
     {
       q: "How does film study work in your program?",
@@ -53,19 +81,19 @@ export default function FAQ() {
     },
     {
       q: "What is Shoot 360 and how do your athletes use it?",
-      a: "Shoot 360 is the world's leading immersive basketball training system with 60 locations worldwide. It just opened in Springfield, MO, and our athletes train there at least 2 sessions per week. The system uses motion-tracking cameras and AI analytics to measure arc, depth, and alignment on every shot. Players report shooting percentage improvements of up to 18 percent."
+      a: "Shoot 360 is the world's leading immersive basketball training system with 60 locations worldwide. It just opened in Springfield, MO, and our athletes train there at least 2 sessions per week. The system uses motion-tracking cameras and AI analytics to measure arc, depth, and alignment on every shot. Players report shooting percentage improvements of up to 18 percent. It is the same technology Damian Lillard and the Golden State Warriors Basketball Academy use."
     },
     {
       q: "Is Warriors Academy a Christian program?",
       a: "Yes. Everything we do is rooted in faith. We are a Christ-centered program that blends spiritual growth with athletic achievement. Players are required to apply biblical principles in their daily lives and participate in community outreach and mission projects. We honor God in everything we do on and off the court."
     },
     {
-      q: "How much does the program cost?",
-      a: "Contact us directly for current tuition and fee information. We work with families to make our program accessible. Our athletes also participate in team fundraising businesses as part of the entrepreneur curriculum, which helps offset costs."
+      q: "What is HoopSmith?",
+      a: "HoopSmith is our proprietary software platform for film review, game statistics, and player analytics. It gives coaches and players access to detailed performance data, highlight clips, and recruiting-ready content. HoopSmith is a key part of how we develop elite athletes and prepare them for the next level."
     },
     {
-      q: "How do I apply?",
-      a: "Email us at missouriwarriorsbasketball@gmail.com or use the contact form on our website. Spots are limited and we accept families who are serious about athletic development, academic excellence, and Christ-centered living."
+      q: "How much does the program cost?",
+      a: "Contact us directly for current tuition and fee information. We work with families to make our program accessible. Our athletes also participate in team fundraising businesses as part of the entrepreneur curriculum, which helps offset costs."
     }
   ];
 
@@ -84,7 +112,7 @@ export default function FAQ() {
         <div className="max-w-4xl mx-auto space-y-6">
           {faqs.map((faq, i) => (
             <div key={i} className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+              <h3 className="text-lg font-bold text-green-400 mb-2">{faq.q}</h3>
               <p className="text-gray-300">{faq.a}</p>
             </div>
           ))}
