@@ -224,7 +224,25 @@ export default function Home() {
                 <p className="text-gray-400 text-sm">Correct reps needed to make your shot automatic</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm mb-4">Real-time stat tracking with heatmaps, progress charts, and custom drills for every player.</p>
+            <p className="text-gray-400 text-sm mb-6">Real-time stat tracking with heatmaps, progress charts, and custom drills for every player.</p>
+
+            {/* Real Proof — 36,862 Shots */}
+            <div className="bg-gradient-to-br from-green-900/30 via-gray-800 to-gray-900 border border-green-500/40 rounded-xl p-6 md:p-8 mb-6">
+              <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-8 items-center">
+                <div className="text-center md:text-left">
+                  <p className="text-xs text-green-400 font-bold tracking-widest mb-1">REAL SHOTS, REAL DATA</p>
+                  <p className="text-5xl md:text-6xl font-black text-white tracking-tight">36,862</p>
+                  <p className="text-green-400 font-semibold mt-1">Shots &amp; Counting</p>
+                </div>
+                <div>
+                  <p className="text-gray-200 text-lg leading-relaxed">
+                    This is not a pipe dream. Our Warriors athletes logged <span className="text-green-400 font-bold">36,862 real shots</span> on our Dr. Dish CT machine, and we only had the machine for <span className="text-white font-bold">half the season</span>.
+                  </p>
+                  <p className="text-gray-400 text-sm mt-3">Every rep tracked. Every shot tweaked and perfected. Imagine what a full season looks like.</p>
+                </div>
+              </div>
+            </div>
+
             <a href="https://www.drdishbasketball.com" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 underline text-sm">Learn more about Dr. Dish &#8594;</a>
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 md:p-12 border border-gray-700">
@@ -373,25 +391,142 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Why This Matters */}
-          <div className="bg-gray-800 rounded-2xl p-8 md:p-10 border border-green-500/30">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4">Mastery Through <span className="text-green-500">Teaching</span></h3>
-                <ul className="space-y-3 text-gray-300">
-                  <li>When you teach a skill, you process it at a far deeper level than when you simply practice it</li>
-                  <li>Older athletes lock in their own mastery by teaching the next generation</li>
-                  <li>Younger players get mentorship from someone who has lived it, not just coached it</li>
-                  <li>Builds servant leadership and accountability rooted in Christ-centered values</li>
-                  <li>Big Brothers develop coaching and communication skills they carry for life</li>
-                  <li>Creates a family culture where every athlete has someone invested in their growth</li>
-                </ul>
+          {/* Mastery Through Teaching */}
+          <div className="mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-center text-white mb-3">
+              Mastery Through <span className="text-green-500">Teaching</span>
+            </h3>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-10">
+              Why the Big Brother system makes every athlete better, on both sides of the badge.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+              <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+                <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-4">
+                  <span className="text-2xl">&#129504;</span>
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2">Teach It to Master It</h4>
+                <p className="text-gray-400 text-sm">Research proves teaching a skill forces your brain to process it at a far deeper level than simply practicing.</p>
               </div>
-              <div className="text-center">
-                <p className="text-5xl font-black text-green-500 mb-2">Iron Sharpens Iron</p>
-                <p className="text-gray-400 italic">"As iron sharpens iron, so one person sharpens another." - Proverbs 27:17</p>
+              <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+                <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-4">
+                  <span className="text-2xl">&#128257;</span>
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2">Both Players Level Up</h4>
+                <p className="text-gray-400 text-sm">Big Brothers lock in their own mastery. Younger athletes get mentorship from someone who has lived it.</p>
+              </div>
+              <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+                <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-4">
+                  <span className="text-2xl">&#10014;</span>
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2">Servant Leadership</h4>
+                <p className="text-gray-400 text-sm">Every Big Brother leads from a foundation of Christ-centered accountability, not ego or seniority.</p>
+              </div>
+              <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+                <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-4">
+                  <span className="text-2xl">&#127919;</span>
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2">Life After Basketball</h4>
+                <p className="text-gray-400 text-sm">Coaching and communication skills Big Brothers carry into business, family, and ministry for life.</p>
               </div>
             </div>
+            <div className="relative bg-gradient-to-br from-green-900/40 via-gray-800 to-gray-900 rounded-2xl p-10 md:p-14 border border-green-500/40 text-center overflow-hidden">
+              <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(circle at 20% 20%, #22c55e 0%, transparent 50%), radial-gradient(circle at 80% 80%, #22c55e 0%, transparent 50%)"}}></div>
+              <div className="relative">
+                <p className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tight">
+                  Iron Sharpens <span className="text-green-500">Iron</span>
+                </p>
+                <p className="text-gray-300 italic text-lg md:text-xl max-w-2xl mx-auto">
+                  "As iron sharpens iron, so one person sharpens another."
+                </p>
+                <p className="text-green-400 font-semibold mt-3 tracking-widest text-sm">PROVERBS 27:17</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Warrior Life — Mission Control */}
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{backgroundImage: "linear-gradient(rgba(34, 197, 94, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 197, 94, 0.3) 1px, transparent 1px)", backgroundSize: "40px 40px"}}></div>
+        <div className="max-w-6xl mx-auto relative">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-green-500/20 text-green-400 text-xs font-bold tracking-widest px-4 py-2 rounded-full border border-green-500/40 mb-4">PROPRIETARY WARRIORS ACADEMY TECHNOLOGY</span>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+              Warrior <span className="text-green-500">Life</span>
+            </h2>
+            <p className="text-2xl text-gray-300 mb-2">Their Mission Control for Everything That Matters</p>
+            <p className="text-gray-400 max-w-3xl mx-auto">
+              A proprietary student-athlete command center built by Warriors Academy. In just 5 to 10 minutes a day, our athletes manage their entire holistic development, from faith to physical readiness to academics.
+            </p>
+          </div>
+
+          {/* 5 Pillars Grid */}
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                  <span className="text-2xl">&#9200;</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">The Ultimate Daily Command Center</h3>
+                  <p className="text-gray-400">A frictionless app that replaces tedious paper tracking. Athletes manage faith, nutrition, sleep, readiness, schoolwork, and reflection, all in under 10 minutes a day.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                  <span className="text-2xl">&#129302;</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">AI-Powered Nutrition &amp; Readiness</h3>
+                  <p className="text-gray-400">Athletes snap a photo of their meals and AI auto-estimates macros (protein, carbs, sugar). A 30-second morning pulse check logs sleep, energy, mood, and soreness with a visual body map.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                  <span className="text-2xl">&#10014;</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">"The Mirror" Character Development</h3>
+                  <p className="text-gray-400">We build character alongside athletic ability. Athletes complete a daily devotional and an evening voice reflection answering rotating questions on leadership, courage, and serving others. Example: "Who did you help today and how?"</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                  <span className="text-2xl">&#127918;</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">Gamified Team Accountability</h3>
+                  <p className="text-gray-400">RPG-style system. Athletes build avatars, earn XP, unlock badges, and maintain streaks. Our standout feature is cooperative <span className="text-green-400 font-semibold">Team Boss Battles</span>, where completing daily tasks damages a virtual boss while skipping tasks hurts the whole team. Elite positive peer pressure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Coach Dashboard — Full Width */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 md:p-10 border border-green-500/30">
+            <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-8 items-center">
+              <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                <span className="text-3xl">&#128202;</span>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-2">Pro-Level Coach Oversight</h3>
+                <p className="text-gray-300">Our coaching staff monitors a centralized dashboard that flags warning signs in real time. Missed devotionals. Low sleep. Abnormal soreness. Energy drops. We intervene to optimize performance before an athlete burns out or gets injured, and we spot trends that inform parent conferences and end-of-season awards.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Launch Timeline */}
+          <div className="mt-8 text-center">
+            <p className="text-green-400 font-semibold text-sm tracking-widest">LAUNCHING THIS SEASON &#8212; INCLUDED WITH EVERY WARRIORS ACADEMY MEMBERSHIP</p>
           </div>
         </div>
       </section>
@@ -578,7 +713,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold text-green-400 mb-2">Is this a real school? Will my child get a diploma?</h3>
-              <p className="text-gray-300">Warriors Academy operates as a Missouri-compliant homeschool co-op. Missouri law requires parents to be responsible for at least 51 percent of their child's education. Parents handle core academics like math, English, reading, and science. Warriors Academy handles the enrichment: marketing, sales, AI, coding, finance, entrepreneurship, and elite athletic training. Students have a dedicated study hour each day to work on parent or teacher assignments. Parents can issue diplomas under Missouri homeschool law.</p>
+              <p className="text-gray-300">Warriors Academy operates as a Missouri-compliant homeschool co-op. Missouri law requires parents to be responsible for at least 51 percent of their child's education. Parents handle core academics like math, English, reading, and science at home. Warriors Academy handles the enrichment: marketing, sales, AI, coding, finance, entrepreneurship, and elite athletic training. Parents can issue diplomas under Missouri homeschool law.</p>
             </div>
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold text-green-400 mb-2">Does this model actually work? Who else is doing it?</h3>
@@ -590,7 +725,7 @@ export default function Home() {
             </div>
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold text-green-400 mb-2">What is the parent's role versus the academy's role?</h3>
-              <p className="text-gray-300">Parents are required to be responsible for at least 51 percent of their child's schooling. This means parents handle core subjects: math, English, reading, science, and social studies. Warriors Academy handles the enrichment that public schools completely ignore: marketing, sales, AI, coding, finance, entrepreneurship, and elite athletic training. Students have a dedicated study hour each day at the academy to work on parent or teacher assignments. This is still homeschooling. Parents are actively involved.</p>
+              <p className="text-gray-300">Parents are required to be responsible for at least 51 percent of their child's schooling. This means parents handle core subjects at home: math, English, reading, science, and social studies. Warriors Academy handles enrichment the public schools completely ignore: marketing, sales, AI, coding, finance, entrepreneurship, plus elite athletic training. This is still homeschooling. Parents remain the primary educators and are actively involved every single day.</p>
             </div>
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold text-green-400 mb-2">What if my child does not have a business idea yet?</h3>
@@ -599,7 +734,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-8">
             <Link href="/faq" className="text-green-400 hover:text-green-300 underline text-lg">
-              View All 23 Questions Answered
+              View All 24 Questions Answered
             </Link>
           </div>
         </div>

@@ -9,7 +9,11 @@ export default function FAQ() {
   const faqs = [
     {
       q: "Is this a real school? Will my child get a diploma?",
-      a: "Warriors Academy operates as a Missouri-compliant homeschool co-op. Missouri law requires parents to be responsible for at least 51 percent of their child's education. Parents handle core academics like math, English, reading, and science. Warriors Academy handles the enrichment: marketing, sales, AI, coding, finance, entrepreneurship, and elite athletic training. Students have a dedicated study hour each day to work on parent or teacher assignments. Parents can issue diplomas under Missouri homeschool law."
+      a: "Warriors Academy operates as a Missouri-compliant homeschool co-op. Missouri law requires parents to be responsible for at least 51 percent of their child's education. Parents handle core academics like math, English, reading, and science at home. Warriors Academy handles the enrichment: marketing, sales, AI, coding, finance, entrepreneurship, and elite athletic training. Parents can issue diplomas under Missouri homeschool law."
+    },
+    {
+      q: "Is this really homeschooling if my child attends your academy 4 days a week?",
+      a: "Yes, absolutely. Under Missouri homeschool law, what matters is that parents are responsible for at least 51 percent of their child's education and that the child receives the required hours of core instruction each year. Parents remain the primary educators, teaching core subjects like math, English, reading, science, and social studies at home. Warriors Academy handles enrichment: entrepreneurship, marketing, business, finance, AI, coding, and elite athletic training. Parents are actively involved in their child's education every single day. This is still homeschooling. We just give your athlete access to world-class training and real-world skills that public schools completely ignore."
     },
     {
       q: "Can my child play sports at their public school?",
@@ -21,7 +25,7 @@ export default function FAQ() {
     },
     {
       q: "How does the 4-day schedule work?",
-      a: "Two days per week focus on enrichment including athletics, entrepreneurship, financial literacy, and AI education at the academy. Two additional days are structured for parent-led core academics at home completed in focused 2-3 hour blocks. Students also have a dedicated study hour during academy days to work on parent-assigned or teacher-assigned work. This model gives athletes up to 4 hours of training daily while exceeding academic standards. Children do not need to sit in classrooms all day to learn."
+      a: "Warriors Academy focuses exclusively on enrichment and athletic development. Each academy day includes 2-3 hours of enrichment instruction covering entrepreneurship, business, marketing, finance, AI, and coding, with part of that time dedicated to students working on their own businesses. The rest of the day is focused athletic training and basketball-specific development. Core academics like math, English, reading, science, and social studies are handled by parents at home. This model gives athletes the best of both worlds: deep parent-led core instruction and world-class enrichment plus training they cannot get anywhere else."
     },
     {
       q: "Do colleges accept homeschooled athletes?",
@@ -37,11 +41,11 @@ export default function FAQ() {
     },
     {
       q: "What is the parent's role versus the academy's role?",
-      a: "Parents are required to be responsible for at least 51 percent of their child's schooling. This means parents handle core subjects: math, English, reading, science, and social studies. Warriors Academy handles the enrichment that public schools completely ignore: marketing, sales, AI, coding, finance, trusts, cryptocurrency, blockchain, entrepreneurship, and elite athletic training. Students have a dedicated study hour each day at the academy to work on parent or teacher assignments. This is still homeschooling. Parents are actively involved."
+      a: "Parents are required to be responsible for at least 51 percent of their child's schooling. This means parents handle core subjects at home: math, English, reading, science, and social studies. Warriors Academy handles the enrichment that public schools completely ignore: marketing, sales, AI, coding, finance, trusts, cryptocurrency, blockchain, entrepreneurship, plus elite athletic training. This is still homeschooling. Parents remain the primary educators and are actively involved in their child's learning every single day."
     },
     {
       q: "How is the program structured and what about discipline?",
-      a: "Warriors Academy runs a tight ship. Our 4-day model has two days at the academy for enrichment and athletics and two days at home for parent-led core academics. Academy days include structured training blocks, entrepreneurship sessions, film study, and a dedicated study hour. We hold our athletes to high standards of conduct, respect, and effort. This is a Christ-centered program and we expect our students to carry themselves with discipline and integrity on and off the court."
+      a: "Warriors Academy runs a tight ship. Academy days include 2-3 hours of enrichment instruction (entrepreneurship, business, marketing, finance, AI, coding) with time carved out for students to work on their own businesses, followed by focused athletic training and basketball-specific development blocks. Core academics happen at home with parents. We hold our athletes to high standards of conduct, respect, and effort. This is a Christ-centered program and we expect our students to carry themselves with discipline and integrity on and off the court."
     },
     {
       q: "What is the ATG training program?",
