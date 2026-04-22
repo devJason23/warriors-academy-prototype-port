@@ -25,7 +25,7 @@ export default function FAQ() {
     },
     {
       q: "How does the 4-day schedule work?",
-      a: "Warriors Academy focuses exclusively on enrichment and athletic development. Each academy day includes 2-3 hours of enrichment instruction covering entrepreneurship, business, marketing, finance, AI, and coding, with part of that time dedicated to students working on their own businesses. The rest of the day is focused athletic training and basketball-specific development. Core academics like math, English, reading, science, and social studies are handled by parents at home. This model gives athletes the best of both worlds: deep parent-led core instruction and world-class enrichment plus training they cannot get anywhere else."
+      a: "Each academy day runs Monday through Thursday and includes 2-3 hours of enrichment instruction covering entrepreneurship, business, marketing, finance, AI, and coding, with part of that time dedicated to students working on their own businesses. The rest of the day is focused athletic training and basketball-specific development. We also build in a dedicated study hall hour so students have guaranteed time on-site to knock out core academics if they need it. If your athlete is caught up on their core work at home, that hour becomes flex time they can use for extra reps on the court, deeper work on their business, or the fundraiser enterprise. Parents remain responsible for core academics (math, English, reading, science, social studies) under Missouri homeschool law, but the study hour gives families breathing room so the academy day works around real life."
     },
     {
       q: "Do colleges accept homeschooled athletes?",
@@ -45,7 +45,7 @@ export default function FAQ() {
     },
     {
       q: "How is the program structured and what about discipline?",
-      a: "Warriors Academy runs a tight ship. Academy days include 2-3 hours of enrichment instruction (entrepreneurship, business, marketing, finance, AI, coding) with time carved out for students to work on their own businesses, followed by focused athletic training and basketball-specific development blocks. Core academics happen at home with parents. We hold our athletes to high standards of conduct, respect, and effort. This is a Christ-centered program and we expect our students to carry themselves with discipline and integrity on and off the court."
+      a: "Warriors Academy runs a tight ship. Academy days include 2-3 hours of enrichment instruction (entrepreneurship, business, marketing, finance, AI, coding) with time carved out for students to work on their own businesses, a dedicated study hall hour for core academics (or flex work if they are already caught up), and focused athletic training and basketball-specific development blocks. Parents stay responsible for core academics at home under Missouri homeschool law. We hold our athletes to high standards of conduct, respect, and effort. This is a Christ-centered program and we expect our students to carry themselves with discipline and integrity on and off the court."
     },
     {
       q: "What is the ATG training program?",
