@@ -27,3 +27,5 @@ pnpm-debug.log*
 
 # Claude Code local worktrees/state
 .claude/
+
+.vercel
