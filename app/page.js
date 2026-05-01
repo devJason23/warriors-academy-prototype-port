@@ -1,761 +1,876 @@
-import Link from "next/link";
+import Btn from '../components/ui/Btn'
+import Eyebrow from '../components/ui/Eyebrow'
+import LiteYouTube from '../components/ui/LiteYouTube'
 
-export const metadata = {
-  title: "Warriors Academy | Faith-Based Homeschool Athletic Program",
-  description: "A Christ-centered 4-day homeschool co-op in Springfield, Missouri building elite athletes, entrepreneurs, and leaders.",
-};
-
-export default function Home() {
+function PriceLine({ tier, price, featured }) {
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-24 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <p className="text-green-400 font-semibold tracking-wide mb-4 text-sm uppercase">Faith. Performance. Entrepreneurship.</p>
-          <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
-            Train Like a <span className="text-green-500">Warrior</span>.
-            <br />Learn Like a <span className="text-green-500">Champion</span>.
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'baseline',
+        padding: '20px 24px',
+        background: featured ? 'var(--ink)' : 'transparent',
+        color: featured ? 'var(--paper)' : 'var(--ink)',
+        border: featured ? '1px solid var(--brass)' : '1px solid rgba(11,11,13,0.12)',
+        borderRadius: 4,
+      }}
+    >
+      <div>
+        <div className="mono" style={{ color: featured ? 'var(--brass)' : 'rgba(11,11,13,0.5)' }}>{tier}</div>
+      </div>
+      <div style={{ fontFamily: 'var(--f-display)', fontSize: 32, lineHeight: 1 }}>{price}</div>
+    </div>
+  )
+}
+
+function CtaPath({ num, stage, title, desc, label, href, featured, disabled }) {
+  const inner = (
+    <>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+        <span className="mono" style={{ color: 'var(--brass)' }}>{num}</span>
+        <span className="mono" style={{ color: 'var(--muted)' }}>{stage}</span>
+      </div>
+      <div style={{ fontFamily: 'var(--f-display)', fontSize: 36, lineHeight: 1, textTransform: 'uppercase', marginTop: 8 }}>{title}</div>
+      <p className="body" style={{ fontSize: 14 }}>{desc}</p>
+      <div
+        style={{
+          marginTop: 'auto',
+          paddingTop: 16,
+          fontFamily: 'var(--f-mono)',
+          fontSize: 11,
+          letterSpacing: '0.16em',
+          textTransform: 'uppercase',
+          color: featured ? 'var(--paper)' : 'var(--muted)',
+        }}
+      >
+        {label} <span style={{ color: featured ? 'var(--brass)' : 'inherit' }}>→</span>
+      </div>
+    </>
+  )
+  const style = {
+    padding: 40,
+    background: featured
+      ? 'linear-gradient(180deg, rgba(142,31,43,0.15), transparent 80%) var(--ink-2)'
+      : 'var(--ink-2)',
+    border: featured ? '1px solid var(--accent)' : '1px solid var(--ink-4)',
+    borderRadius: 8,
+    cursor: disabled ? 'not-allowed' : 'pointer',
+    opacity: disabled ? 0.6 : 1,
+    transition: 'all .18s',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 16,
+    textDecoration: 'none',
+    color: 'inherit',
+  }
+  if (disabled || !href) return <div style={style}>{inner}</div>
+  return (
+    <a href={href} style={style}>
+      {inner}
+    </a>
+  )
+}
+
+const dayTeaseBlocks = [
+  { time: '9:00 AM', label: 'Prayer · Devotion · Warmup' },
+  { time: '9:30 AM', label: 'Athletic Training (basketball + ATG)' },
+  { time: '1:00 PM', label: 'Entrepreneur Unschool' },
+  { time: '2:30 PM', label: 'Film + Big Brother Mentorship' },
+]
+
+const collapsedPillars = [
+  { num: '01', name: 'Elite Athletic Training', body: 'ATG. Dr. Dish. Shoot 360. Plus the only mandatory golf season in basketball training.', link: '/training' },
+  { num: '02', name: 'Real Businesses, Real Money', body: 'Athletes build, market, and run real businesses — not simulations.', link: '/training' },
+  { num: '03', name: 'Christ at the Center', body: 'Every day opens in prayer. Discipleship is the spine, not a side dish.', link: '/day' },
+  { num: '04', name: 'Warrior Life · Mission Control', body: 'Daily app for training, devotion, business, and accountability. Launching this season.', link: '/warrior-life-app' },
+]
+
+export default function HomePage() {
+  return (
+    <div className="page-enter">
+
+      {/* 1 · HERO */}
+      <section className="hero">
+        <div className="hero-bg"></div>
+        <div className="hero-content">
+          <div className="hero-eyebrow">
+            <span className="hero-dot"></span>
+            <span className="mono" style={{ color: 'var(--paper)' }}>Warriors Academy</span>
+            <span className="mono" style={{ color: 'var(--muted)' }}>Springfield, MO · Est. 2024</span>
+          </div>
+          <h1 className="h-hero hero-title">
+            Train Like<br />
+            a Warrior.<br />
+            Build Like <span className="accent">a Founder.</span><br />
+            Live Like a Champion.
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-4 max-w-3xl mx-auto italic">
-            "I can do all things through Christ who strengthens me." - Philippians 4:13
+          <p className="hero-scripture">&ldquo;I can do all things through Christ who strengthens me.&rdquo; — Philippians 4:13</p>
+          <p className="hero-sub">
+            A Christ-centered 4-day homeschool athletic academy for serious student-athletes ages 10–18. Elite training. Real businesses. Family evenings back. The first tech-forward Christian basketball academy.
           </p>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            A Christ-centered 4-day homeschool co-op in Springfield, Missouri where athletes get up to 4 hours of elite training daily, launch real businesses, and reclaim family time.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#apply" className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
-              Apply Now
-            </a>
-            <Link href="/why-homeschool" className="border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-white font-bold py-4 px-8 rounded-lg text-lg transition">
-              Why Homeschool?
-            </Link>
+          <div className="hero-actions">
+            <Btn kind="primary" href="/experience">Spend a Day With Us</Btn>
+            <Btn kind="ghost" href="/case">Why Not Traditional School</Btn>
+          </div>
+          <div className="hero-trust">
+            <div><strong>#2 Nationally</strong><br />HCHB 12U · 2025</div>
+            <div><strong>36,862 Shots</strong><br />Dr. Dish · Half Season</div>
+            <div><strong>Only ATG Hub</strong><br />Within 200 Miles</div>
+            <div><strong>4 Days a Week</strong><br />Fridays Off for Family</div>
           </div>
         </div>
       </section>
 
-      {/* Problem vs Solution */}
-      <section className="py-16 px-4 bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            The Traditional System Is <span className="text-green-500">Failing</span> Student Athletes
-          </h2>
-          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-            The modern school system forces kids to sit in class all day, followed by exhausting after-school practices, homework, and chores, leaving zero time for family connection. Meanwhile, 45% of high school seniors test below basic in math despite nearly a trillion dollars in annual government spending.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-red-900/30 border border-red-800 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-red-400 mb-4">The Traditional Model</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li>7-8 hours of seat time daily</li>
-                <li>Exhausted by practice time</li>
-                <li>Homework kills family evenings</li>
-                <li>Zero entrepreneurship training</li>
-                <li>System designed for factory workers, not athletes</li>
-              </ul>
-            </div>
-            <div className="bg-green-900/30 border border-green-800 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-green-400 mb-4">The Warriors Way</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li>4-day focused schedule with parent-led academics</li>
-                <li>Up to 4 hours of elite training daily</li>
-                <li>Families get their evenings back</li>
-                <li>Every student launches a real business</li>
-                <li>Christ-centered mentorship and discipleship</li>
-              </ul>
-            </div>
+      {/* 2 · CHAMPIONS BAND */}
+      <section className="champions">
+        <div className="champions-wrap">
+          <div className="champions-photo">
+            <img src="/nationals-team.webp" alt="Warriors 12U team — 2025 Gold Ball Tournament Champions · #2 in the Nation · 12u" />
           </div>
-          <div className="text-center mt-8">
-            <Link href="/why-homeschool" className="text-green-400 hover:text-green-300 underline text-lg">
-              Deep dive: The hidden history of public school and why our model wins
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Proof This Works */}
-      <section className="py-16 px-4 bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            This Model Is <span className="text-green-500">Already Working</span>
-          </h2>
-          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-            Warriors Academy is not an experiment. Schools across the country are proving that when you replace the outdated factory model with focused academics, real-world business, and elite training, kids do not just keep up. They dominate.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-green-400">Acton Academy</h3>
-                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 2009</span>
-              </div>
-              <p className="text-3xl font-black text-white mb-1">300+ Campuses</p>
-              <p className="text-sm text-gray-400 mb-4">31 states and 25+ countries worldwide</p>
-              <p className="text-gray-300 text-sm">Student-led micro-school model where learners set their own goals and run real businesses. Students consistently perform 3 to 5 grade levels above the national average. Started with one campus in Austin, Texas and became a global movement.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-green-400">Alpha School</h3>
-                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 2022</span>
-              </div>
-              <p className="text-3xl font-black text-white mb-1">Top 1-2% Nationally</p>
-              <p className="text-sm text-gray-400 mb-4">AI-powered academics completed in 2 hours</p>
-              <p className="text-gray-300 text-sm">Students complete core academics using AI in just two hours each morning, freeing the rest of the day for projects, athletics, and real-world learning. Despite spending a fraction of the time on academics, their students score in the top 1 to 2 percent on national standardized tests.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-green-400">Combine Academy</h3>
-                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 2012</span>
-              </div>
-              <p className="text-3xl font-black text-white mb-1">500+ College Scholarships</p>
-              <p className="text-sm text-gray-400 mb-4">Founded by NBA player Trevor Booker</p>
-              <p className="text-gray-300 text-sm">International boarding school on a 70-acre campus in Charlotte, NC with students from 50+ countries. Launched a School of Business and Entrepreneurship in 2025 with tracks in sports management, digital marketing, real estate, and sales. Students intern with real VC firms.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-green-400">IMG Academy</h3>
-                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 1978</span>
-              </div>
-              <p className="text-3xl font-black text-white mb-1">100% College Acceptance</p>
-              <p className="text-sm text-gray-400 mb-4">311 D1+ commitments from 71 countries</p>
-              <p className="text-gray-300 text-sm">The gold standard for athletic academies. IMG has produced multiple first-round NBA and NFL draft picks. Their model proves that when training is the priority, academics do not suffer. Every single graduate is accepted to college. Warriors Academy brings this same training-first mentality to Springfield.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-green-400">Colossal Academy</h3>
-                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Florida</span>
-              </div>
-              <p className="text-3xl font-black text-white mb-1">Featured in Forbes</p>
-              <p className="text-sm text-gray-400 mb-4">Students work with Shark Tank investors</p>
-              <p className="text-gray-300 text-sm">Students launch and operate real businesses with mentorship from investors who have appeared on Shark Tank. This is not a simulation or a class project. Kids build actual companies that generate real revenue. Forbes featured their model as the future of education.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-green-400">Iowa BIG</h3>
-                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Public School</span>
-              </div>
-              <p className="text-3xl font-black text-white mb-1">97% Feel Prepared</p>
-              <p className="text-sm text-gray-400 mb-4">500+ educators have visited to study the model</p>
-              <p className="text-gray-300 text-sm">A public half-day program where high school students work on real projects for local businesses and nonprofits instead of sitting in traditional classes. 97 percent of seniors say they feel prepared for life after school. Educators from around the country visit to study why it works.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-green-400">Elizabeth City</h3>
-                <span className="text-xs text-gray-500 bg-gray-700 px-2 py-1 rounded">Est. 2025</span>
-              </div>
-              <p className="text-3xl font-black text-white mb-1">Real Airbnb Property</p>
-              <p className="text-sm text-gray-400 mb-4">26 middle schoolers running a real business</p>
-              <p className="text-gray-300 text-sm">Twenty-six middle school students use AI-powered academics and spend the rest of their day actually operating a real Airbnb property. They handle bookings, guest communications, property management, and financials. If middle schoolers can run a real business, imagine what our high school athletes can build.</p>
-            </div>
-          </div>
-          <div className="bg-green-900/20 border border-green-500/30 rounded-2xl p-8 md:p-10 text-center">
-            <p className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Warriors Academy is bringing this <span className="text-green-500">proven model</span> to Springfield, Missouri.
-            </p>
-            <p className="text-lg text-gray-300">
-              Elite basketball training. Real entrepreneurship. Christ-centered formation. The schools above proved it works. We are building it here.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Athletic Edge */}
-      <section className="py-16 px-4 bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            The <span className="text-green-500">Warriors Academy</span> Athletic Edge
-          </h2>
-          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-            We are the only ATG-certified training center within a 200-mile radius. Our knees-over-toes, joint-first approach builds bulletproof, explosive athletes who stay injury-free.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <div className="text-green-500 text-3xl mb-4">&#10003;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">ATG Certified Training</h3>
-              <p className="text-gray-300">The only ATG-certified hub within 200 miles. We bulletproof knees, ankles, and the posterior chain to increase vertical jump and speed while reducing non-contact injuries.</p>
-              <a href="https://atgonlinecoaching.com" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-green-400 hover:text-green-300 underline text-sm">Learn more about ATG &#8594;</a>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <div className="text-green-500 text-3xl mb-4">&#10003;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">Elite Basketball Development</h3>
-              <p className="text-gray-300">Up to 4 hours daily of basketball practice, conditioning, film study, strength and agility training built into the school week, not crammed into exhausting after-school sessions.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <div className="text-green-500 text-3xl mb-4">&#10003;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">Entrepreneur Unschool</h3>
-              <p className="text-gray-300">Every student launches and operates their own business, plus participates in a team fundraising venture. We teach students to leverage AI to build applications, marketing platforms, and real wealth.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <div className="text-green-500 text-3xl mb-4">&#10003;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">College Recruitment Ready</h3>
-              <p className="text-gray-300">Custom profile pages for every athlete featuring highlight films, verified stats, and personalized interview videos. The most high-tech homeschool recruiting platform in the country.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Shooting Technology */}
-      <section className="py-16 px-4 bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            Shooting <span className="text-green-500">Technology</span> That Builds Elite Scorers
-          </h2>
-          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-            Warriors Academy leverages the same shooting technology used by NBA players to develop elite scorers. Our athletes do not just practice, they train with data.
-          </p>
-          <div className="bg-gray-900 rounded-2xl p-8 md:p-12 border border-gray-700 mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Dr. Dish CT <span className="text-green-500">Rebounding Machine</span></h3>
-            <p className="text-gray-300 text-lg mb-8">
-              Every Warriors player is required to hit a weekly shot count on our Dr. Dish CT. Research shows it takes 20,000 correct repetitions for a jump shot to become automatic. With the Dr. Dish, players get up to 1,000 shots per hour compared to just 50-100 without a machine. Stephen Curry takes 500 shots per day to maintain his stroke. Our athletes train the same way.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
-              <div className="text-center">
-                <p className="text-3xl font-bold text-green-500">1,000</p>
-                <p className="text-gray-400 text-sm">Shots per hour with Dr. Dish vs 50-100 without</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-bold text-green-500">8-12%</p>
-                <p className="text-gray-400 text-sm">Shooting percentage increase for HS teams in one season</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-bold text-green-500">15-20%</p>
-                <p className="text-gray-400 text-sm">Three-point accuracy improvement at the college level</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-bold text-green-500">20,000</p>
-                <p className="text-gray-400 text-sm">Correct reps needed to make your shot automatic</p>
-              </div>
-            </div>
-            <p className="text-gray-400 text-sm mb-6">Real-time stat tracking with heatmaps, progress charts, and custom drills for every player.</p>
-
-            {/* Real Proof — 36,862 Shots */}
-            <div className="bg-gradient-to-br from-green-900/30 via-gray-800 to-gray-900 border border-green-500/40 rounded-xl p-6 md:p-8 mb-6">
-              <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-8 items-center">
-                <div className="text-center md:text-left">
-                  <p className="text-xs text-green-400 font-bold tracking-widest mb-1">REAL SHOTS, REAL DATA</p>
-                  <p className="text-5xl md:text-6xl font-black text-white tracking-tight">36,862</p>
-                  <p className="text-green-400 font-semibold mt-1">Shots &amp; Counting</p>
-                </div>
-                <div>
-                  <p className="text-gray-200 text-lg leading-relaxed">
-                    This is not a pipe dream. Our Warriors athletes logged <span className="text-green-400 font-bold">36,862 real shots</span> on our Dr. Dish CT machine, and we only had the machine for <span className="text-white font-bold">half the season</span>.
-                  </p>
-                  <p className="text-gray-400 text-sm mt-3">Every rep tracked. Every shot tweaked and perfected. Imagine what a full season looks like.</p>
-                </div>
-              </div>
-            </div>
-
-            <a href="https://www.drdishbasketball.com" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 underline text-sm">Learn more about Dr. Dish &#8594;</a>
-          </div>
-          <div className="bg-gray-900 rounded-2xl p-8 md:p-12 border border-gray-700">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Shoot 360 <span className="text-green-500">Immersive Training</span></h3>
-            <p className="text-gray-300 text-lg mb-8">
-              Shoot 360 just opened in Springfield, MO, and Warriors Academy athletes will train there as part of our program. The same technology Damian Lillard used to post 1,000 makes out of 1,090 shots. The same system the Golden State Warriors Basketball Academy uses. Shoot 360 is the world's leading immersive basketball training system with 60 locations worldwide.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div className="bg-gray-800 rounded-lg p-6">
-                <div className="text-2xl mb-2">&#127919;</div>
-                <h4 className="text-lg font-bold text-green-400 mb-2">Splash Meter</h4>
-                <p className="text-gray-400 text-sm">Motion-tracking cameras measure arc, depth, and alignment on every single shot with instant feedback.</p>
-              </div>
-              <div className="bg-gray-800 rounded-lg p-6">
-                <div className="text-2xl mb-2">&#128200;</div>
-                <h4 className="text-lg font-bold text-green-400 mb-2">AI Shot Analytics</h4>
-                <p className="text-gray-400 text-sm">Every rep is recorded, every improvement measured, all synced to the mobile app to track progress over time.</p>
-              </div>
-              <div className="bg-gray-800 rounded-lg p-6">
-                <div className="text-2xl mb-2">&#127942;</div>
-                <h4 className="text-lg font-bold text-green-400 mb-2">Proven Results</h4>
-                <p className="text-gray-400 text-sm">Players report shooting percentage improvements of up to 18%. Three core training areas: shooting, passing, and ball handling.</p>
-              </div>
-            </div>
-            <p className="text-gray-400 text-sm mb-4">Shoot 360 Springfield | 4136 E. Kearney St. | Warriors athletes train with minimum 2 sessions per week.</p>
-            <a href="https://www.shoot360.com" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 underline text-sm">Learn more about Shoot 360 &#8594;</a>
-          </div>
-        </div>
-      </section>
-
-      {/* Golf & Mental Toughness */}
-      <section className="py-16 px-4 bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            Our Secret Weapon for Your <span className="text-green-500">Mental Game</span>
-          </h2>
-          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-            Caitlin Clark credits golf with sharpening her mental toughness, saying when she has a bad shot on the course, it is all on her with no teammates to lean on. Steph Curry famously hit the golf course after a tough playoff loss instead of the gym, then dropped 45 points the next game. Research from Frontiers in Psychology shows individual sports build self-efficacy and autonomous emotional regulation, while the APA found mental resilience can boost performance by 23 percent. That is why every Warriors athlete completes a mandatory golf season.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
-              <div className="text-4xl mb-4">&#9971;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">Mental Toughness</h3>
-              <p className="text-gray-300">Neuroimaging research shows individual sport athletes develop enhanced prefrontal-limbic connectivity, acting as emotional circuit breakers that restore focus under pressure. Golf demands 4-plus hours of sustained concentration, training the same full-game awareness needed in the fourth quarter.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
-              <div className="text-4xl mb-4">&#129309;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">Lifelong Networking</h3>
-              <p className="text-gray-300">Golf is the sport of business. Our athletes learn a game they can play with friends, family, and future business partners for life.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
-              <div className="text-4xl mb-4">&#127947;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">ATG Golf Performance</h3>
-              <p className="text-gray-300">Our ATG training builds hip and spinal robustness, allowing greater clubhead speed with less strain. Better bodies, better swings.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Competitive Cheer & Stunt */}
-      <section className="py-16 px-4 bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            Competitive <span className="text-green-500">Cheer & Stunt</span>
-          </h2>
-          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-            Warriors Academy is more than basketball. Our competitive Cheer Squad builds strength, coordination, discipline, and teamwork. Athletes train alongside our basketball program in a Christ-centered environment with the same commitment to excellence.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-900 rounded-xl p-8 border border-gray-700 text-center">
-              <div className="text-4xl mb-4">&#128170;</div>
-              <h4 className="text-lg font-bold text-green-400 mb-2">Strength & Agility</h4>
-              <p className="text-gray-300">Stunting builds explosive power, balance, and body control that transfers to any sport.</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-8 border border-gray-700 text-center">
-              <div className="text-4xl mb-4">&#129504;</div>
-              <h4 className="text-lg font-bold text-green-400 mb-2">Mental Discipline</h4>
-              <p className="text-gray-300">Cheer requires precision under pressure, building focus and confidence in young athletes.</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-8 border border-gray-700 text-center">
-              <div className="text-4xl mb-4">&#127752;</div>
-              <h4 className="text-lg font-bold text-green-400 mb-2">Team Unity</h4>
-              <p className="text-gray-300">Our Cheer Squad performs at Warriors basketball games, building school spirit and community.</p>
-            </div>
-          </div>
-          <p className="text-center text-gray-400 mt-8">Interested in joining the Cheer Squad? Select Cheer Squad on our contact form for more information.</p>
-        </div>
-      </section>
-
-      {/* Big Brother Mentor Program */}
-      <section className="py-16 px-4 bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            How Warriors <span className="text-green-500">Develop Leaders</span>
-          </h2>
-          <p className="text-xl text-gray-300 text-center mb-4 max-w-3xl mx-auto">
-            The Big Brother Mentorship Program
-          </p>
-          <p className="text-lg text-gray-400 text-center mb-12 max-w-3xl mx-auto">
-            Our older athletes take the young guns under their wing and teach them the game from their own perspective. This is not just a culture feature, it is a development engine. Research on learning by teaching shows that when you teach a skill, you process it at a far deeper level than when you simply practice it. Our older athletes are not just giving back. They are locking in their own mastery.
-          </p>
-
-          {/* Badge Economy */}
-          <h3 className="text-2xl font-bold text-center text-white mb-8">
-            The <span className="text-green-500">Badge Economy</span>
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <div className="bg-gray-800 rounded-xl p-6 border border-green-500/30 text-center">
-              <div className="text-4xl mb-3">&#127919;</div>
-              <h4 className="text-lg font-bold text-green-400 mb-2">Knockdown Shooter</h4>
-              <p className="text-gray-400 text-sm">Prove you can shoot at an elite level through written knowledge and on-court performance testing.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-6 border border-green-500/30 text-center">
-              <div className="text-4xl mb-3">&#128737;</div>
-              <h4 className="text-lg font-bold text-green-400 mb-2">Lockdown Defender</h4>
-              <p className="text-gray-400 text-sm">Demonstrate elite on-ball defensive principles, positioning, and the mindset to shut down any opponent.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-6 border border-green-500/30 text-center">
-              <div className="text-4xl mb-3">&#128170;</div>
-              <h4 className="text-lg font-bold text-green-400 mb-2">Rebounding</h4>
-              <p className="text-gray-400 text-sm">Master box-out technique, positioning, timing, and the relentless effort it takes to control the glass.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-6 border border-green-500/30 text-center">
-              <div className="text-4xl mb-3">&#129504;</div>
-              <h4 className="text-lg font-bold text-green-400 mb-2">Court IQ</h4>
-              <p className="text-gray-400 text-sm">Prove you see the game at a higher level, reads, rotations, spacing, and decision-making under pressure.</p>
-            </div>
-          </div>
-
-          {/* How It Works */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
-              <div className="text-4xl mb-4">&#128221;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">Pass the Tests</h3>
-              <p className="text-gray-300">Older athletes must pass strict written AND on-court performance tests for each badge. If you cannot explain it and demonstrate it, you have not earned the right to teach it.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
-              <div className="text-4xl mb-4">&#127942;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">Earn Your Badge</h3>
-              <p className="text-gray-300">Once you pass both tests, you earn an official Big Brother badge in that specific skill. Each badge is earned independently, so a player might be a certified Knockdown Shooter and Rebounding mentor but still working toward their Court IQ badge.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
-              <div className="text-4xl mb-4">&#128197;</div>
-              <h3 className="text-xl font-bold text-green-400 mb-3">Book a Session</h3>
-              <p className="text-gray-300">Younger athletes can specifically book time with a certified Big Brother to develop the exact skill they need. Want to improve your shot? Book a session with a Knockdown Shooter. Need help reading the defense? Book a Court IQ mentor.</p>
-            </div>
-          </div>
-
-          {/* Mastery Through Teaching */}
-          <div className="mb-8">
-            <h3 className="text-3xl md:text-4xl font-bold text-center text-white mb-3">
-              Mastery Through <span className="text-green-500">Teaching</span>
-            </h3>
-            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-10">
-              Why the Big Brother system makes every athlete better, on both sides of the badge.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
-              <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-                <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-4">
-                  <span className="text-2xl">&#129504;</span>
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">Teach It to Master It</h4>
-                <p className="text-gray-400 text-sm">Research proves teaching a skill forces your brain to process it at a far deeper level than simply practicing.</p>
-              </div>
-              <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-                <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-4">
-                  <span className="text-2xl">&#128257;</span>
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">Both Players Level Up</h4>
-                <p className="text-gray-400 text-sm">Big Brothers lock in their own mastery. Younger athletes get mentorship from someone who has lived it.</p>
-              </div>
-              <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-                <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-4">
-                  <span className="text-2xl">&#10014;</span>
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">Servant Leadership</h4>
-                <p className="text-gray-400 text-sm">Every Big Brother leads from a foundation of Christ-centered accountability, not ego or seniority.</p>
-              </div>
-              <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-                <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-4">
-                  <span className="text-2xl">&#127919;</span>
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">Life After Basketball</h4>
-                <p className="text-gray-400 text-sm">Coaching and communication skills Big Brothers carry into business, family, and ministry for life.</p>
-              </div>
-            </div>
-            <div className="relative bg-gradient-to-br from-green-900/40 via-gray-800 to-gray-900 rounded-2xl p-10 md:p-14 border border-green-500/40 text-center overflow-hidden">
-              <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(circle at 20% 20%, #22c55e 0%, transparent 50%), radial-gradient(circle at 80% 80%, #22c55e 0%, transparent 50%)"}}></div>
-              <div className="relative">
-                <p className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tight">
-                  Iron Sharpens <span className="text-green-500">Iron</span>
-                </p>
-                <p className="text-gray-300 italic text-lg md:text-xl max-w-2xl mx-auto">
-                  "As iron sharpens iron, so one person sharpens another."
-                </p>
-                <p className="text-green-400 font-semibold mt-3 tracking-widest text-sm">PROVERBS 27:17</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Warrior Life — Mission Control */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{backgroundImage: "linear-gradient(rgba(34, 197, 94, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 197, 94, 0.3) 1px, transparent 1px)", backgroundSize: "40px 40px"}}></div>
-        <div className="max-w-6xl mx-auto relative">
-          <div className="text-center mb-12">
-            <span className="inline-block bg-green-500/20 text-green-400 text-xs font-bold tracking-widest px-4 py-2 rounded-full border border-green-500/40 mb-4">PROPRIETARY WARRIORS ACADEMY TECHNOLOGY</span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-              Warrior <span className="text-green-500">Life</span>
+          <div className="champions-copy">
+            <div className="mono" style={{ color: 'var(--brass)', letterSpacing: '0.2em' }}>2025 · HCHB Nationals · Springfield, MO</div>
+            <h2 className="h-section" style={{ marginTop: 20, marginBottom: 20 }}>
+              Gold Ball Tournament Champions ·<br />
+              <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)', letterSpacing: '-0.02em' }}>Currently Ranked #2 in the Nation (12u)</span>
             </h2>
-            <p className="text-2xl text-gray-300 mb-2">Their Mission Control for Everything That Matters</p>
-            <p className="text-gray-400 max-w-3xl mx-auto">
-              A proprietary student-athlete command center built by Warriors Academy. In just 5 to 10 minutes a day, our athletes manage their entire holistic development, from faith to physical readiness to academics.
+            <p className="lead" style={{ color: 'rgba(245,242,236,0.82)', maxWidth: '52ch' }}>
+              Warriors 12u won the National Gold Ball Tournament in 2025 and finished as the #2-ranked 12u team in the country. The Undisputed National Championship (the unbeaten bracket within the national tournament) went to a different team — we lost that final game. We&apos;re proud of the trophy. We&apos;re hungrier for the one we didn&apos;t win.
             </p>
-          </div>
-
-          {/* 5 Pillars Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-10">
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
-                  <span className="text-2xl">&#9200;</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">The Ultimate Daily Command Center</h3>
-                  <p className="text-gray-400">A frictionless app that replaces tedious paper tracking. Athletes manage faith, nutrition, sleep, readiness, schoolwork, and reflection, all in under 10 minutes a day.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
-                  <span className="text-2xl">&#129302;</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">AI-Powered Nutrition &amp; Readiness</h3>
-                  <p className="text-gray-400">Athletes snap a photo of their meals and AI auto-estimates macros (protein, carbs, sugar). A 30-second morning pulse check logs sleep, energy, mood, and soreness with a visual body map.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
-                  <span className="text-2xl">&#10014;</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">"The Mirror" Character Development</h3>
-                  <p className="text-gray-400">We build character alongside athletic ability. Athletes complete a daily devotional and an evening voice reflection answering rotating questions on leadership, courage, and serving others. Example: "Who did you help today and how?"</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
-                  <span className="text-2xl">&#127918;</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Gamified Team Accountability</h3>
-                  <p className="text-gray-400">RPG-style system. Athletes build avatars, earn XP, unlock badges, and maintain streaks. Our standout feature is cooperative <span className="text-green-400 font-semibold">Team Boss Battles</span>, where completing daily tasks damages a virtual boss while skipping tasks hurts the whole team. Elite positive peer pressure.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Coach Dashboard — Full Width */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 md:p-10 border border-green-500/30">
-            <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-8 items-center">
-              <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-green-500/10 border border-green-500/30 flex items-center justify-center">
-                <span className="text-3xl">&#128202;</span>
+            <div className="champions-meta">
+              <div>
+                <div className="mono" style={{ color: 'var(--muted)' }}>Division</div>
+                <div className="champions-stat">12U</div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2">Pro-Level Coach Oversight</h3>
-                <p className="text-gray-300">Our coaching staff monitors a centralized dashboard that flags warning signs in real time. Missed devotionals. Low sleep. Abnormal soreness. Energy drops. We intervene to optimize performance before an athlete burns out or gets injured, and we spot trends that inform parent conferences and end-of-season awards.</p>
+                <div className="mono" style={{ color: 'var(--muted)' }}>Teams in Division</div>
+                <div className="champions-stat">44</div>
+              </div>
+              <div>
+                <div className="mono" style={{ color: 'var(--muted)' }}>Final Rank</div>
+                <div className="champions-stat" style={{ color: 'var(--brass)' }}>#2</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3 · RECEIPTS STRIP */}
+      <section className="receipts">
+        <div className="wrap">
+          <div className="receipts-row">
+            <div className="receipt">
+              <span className="receipt-stat">#2<span className="unit">nationally</span></span>
+              <span className="receipt-label">HCHB 12U Championship · 2025</span>
+            </div>
+            <div className="receipt">
+              <span className="receipt-stat">50+<span className="unit">games</span></span>
+              <span className="receipt-label">School Ball · St. Louis, Wichita, Indiana</span>
+            </div>
+            <div className="receipt">
+              <span className="receipt-stat">4<span className="unit">hrs/day</span></span>
+              <span className="receipt-label">Elite Training, Inside the School Day</span>
+            </div>
+            <div className="receipt">
+              <span className="receipt-stat">100%<span className="unit">faith-first</span></span>
+              <span className="receipt-label">Daily Devotion · Christ-Centered Mentorship</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4 · WARRIORS DAY — TEASE (replaces full schedule, deep-link to /day) */}
+      <section className="section">
+        <div className="wrap">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: 72, alignItems: 'center' }}>
+            <div>
+              <Eyebrow>A Day at Warriors</Eyebrow>
+              <h2 className="h-section" style={{ marginTop: 16, marginBottom: 24 }}>
+                What four days a week<br />
+                <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--accent)' }}>actually looks like.</span>
+              </h2>
+              <p className="lead" style={{ marginBottom: 28 }}>
+                Prayer at 9. Two hours of elite training plus dedicated ATG. Family lunch with the coaches. An afternoon building real businesses. Film study and Big Brother mentorship before pickup.
+              </p>
+              <Btn kind="primary" href="/day">See a Full Day at Warriors</Btn>
+            </div>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
+                {dayTeaseBlocks.map((b, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      padding: '24px 20px',
+                      background: 'var(--ink-2)',
+                      border: '1px solid var(--ink-4)',
+                      borderRadius: 'var(--radius)',
+                    }}
+                  >
+                    <div className="mono" style={{ color: 'var(--accent)', fontSize: 11, letterSpacing: '0.18em', marginBottom: 10 }}>{b.time}</div>
+                    <div style={{ fontFamily: 'var(--f-display)', fontSize: 22, color: 'var(--paper)', letterSpacing: '-0.005em' }}>{b.label}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontStyle: 'italic' }}>
+                Example day — each team&apos;s rotation varies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5 · THE CASE TEASER */}
+      <section className="section on-paper">
+        <div className="wrap">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginBottom: 48, alignItems: 'end' }}>
+            <div>
+              <Eyebrow style={{ color: 'var(--accent)' }}>The Case Against Traditional School</Eyebrow>
+              <h2 className="h-section" style={{ marginTop: 16 }}>The system wasn&apos;t<br />built for your kid.</h2>
+            </div>
+            <p className="lead" style={{ color: 'rgba(11,11,13,0.72)' }}>
+              The modern school model was copied from 1800s Prussia and standardized in 1892 to produce factory workers. It wasn&apos;t designed for athletes. It wasn&apos;t designed for entrepreneurs. It definitely wasn&apos;t designed for your family.
+            </p>
+          </div>
+
+          <div className="compare">
+            <div className="compare-col bad">
+              <div className="compare-eyebrow">The Traditional Model</div>
+              <h3 className="h-sub compare-title" style={{ color: 'var(--paper)' }}>7 hours of<br />seat time.</h3>
+              <div className="compare-item"><span className="compare-glyph">—</span><span>7–8 hours of classroom seat time daily</span></div>
+              <div className="compare-item"><span className="compare-glyph">—</span><span>Exhausted by the time practice starts</span></div>
+              <div className="compare-item"><span className="compare-glyph">—</span><span>Homework kills family evenings</span></div>
+              <div className="compare-item"><span className="compare-glyph">—</span><span>Zero entrepreneurship, zero technology mastery</span></div>
+              <div className="compare-item"><span className="compare-glyph">—</span><span>Designed for factory workers, not athletes</span></div>
+            </div>
+            <div className="compare-col good">
+              <div className="compare-eyebrow">The Warriors Way</div>
+              <h3 className="h-sub compare-title" style={{ color: 'var(--paper)' }}>4 days. Built<br />for your kid.</h3>
+              <div className="compare-item"><span className="compare-glyph">✓</span><span>4-day focused schedule with parent-led academics</span></div>
+              <div className="compare-item"><span className="compare-glyph">✓</span><span>Up to 4 hours of elite training in the school day</span></div>
+              <div className="compare-item"><span className="compare-glyph">✓</span><span>Fridays and evenings are family time again</span></div>
+              <div className="compare-item"><span className="compare-glyph">✓</span><span>Every student runs a real business — and can earn</span></div>
+              <div className="compare-item"><span className="compare-glyph">✓</span><span>Christ-centered mentorship and discipleship every day</span></div>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 48, textAlign: 'center' }}>
+            <Btn kind="ghost" href="/case">Read the full case →</Btn>
+          </div>
+        </div>
+      </section>
+
+      {/* 6 · ALTERNATIVE SCHOOLS + ATHLETES WHO ALREADY LEFT — Round 4 §7 */}
+      <section className="section" style={{ background: 'var(--ink)' }}>
+        <div className="wrap">
+          <Eyebrow>The Model Already Works</Eyebrow>
+          <h2 className="h-section" style={{ marginTop: 16, marginBottom: 24, color: 'var(--paper)' }}>
+            We didn&apos;t invent this.<br />
+            <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>Alternative schools across the country</span><br />
+            are doing it now.
+          </h2>
+          <p className="lead" style={{ maxWidth: '70ch', fontStyle: 'italic', marginBottom: 56 }}>
+            Warriors didn&apos;t invent the alternative-school model. Six of the most respected athletic and academic academies in the country are already doing versions of this — and the most elite athletes in the world all left the traditional classroom. You&apos;re not the first. You&apos;re just looking at it now.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 64, alignItems: 'start' }}>
+            {/* LEFT — 6 alternative schools, 3×2 grid */}
+            <div>
+              <div className="mono" style={{ color: 'var(--brass)', marginBottom: 20, letterSpacing: '0.18em' }}>Six Alternative Schools</div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+                {[
+                  { name: 'IMG Academy', loc: 'Bradenton, FL', line: 'The gold standard. Pro pipeline. $90K+ tuition.' },
+                  { name: 'Combine Academy', loc: 'Charlotte, NC', line: 'Hybrid academic-athletic model for elite basketball.' },
+                  { name: 'Iowa United Prep', loc: 'Iowa', line: 'Christian-rooted basketball academy.' },
+                  { name: 'Acton Academy', loc: '300+ campuses', line: 'Self-directed mastery learning network.' },
+                  { name: 'Alpha School', loc: 'Austin, TX', line: 'Top 1–2% nationally · 2-hour academic days.' },
+                  { name: 'Colossal Academy', loc: 'Miami, FL', line: 'Forbes-featured · 3 hrs core academics + project-based.' },
+                ].map((s, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      padding: 24,
+                      background: 'rgba(245,242,236,0.04)',
+                      border: '1px solid var(--ink-4)',
+                      borderRadius: 4,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 8,
+                    }}
+                  >
+                    <div style={{ fontFamily: 'var(--f-display)', fontSize: 22, color: 'var(--paper)', lineHeight: 1.05 }}>{s.name}</div>
+                    <div className="mono" style={{ color: 'var(--accent)', fontSize: 11, letterSpacing: '0.16em' }}>{s.loc}</div>
+                    <p style={{ fontSize: 14, color: 'rgba(245,242,236,0.7)', lineHeight: 1.5, margin: 0 }}>{s.line}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT — 5 athletes vertical stack */}
+            <div>
+              <div className="mono" style={{ color: 'var(--brass)', marginBottom: 20, letterSpacing: '0.18em' }}>Athletes Who Left the Classroom</div>
+              <div style={{ display: 'grid', gap: 12 }}>
+                {[
+                  { name: 'Tim Tebow', headline: 'Football · Heisman Trophy' },
+                  { name: 'Simone Biles', headline: 'Gymnastics · 11-time Olympic medalist' },
+                  { name: 'Venus & Serena Williams', headline: 'Tennis · 30 Grand Slam singles between them' },
+                  { name: 'Blake Griffin', headline: 'Basketball · NBA #1 overall pick · 6× All-Star' },
+                  { name: 'Shaun White', headline: 'Snowboarding · 3× Olympic gold' },
+                ].map((a, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      padding: '18px 20px',
+                      background: 'rgba(245,242,236,0.04)',
+                      border: '1px solid var(--ink-4)',
+                      borderRadius: 4,
+                    }}
+                  >
+                    <div style={{ fontFamily: 'var(--f-display)', fontSize: 18, color: 'var(--paper)', lineHeight: 1.05, marginBottom: 4 }}>{a.name}</div>
+                    <div style={{ fontSize: 13, color: 'rgba(245,242,236,0.7)', lineHeight: 1.4, marginBottom: 8 }}>{a.headline}</div>
+                    <div className="mono" style={{ color: 'var(--accent)', fontSize: 10, letterSpacing: '0.16em' }}>Homeschooled</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Launch Timeline */}
-          <div className="mt-8 text-center">
-            <p className="text-green-400 font-semibold text-sm tracking-widest">LAUNCHING THIS SEASON &#8212; INCLUDED WITH EVERY WARRIORS ACADEMY MEMBERSHIP</p>
+          <div style={{ marginTop: 56, textAlign: 'center' }}>
+            <Btn kind="ghost" href="/case">See the full case →</Btn>
+            <p style={{ marginTop: 32, fontSize: 14, lineHeight: 1.6, color: 'rgba(245,242,236,0.6)', fontStyle: 'italic', maxWidth: '60ch', marginInline: 'auto' }}>
+              Worried about teaching algebra at 9 PM? Warriors families partner with Numerade for AI video tutoring and live tutor help — so parents don&apos;t have to be experts in every subject.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Entrepreneur Unschool Expanded */}
-      <section className="py-16 px-4 bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            The <span className="text-green-500">Entrepreneur Unschool</span>
+      {/* 7 · FOUR PILLARS — COLLAPSED */}
+      <section className="section on-paper">
+        <div className="wrap">
+          <Eyebrow style={{ color: 'var(--accent)' }}>Tech-Forward · Christ-Centered</Eyebrow>
+          <h2 className="h-section" style={{ marginTop: 16, marginBottom: 48, color: 'var(--ink)' }}>
+            Four pillars.<br />
+            <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic' }}>One Warrior.</span>
           </h2>
-          <p className="text-xl text-gray-300 text-center mb-4 max-w-3xl mx-auto italic">
-            "Start children off on the way they should go, and even when they are old they will not turn from it." - Proverbs 22:6
-          </p>
-          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-            Public schools teach kids to be employees. Warriors Academy teaches them to be owners. Every student launches a real business, learns AI and technology, and builds skills that create wealth beyond the court.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <h3 className="text-xl font-bold text-green-400 mb-3">Launch Your Own Business</h3>
-              <p className="text-gray-300">Every student is required to launch and operate their own individual business, which directly impacts their grade. Students also participate in a team business used to fundraise for the school programs. This is not a simulation. It is real.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <h3 className="text-xl font-bold text-green-400 mb-3">AI and Technology</h3>
-              <p className="text-gray-300">Students learn to build applications, software, and SAAS platforms using artificial intelligence. We teach them to leverage technology to level the playing field and position themselves ahead of the curve for lifelong success.</p>
-            </div>
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <h3 className="text-xl font-bold text-green-400 mb-3">Financial Literacy & Marketing</h3>
-              <p className="text-gray-300">Our enrichment days cover financial literacy, marketing, sales, coding, trusts, cryptocurrency, and blockchain. Warriors students understand money, resources, and how to build real wealth.</p>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">60%</p>
-              <p className="text-gray-400 text-sm">of teens prefer starting a business over a traditional job</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">69%</p>
-              <p className="text-gray-400 text-sm">of teens have a business idea but do not know how to start</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">78%</p>
-              <p className="text-gray-400 text-sm">of entrepreneurs say work experience beats a college degree</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">4-9x</p>
-              <p className="text-gray-400 text-sm">more likely to start a venture after entrepreneurship training</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">24%</p>
-              <p className="text-gray-400 text-sm">of 18-24 year olds are now active entrepreneurs, highest ever</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">300+</p>
-              <p className="text-gray-400 text-sm">Acton Academy campuses in 31 states proving this model works</p>
-            </div>
-          </div>
-          <div className="text-center">
-            <Link href="/entrepreneur" className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition">
-              Learn More About Our Entrepreneur Program
-            </Link>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32 }}>
+            {collapsedPillars.map((p, i) => (
+              <div key={i} style={{ borderTop: '2px solid var(--ink)', paddingTop: 24 }}>
+                <div className="mono" style={{ color: 'rgba(11,11,13,0.55)', fontSize: 11, letterSpacing: '0.18em', marginBottom: 12 }}>PILLAR · {p.num}</div>
+                <h3 style={{ fontFamily: 'var(--f-display)', fontSize: 26, color: 'var(--ink)', margin: '0 0 12px', letterSpacing: '-0.005em' }}>{p.name}</h3>
+                <p style={{ color: 'rgba(11,11,13,0.7)', fontSize: 15, lineHeight: 1.55, margin: '0 0 16px' }}>{p.body}</p>
+                <a
+                  href={p.link}
+                  style={{
+                    color: 'var(--accent)',
+                    fontFamily: 'var(--f-mono)',
+                    fontSize: 11,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Go Deeper →
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Warriors Fight Song */}
-      <section className="py-16 px-4 bg-gray-800">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            The <span className="text-green-500">Warriors Fight Song</span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Every Warriors athlete gets their name featured in our custom-produced team fight song. This is our anthem, our identity, and our culture.
-          </p>
-          <div className="bg-gray-900 rounded-2xl p-6 border border-green-500/30 max-w-md mx-auto">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="text-green-500 text-2xl">&#9835;</div>
-              <div className="text-left">
-                <p className="text-white font-bold text-lg">Warriors Fight Song</p>
-                <p className="text-green-400 text-sm">Warriors Academy</p>
+      {/* 8 · NCHBC / SPRINGFIELD ADVANTAGE */}
+      <section className="section" style={{ background: 'var(--ink-2)', borderTop: '1px solid var(--ink-4)', borderBottom: '1px solid var(--ink-4)' }}>
+        <div className="wrap">
+          <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 64, alignItems: 'center', marginBottom: 64 }}>
+            <div>
+              <Eyebrow>The Springfield Advantage</Eyebrow>
+              <h2 className="h-section" style={{ marginTop: 16, marginBottom: 24 }}>
+                Your backyard<br />is the <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>national capital</span> of homeschool basketball.
+              </h2>
+              <p className="lead" style={{ maxWidth: '54ch' }}>
+                Every March, the <strong style={{ color: 'var(--paper)' }}>National Christian HomeSchool Basketball Championships</strong> turns Springfield into the largest annual visitor event in the city. 416 teams. 19 states. Hawaii to Maine. Over 1,000 games across 20+ venues, all decided right here.
+              </p>
+              <p className="lead" style={{ maxWidth: '54ch', marginTop: 20 }}>
+                Most teams average around 400 miles to come compete for the national title. Warriors drive ten minutes. Home court. Home crowd. Home advantage.
+              </p>
+            </div>
+            <div>
+              <figure
+                style={{
+                  margin: 0,
+                  position: 'relative',
+                  aspectRatio: '4/5',
+                  minHeight: 480,
+                  borderRadius: 2,
+                  overflow: 'hidden',
+                  border: '1px solid var(--ink-4)',
+                }}
+              >
+                <img
+                  src="/nationals-coaches.webp"
+                  alt="Warriors coaching staff with the NCHBC Gold Ball trophy"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 35%', display: 'block' }}
+                />
+                <figcaption
+                  style={{
+                    position: 'absolute',
+                    left: 16,
+                    right: 16,
+                    bottom: 16,
+                    padding: '10px 14px',
+                    background: 'rgba(11,11,13,0.78)',
+                    border: '1px solid rgba(200,165,100,0.3)',
+                    fontFamily: 'var(--f-mono)',
+                    fontSize: 10,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: 'var(--brass)',
+                    backdropFilter: 'blur(6px)',
+                  }}
+                >
+                  Coaching Staff · NCHBC Nationals · Springfield
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: 1,
+              background: 'var(--ink-4)',
+              border: '1px solid var(--ink-4)',
+              borderRadius: 4,
+              overflow: 'hidden',
+            }}
+          >
+            {[
+              ['416', 'Teams · NCHBC 2026', 'From 19 states · including Hawaii'],
+              ['3,500', 'Athletes & Coaches', 'Converging on Springfield every March'],
+              ['10,000', 'Fans in Attendance', 'Largest annual event in the city'],
+              ['$30M+', 'Economic Impact by 2030', '$5.5–6M in direct spending each year'],
+            ].map(([n, l, s], i) => (
+              <div key={i} style={{ background: 'var(--ink)', padding: '32px 28px' }}>
+                <div style={{ fontFamily: 'var(--f-display)', fontSize: 56, lineHeight: 1, color: 'var(--paper)' }}>{n}</div>
+                <div className="mono" style={{ color: 'var(--brass)', marginTop: 12 }}>{l}</div>
+                <div style={{ fontSize: 13, color: 'rgba(245,242,236,0.6)', marginTop: 8, lineHeight: 1.5 }}>{s}</div>
+              </div>
+            ))}
+          </div>
+
+          <div
+            style={{
+              marginTop: 48,
+              padding: '32px 40px',
+              background: 'linear-gradient(135deg, rgba(142,31,43,0.2), transparent 70%)',
+              borderLeft: '3px solid var(--accent)',
+              borderRadius: '0 8px 8px 0',
+            }}
+          >
+            <div className="mono" style={{ color: 'var(--accent-hi)', marginBottom: 12 }}>Why this matters for your athlete</div>
+            <p className="lead" style={{ maxWidth: '68ch' }}>
+              When you join Warriors Academy, you aren&apos;t joining a local co-op. You&apos;re stepping into the most competitive homeschool basketball ecosystem in America — and you&apos;re already home. Sleep in your own bed the night before you play in nationals.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 9 · GAMES + HOOSIERS + Four Road Trips */}
+      <section className="section on-paper">
+        <div className="wrap">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 64, alignItems: 'center' }}>
+            <div>
+              <Eyebrow style={{ color: 'var(--accent)' }}>School Ball · Four Overnight Trips</Eyebrow>
+              <h2 className="h-section" style={{ marginTop: 16, marginBottom: 24, color: 'var(--ink)' }}>
+                We play on the floor<br />where <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--accent)' }}>Hickory</span> won.
+              </h2>
+              <p className="lead" style={{ color: 'rgba(11,11,13,0.72)', fontStyle: 'italic', marginBottom: 20 }}>
+                Most games are within day-driving distance. Four times a year — and only four — we go overnight.
+              </p>
+              <p className="body" style={{ color: 'rgba(11,11,13,0.7)', fontSize: 16, lineHeight: 1.7 }}>
+                One of those four trips is inside the <strong>original Hoosier Gym</strong> in Knightstown, Indiana. The actual hardwood where the movie was filmed. The actual baskets Jimmy Chitwood shot on. Our kids don&apos;t just watch the movie in film study. They lace up and play on it.
+              </p>
+              <p className="body" style={{ color: 'rgba(11,11,13,0.7)', fontSize: 15, lineHeight: 1.7, fontStyle: 'italic', marginTop: 16 }}>
+                Most travel teams average around 400 miles per trip. We do four. That&apos;s it.
+              </p>
+              <div
+                style={{
+                  marginTop: 32,
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: 24,
+                  paddingTop: 32,
+                  borderTop: '1px solid rgba(11,11,13,0.12)',
+                }}
+              >
+                <div>
+                  <div style={{ fontFamily: 'var(--f-display)', fontSize: 44, color: 'var(--ink)', lineHeight: 1 }}>4</div>
+                  <div className="mono" style={{ color: 'rgba(11,11,13,0.55)', marginTop: 8 }}>Overnight trips · per season</div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: 'var(--f-display)', fontSize: 44, color: 'var(--ink)', lineHeight: 1 }}>4 States</div>
+                  <div className="mono" style={{ color: 'rgba(11,11,13,0.55)', marginTop: 8 }}>MO · AR · KS · IN</div>
+                </div>
               </div>
             </div>
-            <audio controls className="w-full" style={{filter: 'invert(1) hue-rotate(140deg)'}}>
-              <source src="/warriors-fight-song.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <p className="text-gray-500 text-xs mt-3">The official Warriors Academy anthem.</p>
+            <div>
+              <figure
+                style={{
+                  margin: 0,
+                  position: 'relative',
+                  aspectRatio: '4/3',
+                  minHeight: 420,
+                  borderRadius: 2,
+                  overflow: 'hidden',
+                  border: '1px solid rgba(11,11,13,0.15)',
+                  background: '#0A0A0C',
+                }}
+              >
+                <img
+                  src="/hoosier-gym.jpg"
+                  alt="Hoosier Gym — Knightstown, Indiana · the original floor from the movie Hoosiers"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: '50% 45%',
+                    filter: 'grayscale(100%) contrast(1.08) brightness(0.88)',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, transparent 55%, rgba(11,11,13,0.55) 100%)',
+                    pointerEvents: 'none',
+                  }}
+                ></div>
+                <figcaption
+                  style={{
+                    position: 'absolute',
+                    left: 16,
+                    bottom: 16,
+                    padding: '8px 12px',
+                    background: 'rgba(11,11,13,0.8)',
+                    border: '1px solid rgba(200,165,100,0.3)',
+                    fontFamily: 'var(--f-mono)',
+                    fontSize: 10,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: 'var(--brass)',
+                    backdropFilter: 'blur(6px)',
+                  }}
+                >
+                  Hoosier Gym · Knightstown, IN · The Original Floor
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          {/* FOUR ROAD TRIPS */}
+          <div style={{ marginTop: 88 }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'baseline',
+                justifyContent: 'space-between',
+                marginBottom: 28,
+                paddingBottom: 20,
+                borderBottom: '1px solid rgba(11,11,13,0.14)',
+              }}
+            >
+              <div>
+                <Eyebrow style={{ color: 'var(--accent)' }}>The Four Road Trips</Eyebrow>
+                <h3
+                  style={{
+                    fontFamily: 'var(--f-display)',
+                    fontSize: 30,
+                    color: 'var(--ink)',
+                    margin: '10px 0 0',
+                    letterSpacing: '-0.005em',
+                  }}
+                >
+                  Four road trips. <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic' }}>The rest is home.</span>
+                </h3>
+              </div>
+              <div className="mono" style={{ color: 'rgba(11,11,13,0.5)', fontSize: 11, letterSpacing: '0.14em' }}>THE FULL SEASON · START TO FINISH</div>
+            </div>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(5, 1fr)',
+                gap: 0,
+                border: '1px solid rgba(11,11,13,0.16)',
+              }}
+            >
+              {[
+                { phase: 'KICKOFF', city: 'St. Louis, MO', detail: 'Season opener · the first road miles of the year.', state: 'MO', trip: true },
+                { phase: 'STATE', city: 'Columbia, MO', detail: 'State tournament · the first banner on the board.', state: 'MO', trip: true },
+                { phase: 'REGIONALS', city: 'Wichita, KS', detail: 'Regional bracket · the road to Nationals begins here.', state: 'KS', trip: true },
+                { phase: 'HOOSIER GAME', city: 'Knightstown, IN', detail: 'One game on the original Hoosier Gym floor.', state: 'IN', trip: true },
+                { phase: 'NATIONALS', city: 'Springfield, MO', detail: 'The one that matters most — and we drive ten minutes to it.', state: 'HOME', trip: false },
+              ].map((stop, i, arr) => (
+                <div
+                  key={i}
+                  style={{
+                    padding: '28px 22px 26px',
+                    borderRight: i < arr.length - 1 ? '1px solid rgba(11,11,13,0.1)' : 'none',
+                    background: stop.trip ? 'transparent' : 'rgba(200,165,100,0.08)',
+                    position: 'relative',
+                  }}
+                >
+                  <div
+                    className="mono"
+                    style={{
+                      color: stop.trip ? 'var(--accent)' : '#8C6F3D',
+                      fontSize: 10,
+                      letterSpacing: '0.16em',
+                      marginBottom: 14,
+                    }}
+                  >
+                    STOP {i + 1}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--f-display)',
+                      fontSize: 15,
+                      letterSpacing: '0.02em',
+                      color: 'var(--ink)',
+                      marginBottom: 4,
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {stop.phase}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--f-serif)',
+                      fontStyle: 'italic',
+                      fontSize: 17,
+                      color: stop.trip ? 'rgba(11,11,13,0.82)' : '#8C6F3D',
+                      marginBottom: 12,
+                    }}
+                  >
+                    {stop.city}
+                  </div>
+                  <p className="body" style={{ fontSize: 13, lineHeight: 1.55, color: 'rgba(11,11,13,0.65)', margin: 0 }}>
+                    {stop.detail}
+                  </p>
+                  <div
+                    className="mono"
+                    style={{
+                      position: 'absolute',
+                      top: 18,
+                      right: 18,
+                      fontSize: 9,
+                      letterSpacing: '0.18em',
+                      padding: '3px 7px',
+                      border: stop.trip ? '1px solid rgba(11,11,13,0.2)' : '1px solid rgba(140,111,61,0.5)',
+                      color: stop.trip ? 'rgba(11,11,13,0.55)' : '#8C6F3D',
+                      background: stop.trip ? 'transparent' : 'rgba(200,165,100,0.15)',
+                    }}
+                  >
+                    {stop.state}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p
+              className="mono"
+              style={{
+                color: 'rgba(11,11,13,0.5)',
+                fontSize: 10,
+                letterSpacing: '0.14em',
+                marginTop: 14,
+                textAlign: 'right',
+              }}
+            >
+              FIVE DESTINATIONS · FOUR ROAD TRIPS · ONE HOME FLOOR
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Real Stats */}
-      <section className="py-16 px-4 bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-            Homeschoolers <span className="text-green-500">Dominate</span> the Numbers
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">65-80th</p>
-              <p className="text-gray-400 text-sm">Percentile on standardized tests vs 50th for public school</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">1190</p>
-              <p className="text-gray-400 text-sm">Average SAT score vs 1060 for public school students</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">87%</p>
-              <p className="text-gray-400 text-sm">College acceptance rate vs 68% for public school</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">66.7%</p>
-              <p className="text-gray-400 text-sm">4-year college graduation rate vs 57.5% public school</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">3.41</p>
-              <p className="text-gray-400 text-sm">First-year college GPA vs 3.12 for public school students</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-500">87%</p>
-              <p className="text-gray-400 text-sm">Of peer-reviewed studies show homeschoolers have superior social and emotional development</p>
-            </div>
+      {/* 10 · TESTIMONIAL VIDEO */}
+      <section className="section" style={{ background: 'var(--ink)' }}>
+        <div className="wrap">
+          <div style={{ maxWidth: 720, marginBottom: 48 }}>
+            <Eyebrow>A Parent&apos;s Voice</Eyebrow>
+            <h2 className="h-section" style={{ marginTop: 16, color: 'var(--paper)' }}>
+              Listen to a<br />
+              <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>Warriors parent.</span>
+            </h2>
           </div>
-          <p className="text-center text-gray-400">Homeschoolers achieve these results studying just 2-3 hours per day compared to 6-8 hours in public school.</p>
-        </div>
-      </section>
 
-      {/* Elite Homeschooled Athletes */}
-      <section className="py-16 px-4 bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            Elite Athletes Who Were <span className="text-green-500">Homeschooled</span>
-          </h2>
-          <p className="text-xl text-gray-300 text-center mb-12">The best athletes in the world escaped the classroom to train. So do Warriors.</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="bg-gray-900 rounded-xl p-6 text-center border border-gray-700">
-              <h3 className="text-lg font-bold text-white">Tim Tebow</h3>
-              <p className="text-gray-400 text-sm">Heisman Trophy Winner, NFL QB</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-6 text-center border border-gray-700">
-              <h3 className="text-lg font-bold text-white">Blake Griffin</h3>
-              <p className="text-gray-400 text-sm">#1 NBA Draft Pick, 6x All-Star</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-6 text-center border border-gray-700">
-              <h3 className="text-lg font-bold text-white">Simone Biles</h3>
-              <p className="text-gray-400 text-sm">Most Decorated US Gymnast, 11 Olympic Medals</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-6 text-center border border-gray-700">
-              <h3 className="text-lg font-bold text-white">Venus & Serena Williams</h3>
-              <p className="text-gray-400 text-sm">23 Combined Grand Slam Titles</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-6 text-center border border-gray-700">
-              <h3 className="text-lg font-bold text-white">Shaun White</h3>
-              <p className="text-gray-400 text-sm">3x Olympic Gold Medalist</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-6 text-center border border-gray-700">
-              <h3 className="text-lg font-bold text-white">Michelle Kwan</h3>
-              <p className="text-gray-400 text-sm">5x World Champion Figure Skater</p>
+          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 48, alignItems: 'center' }}>
+            <LiteYouTube id="LTlJLOo9itU" title="A Warriors parent shares their story" />
+            <div>
+              <div className="mono" style={{ color: 'var(--brass)', marginBottom: 16 }}>TESTIMONIAL · PARENT OF JUDE</div>
+              <p style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', fontSize: 22, lineHeight: 1.45, color: 'var(--paper)', marginBottom: 24 }}>
+                &ldquo;Hear directly from a Warriors family — why they made the switch, what changed, and what their kid is like at home now.&rdquo;
+              </p>
+              <div className="mono" style={{ color: 'var(--muted)', fontSize: 11 }}>
+                · 2 minute watch<br />
+                · Plays in place · no page reload
+              </div>
+              <div style={{ marginTop: 24 }}>
+                <Btn kind="ghost" href="/warriors">Meet the coaches and players</Btn>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Player Profiles CTA */}
-      <section className="py-16 px-4 bg-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Meet Our <span className="text-green-500">Warriors</span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Every player gets a professional profile page with highlight videos, season stats, bio, and everything college coaches need to evaluate and recruit our athletes.
-          </p>
-          <Link href="/player" className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition">
-            View Player Profiles
-          </Link>
-        </div>
-      </section>
-
-      {/* FAQ Preview */}
-      <section className="py-16 px-4 bg-gray-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-            Frequently Asked <span className="text-green-500">Questions</span>
-          </h2>
-          <div className="space-y-6">
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold text-green-400 mb-2">Is this a real school? Will my child get a diploma?</h3>
-              <p className="text-gray-300">Warriors Academy operates as a Missouri-compliant homeschool co-op. Missouri law requires parents to be responsible for at least 51 percent of their child's education. Parents handle core academics like math, English, reading, and science at home. Warriors Academy handles the enrichment: marketing, sales, AI, coding, finance, entrepreneurship, and elite athletic training. Parents can issue diplomas under Missouri homeschool law.</p>
+      {/* 11 · TUITION + SCARCITY + FINAL CTA — closing arc */}
+      <section className="section on-paper">
+        <div className="wrap">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+            <div>
+              <Eyebrow style={{ color: 'var(--accent)' }}>Tuition</Eyebrow>
+              <h2 className="h-section" style={{ marginTop: 16, marginBottom: 24, color: 'var(--ink)' }}>
+                Starts at<br />$4,000 <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', fontSize: '0.6em' }}>/ year.</span>
+              </h2>
+              <p className="lead" style={{ color: 'rgba(11,11,13,0.72)' }}>
+                Includes all training, tournament fees, uniforms, and a full national travel-ball schedule. Multi-player discounts. Scholarships available. Most importantly: students on our entrepreneur tracks can earn revenue that offsets their tuition — and then some.
+              </p>
+              <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <Btn kind="primary" href="/tuition">See full tuition breakdown</Btn>
+              </div>
             </div>
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold text-green-400 mb-2">Does this model actually work? Who else is doing it?</h3>
-              <p className="text-gray-300">This is not an experiment. Acton Academy has over 300 campuses in 31 states and 25-plus countries with students performing 3 to 5 grade levels above average. Alpha School delivers core academics via AI in two hours each morning and their students score in the top 1 to 2 percent nationally. Colossal Academy in Florida was featured in Forbes with students running live businesses alongside Shark Tank investors. Warriors Academy is bringing this proven model to Springfield, Missouri.</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold text-green-400 mb-2">Can my child play sports at their public school?</h3>
-              <p className="text-gray-300">Yes. Missouri Governor Mike Kehoe signed Senate Bill 63, the Homeschoolers Sports Act, into law on July 9, 2025. As of August 28, 2025, all public schools in Missouri are required to allow homeschool students to try out for sports teams and extracurricular activities. Warriors Academy students are welcome to play any sport that we do not offer at their local public school. This is a major advantage for multi-sport athletes who want the best of both worlds.</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold text-green-400 mb-2">What is the parent's role versus the academy's role?</h3>
-              <p className="text-gray-300">Parents are required to be responsible for at least 51 percent of their child's schooling. This means parents handle core subjects at home: math, English, reading, science, and social studies. Warriors Academy handles enrichment the public schools completely ignore: marketing, sales, AI, coding, finance, entrepreneurship, plus elite athletic training. This is still homeschooling. Parents remain the primary educators and are actively involved every single day.</p>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold text-green-400 mb-2">What if my child does not have a business idea yet?</h3>
-              <p className="text-gray-300">That is completely normal. We offer a Digital Marketing Track as the perfect entry point. Students learn affiliate marketing, content creation, and digital advertising through school-managed accounts. As a Christ-centered school, students never manage their own social media. The school creates business accounts, AI assists with content creation, and all posts go through teacher and coach approval before publishing. Students learn the business strategy without ever scrolling a feed.</p>
+            <div style={{ display: 'grid', gap: 12 }}>
+              <PriceLine tier="Returning Student" price="$4,000" />
+              <PriceLine tier="Multi-Player (2+)" price="$4,400 / ea" featured />
+              <PriceLine tier="New Student" price="$4,800" />
+              <div
+                style={{
+                  marginTop: 8,
+                  fontFamily: 'var(--f-mono)',
+                  fontSize: 11,
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(11,11,13,0.5)',
+                }}
+              >
+                Scholarships available · Payment plans welcome
+              </div>
             </div>
           </div>
-          <div className="text-center mt-8">
-            <Link href="/faq" className="text-green-400 hover:text-green-300 underline text-lg">
-              View All 24 Questions Answered
-            </Link>
+
+          <hr style={{ border: 'none', borderTop: '1px solid rgba(11,11,13,0.12)', margin: '88px 0' }} />
+
+          {/* SCARCITY / TRYOUTS — inverted to ink for contrast within closing arc */}
+          <div style={{ background: 'var(--ink-2)', padding: '64px 48px', borderRadius: 8, color: 'var(--paper)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 64, alignItems: 'center' }}>
+              <div>
+                <Eyebrow>Open Spots · Tryouts Now</Eyebrow>
+                <h2 className="h-section" style={{ marginTop: 16, marginBottom: 24 }}>
+                  You can&apos;t buy<br />your way <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>in.</span>
+                </h2>
+                <p className="lead">
+                  Tryouts are mandatory. Every age group. Every season. Spots on the team are contingent on tryouts — including for returning players.
+                </p>
+                <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                  <Btn kind="primary" href="/experience">Schedule Tryout</Btn>
+                  <Btn kind="ghost" href="/experience">Spend a Day With Us</Btn>
+                </div>
+              </div>
+              <div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 8, marginBottom: 32 }}>
+                  {[
+                    ['10u', 'Boys', '3–4'],
+                    ['12u', 'Boys', '2–3'],
+                    ['14u', 'Boys', '1–2'],
+                    ['16u', 'Boys', '1–2'],
+                    ['18u', 'Boys', '1–2'],
+                  ].map(([age, sex, open], i) => (
+                    <div
+                      key={i}
+                      style={{
+                        padding: 20,
+                        background: 'var(--ink)',
+                        border: '1px solid var(--ink-4)',
+                        borderRadius: 4,
+                        textAlign: 'center',
+                      }}
+                    >
+                      <div style={{ fontFamily: 'var(--f-display)', fontSize: 36, color: 'var(--paper)', lineHeight: 1 }}>{age}</div>
+                      <div className="mono" style={{ color: 'var(--muted)', marginTop: 6, fontSize: 10 }}>{sex}</div>
+                      <div
+                        style={{
+                          marginTop: 12,
+                          paddingTop: 12,
+                          borderTop: '1px solid var(--ink-4)',
+                          fontFamily: 'var(--f-mono)',
+                          fontSize: 11,
+                          letterSpacing: '0.14em',
+                          color: 'var(--brass)',
+                          textTransform: 'uppercase',
+                        }}
+                      >
+                        {open} Open
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div
+                  style={{
+                    padding: 24,
+                    background: 'linear-gradient(135deg, rgba(176,138,62,0.12), transparent 80%)',
+                    borderLeft: '3px solid var(--brass)',
+                    borderRadius: '0 4px 4px 0',
+                  }}
+                >
+                  <div className="mono" style={{ color: 'var(--brass)', marginBottom: 8 }}>Girls Teams (all ages)</div>
+                  <div style={{ fontSize: 14, color: 'rgba(245,242,236,0.78)', lineHeight: 1.6 }}>
+                    Forming now.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr style={{ border: 'none', borderTop: '1px solid rgba(11,11,13,0.12)', margin: '88px 0' }} />
+
+          {/* FINAL CTA — three paths */}
+          <div style={{ textAlign: 'center', marginBottom: 64, maxWidth: 720, margin: '0 auto 64px' }}>
+            <Eyebrow style={{ color: 'var(--accent)' }}>Three Ways In</Eyebrow>
+            <h2 className="h-section" style={{ marginTop: 16, color: 'var(--ink)' }}>Pick your next step.</h2>
+            <p className="lead" style={{ margin: '24px auto 0', color: 'rgba(11,11,13,0.72)' }}>
+              Most families don&apos;t apply on the first visit. That&apos;s by design. Here&apos;s how we meet you where you are.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            <CtaPath
+              num="01"
+              stage="Curious"
+              title="Spend a Day With Us"
+              desc="4 summer dates. Training, team building, family lunch, coach Q&A. The fastest way to understand Warriors is to live a day of it."
+              label="Warriors Experience Day"
+              href="/experience"
+              featured
+            />
+            <CtaPath
+              num="02"
+              stage="Considering"
+              title="Book a 15-min Call"
+              desc="Talk to Coach Don. No pitch. Just answers to the specific questions your family has. Scheduled at your convenience."
+              label="Book a Call"
+              href="#"
+            />
+            <CtaPath
+              num="03"
+              stage="Ready"
+              title="Start Your Application"
+              desc="2–3 spots available per team across 10U–18U boys. All new athletes must complete tryouts and a 1v1 evaluation with our coaching staff."
+              label="Apply · Coming Soon"
+              disabled
+            />
           </div>
         </div>
       </section>
-
-      {/* Apply Section */}
-      <section id="apply" className="py-20 px-4 bg-gradient-to-br from-green-900 via-gray-900 to-gray-900 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Become a Warrior?</h2>
-          <p className="text-xl text-gray-300 mb-4 italic">
-            "Whatever you do, work at it with all your heart, as working for the Lord." - Colossians 3:23
-          </p>
-          <p className="text-xl text-gray-300 mb-8">
-            We honor God in everything we do on and off the court. If you are a dedicated athlete and family seeking Christ-centered mentorship, elite training, and real entrepreneurship education, Warriors Academy is your home.
-          </p>
-          <a href="mailto:missouriwarriorsbasketball@gmail.com" className="inline-block bg-white text-green-900 font-bold py-4 px-10 rounded-lg text-lg hover:bg-gray-100 transition">
-            Contact Us to Apply
-          </a>
-          <p className="text-gray-400 mt-4">Springfield, Missouri | Limited spots available</p>
-        </div>
-      </section>
-    </main>
-  );
+    </div>
+  )
 }

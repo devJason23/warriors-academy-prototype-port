@@ -1,58 +1,48 @@
 import './globals.css'
-import Link from 'next/link'
+import { Bebas_Neue, Fraunces, Inter, JetBrains_Mono } from 'next/font/google'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
+
+const bebas = Bebas_Neue({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-bebas',
+  display: 'swap',
+})
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  style: ['italic'],
+  weight: ['400', '600'],
+  variable: '--font-fraunces',
+  display: 'swap',
+})
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+})
 
 export const metadata = {
-  title: 'MO Warriors | Homeschool Basketball & Entrepreneur Academy',
-  description: 'Faith-based homeschool basketball and entrepreneur academy in Springfield, MO. The only ATG-certified training program within 200 miles.',
+  title: 'Warriors Academy — Christ-Centered 4-Day Homeschool Athletic Academy · Springfield, MO',
+  description:
+    'Train like a warrior. Build like a founder. Live like a champion. A Christ-centered 4-day homeschool athletic academy for serious student-athletes ages 10–18.',
 }
 
 export default function RootLayout({ children }) {
+  const fontClasses = `${bebas.variable} ${fraunces.variable} ${inter.variable} ${jetbrains.variable}`
   return (
-    <html lang="en">
-      <body>
-        <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur border-b border-green-900/30">
-          <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <Link href="/" className="text-xl font-black tracking-widest text-white">W<span className="text-green-500">A</span>W</Link>
-            <div className="hidden md:flex gap-6 text-sm font-medium">
-              <Link href="/" className="text-gray-300 hover:text-green-400 transition">Home</Link>
-              <Link href="/why-homeschool" className="text-gray-300 hover:text-green-400 transition">Why Homeschool?</Link>
-              <Link href="/entrepreneur" className="text-gray-300 hover:text-green-400 transition">Entrepreneur</Link>
-              <Link href="/player" className="text-gray-300 hover:text-green-400 transition">Player Profile</Link>
-              <Link href="/faq" className="text-gray-300 hover:text-green-400 transition">FAQ</Link>
-              <a href="https://hoopsmith.vercel.app" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition">HoopSmith</a>
-              <a href="https://wearewarriorsapparel.com" target="_blank" className="text-gray-300 hover:text-green-400 transition">Shop</a>
-            </div>
-            <a href="#contact" className="bg-green-600 hover:bg-green-500 text-white text-sm font-bold px-4 py-2 rounded transition">Join Us</a>
-          </div>
-        </nav>
-        <main className="pt-16">{children}</main>
-        <footer className="bg-[#0d1f17] border-t border-green-900/30 py-12">
-          <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm text-gray-400">
-            <div>
-              <h3 className="text-white font-black text-lg mb-2">W<span className="text-green-500">A</span>W</h3>
-              <p>Missouri Warriors Basketball</p>
-              <p>Springfield, Missouri</p>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-2">Links</h4>
-              <div className="flex flex-col gap-1">
-                <Link href="/" className="hover:text-green-400 transition">Home</Link>
-                <Link href="/why-homeschool" className="hover:text-green-400 transition">Why Homeschool?</Link>
-                <Link href="/entrepreneur" className="hover:text-green-400 transition">Entrepreneur</Link>
-                <Link href="/player" className="hover:text-green-400 transition">Player Profiles</Link>
-                <Link href="/faq" className="hover:text-green-400 transition">FAQ</Link>
-                <a href="https://hoopsmith.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition">HoopSmith</a>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-2">Contact</h4>
-              <a href="mailto:missouriwarriorsbasketball@gmail.com" className="hover:text-green-400 transition">missouriwarriorsbasketball@gmail.com</a>
-            </div>
-          </div>
-          <div className="max-w-7xl mx-auto px-4 mt-8 pt-4 border-t border-gray-800 text-center text-xs text-gray-500">
-            Privacy Policy 2026
-          </div>
-        </footer>
+    <html lang="en" className={fontClasses}>
+      <body data-theme="midnight" data-density="normal">
+        <Nav />
+        {children}
+        <Footer />
       </body>
     </html>
   )
