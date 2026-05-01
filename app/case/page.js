@@ -304,25 +304,13 @@ export default function CasePage() {
             ))}
           </div>
 
-          {/* NUMERADE PARTNER BLOCK — placeholder logo. TODO(asset): drop in Numerade logo when provided. */}
           <div id="numerade" style={{ padding: 32, border: '1px solid var(--accent)', borderRadius: 4, background: 'rgba(4,149,75,0.06)' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '180px 1fr', gap: 32, alignItems: 'center' }}>
-              <div
-                style={{
-                  height: 60,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: '1px dashed rgba(11,11,13,0.3)',
-                  fontFamily: 'var(--f-mono)',
-                  fontSize: 11,
-                  letterSpacing: '0.18em',
-                  color: 'rgba(11,11,13,0.55)',
-                  textTransform: 'uppercase',
-                }}
-              >
-                NUMERADE PARTNER
-              </div>
+              <img
+                src="/numerade-logo.svg"
+                alt="Numerade"
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
               <div>
                 <div className="mono" style={{ color: 'var(--accent)', marginBottom: 8 }}>The Numerade Backstop</div>
                 <p className="body" style={{ fontSize: 16, color: 'rgba(11,11,13,0.8)', margin: 0 }}>
