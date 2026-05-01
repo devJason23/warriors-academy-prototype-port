@@ -79,7 +79,11 @@ export default function WarriorsPage() {
                 · Plays in place · no page reload
               </div>
             </div>
-            <LiteYouTube id="ZKgw9OSY5gg" title="The Warriors Academy story — from the people inside it" />
+            <LiteYouTube
+              id="ZKgw9OSY5gg"
+              title="The Warriors Academy story — from the people inside it"
+              poster="https://i.ytimg.com/vi/ZKgw9OSY5gg/sddefault.jpg"
+            />
           </div>
         </div>
       </section>
