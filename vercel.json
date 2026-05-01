@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/warriors",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/warriors/",
+      "permanent": true
+    },
+    {
+      "source": "/model",
+      "destination": "/day",
+      "permanent": true
+    },
+    {
+      "source": "/model/",
+      "destination": "/day/",
+      "permanent": true
+    }
+  ]
+}
