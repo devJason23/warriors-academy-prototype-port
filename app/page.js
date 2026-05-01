@@ -489,9 +489,6 @@ export default function HomePage() {
               <p className="body" style={{ color: 'rgba(11,11,13,0.7)', fontSize: 16, lineHeight: 1.7 }}>
                 One of those four trips is inside the <strong>original Hoosier Gym</strong> in Knightstown, Indiana. The actual hardwood where the movie was filmed. The actual baskets Jimmy Chitwood shot on. Our kids don&apos;t just watch the movie in film study. They lace up and play on it.
               </p>
-              <p className="body" style={{ color: 'rgba(11,11,13,0.7)', fontSize: 15, lineHeight: 1.7, fontStyle: 'italic', marginTop: 16 }}>
-                Most travel teams average around 400 miles per trip. We do four. That&apos;s it.
-              </p>
               <div
                 style={{
                   marginTop: 32,
