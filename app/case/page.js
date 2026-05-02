@@ -359,11 +359,11 @@ export default function CasePage() {
 
           <div className="athletes-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24, marginBottom: 48 }}>
             {[
-              { name: 'Tim Tebow', last: 'Tebow', body: 'Football · Heisman Trophy. The Missouri "Tebow Law" cited above is named for him.' },
-              { name: 'Simone Biles', last: 'Biles', body: 'Gymnastics · 11-time Olympic medalist — all-time leader in Olympic gymnastics medals.' },
-              { name: 'Venus & Serena Williams', last: 'Williams', body: 'Tennis · 30 Grand Slam singles titles between them. Trained at home and on the court — never in a school day.' },
-              { name: 'Blake Griffin', last: 'Griffin', body: 'Basketball · NBA #1 overall pick, 6× All-Star, Rookie of the Year. Homeschooled K–8.' },
-              { name: 'Shaun White', last: 'White', body: 'Snowboarding / Skateboarding · 3× Olympic gold. Homeschooled to train.' },
+              { name: 'Tim Tebow', last: 'Tebow', image: '/athlete-tim-tebow.jpg', body: 'Football · Heisman Trophy. The Missouri "Tebow Law" cited above is named for him.' },
+              { name: 'Simone Biles', last: 'Biles', image: '/athlete-simone-biles.jpg', body: 'Gymnastics · 11-time Olympic medalist — all-time leader in Olympic gymnastics medals.' },
+              { name: 'Venus & Serena Williams', last: 'Williams', image: '/athlete-williams-sisters.jpg', body: 'Tennis · 30 Grand Slam singles titles between them. Trained at home and on the court — never in a school day.' },
+              { name: 'Blake Griffin', last: 'Griffin', image: '/athlete-blake-griffin.jpg', body: 'Basketball · NBA #1 overall pick, 6× All-Star, Rookie of the Year. Homeschooled K–8.' },
+              { name: 'Shaun White', last: 'White', image: '/athlete-shaun-white.jpg', body: 'Snowboarding / Skateboarding · 3× Olympic gold. Homeschooled to train.' },
             ].map((a, i) => (
               <div
                 key={i}
@@ -377,25 +377,17 @@ export default function CasePage() {
                   gap: 14,
                 }}
               >
-                {/* TODO(asset): replace placeholder with licensed athlete photo when provided. Do not pull from the web. */}
-                <div
+                <img
+                  src={a.image}
+                  alt={a.name}
                   style={{
                     aspectRatio: '1/1',
                     width: '100%',
-                    background: 'rgba(11,11,13,0.08)',
-                    border: '1px dashed rgba(11,11,13,0.2)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontFamily: 'var(--f-mono)',
-                    fontSize: 11,
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                    color: 'rgba(11,11,13,0.55)',
+                    objectFit: 'cover',
+                    borderRadius: 4,
+                    display: 'block',
                   }}
-                >
-                  {a.last}
-                </div>
+                />
                 <div
                   style={{
                     fontFamily: 'var(--f-display)',
