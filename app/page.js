@@ -110,7 +110,7 @@ export default function HomePage() {
             A Christ-centered 4-day homeschool athletic academy for serious student-athletes ages 10–18. Elite training. Real businesses. Family evenings back. The first tech-forward Christian basketball academy.
           </p>
           <div className="hero-actions">
-            <Btn kind="primary" href="/experience">Spend a Day With Us</Btn>
+            <Btn kind="primary" href="/experience">Schedule Tryout</Btn>
             <Btn kind="ghost" href="/case">Why Not Traditional School</Btn>
           </div>
           <div className="hero-trust">
@@ -139,16 +139,16 @@ export default function HomePage() {
             </p>
             <div className="champions-meta">
               <div>
-                <div className="mono" style={{ color: 'var(--muted)' }}>Division</div>
-                <div className="champions-stat">12U</div>
+                <div className="mono" style={{ color: 'var(--muted)' }}>Result</div>
+                <div className="champions-stat">Gold Ball Tournament Champions</div>
               </div>
               <div>
-                <div className="mono" style={{ color: 'var(--muted)' }}>Teams in Division</div>
-                <div className="champions-stat">44</div>
+                <div className="mono" style={{ color: 'var(--muted)' }}>National Ranking</div>
+                <div className="champions-stat">#2 of 44 nationally-ranked 12u teams</div>
               </div>
               <div>
-                <div className="mono" style={{ color: 'var(--muted)' }}>Final Rank</div>
-                <div className="champions-stat" style={{ color: 'var(--brass)' }}>#2</div>
+                <div className="mono" style={{ color: 'var(--muted)' }}>Tournament</div>
+                <div className="champions-stat" style={{ color: 'var(--brass)' }}>HCHB Nationals · 2025</div>
               </div>
             </div>
           </div>
@@ -727,19 +727,25 @@ export default function HomePage() {
             <div>
               <Eyebrow style={{ color: 'var(--accent)' }}>Tuition</Eyebrow>
               <h2 className="h-section" style={{ marginTop: 16, marginBottom: 24, color: 'var(--ink)' }}>
-                Starts at<br />$4,000 <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', fontSize: '0.6em' }}>/ year.</span>
+                $3,850 <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', fontSize: '0.6em' }}>/ year.</span>
               </h2>
               <p className="lead" style={{ color: 'rgba(11,11,13,0.72)' }}>
-                Includes all training, tournament fees, uniforms, and a full national travel-ball schedule. Multi-player discounts. Scholarships available. Most importantly: students on our entrepreneur tracks can earn revenue that offsets their tuition — and then some.
+                Includes training, tournament fees, uniforms, coaching, and the Warriors development environment. Families who prefer to pay in full receive a discounted rate of $2,888. Otherwise, $850 starts your athlete and the remaining balance is spread over the year. Scholarships available. Most importantly: athletes on our entrepreneur tracks can earn revenue that offsets their tuition — and then some.
               </p>
+              <div style={{ marginTop: 24, padding: '16px 20px', background: 'rgba(11,11,13,0.04)', borderLeft: '3px solid var(--accent)', borderRadius: '0 4px 4px 0' }}>
+                <div className="mono" style={{ color: 'var(--accent)', fontSize: 11, letterSpacing: '0.16em', marginBottom: 6 }}>Full-Day Option</div>
+                <p className="body" style={{ fontSize: 14, color: 'rgba(11,11,13,0.72)', margin: 0, lineHeight: 1.55 }}>
+                  Not every Warrior has to be here all day. Some families already have education covered at home and just want the team, practices, training, and evaluation path — that&apos;s a fit. For families who want the full environment — training, mentorship, business, film, structure — Warriors is here all day. Practices are expected, with reasonable exceptions. The rest is optional.
+                </p>
+              </div>
               <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <Btn kind="primary" href="/tuition">See full tuition breakdown</Btn>
               </div>
             </div>
             <div style={{ display: 'grid', gap: 12 }}>
-              <PriceLine tier="Returning Student" price="$4,000" />
-              <PriceLine tier="Multi-Player (2+)" price="$4,400 / ea" featured />
-              <PriceLine tier="New Student" price="$4,800" />
+              <PriceLine tier="Base Tuition" price="$3,850" />
+              <PriceLine tier="Pay in Full · Discounted" price="$2,888" featured />
+              <PriceLine tier="$850 to Start" price="Balance / Year" />
               <div
                 style={{
                   marginTop: 8,
@@ -763,10 +769,10 @@ export default function HomePage() {
               <div>
                 <Eyebrow>Open Spots · Tryouts Now</Eyebrow>
                 <h2 className="h-section" style={{ marginTop: 16, marginBottom: 24 }}>
-                  You can&apos;t buy<br />your way <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>in.</span>
+                  Roster spots<br />are <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>earned.</span>
                 </h2>
                 <p className="lead">
-                  Tryouts are mandatory. Every age group. Every season. Spots on the team are contingent on tryouts — including for returning players.
+                  Every athlete starts with an evaluation. We look at skill, effort, coachability, competitiveness, and fit — then walk the family through where the athlete stands and what comes next.
                 </p>
                 <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                   <Btn kind="primary" href="/experience">Schedule Tryout</Btn>
@@ -860,10 +866,10 @@ export default function HomePage() {
             <CtaPath
               num="03"
               stage="Ready"
-              title="Start Your Application"
+              title="Schedule Tryout"
               desc="2–3 spots available per team across 10U–18U boys. All new athletes must complete tryouts and a 1v1 evaluation with our coaching staff."
-              label="Apply · Coming Soon"
-              disabled
+              label="Schedule Tryout"
+              href="/experience"
             />
           </div>
         </div>

@@ -28,6 +28,10 @@ const FAQ_DATA = [
         q: 'How does the 4-day schedule work?',
         a: 'Monday through Thursday, 9 AM to 3 PM, your athlete is at the academy. Fridays are off — for family, tournament travel, extra skill work, or rest. Home by 3:30 every weeknight. The day rotates through prayer and mobility, athletic training, Dr. Dish + Shoot 360 reps, family-style lunch, entrepreneur unschool, flex/study hall, and film study + reflection.',
       },
+      {
+        q: 'Does my athlete have to attend the full day?',
+        a: 'No. Not every Warrior has to be here all day. Some families already have education covered at home and only need the basketball team, practices, training, and the evaluation path — that’s a fit, and we welcome it. For families who want the full environment — training, mentorship, business, film, and the structure of the day — Warriors is here all day. The full-day experience is not required just to play basketball. Practices are expected, with reasonable exceptions for travel, illness, and family obligations. The additional enrichment pieces are available for families who want them.',
+      },
     ],
   },
   {
@@ -136,7 +140,7 @@ const FAQ_DATA = [
     items: [
       {
         q: 'How much does the program cost?',
-        a: 'Full detail is on the Tuition page, but here’s the short version: tuition covers our full national travel schedule, all tournament fees, travel to events in St. Louis, Columbia, Wichita, and Indiana, up to 4 hours of daily training, ATG coaching, Dr. Dish, Warrior Life, uniforms, and team gear. Shoot 360 is a recommended off-facility add-on. Stack up the à la carte price and most families find we’re priced below what they’d pay for less. Need-based scholarships are available and payment plans are welcome — no family with the right fit gets turned away for finances.',
+        a: 'Full detail is on the Tuition page, but here’s the short version: base tuition is $3,850 per athlete, per year. Families who prefer to pay in full receive a discounted rate of $2,888. Otherwise, $850 starts your athlete and the remaining balance is spread across the year on a schedule that works for your family. Tuition covers training, tournament fees, coaching, Dr. Dish, Warrior Life, uniforms, team gear, and the Warriors development environment. Shoot 360 is a recommended off-facility add-on. Need-based scholarships are available — no family with the right fit gets turned away for finances.',
       },
     ],
   },

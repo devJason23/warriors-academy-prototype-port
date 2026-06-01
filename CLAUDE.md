@@ -1,5 +1,20 @@
 # Warriors Academy Claude Code Instructions
 
+## MAIN BUILD — DO NOT USE STALE WORKTREES
+
+This checkout is the main Warriors Academy build.
+
+Main build WSL path:
+/mnt/c/Users/mdmja/Projects/warriors-academy-prototype-port
+
+Main build Windows path:
+C:\Users\mdmja\Projects\warriors-academy-prototype-port
+
+Main build branch:
+build/claude-design-port-2026-04-29
+
+Use this checkout for all current Warriors Academy edits unless Jason or Hermes explicitly says otherwise. Do not continue work from `.claude/worktrees/...`, `warriors-academy-redesign`, `warriors-academy-redesign-archive-claude-v1`, or the legacy production repo.
+
 ## Project source of truth
 
 This repo is the current implementation workspace for the Warriors Academy prototype port.

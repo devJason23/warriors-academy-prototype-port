@@ -25,7 +25,7 @@ export default function TuitionPage() {
                 Invest once.<br />Your athlete can <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>earn it back.</span>
               </h1>
               <p className="lead" style={{ maxWidth: '52ch' }}>
-                Warriors tuition includes all training, uniforms, tournament fees, and a full national travel schedule. Nothing a-la-carte. And our entrepreneur tracks give students real paths to earn revenue — for themselves and the program.
+                Warriors tuition includes training, uniforms, tournament fees, coaching, and the Warriors development environment. Nothing a-la-carte. And our entrepreneur tracks give athletes real paths to earn revenue — for themselves and the program.
               </p>
             </div>
             <div>
@@ -44,20 +44,20 @@ export default function TuitionPage() {
         <div className="wrap">
           <div className="price-grid">
             <div className="price-card">
-              <div className="price-eyebrow">New Student</div>
-              <div className="price-num">$4,800<span className="per">per athlete · per year</span></div>
-              <p className="body" style={{ fontSize: 14 }}>First-year Warriors tuition. Includes everything below.</p>
+              <div className="price-eyebrow">Base Tuition</div>
+              <div className="price-num">$3,850<span className="per">per athlete · per year</span></div>
+              <p className="body" style={{ fontSize: 14 }}>Full Warriors tuition. Includes everything below.</p>
             </div>
             <div className="price-card featured">
-              <span className="tag">Most Families</span>
-              <div className="price-eyebrow" style={{ color: 'var(--brass)' }}>Multi-Player · 2+</div>
-              <div className="price-num">$4,400<span className="per">per athlete · per year</span></div>
-              <p className="body" style={{ fontSize: 14 }}>Two or more siblings enrolled. Applies to each athlete in the family.</p>
+              <span className="tag">Discounted Rate</span>
+              <div className="price-eyebrow" style={{ color: 'var(--brass)' }}>Pay in Full</div>
+              <div className="price-num">$2,888<span className="per">per athlete · per year</span></div>
+              <p className="body" style={{ fontSize: 14 }}>Families who prefer to pay in full receive a discounted rate. One payment up front, nothing else due.</p>
             </div>
             <div className="price-card">
-              <div className="price-eyebrow">Returning Student</div>
-              <div className="price-num">$4,000<span className="per">per athlete · per year</span></div>
-              <p className="body" style={{ fontSize: 14 }}>Second-year Warriors and beyond. Loyalty pricing for families who stay.</p>
+              <div className="price-eyebrow">$850 to Start</div>
+              <div className="price-num">Balance<span className="per">spread over the year</span></div>
+              <p className="body" style={{ fontSize: 14 }}>$850 starts your athlete. The remaining balance is paid across the year on a schedule that works for your family.</p>
             </div>
           </div>
 
@@ -86,6 +86,13 @@ export default function TuitionPage() {
               Recommended add-on (optional, off-facility): Shoot 360 membership.
             </div>
           </div>
+
+          <div style={{ marginTop: 32, padding: 40, background: 'var(--ink-2)', borderLeft: '3px solid var(--accent)', borderRadius: '0 8px 8px 0' }}>
+            <div style={{ fontFamily: 'var(--f-mono)', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>The Full-Day Option</div>
+            <p className="body" style={{ fontSize: 16, color: 'rgba(245,242,236,0.82)', maxWidth: '70ch', margin: 0, lineHeight: 1.7 }}>
+              Not every Warrior has to attend the full day. Some families already have education covered at home and only need the team, practices, training, and the evaluation path — and that&apos;s a fit. For families who want the full environment — training, mentorship, business, film, and structure — Warriors is here all day. The full-day experience is not required just to play basketball. Practices are expected, with reasonable exceptions. Additional enrichment pieces are available for families who want them.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -103,9 +110,9 @@ export default function TuitionPage() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: 64 }}>
-            <FlywheelCard num="01" title="Students Run the Shop" desc="Athletes on the entrepreneur track operate a real digital marketing agency inside the school — websites, lead gen, AI receptionists for local businesses. School-managed accounts, teacher-approved output." />
-            <FlywheelCard num="02" title="Local Businesses Win" desc="Springfield businesses get professional marketing at a discounted price, delivered by motivated, mentored student-athletes using modern AI tools." />
-            <FlywheelCard num="03" title="Revenue Flows Back" desc="Revenue offsets program costs, funds scholarships, and pays students directly. The harder the student works, the more they earn — real-world economics, real paychecks." />
+            <FlywheelCard num="01" title="Athletes Build the Work" desc="Athletes on the entrepreneur track run real marketing and lead-generation projects for local businesses — program-managed accounts, adult-approved output." />
+            <FlywheelCard num="02" title="Local Businesses Win" desc="Springfield businesses get professional marketing at a discounted price, delivered by motivated, mentored athletes using modern AI tools." />
+            <FlywheelCard num="03" title="Revenue Flows Back" desc="Revenue offsets program costs, funds scholarships, and pays athletes directly. The harder the athlete works, the more they earn — real-world economics, real paychecks." />
           </div>
 
           <div style={{ padding: 40, border: '2px solid var(--accent)', borderRadius: 8, background: 'rgba(4,149,75,0.06)' }}>
@@ -114,7 +121,7 @@ export default function TuitionPage() {
               Every athlete on the entrepreneur track can earn back their tuition — and put thousands more in their pocket.
             </div>
             <p className="body" style={{ fontSize: 16, marginTop: 20, color: 'rgba(11,11,13,0.7)', maxWidth: '60ch' }}>
-              This isn&apos;t a guarantee — it&apos;s a ceiling we&apos;re actively building toward. Participation is earned through effort and approval. But the model is live, the clients are real, and the first cohort is already in motion.
+              This isn&apos;t a guarantee — it&apos;s a ceiling we&apos;re actively building toward. Participation is earned through effort and adult approval. But the model is live, the clients are real, and the first cohort is already in motion.
             </p>
           </div>
         </div>
