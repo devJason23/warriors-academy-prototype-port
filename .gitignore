@@ -5,6 +5,10 @@
 /.next
 /out
 
+# Next.js failed-build snapshots (timestamped junk)
+/.next-bad-*
+/.next-corrupt-*
+
 # production
 /build
 

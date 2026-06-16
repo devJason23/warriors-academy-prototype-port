@@ -11,7 +11,7 @@ Main build Windows path:
 C:\Users\mdmja\Projects\warriors-academy-prototype-port
 
 Main build branch:
-build/claude-design-port-2026-04-29
+main
 
 Use this checkout for all current Warriors Academy edits unless Jason or Hermes explicitly says otherwise. Do not continue work from `.claude/worktrees/...`, `warriors-academy-redesign`, `warriors-academy-redesign-archive-claude-v1`, or the legacy production repo.
 
@@ -23,12 +23,12 @@ Canonical local path:
 C:\Users\mdmja\Projects\warriors-academy-prototype-port
 
 Expected branch:
-build/claude-design-port-2026-04-29
+main
 
 Before editing, confirm:
 - You are in the canonical project folder above.
 - You are not working from a stale `.claude/worktrees/...` checkout unless Jason or Hermes explicitly requested that worktree.
-- Your branch is current with origin/build/claude-design-port-2026-04-29 or origin/main.
+- Your branch is current with origin/main.
 
 Known stale worktree to avoid unless intentionally recovered:
 C:\Users\mdmja\Projects\warriors-academy-prototype-port\.claude\worktrees\inspiring-kare-b09990
