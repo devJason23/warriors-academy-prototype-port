@@ -431,9 +431,9 @@ export default function CasePage() {
             So what do<br />you do with this?
           </h2>
           <p className="lead" style={{ margin: '0 auto 40px' }}>
-            You don&apos;t need to apply today. You don&apos;t need to commit to anything. You just need to come spend a day with us and see it for yourself.
+            You don&apos;t need to apply today. You don&apos;t need to commit to anything. Start with an evaluation, then come spend a day with us if you want the full-day picture.
           </p>
-          <Btn kind="primary" href="/experience">Register for Experience Day</Btn>
+          <Btn kind="primary" href="/experience#evaluation">Book an Evaluation</Btn>
         </div>
       </section>
     </div>

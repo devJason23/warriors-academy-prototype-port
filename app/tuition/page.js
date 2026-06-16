@@ -66,7 +66,7 @@ export default function TuitionPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
               {[
                 'Full uniform & team gear',
-                'Full national travel schedule · school ball season',
+                'Team schedule · school ball season',
                 'All tournament entry fees',
                 'Up to 4 hours daily elite training',
                 'ATG-certified strength & mobility',
@@ -105,7 +105,7 @@ export default function TuitionPage() {
               This is what makes<br />Warriors <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--accent)' }}>different.</span>
             </h2>
             <p className="lead" style={{ color: 'rgba(11,11,13,0.72)', marginBottom: 48 }}>
-              Warriors doesn&apos;t just teach entrepreneurship as a class. We run a real revenue flywheel — and we share it with the students who build it.
+              Warriors doesn&apos;t just talk about entrepreneurship. Athletes on the entrepreneur track help with real marketing and lead-generation projects under adult oversight.
             </p>
           </div>
 
@@ -137,7 +137,7 @@ export default function TuitionPage() {
               We offer need-based scholarships to families who align with the Warriors mission. Payment plans are available for every tier. If Warriors is the right place for your athlete, let&apos;s talk — we&apos;ll find a way.
             </p>
             <div style={{ marginTop: 24 }}>
-              <Btn kind="brass" href="/experience">Talk to Coach Don</Btn>
+              <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
             </div>
           </div>
         </div>
@@ -148,9 +148,9 @@ export default function TuitionPage() {
         <div className="wrap-narrow">
           <h2 className="h-section">See it before<br />you commit.</h2>
           <p className="lead" style={{ margin: '24px auto 32px' }}>
-            Tuition pages raise questions that only a day in the gym can answer. Come spend one with us.
+            Tuition pages raise questions that are easier to answer after coaches evaluate your athlete. Start there, then decide whether to spend a full day with us.
           </p>
-          <Btn kind="brass" href="/experience">Register for Experience Day</Btn>
+          <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
         </div>
       </section>
     </div>

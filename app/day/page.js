@@ -32,7 +32,7 @@ const warriorsColumn = {
   subtitle: 'Four days a week, 9–3. The enrichment public school ignores.',
   items: [
     { t: 'Elite Athletic Training', d: '4 hours/day of basketball-specific development inside the academic day. ATG-certified, injury-first, strength-and-speed-integrated.' },
-    { t: 'Entrepreneur Unschool', d: 'Real businesses, real clients, real money. AI, code, video, marketing, finance. A student can earn back tuition.' },
+    { t: 'Entrepreneur Unschool', d: 'Real businesses, real clients, real money. AI, code, video, marketing, finance. An athlete can earn back tuition.' },
     { t: 'Christ-Centered Character', d: 'Daily devotion. Mentorship. The Big Brother Badge Economy where older Warriors teach younger ones.' },
     { t: 'Warrior Life App', d: 'Mission Control for sleep, nutrition, readiness, reflection. Gamified. Parent dashboard included.' },
     { t: 'Family Culture', d: 'Coaches eat lunch with athletes. Families know each other. Community is the scaffold around every kid.' },
@@ -338,7 +338,7 @@ export default function ModelPage() {
           </div>
 
           <p className="mono" style={{ marginTop: 40, color: 'var(--muted)', maxWidth: '70ch' }}>
-            · This is not legal advice. Every family&apos;s situation is different. We&apos;ll walk you through it in person at Experience Day.
+            · This is not legal advice. Every family&apos;s situation is different. We&apos;ll walk you through it in person.
           </p>
         </div>
       </section>
@@ -376,7 +376,7 @@ export default function ModelPage() {
             Reading about the 4-day week is one thing. Living a day of it is another. Come spend one with us.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="/experience">Register for Experience Day</Btn>
+            <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
             <Btn kind="ghost" href="/tuition">See tuition</Btn>
           </div>
         </div>

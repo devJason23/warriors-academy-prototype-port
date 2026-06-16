@@ -20,10 +20,8 @@ function ScheduleRow({ time, title, desc, tag }) {
 export default function ExperiencePage() {
   const [selected, setSelected] = useState(0)
   const dates = [
-    { m: 'June', d: '16', activity: 'Paintball · Team-Building Battle' },
-    { m: 'June', d: '23', activity: 'Golf Short-Game Clinic' },
-    { m: 'July', d: '14', activity: 'Archery · Escape Room Challenge' },
-    { m: 'July', d: '21', activity: 'Paintball · Championship Day' },
+    { m: 'June', d: '30', day: 'Tuesday', activity: 'Warriors Day · Training + Family Lunch' },
+    { m: 'July', d: '14', day: 'Tuesday', activity: 'Warriors Day · Training + Coach Q&A' },
   ]
 
   return (
@@ -35,11 +33,11 @@ export default function ExperiencePage() {
             Spend a day<br />living the <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>Warrior life.</span>
           </h1>
           <p className="lead" style={{ maxWidth: '64ch' }}>
-            Four dates this summer. Training, team building, family lunch, coach Q&A. Bring your athlete — parents stay all day. The fastest way to understand Warriors Academy is to live a day of it.
+            Two dates this summer. Training, team building, family lunch, coach Q&A. Bring your athlete — parents stay all day. The fastest way to understand the full-day Warriors option is to live a day of it. The first step for most families is still the 1-hour evaluation.
           </p>
           <div style={{ marginTop: 40, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Btn kind="primary" href="#register">Register Your Athlete</Btn>
-            <Btn kind="ghost" href="#schedule">See the day</Btn>
+            <Btn kind="primary" href="#evaluation">Book an Evaluation</Btn>
+            <Btn kind="ghost" href="#register">Register for a Day</Btn>
           </div>
         </div>
       </section>
@@ -47,8 +45,8 @@ export default function ExperiencePage() {
       {/* DATES */}
       <section className="section-tight" style={{ borderTop: '1px solid var(--ink-4)', borderBottom: '1px solid var(--ink-4)' }}>
         <div className="wrap">
-          <div className="mono" style={{ color: 'var(--muted)', marginBottom: 24 }}>Pick your date — 9:00 AM to 2:30 PM · Springfield, MO</div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
+          <div className="mono" style={{ color: 'var(--muted)', marginBottom: 24 }}>Pick your day — 9:00 AM to 2:30 PM · Springfield, MO</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
             {dates.map((d, i) => (
               <div
                 key={i}
@@ -57,7 +55,7 @@ export default function ExperiencePage() {
               >
                 <div className="date-month">{d.m}</div>
                 <div className="date-day">{d.d}</div>
-                <div className="date-year">2026 · Monday</div>
+                <div className="date-year">2026 · {d.day}</div>
                 <div className="date-activity">{d.activity}</div>
               </div>
             ))}
@@ -78,7 +76,6 @@ export default function ExperiencePage() {
                 <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, color: 'rgba(245,242,236,0.78)', lineHeight: 1.7 }}>
                   <li>Basketball shoes + athletic wear</li>
                   <li>Water bottle</li>
-                  <li>Golf clubs if you have them (loaners available)</li>
                   <li>Questions. Lots of them.</li>
                 </ul>
               </div>
@@ -86,7 +83,7 @@ export default function ExperiencePage() {
             <div>
               <ScheduleRow time="9:00 AM" title="Arrival · Prayer · Dynamic Warmup" desc="Meet the coaches. Open in prayer. ATG mobility warmup — the same way every Warrior starts the day." tag="30 min" />
               <ScheduleRow time="9:30 AM" title="Elite Training Block" desc="Basketball-specific development with Coach Jason. Skill work, small-sided competition, and individual shooting on Dr. Dish." tag="75 min" />
-              <ScheduleRow time="10:45 AM" title="Business Build Sprint" desc="Students ideate a mini-business, build a 60-second pitch using AI tools, and present. Real skills in 30 minutes." tag="30 min" />
+              <ScheduleRow time="10:45 AM" title="Business Build Sprint" desc="Athletes ideate a mini-business, build a 60-second pitch using AI tools, and present. Real skills in 30 minutes." tag="30 min" />
               <ScheduleRow time="11:15 AM" title="Team-Building Activity" desc="Rotating by date — paintball, golf short-game clinic, archery, or escape room. This is the part kids text their friends about." tag="60 min" />
               <ScheduleRow time="12:15 PM" title="Family Lunch With Coaches" desc="Team meal. Parents sit with Don, Jason, and Dee. Kids sit with current Warriors. Real conversation, no presentation." tag="45 min" />
               <ScheduleRow time="1:00 PM" title="Film Study + Big Brother Session" desc="Current Warriors walk visiting athletes through a film study. Visiting athletes book 15-minute micro-sessions with certified Big Brothers." tag="45 min" />
@@ -98,16 +95,30 @@ export default function ExperiencePage() {
 
       <hr className="rule" />
 
+      {/* EVALUATION */}
+      <section className="section on-paper" id="evaluation">
+        <div className="wrap">
+          <div style={{ maxWidth: 860, margin: '0 auto', textAlign: 'center' }}>
+            <Eyebrow style={{ color: 'var(--accent)' }}>First Step · 1-Hour Evaluation</Eyebrow>
+            <h2 className="h-section" style={{ marginTop: 16, marginBottom: 16, color: 'var(--ink)' }}>Book an evaluation first.</h2>
+            <p className="lead" style={{ color: 'rgba(11,11,13,0.72)', marginBottom: 32 }}>
+              Coaches test vertical leap, 40-yard dash, Dr. Dish shooting, basketball skill, competitiveness, and coachability. Every athlete gets an evaluation, a walk-through of where they are, and a chance to see where they land on the Warriors tryout leaderboard. Evaluation athletes may also get a chance to compete against top Warriors when it fits the session.
+            </p>
+            <Btn kind="primary" href="#register">Book Evaluation / Register Interest</Btn>
+          </div>
+        </div>
+      </section>
+
       {/* REGISTER FORM */}
       <section className="section on-paper" id="register">
         <div className="wrap">
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <Eyebrow style={{ color: 'var(--accent)' }}>Register · Free</Eyebrow>
             <h2 className="h-section" style={{ marginTop: 16, marginBottom: 16, color: 'var(--ink)' }}>
-              One form. One day.<br />No pressure, no pitch.
+              One form. Evaluation or day visit.<br />No pressure, no pitch.
             </h2>
             <p className="lead" style={{ color: 'rgba(11,11,13,0.72)', marginBottom: 48 }}>
-              Spots are limited to 12 athletes per date so everyone gets real coaching time. We&apos;ll confirm your spot within 24 hours.
+              Tell us whether you want the 1-hour evaluation first or one of the two Warriors day visits. We&apos;ll confirm your next step within 24 hours.
             </p>
 
             <div style={{ background: 'var(--ink)', padding: 48, borderRadius: 8 }}>
@@ -133,7 +144,7 @@ export default function ExperiencePage() {
               </div>
               <div className="form-row">
                 <div className="form-field">
-                  <label>Preferred Date</label>
+                  <label>Preferred Day Visit Date</label>
                   <select defaultValue={selected}>
                     {dates.map((d, i) => (
                       <option key={i} value={i}>
@@ -143,7 +154,7 @@ export default function ExperiencePage() {
                   </select>
                 </div>
                 <div className="form-field">
-                  <label>Current School</label>
+                  <label>Current Education Setup</label>
                   <input placeholder="Public / Private / Homeschool" />
                 </div>
               </div>
@@ -151,9 +162,9 @@ export default function ExperiencePage() {
                 <label>Anything else we should know?</label>
                 <textarea rows={3} placeholder="Athletic background, sibling athletes, specific questions..." />
               </div>
-              <Btn kind="primary">Lock In Your Spot</Btn>
+              <Btn kind="primary">Submit Next Step Request</Btn>
               <div style={{ marginTop: 16, fontFamily: 'var(--f-mono)', fontSize: 11, letterSpacing: '0.14em', color: 'var(--muted)', textTransform: 'uppercase' }}>
-                Confirmation within 24 hours. Max 12 athletes per day.
+                Confirmation within 24 hours. Evaluations are the recommended first step.
               </div>
             </div>
           </div>
@@ -165,7 +176,7 @@ export default function ExperiencePage() {
         <div className="wrap-narrow" style={{ textAlign: 'center' }}>
           <p className="body" style={{ fontSize: 14, color: 'var(--muted)' }}>
             Can&apos;t make any of these dates?{' '}
-            <a href="#" style={{ color: 'var(--brass)', cursor: 'pointer' }}>Book a 15-minute call with Coach Don →</a>
+            <a href="#evaluation" style={{ color: 'var(--brass)', cursor: 'pointer' }}>Book a 1-hour evaluation →</a>
           </p>
         </div>
       </section>

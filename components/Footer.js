@@ -31,8 +31,8 @@ export default function Footer() {
           </div>
           <div>
             <h4>Visit & Apply</h4>
+            <Link href="/experience#evaluation">Book Evaluation</Link>
             <Link href="/experience">Experience Day</Link>
-            <a href="#">Book a Call</a>
             <a href="https://wearewarriorsapparel.com">Team Shop ↗</a>
             <a href="mailto:missouriwarriorsbasketball@gmail.com">Contact</a>
           </div>

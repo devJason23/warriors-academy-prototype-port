@@ -178,7 +178,7 @@ export default function FAQPage() {
             <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>before they say yes.</span>
           </h1>
           <p className="lead" style={{ maxWidth: '62ch', color: 'rgba(245,242,236,0.78)' }}>
-            If your question isn&apos;t here, grab 15 minutes with Coach Don or come spend a day with us at Experience Day. The best questions always come up over family-style lunch anyway.
+            If your question isn&apos;t here, start with a 1-hour evaluation or come spend a day with us after that. The best questions always come up over family-style lunch anyway.
           </p>
         </div>
       </section>
@@ -426,7 +426,7 @@ export default function FAQPage() {
             The best ones always come up over lunch anyway. Come spend a day with us — or grab 15 minutes with Coach Don.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="/experience">Register for Experience Day</Btn>
+            <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
             <Btn kind="ghost" href="/tuition">See tuition</Btn>
           </div>
         </div>

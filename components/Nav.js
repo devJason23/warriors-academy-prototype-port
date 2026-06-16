@@ -34,7 +34,7 @@ export default function Nav() {
               {i.label}
             </Link>
           ))}
-          <Link href="/experience" className="nav-cta">Spend a Day →</Link>
+          <Link href="/experience#evaluation" className="nav-cta">Book Eval →</Link>
         </div>
       </div>
     </nav>

@@ -80,9 +80,9 @@ const dayTeaseBlocks = [
 ]
 
 const collapsedPillars = [
-  { num: '01', name: 'Elite Athletic Training', body: 'ATG. Dr. Dish. Shoot 360. Plus the only mandatory golf season in basketball training.', link: '/training' },
-  { num: '02', name: 'Real Businesses, Real Money', body: 'Athletes build, market, and run real businesses — not simulations.', link: '/training' },
-  { num: '03', name: 'Christ at the Center', body: 'Every day opens in prayer. Discipleship is the spine, not a side dish.', link: '/day' },
+  { num: '01', name: 'Christ at the Center', body: 'Every day opens in prayer. Discipleship is the spine, not a side dish.', link: '/day' },
+  { num: '02', name: 'Elite Athletic Training', body: 'ATG. Dr. Dish. Shoot 360. Plus the only mandatory golf season in basketball training.', link: '/training' },
+  { num: '03', name: 'Real Businesses, Real Money', body: 'Athletes build, market, and run real businesses — not simulations.', link: '/training' },
   { num: '04', name: 'Warrior Life · Mission Control', body: 'Daily app for training, devotion, business, and accountability. Launching this season.', link: '/warrior-life-app' },
 ]
 
@@ -110,8 +110,8 @@ export default function HomePage() {
             A Christ-centered 4-day homeschool athletic academy for serious student-athletes ages 10–18. Elite training. Real businesses. Family evenings back. The first tech-forward Christian basketball academy.
           </p>
           <div className="hero-actions">
-            <Btn kind="primary" href="/experience">Schedule Tryout</Btn>
-            <Btn kind="ghost" href="/case">Why Not Traditional School</Btn>
+            <Btn kind="primary" href="/experience#evaluation">Book an Evaluation</Btn>
+            <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn>
           </div>
           <div className="hero-trust">
             <div><strong>#2 Nationally</strong><br />HCHB 12U · 2025</div>
@@ -135,7 +135,7 @@ export default function HomePage() {
               <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)', letterSpacing: '-0.02em' }}>Currently Ranked #2 in the Nation (12u)</span>
             </h2>
             <p className="lead" style={{ color: 'rgba(245,242,236,0.82)', maxWidth: '52ch' }}>
-              Warriors 12u won the National Gold Ball Tournament in 2025 and finished as the #2-ranked 12u team in the country. The Undisputed National Championship (the unbeaten bracket within the national tournament) went to a different team — we lost that final game. We&apos;re proud of the trophy. We&apos;re hungrier for the one we didn&apos;t win.
+              In our first year, our 12U Warriors made it all the way to the final game and finished #2 in the nation. We didn&apos;t get it done that day — and that&apos;s exactly why we&apos;re hungry.
             </p>
             <div className="champions-meta">
               <div>
@@ -248,7 +248,7 @@ export default function HomePage() {
               <div className="compare-item"><span className="compare-glyph">✓</span><span>4-day focused schedule with parent-led academics</span></div>
               <div className="compare-item"><span className="compare-glyph">✓</span><span>Up to 4 hours of elite training in the school day</span></div>
               <div className="compare-item"><span className="compare-glyph">✓</span><span>Fridays and evenings are family time again</span></div>
-              <div className="compare-item"><span className="compare-glyph">✓</span><span>Every student runs a real business — and can earn</span></div>
+              <div className="compare-item"><span className="compare-glyph">✓</span><span>Every athlete can build real business skills — and earn</span></div>
               <div className="compare-item"><span className="compare-glyph">✓</span><span>Christ-centered mentorship and discipleship every day</span></div>
             </div>
           </div>
@@ -775,8 +775,8 @@ export default function HomePage() {
                   Every athlete starts with an evaluation. We look at skill, effort, coachability, competitiveness, and fit — then walk the family through where the athlete stands and what comes next.
                 </p>
                 <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                  <Btn kind="primary" href="/experience">Schedule Tryout</Btn>
-                  <Btn kind="ghost" href="/experience">Spend a Day With Us</Btn>
+                  <Btn kind="primary" href="/experience#evaluation">Book an Evaluation</Btn>
+                  <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn>
                 </div>
               </div>
               <div>
@@ -848,28 +848,28 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             <CtaPath
               num="01"
-              stage="Curious"
-              title="Spend a Day With Us"
-              desc="4 summer dates. Training, team building, family lunch, coach Q&A. The fastest way to understand Warriors is to live a day of it."
-              label="Warriors Experience Day"
-              href="/experience"
+              stage="First Step"
+              title="Book an Evaluation"
+              desc="Start with a 1-hour Warriors evaluation: vertical leap, 40-yard dash, Dr. Dish shooting, basketball skill, competitiveness, coachability, and a walk-through of where your athlete lands on the tryout leaderboard."
+              label="Book Evaluation"
+              href="/experience#evaluation"
               featured
             />
             <CtaPath
               num="02"
-              stage="Considering"
-              title="Book a 15-min Call"
-              desc="Talk to Coach Don. No pitch. Just answers to the specific questions your family has. Scheduled at your convenience."
-              label="Book a Call"
-              href="#"
+              stage="Second Step"
+              title="Experience a Day at Warriors"
+              desc="Two summer dates. Training, team building, family lunch, coach Q&A. The fastest way to understand the full-day option is to live a day of it."
+              label="Warriors Experience Day"
+              href="/experience"
             />
             <CtaPath
               num="03"
               stage="Ready"
-              title="Schedule Tryout"
-              desc="2–3 spots available per team across 10U–18U boys. All new athletes must complete tryouts and a 1v1 evaluation with our coaching staff."
-              label="Schedule Tryout"
-              href="/experience"
+              title="Apply"
+              desc="If Warriors is already the right fit, start the application path. We will still evaluate skill, effort, coachability, competitiveness, and fit before any roster spot is promised."
+              label="Start Application"
+              href="/experience#register"
             />
           </div>
         </div>

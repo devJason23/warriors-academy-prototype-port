@@ -35,9 +35,9 @@ const stack = [
     num: '03',
     name: 'Shoot 360 · Form Studio',
     short: 'Motion-tracked form analysis. Release time. Arc. Rotation.',
-    long: 'Two sessions a week on Shoot 360 — a full-court, sensor-equipped station that captures every detail of a shot: release time, arc angle, ball rotation, elbow alignment, follow-through. What a coach can’t catch with their eyes, the system catches every possession. Athletes adjust with video playback on the spot. Small form corrections compound into entire percentage points of shooting gain in a single season.',
+    long: 'Warriors has partnered with Shoot 360 to offer an outside group membership rate for Warriors players and families. It is not required — but for the player who wants to be the best, it is available at a steep discount. Shoot 360 is a full-court, sensor-equipped station that captures every detail of a shot: release time, arc angle, ball rotation, elbow alignment, follow-through. What a coach can’t catch with their eyes, the system catches every possession. Athletes adjust with video playback on the spot. Small form corrections compound into entire percentage points of shooting gain in a single season.',
     stats: [
-      ['2x / week', 'form sessions'],
+      ['Optional', 'outside group membership rate'],
       ['8–12%', 'shooting % gain · season'],
       ['Real time', 'video + stats playback'],
     ],
@@ -606,7 +606,7 @@ export default function TrainingPage() {
             Specs and screenshots only go so far. Stand under the Dr. Dish. Watch an ATG warmup. Spend a day inside the stack.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="/experience">Register for Experience Day</Btn>
+            <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
             <Btn kind="ghost" href="/day">See the 4-day model</Btn>
           </div>
         </div>

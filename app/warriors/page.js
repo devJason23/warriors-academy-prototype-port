@@ -254,8 +254,8 @@ export default function WarriorsPage() {
             Photos and bios only get you so far. Spend a day in the gym with the Warriors and decide for yourself.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="/experience">Schedule a Tryout</Btn>
-            <Btn kind="ghost" href="/experience">Spend a Day With Us</Btn>
+            <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
+            <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn>
           </div>
         </div>
       </section>

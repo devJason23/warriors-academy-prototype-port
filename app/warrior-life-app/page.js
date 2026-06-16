@@ -123,8 +123,8 @@ export default function WarriorLifeAppPage() {
             Built by coaches. Used daily. Every Warrior parent and athlete will have it from day one of the upcoming season.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="/experience">Schedule a Tryout</Btn>
-            <Btn kind="ghost" href="/experience">Spend a Day With Us</Btn>
+            <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
+            <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn>
             <Btn kind="ghost">Download App</Btn>
           </div>
         </div>
