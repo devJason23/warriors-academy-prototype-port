@@ -1,6 +1,7 @@
 import Btn from '../../components/ui/Btn'
 import Eyebrow from '../../components/ui/Eyebrow'
 import LiteYouTube from '../../components/ui/LiteYouTube'
+import RosterByTeam from '../../components/warriors/RosterByTeam'
 
 export const metadata = {
   title: 'The Warriors — Warriors Academy',
@@ -140,6 +141,9 @@ export default function WarriorsPage() {
           </div>
         </div>
       </section>
+
+      {/* 4.5 · ROSTER — BY TEAM (inserted: team-grouped roster + player profiles) */}
+      <RosterByTeam />
 
       {/* 5 · IRON SHARPENS IRON breather */}
       <section className="scripture-block">

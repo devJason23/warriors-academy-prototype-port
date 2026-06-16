@@ -508,6 +508,7 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
 /* Responsive */
 @media (max-width: 960px) {
   .nav-links { display: none; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
   .receipts-row { grid-template-columns: repeat(2, 1fr); }
   .receipt { border-bottom: 1px solid var(--ink-4); }
   .proof-grid { grid-template-columns: 1fr 1fr; }
@@ -518,4 +519,66 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
   .price-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }
+}
+
+/* ===== Teams (Warriors roster) ===== */
+.team-jump {
+  position: sticky; top: 72px; z-index: 40;
+  background: rgba(11,11,13,0.92);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--ink-4); border-bottom: 1px solid var(--ink-4);
+}
+.team-jump-inner {
+  display: flex; align-items: center; gap: 8px;
+  padding: 14px 0; overflow-x: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.team-jump-inner::-webkit-scrollbar { display: none; }
+.team-jump-label {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); white-space: nowrap; margin-right: 6px; flex: 0 0 auto;
+}
+.team-chip {
+  flex: 0 0 auto; cursor: pointer; white-space: nowrap;
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(245,242,236,0.72); background: var(--ink);
+  border: 1px solid var(--ink-4); padding: 9px 16px; border-radius: 999px;
+  transition: color .15s ease, background .15s ease, border-color .15s ease;
+}
+.team-chip:hover { color: var(--paper); border-color: var(--brass); }
+.team-chip[data-active="true"] { color: var(--ink); background: var(--brass); border-color: var(--brass); }
+
+.team-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 32px; margin-bottom: 36px; flex-wrap: wrap;
+}
+.team-title {
+  font-family: var(--f-display); font-size: clamp(34px, 4vw, 52px);
+  line-height: 0.95; color: var(--paper); text-transform: uppercase;
+}
+.team-flag {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--brass); border: 1px solid var(--brass); padding: 5px 10px; border-radius: 999px; white-space: nowrap;
+}
+.team-meta { color: var(--brass); margin-top: 14px; }
+.team-blurb {
+  max-width: 60ch; margin-top: 14px;
+  font-size: 15px; line-height: 1.6; color: rgba(245,242,236,0.72);
+}
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.open-spot-card {
+  text-align: left; cursor: pointer; color: inherit; font: inherit;
+  background: transparent; border: 1px dashed var(--ink-4);
+  display: flex; flex-direction: column;
+  transition: border-color .15s ease, background .15s ease;
+}
+.open-spot-card:hover { background: rgba(200,165,100,0.04); }
+.girls-pill {
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(245,242,236,0.66); border: 1px solid var(--ink-4);
+  padding: 10px 16px; border-radius: 999px;
+}
+
+@media (max-width: 520px) {
+  .team-grid { grid-template-columns: 1fr; }
 }
