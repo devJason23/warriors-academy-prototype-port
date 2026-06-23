@@ -387,7 +387,7 @@ export default function PlayerProfile({ playerId }) {
         <div className="wrap-narrow">
           <h2 className="h-section">Want to meet {p.name.split(' ')[0]}?</h2>
           <p className="lead" style={{ margin: '24px auto 32px' }}>
-            Email or call the coach above. Or come see {p.name.split(' ')[0]} live — the Warriors play 50+ games a season, and most are within day-driving distance of Springfield.
+            Email or call the coach above. Or come see {p.name.split(' ')[0]} live — the Warriors play 40+ games a season, and most are within day-driving distance of Springfield.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Btn kind="brass" href={`mailto:${p.contact.email}`}>Contact {p.contact.name.split(' ').slice(-1)[0]}</Btn>

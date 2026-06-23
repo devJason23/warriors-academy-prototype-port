@@ -115,10 +115,10 @@ export default function ExperiencePage() {
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <Eyebrow style={{ color: 'var(--accent)' }}>Register · Free</Eyebrow>
             <h2 className="h-section" style={{ marginTop: 16, marginBottom: 16, color: 'var(--ink)' }}>
-              One form. Evaluation or day visit.<br />No pressure, no pitch.
+              Request an evaluation.<br />No pressure, no pitch.
             </h2>
             <p className="lead" style={{ color: 'rgba(11,11,13,0.72)', marginBottom: 48 }}>
-              Tell us whether you want the 1-hour evaluation first or one of the two Warriors day visits. We&apos;ll confirm your next step within 24 hours.
+              Share a few details about your athlete and a Warriors coach — or AD Don Hamilton — will reach out within 24 hours to schedule your 1-hour evaluation. Want to spend a full day with the Warriors too? We&apos;ll talk that through during or after the evaluation.
             </p>
 
             <div style={{ background: 'var(--ink)', padding: 48, borderRadius: 8 }}>
@@ -142,29 +142,17 @@ export default function ExperiencePage() {
                   <input placeholder="e.g. Micah · 13" />
                 </div>
               </div>
-              <div className="form-row">
-                <div className="form-field">
-                  <label>Preferred Day Visit Date</label>
-                  <select defaultValue={selected}>
-                    {dates.map((d, i) => (
-                      <option key={i} value={i}>
-                        {d.m} {d.d} · {d.activity}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className="form-field">
-                  <label>Current Education Setup</label>
-                  <input placeholder="Public / Private / Homeschool" />
-                </div>
+              <div className="form-field" style={{ marginBottom: 24 }}>
+                <label>Current Education Setup</label>
+                <input placeholder="Public / Private / Homeschool" />
               </div>
               <div className="form-field" style={{ marginBottom: 24 }}>
                 <label>Anything else we should know?</label>
                 <textarea rows={3} placeholder="Athletic background, sibling athletes, specific questions..." />
               </div>
-              <Btn kind="primary">Submit Next Step Request</Btn>
+              <Btn kind="primary">Request My Evaluation</Btn>
               <div style={{ marginTop: 16, fontFamily: 'var(--f-mono)', fontSize: 11, letterSpacing: '0.14em', color: 'var(--muted)', textTransform: 'uppercase' }}>
-                Confirmation within 24 hours. Evaluations are the recommended first step.
+                A Warriors coach or AD Don will reach out within 24 hours to schedule your evaluation.
               </div>
             </div>
           </div>
