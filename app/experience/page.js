@@ -142,9 +142,15 @@ export default function ExperiencePage() {
                   <input placeholder="e.g. Micah · 13" />
                 </div>
               </div>
-              <div className="form-field" style={{ marginBottom: 24 }}>
-                <label>Current Education Setup</label>
-                <input placeholder="Public / Private / Homeschool" />
+              <div className="form-row">
+                <div className="form-field">
+                  <label>Has your child played competitive basketball before?</label>
+                  <input placeholder="Yes / No — leagues, years, level" />
+                </div>
+                <div className="form-field">
+                  <label>Current Education Setup</label>
+                  <input placeholder="Public / Private / Homeschool" />
+                </div>
               </div>
               <div className="form-field" style={{ marginBottom: 24 }}>
                 <label>Anything else we should know?</label>
@@ -156,16 +162,6 @@ export default function ExperiencePage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* SMALL PRINT */}
-      <section className="section-tight">
-        <div className="wrap-narrow" style={{ textAlign: 'center' }}>
-          <p className="body" style={{ fontSize: 14, color: 'var(--muted)' }}>
-            Can&apos;t make any of these dates?{' '}
-            <a href="#evaluation" style={{ color: 'var(--brass)', cursor: 'pointer' }}>Book a 1-hour evaluation →</a>
-          </p>
         </div>
       </section>
     </div>

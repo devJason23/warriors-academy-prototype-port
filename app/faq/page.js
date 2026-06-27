@@ -22,7 +22,7 @@ const FAQ_DATA = [
       },
       {
         q: 'What ages do you accept?',
-        a: 'All age groups, boys and girls, are currently in evaluations. Roster spots are contingent on tryouts — we don’t pre-promise, we evaluate. Boys teams run 10U–18U; girls evaluations are open across all age groups and the roster is forming.',
+        a: 'All age groups, boys and girls, are currently in evaluations. Roster spots are contingent on tryouts — we don’t pre-promise, we evaluate. Boys teams run 8U–18U; girls evaluations are open across all age groups and the roster is forming.',
       },
       {
         q: 'How does the 4-day schedule work?',
@@ -30,7 +30,7 @@ const FAQ_DATA = [
       },
       {
         q: 'Does my athlete have to attend the full day?',
-        a: 'No. Not every Warrior has to be here all day. Some families already have education covered at home and only need the basketball team, practices, training, and the evaluation path — that’s a fit, and we welcome it. For families who want the full environment — training, mentorship, business, film, and the structure of the day — Warriors is here all day. The full-day experience is not required just to play basketball. Practices are expected, with reasonable exceptions for travel, illness, and family obligations. The additional enrichment pieces are available for families who want them.',
+        a: 'No. Not every Warrior has to be here all day. Some families already have education covered at home and only need the basketball team, practices, training, and the evaluation path — that’s a fit, and we welcome it. For families who want the full environment — training, mentorship, business, film, and the structure of the day — Warriors is here all day. The full-day experience is not required just to play basketball. Practices are expected, with reasonable exceptions. The additional enrichment pieces are available for families who want them.',
       },
     ],
   },
@@ -88,10 +88,6 @@ const FAQ_DATA = [
         a: 'Dr. Dish is a shooting machine that rebounds and feeds every shot — athletes stack up to 1,000 tracked shots per hour and the system logs every zone. Last half-season our program logged 36,862 tracked shots. Shoot 360 is a motion-tracked station used twice a week for form analysis — release time, arc, rotation, elbow alignment, follow-through. Dr. Dish is for volume and efficiency data. Shoot 360 is for mechanical precision. You need both.',
       },
       {
-        q: 'What is Shoot 360 and how do your athletes use it?',
-        a: 'Two sessions a week. Sensors capture every detail of a shot — release time, arc angle, rotation, elbow alignment, follow-through — and athletes review video on the spot. What a coach can’t catch every rep, the system catches every possession. Small form corrections compound into significant shooting-percentage gains over a single season. It’s the most efficient form-coaching tool in youth basketball.',
-      },
-      {
         q: 'How does film study work in your program?',
         a: 'Film is daily, not weekly. Every afternoon ends with 15–30 minutes of film from that morning’s training or the last tournament. Coaches teach athletes how to watch film — what to look for, how to grade themselves honestly, how to spot patterns. Journal one thing learned, close in prayer, go home. By 14u most Warriors can break down their own tape better than a lot of college freshmen.',
       },
@@ -114,7 +110,7 @@ const FAQ_DATA = [
       },
       {
         q: 'Is this program only for basketball players?',
-        a: 'Basketball is our primary sport, but it’s not the only one. We also offer a competitive Cheer and Stunt program, and every Warrior — regardless of sport — completes a mandatory golf season to build mental toughness and composure. The entrepreneurship curriculum, the 4-day academy structure, and the Christ-centered culture benefit any student. And under Missouri’s Tebow Law, our athletes can play any sport their local public school offers that Warriors doesn’t.',
+        a: 'Basketball is our primary sport, but it’s not the only one. We also offer a competitive Cheer and Stunt program. We’re also actively looking for students who love technology and want to help us build out our tech program. The entrepreneurship curriculum, the 4-day academy structure, and the Christ-centered culture benefit any student. And under Missouri’s Tebow Law, our athletes can play any sport their local public school offers that Warriors doesn’t.',
       },
     ],
   },
@@ -126,8 +122,8 @@ const FAQ_DATA = [
         a: 'Yes, structurally — not decoratively. Every day opens in prayer and Scripture. Coaches disciple, not just train. Lunch is family-style at one table with coaches. The Mirror in Warrior Life rotates an evening devotional. The Big Brother Mentor Program ties older Warriors to younger ones in explicit discipleship. Faith isn’t a bolt-on; it’s the scaffold. We welcome families from any background who respect what we’re building.',
       },
       {
-        q: 'What is HoopSmith?',
-        a: 'HoopSmith is a basketball content and training partnership that supports Warriors athletes with additional skill-development resources, tournament exposure, and a broader coaching network. Partnerships like HoopSmith are how we extend what’s possible beyond the walls of the academy — giving Warriors access to a national basketball ecosystem while staying rooted in Springfield. [PLACEHOLDER — this question may need updating once the HoopSmith → HoopsIQ transition is finalized.]',
+        q: 'How does Warriors use technology to track stats and develop athletes?',
+        a: 'We’ve partnered with a high-tech sports firm to track our season-long team and individual stats, build detailed shot charts, and automatically generate player highlight reels. Our goal is to be the highest-tech homeschool basketball program in the country — and this partnership, which we’ll be announcing soon, is a major step toward that.',
       },
       {
         q: 'What is the Big Brother Mentor Program?',
