@@ -111,7 +111,8 @@ export default function HomePage() {
           </p>
           <div className="hero-actions">
             <Btn kind="primary" href="/experience#evaluation">Book an Evaluation</Btn>
-            <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn>
+            {/* Experience Day hidden — restore with SHOW_EXPERIENCE_DAY flag on /experience */}
+            {/* <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn> */}
           </div>
           <div className="hero-trust">
             <div><strong>#2 Nationally</strong><br />HCHB 12U · 2025</div>
@@ -776,7 +777,8 @@ export default function HomePage() {
                 </p>
                 <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                   <Btn kind="primary" href="/experience#evaluation">Book an Evaluation</Btn>
-                  <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn>
+                  {/* Experience Day hidden — restore with SHOW_EXPERIENCE_DAY flag on /experience */}
+                  {/* <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn> */}
                 </div>
               </div>
               <div>
@@ -861,7 +863,6 @@ export default function HomePage() {
               title="Experience a Day at Warriors"
               desc="Two summer dates. Training, team building, family lunch, coach Q&A. The fastest way to understand the full-day option is to live a day of it."
               label="Warriors Experience Day"
-              href="/experience"
             />
             <CtaPath
               num="03"

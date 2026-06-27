@@ -24,8 +24,14 @@ export default function ExperiencePage() {
     { m: 'July', d: '14', day: 'Tuesday', activity: 'Warriors Day · Training + Coach Q&A' },
   ]
 
+  // Experience Day ("Spend a day living the Warrior life") is temporarily hidden.
+  // Flip this to true to restore the hero, dates, and schedule sections.
+  const SHOW_EXPERIENCE_DAY = false
+
   return (
     <div className="page-enter">
+      {SHOW_EXPERIENCE_DAY && (
+      <>
       <section style={{ padding: '120px 0 80px', background: 'var(--ink)' }}>
         <div className="wrap">
           <Eyebrow>Warriors Experience Day · 2026</Eyebrow>
@@ -94,6 +100,8 @@ export default function ExperiencePage() {
       </section>
 
       <hr className="rule" />
+      </>
+      )}
 
       {/* EVALUATION */}
       <section className="section on-paper" id="evaluation">

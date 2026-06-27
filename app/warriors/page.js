@@ -259,7 +259,8 @@ export default function WarriorsPage() {
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
-            <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn>
+            {/* Experience Day hidden — restore with SHOW_EXPERIENCE_DAY flag on /experience */}
+            {/* <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn> */}
           </div>
         </div>
       </section>

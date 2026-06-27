@@ -32,7 +32,8 @@ export default function Footer() {
           <div>
             <h4>Visit & Apply</h4>
             <Link href="/experience#evaluation">Book Evaluation</Link>
-            <Link href="/experience">Experience Day</Link>
+            {/* Experience Day hidden — restore with SHOW_EXPERIENCE_DAY flag on /experience */}
+            {/* <Link href="/experience">Experience Day</Link> */}
             <a href="https://wearewarriorsapparel.com">Team Shop ↗</a>
             <a href="mailto:missouriwarriorsbasketball@gmail.com">Contact</a>
           </div>
