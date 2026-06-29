@@ -23,7 +23,7 @@ function PhotoTreatment({ photos }) {
   const cell = (ph, boxStyle) =>
     ph && ph.src ? (
       <div style={{ ...boxStyle, position: 'relative', overflow: 'hidden', background: 'var(--ink-2)' }}>
-        <img src={ph.src} alt={ph.label} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
+        <img src={ph.src} alt={ph.label} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: ph.fit || 'cover', objectPosition: ph.position || 'center top', display: 'block' }} />
       </div>
     ) : (
       <div className="placeholder" style={boxStyle}>{lbl(ph)}</div>
@@ -67,12 +67,14 @@ export default function PlayerProfile({ playerId }) {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'end', borderBottom: '1px solid var(--ink-4)', paddingBottom: 36, marginBottom: 36 }}>
             <div>
               <div className="mono" style={{ color: 'var(--brass)', marginBottom: 16 }}>
-                #{p.jersey} · {p.position.toUpperCase()} · {p.ageGroup.toUpperCase()} · {p.classOf.toUpperCase()}
+                #{p.jersey} · {p.position.toUpperCase()} · {p.ageGroup.toUpperCase()}{p.classOf ? ` · ${p.classOf.toUpperCase()}` : ''}
               </div>
               <h1 className="h-hero" style={{ lineHeight: 0.9 }}>{p.name}</h1>
-              <div style={{ marginTop: 16, fontFamily: 'var(--f-serif)', fontStyle: 'italic', fontSize: 'clamp(20px, 2.2vw, 28px)', color: 'var(--brass)' }}>
-                {p.nickname}{p.archetype ? ` · ${p.archetype}` : ''}
-              </div>
+              {(p.nickname || p.archetype) && (
+                <div style={{ marginTop: 16, fontFamily: 'var(--f-serif)', fontStyle: 'italic', fontSize: 'clamp(20px, 2.2vw, 28px)', color: 'var(--brass)' }}>
+                  {p.nickname}{p.nickname && p.archetype ? ' · ' : ''}{p.archetype}
+                </div>
+              )}
               {p.accolades && p.accolades.length > 0 && (
                 <div style={{ marginTop: 20, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {p.accolades.map((a, i) => (
@@ -87,27 +89,33 @@ export default function PlayerProfile({ playerId }) {
               )}
             </div>
             <div className="mono" style={{ color: 'var(--muted)', textAlign: 'right', fontSize: 11, lineHeight: 1.8 }}>
-              <div>HOMETOWN · {p.hometown.toUpperCase()}</div>
-              <div>GRADE · {p.grade.toUpperCase()}</div>
-              <div>AGE · {p.age}</div>
+              {p.hometown && <div>HOMETOWN · {p.hometown.toUpperCase()}</div>}
+              {p.grade && <div>GRADE · {p.grade.toUpperCase()}</div>}
+              {p.age && <div>AGE · {p.age}</div>}
             </div>
           </div>
 
-          {/* Vitals strip */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0, borderTop: '1px solid var(--ink-4)', borderBottom: '1px solid var(--ink-4)' }}>
-            {[
+          {/* Vitals strip — VERTICAL column appears only when the player has a vertical */}
+          {(() => {
+            const vitals = [
               ['HEIGHT', p.height],
               ['WEIGHT', p.weight],
               ['WINGSPAN', p.wingspan],
+              ...(p.vertical ? [['VERTICAL', p.vertical]] : []),
               ['DOMINANT HAND', p.handed],
               ['POSITION', p.position],
-            ].map(([l, v], i) => (
-              <div key={i} style={{ padding: '24px 24px', borderRight: i < 4 ? '1px solid var(--ink-4)' : 'none' }}>
-                <div className="mono" style={{ color: 'var(--muted)', marginBottom: 8, fontSize: 10 }}>{l}</div>
-                <div style={{ fontFamily: 'var(--f-display)', fontSize: 28, color: 'var(--paper)', lineHeight: 1 }}>{v}</div>
+            ]
+            return (
+              <div style={{ display: 'grid', gridTemplateColumns: `repeat(${vitals.length}, 1fr)`, gap: 0, borderTop: '1px solid var(--ink-4)', borderBottom: '1px solid var(--ink-4)' }}>
+                {vitals.map(([l, v], i) => (
+                  <div key={i} style={{ padding: '24px 24px', borderRight: i < vitals.length - 1 ? '1px solid var(--ink-4)' : 'none' }}>
+                    <div className="mono" style={{ color: 'var(--muted)', marginBottom: 8, fontSize: 10 }}>{l}</div>
+                    <div style={{ fontFamily: 'var(--f-display)', fontSize: 28, color: 'var(--paper)', lineHeight: 1 }}>{v}</div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            )
+          })()}
         </div>
       </section>
 
@@ -338,35 +346,45 @@ export default function PlayerProfile({ playerId }) {
               Cut by coach, not by Hudl algorithm. Best two-way possessions of the season, in context — possession start to whistle.
             </p>
           </div>
-          <LiteYouTube id={p.highlight.id} title={p.highlight.title} />
+          {p.highlight.src ? (
+            <video controls preload="metadata" style={{ width: '100%', display: 'block', background: '#000', aspectRatio: '16 / 9' }} src={p.highlight.src}>
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <LiteYouTube id={p.highlight.id} title={p.highlight.title} />
+          )}
           <p className="mono" style={{ marginTop: 16, color: 'var(--muted)' }}>· FULL GAME FILM AVAILABLE ON REQUEST · CONTACT THE COACH ABOVE</p>
         </div>
       </section>
 
       {/* ===== FAITH / CHARACTER ===== */}
-      <section className="section on-paper" style={{ paddingTop: 100, paddingBottom: 100 }}>
-        <div className="wrap-narrow" style={{ textAlign: 'center' }}>
-          <Eyebrow style={{ color: 'var(--accent)' }}>In the Player&rsquo;s Words</Eyebrow>
-          <p style={{
-            fontFamily: 'var(--f-serif)', fontStyle: 'italic',
-            fontSize: 'clamp(28px, 3.4vw, 44px)', lineHeight: 1.3,
-            color: 'var(--ink)', maxWidth: '24ch', margin: '24px auto 24px',
-          }}>
-            &ldquo;{p.testimony}&rdquo;
-          </p>
-          <div className="mono" style={{ color: 'var(--accent)', marginTop: 16 }}>· {p.name.toUpperCase()}</div>
-        </div>
-      </section>
+      {p.testimony && (
+        <section className="section on-paper" style={{ paddingTop: 100, paddingBottom: 100 }}>
+          <div className="wrap-narrow" style={{ textAlign: 'center' }}>
+            <Eyebrow style={{ color: 'var(--accent)' }}>In the Player&rsquo;s Words</Eyebrow>
+            <p style={{
+              fontFamily: 'var(--f-serif)', fontStyle: 'italic',
+              fontSize: 'clamp(28px, 3.4vw, 44px)', lineHeight: 1.3,
+              color: 'var(--ink)', maxWidth: '24ch', margin: '24px auto 24px',
+            }}>
+              &ldquo;{p.testimony}&rdquo;
+            </p>
+            <div className="mono" style={{ color: 'var(--accent)', marginTop: 16 }}>· {p.name.toUpperCase()}</div>
+          </div>
+        </section>
+      )}
 
       {/* ===== COACH QUOTE ===== */}
-      <section style={{ padding: '100px 0', background: 'var(--ink)' }}>
-        <div className="wrap">
-          <div className="quote" style={{ background: 'var(--ink-2)', borderLeft: '4px solid var(--brass)', padding: '56px 56px' }}>
-            <div className="quote-text">&ldquo;{p.coachQuote.text}&rdquo;</div>
-            <div className="quote-attr">— {p.coachQuote.attr}</div>
+      {p.coachQuote && p.coachQuote.text && (
+        <section style={{ padding: '100px 0', background: 'var(--ink)' }}>
+          <div className="wrap">
+            <div className="quote" style={{ background: 'var(--ink-2)', borderLeft: '4px solid var(--brass)', padding: '56px 56px' }}>
+              <div className="quote-text">&ldquo;{p.coachQuote.text}&rdquo;</div>
+              <div className="quote-attr">— {p.coachQuote.attr}</div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ===== OTHER PLAYERS ===== */}
       <section style={{ padding: '80px 0 100px', background: 'var(--ink-2)' }}>
@@ -391,14 +409,17 @@ export default function PlayerProfile({ playerId }) {
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--brass)' }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--ink-4)' }}
               >
-                <div className="placeholder" style={{ aspectRatio: '1/1' }}>
-                  <div style={{ position: 'absolute', top: 8, left: 8 }}>
-                    <span className="placeholder-label" style={{ fontSize: 9 }}>#{o.jersey}</span>
-                  </div>
+                <div className="placeholder" style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+                  {o.photos?.[0]?.src && (
+                    <img src={o.photos[0].src} alt={o.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
+                  )}
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'var(--f-display)', fontSize: 24, color: 'var(--paper)', lineHeight: 1, marginBottom: 6 }}>{o.name}</div>
-                  <div className="mono" style={{ color: 'var(--brass)' }}>{o.position} · {o.ageGroup} · {o.classOf}</div>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap', marginBottom: 6 }}>
+                    <span style={{ fontFamily: 'var(--f-display)', fontSize: 24, color: 'var(--paper)', lineHeight: 1 }}>{o.name}</span>
+                    <span className="mono" style={{ color: 'var(--brass)', fontSize: 12 }}>#{o.jersey}</span>
+                  </div>
+                  <div className="mono" style={{ color: 'var(--brass)' }}>{o.position} · {o.ageGroup}{o.classOf ? ` · ${o.classOf}` : ''}</div>
                 </div>
                 <span style={{ color: 'var(--brass)', fontSize: 20 }}>→</span>
               </Link>
