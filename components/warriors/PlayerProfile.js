@@ -19,12 +19,22 @@ function PhotoTreatment({ photos }) {
     </>
   )
 
+  // Real photo when a src is present; otherwise fall back to the placeholder.
+  const cell = (ph, boxStyle) =>
+    ph && ph.src ? (
+      <div style={{ ...boxStyle, position: 'relative', overflow: 'hidden', background: 'var(--ink-2)' }}>
+        <img src={ph.src} alt={ph.label} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
+      </div>
+    ) : (
+      <div className="placeholder" style={boxStyle}>{lbl(ph)}</div>
+    )
+
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 12 }}>
-      <div className="placeholder" style={{ aspectRatio: '3/4' }}>{lbl(photos[0])}</div>
+      {cell(photos[0], { aspectRatio: '3/4' })}
       <div style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: 12 }}>
-        <div className="placeholder" style={{ minHeight: 0 }}>{lbl(photos[1])}</div>
-        <div className="placeholder" style={{ minHeight: 0 }}>{lbl(photos[2])}</div>
+        {cell(photos[1], { minHeight: 0 })}
+        {cell(photos[2], { minHeight: 0 })}
       </div>
     </div>
   )
@@ -35,6 +45,7 @@ export default function PlayerProfile({ playerId }) {
 
   // Other live players (for "see another Warrior")
   const otherPlayers = Object.values(PLAYERS).filter((x) => x.id !== p.id)
+  const hasPhotos = (p.photos || []).some((ph) => ph.src)
 
   return (
     <div className="page-enter">
@@ -62,6 +73,18 @@ export default function PlayerProfile({ playerId }) {
               <div style={{ marginTop: 16, fontFamily: 'var(--f-serif)', fontStyle: 'italic', fontSize: 'clamp(20px, 2.2vw, 28px)', color: 'var(--brass)' }}>
                 {p.nickname} · {p.archetype}
               </div>
+              {p.accolades && p.accolades.length > 0 && (
+                <div style={{ marginTop: 20, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                  {p.accolades.map((a, i) => (
+                    <span key={i} className="mono" style={{
+                      padding: '8px 14px', background: '#F2B705',
+                      color: 'var(--ink)', fontSize: 11, letterSpacing: '0.12em',
+                      textTransform: 'uppercase', whiteSpace: 'nowrap', fontWeight: 800,
+                      borderRadius: 2, boxShadow: '0 2px 14px rgba(242,183,5,0.35)',
+                    }}>{a}</span>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="mono" style={{ color: 'var(--muted)', textAlign: 'right', fontSize: 11, lineHeight: 1.8 }}>
               <div>HOMETOWN · {p.hometown.toUpperCase()}</div>
@@ -91,10 +114,12 @@ export default function PlayerProfile({ playerId }) {
       {/* ===== PHOTOS ===== */}
       <section style={{ padding: '40px 0 80px', background: 'var(--ink)' }}>
         <div className="wrap">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 24 }}>
-            <div className="mono" style={{ color: 'var(--muted)' }}>· MOSAIC TREATMENT · 3 IMAGES</div>
-            <div className="mono" style={{ color: 'var(--muted)', fontSize: 10 }}>// SWAP IN REAL PHOTOS · COACH-FACING / GAME / CHARACTER</div>
-          </div>
+          {!hasPhotos && (
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 24 }}>
+              <div className="mono" style={{ color: 'var(--muted)' }}>· MOSAIC TREATMENT · 3 IMAGES</div>
+              <div className="mono" style={{ color: 'var(--muted)', fontSize: 10 }}>// SWAP IN REAL PHOTOS · COACH-FACING / GAME / CHARACTER</div>
+            </div>
+          )}
           <PhotoTreatment photos={p.photos} />
         </div>
       </section>

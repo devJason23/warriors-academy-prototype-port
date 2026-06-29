@@ -22,13 +22,18 @@ function PlayerCard({ p }) {
       onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--brass)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
       onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--ink-4)'; e.currentTarget.style.transform = 'translateY(0)' }}
     >
-      <div className="placeholder" style={{ aspectRatio: '4/5' }}>
+      <div className="placeholder" style={{ aspectRatio: '4/5', overflow: 'hidden' }}>
+        {p.photos?.[0]?.src && (
+          <img src={p.photos[0].src} alt={p.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
+        )}
         <div style={{ position: 'absolute', top: 16, left: 16 }}>
           <span className="placeholder-label">#{p.jersey} · {p.ageGroup}</span>
         </div>
-        <div style={{ position: 'absolute', bottom: 16, left: 16, right: 16 }}>
-          <span className="mono" style={{ color: 'rgba(245,242,236,0.5)', fontSize: 10 }}>// PORTRAIT</span>
-        </div>
+        {!p.photos?.[0]?.src && (
+          <div style={{ position: 'absolute', bottom: 16, left: 16, right: 16 }}>
+            <span className="mono" style={{ color: 'rgba(245,242,236,0.5)', fontSize: 10 }}>// PORTRAIT</span>
+          </div>
+        )}
       </div>
       <div style={{ padding: 22, borderTop: '1px solid var(--ink-4)' }}>
         <div style={{ fontFamily: 'var(--f-display)', fontSize: 24, color: 'var(--paper)', lineHeight: 1, marginBottom: 8 }}>{p.name}</div>
