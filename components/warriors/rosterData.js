@@ -150,7 +150,7 @@ export const PLAYERS = {
     weight: '132 lb',
     wingspan: '5’10”',
     handed: 'Right',
-    archetype: 'Floor general',
+    archetype: '',
     nickname: '"Cold-Blooded K9 Sniper"',
     hometown: 'Springfield, MO',
     accolades: ['2× National Champion', '3× Regional MVP', '#2 Nationally'],

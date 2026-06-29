@@ -71,7 +71,7 @@ export default function PlayerProfile({ playerId }) {
               </div>
               <h1 className="h-hero" style={{ lineHeight: 0.9 }}>{p.name}</h1>
               <div style={{ marginTop: 16, fontFamily: 'var(--f-serif)', fontStyle: 'italic', fontSize: 'clamp(20px, 2.2vw, 28px)', color: 'var(--brass)' }}>
-                {p.nickname} · {p.archetype}
+                {p.nickname}{p.archetype ? ` · ${p.archetype}` : ''}
               </div>
               {p.accolades && p.accolades.length > 0 && (
                 <div style={{ marginTop: 20, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
