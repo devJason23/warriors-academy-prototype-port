@@ -298,7 +298,7 @@ export const PLAYERS = {
     badges: [],
     badgesInProgress: [],
     awards: [
-      { y: '25–26', t: 'NCHBC 14U National Championship · National Runner-up' },
+      { y: '25–26', t: 'NCHBC 12U National Championship · National Runner-up' },
     ],
     academics: {
       gpa: '4.0', gpaScale: 'unweighted (4.0)',
