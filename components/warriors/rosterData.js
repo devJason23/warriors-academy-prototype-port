@@ -318,6 +318,65 @@ export const PLAYERS = {
       phone: '(417) 413-3305',
     },
   },
+
+  'tre-rucker': {
+    id: 'tre-rucker',
+    name: 'Tre Rucker',
+    jersey: '1',
+    classOf: '',
+    grade: '',
+    age: '',
+    ageGroup: '18u',
+    position: 'Perimeter Big',
+    height: '6’4”',
+    weight: '207 lb',
+    wingspan: '6’6”',
+    vertical: '24”',
+    handed: 'Left',
+    archetype: '',
+    nickname: '',
+    hometown: '',
+    accolades: [],
+    photos: [
+      { label: 'PORTRAIT',    sub: '// MEDALIST',   aspect: '3/4', src: '/players/tre-rucker/portrait.jpg' },
+      { label: 'GAME ACTION', sub: '// RIM FINISH', aspect: '4/5', src: '/players/tre-rucker/action-1.jpg', position: 'center' },
+      { label: 'GAME ACTION', sub: '// BLOCK',      aspect: '1/1', src: '/players/tre-rucker/action-2.jpg', position: 'center' },
+    ],
+    stats: {
+      season: '2025–26',
+      ppg: '14.3', rpg: '7.7', apg: '1.3', spg: '1.1', bpg: '1.2',
+      fg: '41.7%', three: '31.3%', ft: '—',
+      gp: '44',
+    },
+    careerHighs: [
+      ['32', 'PTS',  'vs Lighthouse Chargers'],
+      ['13', 'REB',  'vs Northwest Arkansas'],
+      ['4',  'AST',  'vs Lebanon Rockets'],
+      ['5',  '3PM',  'vs OKC Flame'],
+    ],
+    badges: ['Glass Dominator'],
+    badgesInProgress: [],
+    awards: [
+      { y: '25–26', t: '#16 Nationally · 18U Team' },
+    ],
+    academics: {
+      gpa: '4.0', gpaScale: 'unweighted (4.0)',
+      act: '—', sat: '—',
+      iready: '—',
+      interests: 'Entrepreneurship · Business',
+      references: [],
+    },
+    socials: { hudl: '—', x: '—', ig: '—' },
+    highlight: { src: '/players/tre-rucker/highlight.mp4', title: 'Tre Rucker · 18u Highlights · 2025–26' },
+    coachQuote: { text: '', attr: '' },
+    testimony: '',
+    contact: {
+      name: 'Coach Jason Hill',
+      role: 'Director of Player Development · Inquiries on Tre',
+      email: 'jason@mo-warriors.com',
+      phone: '(417) 413-3305',
+    },
+  },
 }
 
 // ============================================================
@@ -353,6 +412,6 @@ export const TEAMS = [
     id: 'team-18u', short: '18U', label: 'Boys 18U',
     tag: 'Recruiting class', season: '2025–26', coach: 'Coach Don Hamilton',
     blurb: 'Our oldest Warriors — the recruiting front line, with profiles built for college coaches.',
-    players: ['eli-m'], openSpots: 3,
+    players: ['tre-rucker', 'eli-m'], openSpots: 3,
   },
 ]
