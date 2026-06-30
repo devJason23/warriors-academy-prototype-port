@@ -67,7 +67,7 @@ export default function PlayerProfile({ playerId }) {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'end', borderBottom: '1px solid var(--ink-4)', paddingBottom: 36, marginBottom: 36 }}>
             <div>
               <div className="mono" style={{ color: 'var(--brass)', marginBottom: 16 }}>
-                #{p.jersey} · {p.position.toUpperCase()} · {p.ageGroup.toUpperCase()}{p.classOf ? ` · ${p.classOf.toUpperCase()}` : ''}
+                {[`#${p.jersey}`, p.position.toUpperCase(), p.ageGroup && p.ageGroup.toUpperCase(), p.classOf && p.classOf.toUpperCase()].filter(Boolean).join(' · ')}
               </div>
               <h1 className="h-hero" style={{ lineHeight: 0.9 }}>{p.name}</h1>
               {(p.nickname || p.archetype) && (
