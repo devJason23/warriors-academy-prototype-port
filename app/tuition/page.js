@@ -134,7 +134,7 @@ export default function TuitionPage() {
             <Eyebrow style={{ color: 'var(--brass)' }}>Scholarships</Eyebrow>
             <h3 className="h-sub" style={{ marginTop: 16, marginBottom: 16 }}>No family with the right fit<br />gets turned away for finances.</h3>
             <p className="body" style={{ fontSize: 16 }}>
-              We offer need-based scholarships to families who align with the Warriors mission. Payment plans are available for every tier. If Warriors is the right place for your athlete, let&apos;s talk — we&apos;ll find a way.
+              We offer need-based scholarships to families who align with the Warriors mission. Payment plans are available. If Warriors is the right place for your athlete, let&apos;s talk — we&apos;ll find a way.
             </p>
             <div style={{ marginTop: 24 }}>
               <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
