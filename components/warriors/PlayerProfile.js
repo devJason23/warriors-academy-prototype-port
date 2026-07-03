@@ -23,7 +23,7 @@ function PhotoTreatment({ photos }) {
   const cell = (ph, boxStyle) =>
     ph && ph.src ? (
       <div style={{ ...boxStyle, position: 'relative', overflow: 'hidden', background: 'var(--ink-2)' }}>
-        <img src={ph.src} alt={ph.label} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: ph.fit || 'cover', objectPosition: ph.position || 'center top', display: 'block' }} />
+        <img src={ph.src} alt={ph.label} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: ph.fit || 'cover', objectPosition: ph.position || 'center top', transform: ph.scale ? `scale(${ph.scale})` : undefined, transformOrigin: ph.origin || 'center', display: 'block' }} />
       </div>
     ) : (
       <div className="placeholder" style={boxStyle}>{lbl(ph)}</div>
@@ -104,7 +104,7 @@ export default function PlayerProfile({ playerId }) {
               ...(p.vertical ? [['VERTICAL', p.vertical]] : []),
               ['DOMINANT HAND', p.handed],
               ['POSITION', p.position],
-            ]
+            ].filter(([, v]) => v && v !== '—')
             return (
               <div style={{ display: 'grid', gridTemplateColumns: `repeat(${vitals.length}, 1fr)`, gap: 0, borderTop: '1px solid var(--ink-4)', borderBottom: '1px solid var(--ink-4)' }}>
                 {vitals.map(([l, v], i) => (
@@ -187,14 +187,16 @@ export default function PlayerProfile({ playerId }) {
                 <div style={{ fontSize: 16, lineHeight: 1.5, color: 'var(--ink)' }}>{p.academics.interests}</div>
               </div>
 
-              <div>
-                <div className="mono" style={{ color: 'rgba(11,11,13,0.55)', fontSize: 10, marginBottom: 8 }}>REFERENCES (available on request)</div>
-                <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
-                  {p.academics.references.map((r, i) => (
-                    <li key={i} style={{ padding: '8px 0', borderTop: i === 0 ? '1px solid rgba(11,11,13,0.12)' : '1px solid rgba(11,11,13,0.08)', fontSize: 14, color: 'rgba(11,11,13,0.72)' }}>· {r}</li>
-                  ))}
-                </ul>
-              </div>
+              {p.academics.otherInterests && p.academics.otherInterests.length > 0 && (
+                <div>
+                  <div className="mono" style={{ color: 'rgba(11,11,13,0.55)', fontSize: 10, marginBottom: 8 }}>OTHER INTERESTS</div>
+                  <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+                    {p.academics.otherInterests.map((r, i) => (
+                      <li key={i} style={{ padding: '8px 0', borderTop: i === 0 ? '1px solid rgba(11,11,13,0.12)' : '1px solid rgba(11,11,13,0.08)', fontSize: 14, color: 'rgba(11,11,13,0.72)' }}>· {r}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             {/* Coach contact */}
@@ -335,6 +337,7 @@ export default function PlayerProfile({ playerId }) {
       </section>
 
       {/* ===== HIGHLIGHT VIDEO ===== */}
+      {p.highlight && (p.highlight.src || p.highlight.id) && (
       <section style={{ padding: '100px 0', background: 'var(--ink)' }}>
         <div className="wrap">
           <div style={{ maxWidth: 680, marginBottom: 40 }}>
@@ -356,6 +359,7 @@ export default function PlayerProfile({ playerId }) {
           <p className="mono" style={{ marginTop: 16, color: 'var(--muted)' }}>· FULL GAME FILM AVAILABLE ON REQUEST · CONTACT THE COACH ABOVE</p>
         </div>
       </section>
+      )}
 
       {/* ===== FAITH / CHARACTER ===== */}
       {p.testimony && (

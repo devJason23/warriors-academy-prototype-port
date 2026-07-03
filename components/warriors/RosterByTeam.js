@@ -37,7 +37,7 @@ function PlayerCard({ p }) {
       </div>
       <div style={{ padding: 22, borderTop: '1px solid var(--ink-4)' }}>
         <div style={{ fontFamily: 'var(--f-display)', fontSize: 24, color: 'var(--paper)', lineHeight: 1, marginBottom: 8 }}>{p.name}</div>
-        <div className="mono" style={{ color: 'var(--brass)', marginBottom: 12 }}>{p.position} · {p.height} · {p.ageGroup}</div>
+        <div className="mono" style={{ color: 'var(--brass)', marginBottom: 12 }}>{[p.position, p.height, p.ageGroup].filter((x) => x && x !== '—').join(' · ')}</div>
         <div style={{ fontSize: 13, lineHeight: 1.55, color: 'rgba(245,242,236,0.7)' }}>{p.classOf}{p.archetype ? ` · ${p.archetype}` : ''}</div>
         <div style={{ marginTop: 18, paddingTop: 14, borderTop: '1px solid var(--ink-4)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span className="mono" style={{ color: 'var(--muted)', fontSize: 10 }}>OPEN PROFILE</span>
