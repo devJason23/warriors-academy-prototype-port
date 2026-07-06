@@ -84,7 +84,7 @@ function TeamSection({ team }) {
               <h3 className="team-title">{team.label}</h3>
               {team.flagship && <span className="team-flag">★ Flagship</span>}
             </div>
-            <div className="mono team-meta">{team.tag} · {team.season} · {team.coach}</div>
+            <div className="mono team-meta">{[team.tag, team.season, team.coach].filter(Boolean).join(' · ')}</div>
             <p className="team-blurb">{team.blurb}</p>
           </div>
           <Btn kind="ghost" href={EVAL_HREF}>Evaluations open</Btn>

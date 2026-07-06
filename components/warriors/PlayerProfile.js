@@ -41,7 +41,7 @@ function PhotoTreatment({ photos }) {
 }
 
 export default function PlayerProfile({ playerId }) {
-  const p = PLAYERS[playerId] || PLAYERS['eli-m']
+  const p = PLAYERS[playerId] || PLAYERS['brolen-hill']
 
   // Other live players (for "see another Warrior")
   const otherPlayers = Object.values(PLAYERS).filter((x) => x.id !== p.id)
@@ -262,9 +262,9 @@ export default function PlayerProfile({ playerId }) {
             <h3 className="h-sub" style={{ marginTop: 12, marginBottom: 0 }}>One-game bests.</h3>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, border: '1px solid var(--ink-4)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: `repeat(${p.careerHighs.length}, 1fr)`, gap: 0, border: '1px solid var(--ink-4)' }}>
             {p.careerHighs.map(([n, l, ctx], i) => (
-              <div key={i} style={{ padding: '32px 24px', borderRight: i < 3 ? '1px solid var(--ink-4)' : 'none' }}>
+              <div key={i} style={{ padding: '32px 24px', borderRight: i < p.careerHighs.length - 1 ? '1px solid var(--ink-4)' : 'none' }}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 10 }}>
                   <div style={{ fontFamily: 'var(--f-display)', fontSize: 56, lineHeight: 1, color: 'var(--brass)' }}>{n}</div>
                   <div className="mono" style={{ color: 'var(--muted)' }}>{l}</div>
@@ -440,7 +440,7 @@ export default function PlayerProfile({ playerId }) {
             Email or call the coach above. Or come see {p.name.split(' ')[0]} live — the Warriors play 40+ games a season, and most are within day-driving distance of Springfield.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href={`mailto:${p.contact.email}`}>Contact {p.contact.name.split(' ').slice(-1)[0]}</Btn>
+            <Btn kind="brass" href={`mailto:${p.contact.email}`}>Contact {p.contact.name.split(' ')[0]} {p.contact.name.split(' ').slice(-1)[0]}</Btn>
             <Btn kind="ghost" href="/warriors">Back to Roster</Btn>
           </div>
         </div>
