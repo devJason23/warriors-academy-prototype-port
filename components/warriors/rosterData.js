@@ -5,6 +5,7 @@
 // ============================================================
 
 export const BADGES = [
+  { name: 'Christian Character', img: '/badges/christian-character-final.png', desc: 'Glorify God. Leadership.' },
   { name: 'Shooting',      img: '/badges/shooting.png',      desc: 'Pure. Accurate. Deadly.' },
   { name: 'Defense',       img: '/badges/defense.png',       desc: 'Stop. Contest. Dominate.' },
   { name: 'IQ',            img: '/badges/iq.png',            desc: 'See more. Think faster. Win.' },
@@ -292,7 +293,7 @@ export const PLAYERS = {
       ['7',  'AST',  'vs RUSH'],
       ['5',  '3PM',  'vs NWA'],
     ],
-    badges: [],
+    badges: ['Christian Character', 'IQ', 'Ball Handling', 'Shooting'],
     badgesInProgress: [],
     awards: [
       { y: '25–26', t: 'Warriors Team MVP · 14U' },
@@ -351,7 +352,7 @@ export const PLAYERS = {
       ['8',  'AST',  'vs Lighthouse Chargers'],
       ['7',  '3PM',  'vs Bradleyville'],
     ],
-    badges: [],
+    badges: ['Christian Character', 'IQ', 'Ball Handling'],
     badgesInProgress: [],
     awards: [
       { y: '25–26', t: 'NCHBC 18U Regional MVP' },

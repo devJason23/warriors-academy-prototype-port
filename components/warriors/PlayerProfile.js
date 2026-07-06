@@ -327,6 +327,9 @@ export default function PlayerProfile({ playerId }) {
                   border: earned ? '1px solid var(--accent)' : '1px solid var(--ink-4)',
                   padding: 14,
                   textAlign: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
                 }}>
                   <img src={b.img} alt={`${b.name} — ${b.desc}`} style={{ width: '100%', height: 'auto', display: 'block', filter: earned ? 'none' : 'grayscale(0.85)', opacity: earned ? 1 : 0.5 }} />
                   <div className="mono" style={{ marginTop: 12, fontSize: 10, color: earned ? 'var(--accent-hi)' : 'rgba(245,242,236,0.45)' }}>
