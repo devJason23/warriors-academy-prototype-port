@@ -47,6 +47,36 @@ export default function PlayerProfile({ playerId }) {
   const otherPlayers = Object.values(PLAYERS).filter((x) => x.id !== p.id)
   const hasPhotos = (p.photos || []).some((ph) => ph.src)
 
+  // New player with no data yet — show a Coming Soon page instead of the full profile.
+  if (p.comingSoon) {
+    return (
+      <div className="page-enter">
+        <div style={{ padding: '120px 0 0', background: 'var(--ink)' }}>
+          <div className="wrap">
+            <Link href="/warriors" style={{ display: 'inline-block', textDecoration: 'none', fontFamily: 'var(--f-mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--brass)' }}>← Back to Roster</Link>
+          </div>
+        </div>
+        <section style={{ background: 'var(--ink)', minHeight: '68vh', display: 'grid', placeItems: 'center', padding: '64px 0 120px', textAlign: 'center' }}>
+          <div className="wrap-narrow">
+            {p.photos?.[0]?.src && (
+              <div style={{ width: 200, aspectRatio: '3/4', margin: '0 auto 36px', overflow: 'hidden', border: '1px solid var(--ink-4)', background: 'var(--ink-2)' }}>
+                <img src={p.photos[0].src} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', filter: 'grayscale(0.4)' }} />
+              </div>
+            )}
+            <div className="mono" style={{ color: 'var(--brass)', marginBottom: 16 }}>
+              {['#' + p.jersey, p.ageGroup && p.ageGroup.toUpperCase()].filter(Boolean).join(' · ')}
+            </div>
+            <h1 className="h-hero" style={{ marginBottom: 28 }}>{p.name}</h1>
+            <div className="mono" style={{ display: 'inline-block', padding: '10px 20px', border: '1px solid var(--brass)', color: 'var(--brass)', letterSpacing: '0.18em' }}>COMING SOON</div>
+            <p className="lead" style={{ marginTop: 28, color: 'rgba(245,242,236,0.72)', maxWidth: '46ch', marginLeft: 'auto', marginRight: 'auto' }}>
+              New to the program — full profile with stats, film, and story is on the way.
+            </p>
+          </div>
+        </section>
+      </div>
+    )
+  }
+
   return (
     <div className="page-enter">
 
@@ -287,24 +317,21 @@ export default function PlayerProfile({ playerId }) {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, border: '1px solid rgba(11,11,13,0.14)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
             {BADGES.map((b, i) => {
               const earned = p.badges.includes(b.name)
               const inProg = p.badgesInProgress.includes(b.name)
               return (
                 <div key={i} style={{
-                  padding: '32px 24px',
-                  borderRight: i < BADGES.length - 1 ? '1px solid rgba(11,11,13,0.12)' : 'none',
-                  opacity: earned ? 1 : 0.42,
-                  position: 'relative',
-                  background: earned ? 'rgba(4,149,75,0.06)' : 'transparent',
+                  background: 'var(--ink)',
+                  border: earned ? '1px solid var(--accent)' : '1px solid var(--ink-4)',
+                  padding: 14,
+                  textAlign: 'center',
                 }}>
-                  <div style={{ fontFamily: 'var(--f-display)', fontSize: 56, lineHeight: 1, color: earned ? 'var(--accent)' : 'rgba(11,11,13,0.4)', marginBottom: 18 }}>{b.glyph}</div>
-                  <div style={{ fontFamily: 'var(--f-display)', fontSize: 20, textTransform: 'uppercase', lineHeight: 1.1, color: 'var(--ink)', marginBottom: 12 }}>{b.name}</div>
-                  <div className="mono" style={{ color: earned ? 'var(--accent)' : 'rgba(11,11,13,0.5)', fontSize: 10, marginBottom: 12 }}>
+                  <img src={b.img} alt={`${b.name} — ${b.desc}`} style={{ width: '100%', height: 'auto', display: 'block', filter: earned ? 'none' : 'grayscale(0.85)', opacity: earned ? 1 : 0.5 }} />
+                  <div className="mono" style={{ marginTop: 12, fontSize: 10, color: earned ? 'var(--accent-hi)' : 'rgba(245,242,236,0.45)' }}>
                     {earned ? '· CERTIFIED' : inProg ? '· IN PROGRESS' : '· NOT YET'}
                   </div>
-                  <p className="body" style={{ fontSize: 13, lineHeight: 1.55, color: 'rgba(11,11,13,0.62)' }}>{b.desc}</p>
                 </div>
               )
             })}

@@ -36,10 +36,13 @@ function Coach({ name, role, bio, verse, img, imgPos }) {
 }
 
 const badgeBullets = [
-  'Clutch Shooter — written + on-court test of pure shooting under pressure.',
-  'Lockdown Defender — closeouts, stance, communication, and 1-on-1 containment.',
-  'Glass Dominator — boxing out, pursuit angles, and the unglamorous work that wins games.',
-  'Court Visionary — read defenses, run sets, and quarterback the offense from any position.',
+  'Shooting — pure, accurate, deadly shot-making under pressure.',
+  'Defense — stop, contest, and dominate the best perimeter scorer.',
+  'IQ — see more, think faster, win the mental game.',
+  'Ball Handling — handles tight, defenders lost.',
+  'Passing — see it, share it, create for others.',
+  'Finishing — strong finishes at the rim, no mercy.',
+  'Rebounding — own the glass, own the game.',
   'Servant leadership, not seniority — every Warrior earns their place by what they give the room.',
 ]
 
@@ -212,7 +215,7 @@ export default function WarriorsPage() {
               >
                 <img
                   src="/warriors-badges.png"
-                  alt="Warriors badges — Clutch Shooter, Lockdown Defender, Glass Dominator, Court Visionary"
+                  alt="Warriors badges — Shooting, Defense, IQ, Ball Handling, Passing, Finishing, Rebounding"
                   style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }}
                 />
                 <figcaption

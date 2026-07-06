@@ -5,10 +5,13 @@
 // ============================================================
 
 export const BADGES = [
-  { name: 'Clutch Shooter',    glyph: '✦', desc: 'Written test on shot selection · on-court test for live-game shotmaking under pressure.' },
-  { name: 'Lockdown Defender', glyph: '◆', desc: 'Closeouts, hip flips, switch IQ. Stops the best perimeter scorer on the scout.' },
-  { name: 'Glass Dominator',   glyph: '⬢', desc: 'Boxing out, second-jump efficiency, contested rebounding in traffic.' },
-  { name: 'Court Visionary',   glyph: '◈', desc: 'Pick-and-roll reads, second-side decisions, transition pace control.' },
+  { name: 'Shooting',      img: '/badges/shooting.png',      desc: 'Pure. Accurate. Deadly.' },
+  { name: 'Defense',       img: '/badges/defense.png',       desc: 'Stop. Contest. Dominate.' },
+  { name: 'IQ',            img: '/badges/iq.png',            desc: 'See more. Think faster. Win.' },
+  { name: 'Ball Handling', img: '/badges/ball-handling.png', desc: 'Handles tight. Defenders lost.' },
+  { name: 'Passing',       img: '/badges/passing.png',       desc: 'See it. Share it. Create.' },
+  { name: 'Finishing',     img: '/badges/finishing.png',     desc: 'Strong finishes. No mercy.' },
+  { name: 'Rebounding',    img: '/badges/rebounding.png',    desc: 'Own the glass. Own the game.' },
 ]
 
 // 3 fully-fleshed sample profiles + 5 roster placeholders
@@ -43,7 +46,7 @@ export const PLAYERS = {
       gp: '42',
     },
     careerHighs: [
-      ['44', 'PTS',  'vs Springfield Lions'],
+      ['39', 'PTS',  'vs Springfield Lions'],
       ['13', 'REB',  'vs MHEA Eagles'],
       ['10', 'AST',  'vs Epps Elite'],
       ['9',  '3PM',  'vs KC East Lions'],
@@ -230,7 +233,7 @@ export const PLAYERS = {
       ['4',  'AST',  'vs Lebanon Rockets'],
       ['5',  '3PM',  'vs OKC Flame'],
     ],
-    badges: ['Glass Dominator'],
+    badges: ['Rebounding'],
     badgesInProgress: [],
     awards: [
       { y: '25–26', t: '#16 Nationally · 18U Team' },
@@ -518,7 +521,7 @@ export const PLAYERS = {
       gp: '44',
     },
     careerHighs: [
-      ['42', 'PTS',  'vs Yanders Law'],
+      ['44', 'PTS',  'vs Yanders Law'],
       ['11', 'REB',  'vs KC East Lions'],
       ['7',  'AST',  'vs Northwest Arkansas'],
       ['7',  '3PM',  'vs Yanders Law'],
@@ -546,6 +549,21 @@ export const PLAYERS = {
       phone: '(417) 413-3305',
     },
   },
+
+  'jordan-king': {
+    id: 'jordan-king',
+    name: 'Jordan King',
+    jersey: '2',
+    classOf: '',
+    ageGroup: '12u',
+    position: '',
+    height: '',
+    archetype: '',
+    comingSoon: true,
+    photos: [
+      { label: 'PORTRAIT', sub: '// NEW WARRIOR', aspect: '3/4', src: '/players/jordan-king/portrait.jpg', position: 'center' },
+    ],
+  },
 }
 
 // ============================================================
@@ -557,7 +575,7 @@ export const TEAMS = [
     id: 'team-12u', short: '12U', label: 'Boys 12U', flagship: true,
     tag: '#2 Nationally', season: 'Heartland Regional Champions · 2025', coach: 'Coach Jason Hill',
     blurb: 'The flagship. Gold Ball champions and the #2-ranked 12U team in the country — in year one.',
-    players: ['brolen-hill', 'jace-rucker'], openSpots: 2,
+    players: ['brolen-hill', 'jace-rucker', 'jordan-king'], openSpots: 2,
   },
   {
     id: 'team-10u', short: '10U', label: 'Boys 10U',
