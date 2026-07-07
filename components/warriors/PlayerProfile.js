@@ -64,7 +64,7 @@ export default function PlayerProfile({ playerId }) {
               </div>
             )}
             <div className="mono" style={{ color: 'var(--brass)', marginBottom: 16 }}>
-              {['#' + p.jersey, p.ageGroup && p.ageGroup.toUpperCase()].filter(Boolean).join(' · ')}
+              {[p.jersey && ('#' + p.jersey), p.ageGroup && p.ageGroup.toUpperCase()].filter(Boolean).join(' · ')}
             </div>
             <h1 className="h-hero" style={{ marginBottom: 28 }}>{p.name}</h1>
             <div className="mono" style={{ display: 'inline-block', padding: '10px 20px', border: '1px solid var(--brass)', color: 'var(--brass)', letterSpacing: '0.18em' }}>COMING SOON</div>

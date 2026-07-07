@@ -111,7 +111,7 @@ export default function RosterByTeam() {
   }
 
   useEffect(() => {
-    const ids = [...TEAMS.map((t) => t.id), 'team-girls']
+    const ids = [...TEAMS.map((t) => t.id), 'team-girls', 'team-cheer']
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) setActiveTeam(e.target.id) })
     }, { rootMargin: '-150px 0px -55% 0px', threshold: 0 })
@@ -146,6 +146,9 @@ export default function RosterByTeam() {
           <button className="team-chip" data-active={activeTeam === 'team-girls'} onClick={() => jumpTo('team-girls')}>
             Girls
           </button>
+          <button className="team-chip" data-active={activeTeam === 'team-cheer'} onClick={() => jumpTo('team-cheer')}>
+            Cheer
+          </button>
         </div>
       </div>
 
@@ -172,6 +175,35 @@ export default function RosterByTeam() {
               <div key={a} className="girls-pill">{a} · forming</div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== CHEER SQUAD ===== */}
+      <section id="team-cheer" style={{ scrollMarginTop: 150, padding: '72px 0 100px', borderTop: '1px solid var(--ink-4)' }}>
+        <div className="wrap">
+          <div className="team-head">
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
+                <h3 className="team-title">Cheer Squad</h3>
+                <span className="team-flag">Cheer &amp; Stunt</span>
+              </div>
+              <div className="mono team-meta">Head Coach · Elizabeth Avery · Warriors Cheer</div>
+              <p className="team-blurb">Same standard. Same fire. Our Cheer Squad trains and competes with the same passion, discipline, and commitment to winning as every Warriors team &mdash; faith first, family always.</p>
+            </div>
+            <Btn kind="brass" href={EVAL_HREF}>Join the squad</Btn>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+            <figure style={{ margin: 0, aspectRatio: '3/4', background: 'var(--ink)', overflow: 'hidden', border: '1px solid var(--ink-4)' }}>
+              <img src="/cheer/coach-elizabeth-avery.jpg" alt="Coach Elizabeth Avery — Head Coach, Warriors Cheer" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+            </figure>
+            <figure style={{ margin: 0, aspectRatio: '3/4', background: 'var(--ink)', overflow: 'hidden', border: '1px solid var(--ink-4)' }}>
+              <img src="/cheer/squad-1.jpg" alt="Warriors Cheer Squad" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
+            </figure>
+          </div>
+          <figure style={{ margin: 0, aspectRatio: '16/9', background: 'var(--ink)', overflow: 'hidden', border: '1px solid var(--ink-4)' }}>
+            <img src="/cheer/squad-2.jpg" alt="Warriors Cheer Squad — full team" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+          </figure>
         </div>
       </section>
     </div>

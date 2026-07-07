@@ -1,6 +1,7 @@
 import './globals.css'
 import { Bebas_Neue, Fraunces, Inter, JetBrains_Mono } from 'next/font/google'
 import Nav from '../components/Nav'
+import AnnouncementBanner from '../components/AnnouncementBanner'
 import Footer from '../components/Footer'
 
 const bebas = Bebas_Neue({
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={fontClasses}>
       <body data-theme="midnight" data-density="normal">
         <Nav />
+        <AnnouncementBanner />
         {children}
         <Footer />
       </body>

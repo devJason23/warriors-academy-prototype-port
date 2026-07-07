@@ -565,6 +565,21 @@ export const PLAYERS = {
       { label: 'PORTRAIT', sub: '// NEW WARRIOR', aspect: '3/4', src: '/players/jordan-king/portrait.jpg', position: 'center' },
     ],
   },
+
+  'quincy-mboob': {
+    id: 'quincy-mboob',
+    name: 'Quincy Mboob',
+    jersey: '11',
+    classOf: '',
+    ageGroup: '14u',
+    position: '',
+    height: '',
+    archetype: '',
+    comingSoon: true,
+    photos: [
+      { label: 'PORTRAIT', sub: '// NEW WARRIOR', aspect: '3/4', src: '/players/quincy-mboob/portrait.jpg', position: 'center' },
+    ],
+  },
 }
 
 // ============================================================
@@ -588,7 +603,7 @@ export const TEAMS = [
     id: 'team-14u', short: '14U', label: 'Boys 14U',
     tag: '', season: '2025–26', coach: 'Coach Jason Hill',
     blurb: 'The development engine — where shooters get built and recruiting profiles start to matter.',
-    players: ['brolen-hill', 'javion-rucker', 'preston-bishop'], openSpots: 3,
+    players: ['brolen-hill', 'javion-rucker', 'preston-bishop', 'quincy-mboob'], openSpots: 3,
   },
   {
     id: 'team-16u', short: '16U', label: 'Boys 16U',

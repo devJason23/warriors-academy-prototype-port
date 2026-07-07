@@ -129,6 +129,36 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(245,242,236,0.08);
 }
+
+/* Site-wide announcement bar (tryouts) */
+.announce-bar {
+  display: block;
+  background: var(--accent);
+  color: var(--paper);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+  transition: background .15s ease;
+}
+.announce-bar:hover { background: var(--accent-hi); }
+.announce-inner {
+  padding: 9px 20px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; flex-wrap: wrap; text-align: center;
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.03em;
+}
+.announce-label { text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; }
+.announce-detail { opacity: 0.92; }
+.announce-cta { text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; font-weight: 600; }
+.announce-pulse {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--paper); flex: none;
+  animation: announcePulse 2s infinite;
+}
+@keyframes announcePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(244,243,241,0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(244,243,241,0); }
+  100% { box-shadow: 0 0 0 0 rgba(244,243,241,0); }
+}
+@media (max-width: 680px) { .announce-detail { display: none; } }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 72px; padding: 0 32px; max-width: 1440px; margin: 0 auto;
