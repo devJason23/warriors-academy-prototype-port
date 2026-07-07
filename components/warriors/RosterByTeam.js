@@ -6,7 +6,8 @@ import Eyebrow from '../ui/Eyebrow'
 import Btn from '../ui/Btn'
 import { PLAYERS, TEAMS } from './rosterData'
 
-const EVAL_HREF = '/experience#evaluation'
+const EVAL_HREF = 'https://warriors-basketball-eval.vercel.app'
+const CHEER_FORM_HREF = 'https://warriors-cheer-tryout.vercel.app'
 
 function PlayerCard({ p }) {
   return (
@@ -190,7 +191,7 @@ export default function RosterByTeam() {
               <div className="mono team-meta">Head Coach · Elizabeth Avery · Warriors Cheer</div>
               <p className="team-blurb">Same standard. Same fire. Our Cheer Squad trains and competes with the same passion, discipline, and commitment to winning as every Warriors team &mdash; faith first, family always.</p>
             </div>
-            <Btn kind="brass" href={EVAL_HREF}>Join the squad</Btn>
+            <Btn kind="brass" href={CHEER_FORM_HREF}>Join the squad</Btn>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>

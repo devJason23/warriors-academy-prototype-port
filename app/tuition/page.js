@@ -137,7 +137,7 @@ export default function TuitionPage() {
               We offer need-based scholarships to families who align with the Warriors mission. Payment plans are available. If Warriors is the right place for your athlete, let&apos;s talk — we&apos;ll find a way.
             </p>
             <div style={{ marginTop: 24 }}>
-              <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
+              <Btn kind="brass" href="https://warriors-basketball-eval.vercel.app">Book an Evaluation</Btn>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function TuitionPage() {
           <p className="lead" style={{ margin: '24px auto 32px' }}>
             Tuition pages raise questions that are easier to answer after coaches evaluate your athlete. Start there, then decide whether to spend a full day with us.
           </p>
-          <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
+          <Btn kind="brass" href="https://warriors-basketball-eval.vercel.app">Book an Evaluation</Btn>
         </div>
       </section>
     </div>

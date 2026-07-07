@@ -422,7 +422,7 @@ export default function FAQPage() {
             The best ones always come up over lunch anyway. Come spend a day with us — or grab 15 minutes with Coach Don.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="/experience#evaluation">Book an Evaluation</Btn>
+            <Btn kind="brass" href="https://warriors-basketball-eval.vercel.app">Book an Evaluation</Btn>
             <Btn kind="ghost" href="/tuition">See tuition</Btn>
           </div>
         </div>

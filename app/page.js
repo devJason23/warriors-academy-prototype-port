@@ -110,7 +110,7 @@ export default function HomePage() {
             A Christ-centered 4-day homeschool athletic academy for serious student-athletes ages 10–18. Elite training. Real businesses. Family evenings back. The first tech-forward Christian basketball academy.
           </p>
           <div className="hero-actions">
-            <Btn kind="primary" href="/experience#evaluation">Book an Evaluation</Btn>
+            <Btn kind="primary" href="https://warriors-basketball-eval.vercel.app">Book an Evaluation</Btn>
             {/* Experience Day hidden — restore with SHOW_EXPERIENCE_DAY flag on /experience */}
             {/* <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn> */}
           </div>
@@ -776,7 +776,7 @@ export default function HomePage() {
                   Every athlete starts with an evaluation. We look at skill, effort, coachability, competitiveness, and fit — then walk the family through where the athlete stands and what comes next.
                 </p>
                 <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                  <Btn kind="primary" href="/experience#evaluation">Book an Evaluation</Btn>
+                  <Btn kind="primary" href="https://warriors-basketball-eval.vercel.app">Book an Evaluation</Btn>
                   {/* Experience Day hidden — restore with SHOW_EXPERIENCE_DAY flag on /experience */}
                   {/* <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn> */}
                 </div>
@@ -854,7 +854,7 @@ export default function HomePage() {
               title="Book an Evaluation"
               desc="Start with a 1-hour Warriors evaluation: vertical leap, 40-yard dash, Dr. Dish shooting, basketball skill, competitiveness, coachability, and a walk-through of where your athlete lands on the tryout leaderboard."
               label="Book Evaluation"
-              href="/experience#evaluation"
+              href="https://warriors-basketball-eval.vercel.app"
               featured
             />
             <CtaPath
@@ -870,7 +870,7 @@ export default function HomePage() {
               title="Apply"
               desc="If Warriors is already the right fit, start the application path. We will still evaluate skill, effort, coachability, competitiveness, and fit before any roster spot is promised."
               label="Start Application"
-              href="/experience#register"
+              href="https://warriors-basketball-eval.vercel.app"
             />
           </div>
         </div>

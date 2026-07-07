@@ -38,7 +38,7 @@ export default function TryoutsPage() {
           <p className="mono" style={{ marginTop: 20, color: 'var(--muted)' }}>· Cheer ages 5–18 · Basketball boys &amp; girls ages 10–18</p>
 
           <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="/experience#evaluation">Have a question? Reach a coach →</Btn>
+            <Btn kind="brass" href="https://warriors-basketball-eval.vercel.app">Have a question? Reach a coach →</Btn>
           </div>
         </div>
       </section>
