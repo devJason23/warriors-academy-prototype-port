@@ -433,7 +433,7 @@ export default function CasePage() {
           <p className="lead" style={{ margin: '0 auto 40px' }}>
             You don&apos;t need to apply today. You don&apos;t need to commit to anything. Start with an evaluation, then come spend a day with us if you want the full-day picture.
           </p>
-          <Btn kind="primary" href="https://warriors-basketball-eval.vercel.app">Book an Evaluation</Btn>
+          <Btn kind="primary" href="/experience">Book an Evaluation</Btn>
         </div>
       </section>
     </div>

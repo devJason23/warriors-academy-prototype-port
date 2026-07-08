@@ -123,7 +123,7 @@ export default function WarriorLifeAppPage() {
             Built by coaches. Used daily. Every Warrior parent and athlete will have it from day one of the upcoming season.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="https://warriors-basketball-eval.vercel.app">Book an Evaluation</Btn>
+            <Btn kind="brass" href="/experience">Book an Evaluation</Btn>
             {/* Experience Day hidden — restore with SHOW_EXPERIENCE_DAY flag on /experience */}
             {/* <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn> */}
             <Btn kind="ghost">Download App</Btn>

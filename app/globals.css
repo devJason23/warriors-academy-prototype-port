@@ -133,13 +133,13 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
 /* Site-wide announcement bar (tryouts) */
 .announce-bar {
   display: block;
-  background: var(--accent);
+  background: #db2777;
   color: var(--paper);
   text-decoration: none;
   border-bottom: 1px solid rgba(0,0,0,0.18);
   transition: background .15s ease;
 }
-.announce-bar:hover { background: var(--accent-hi); }
+.announce-bar:hover { background: #be185d; }
 .announce-inner {
   padding: 9px 20px;
   display: flex; align-items: center; justify-content: center;

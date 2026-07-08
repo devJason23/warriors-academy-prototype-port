@@ -376,7 +376,7 @@ export default function ModelPage() {
             Reading about the 4-day week is one thing. Living a day of it is another. Come spend one with us.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="https://warriors-basketball-eval.vercel.app">Book an Evaluation</Btn>
+            <Btn kind="brass" href="/experience">Book an Evaluation</Btn>
             <Btn kind="ghost" href="/tuition">See tuition</Btn>
           </div>
         </div>

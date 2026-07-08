@@ -367,7 +367,7 @@ export default function PlayerProfile({ playerId }) {
       </section>
 
       {/* ===== HIGHLIGHT VIDEO ===== */}
-      {p.highlight && (p.highlight.src || p.highlight.id) && (
+      {p.highlight && (
       <section style={{ padding: '100px 0', background: 'var(--ink)' }}>
         <div className="wrap">
           <div style={{ maxWidth: 680, marginBottom: 40 }}>
@@ -376,15 +376,25 @@ export default function PlayerProfile({ playerId }) {
               5 minutes of <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>tape.</span>
             </h2>
             <p className="lead">
-              Cut by coach, not by Hudl algorithm. Best two-way possessions of the season, in context — possession start to whistle.
+              {(p.highlight.src || p.highlight.id)
+                ? 'Cut by coach, not by Hudl algorithm. Best two-way possessions of the season, in context — possession start to whistle.'
+                : 'The highlight reel is being cut — check back soon. Full game film is available on request in the meantime.'}
             </p>
           </div>
           {p.highlight.src ? (
             <video controls preload="metadata" style={{ width: '100%', display: 'block', background: '#000', aspectRatio: '16 / 9' }} src={p.highlight.src}>
               Your browser does not support the video tag.
             </video>
-          ) : (
+          ) : p.highlight.id ? (
             <LiteYouTube id={p.highlight.id} title={p.highlight.title} />
+          ) : (
+            <div style={{ width: '100%', aspectRatio: '16 / 9', background: '#000', border: '1px solid var(--ink-4)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}>
+              <img src="/waw-logo.png" alt="We Are Warriors" style={{ width: 180, maxWidth: '34%', height: 'auto', opacity: 0.9 }} />
+              <div style={{ width: 74, height: 74, borderRadius: '50%', border: '2px solid #fff', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.5 }}>
+                <div style={{ width: 0, height: 0, borderTop: '13px solid transparent', borderBottom: '13px solid transparent', borderLeft: '20px solid #fff', marginLeft: 5 }} />
+              </div>
+              <div className="mono" style={{ color: 'rgba(245,242,236,0.65)', letterSpacing: '0.18em', fontSize: 15 }}>HIGHLIGHT COMING SOON</div>
+            </div>
           )}
           <p className="mono" style={{ marginTop: 16, color: 'var(--muted)' }}>· FULL GAME FILM AVAILABLE ON REQUEST · CONTACT THE COACH ABOVE</p>
         </div>

@@ -57,6 +57,7 @@ export const PLAYERS = {
     awards: [
       { y: '25–26', t: 'NCHBC 12U Regional MVP' },
       { y: '25–26', t: 'NCHBC 12U National Championship · National Runner-up' },
+      { y: '25–26', t: 'NCHBC 14U · Finished 15th in the Nation' },
     ],
     academics: {
       gpa: '3.90', gpaScale: 'unweighted (4.0)',
@@ -551,6 +552,65 @@ export const PLAYERS = {
     },
   },
 
+  'howard-zeigenbein': {
+    id: 'howard-zeigenbein',
+    name: 'Howard Zeigenbein',
+    jersey: '24',
+    classOf: '2030',
+    grade: '',
+    age: '',
+    ageGroup: '14u',
+    position: 'Shooting Guard',
+    height: '5’7”',
+    weight: '117 lb',
+    wingspan: '5’6”',
+    vertical: '20”',
+    handed: 'Ambidextrous',
+    archetype: '',
+    nickname: '',
+    hometown: '',
+    accolades: [],
+    photos: [
+      { label: 'PORTRAIT',    sub: '// WARRIOR 24',  aspect: '3/4', src: '/players/howard-zeigenbein/portrait.jpg', position: 'center' },
+      { label: 'CHARACTER',   sub: '// WAW · GO 24',  aspect: '4/3', src: '/players/howard-zeigenbein/action-1.jpg', position: 'center' },
+      { label: 'GAME ACTION', sub: '// AT THE RIM',   aspect: '1/1', src: '/players/howard-zeigenbein/action-2.jpg', position: 'center' },
+    ],
+    stats: {
+      season: '2025–26',
+      ppg: '5.3', rpg: '2.9', apg: '1.7', spg: '0.9', bpg: '0.7',
+      fg: '40.1%', three: '40.4%', ft: '—',
+      gp: '18',
+    },
+    careerHighs: [
+      ['16', 'PTS', 'vs Lebanon Rockets'],
+      ['5',  'REB', 'vs Lighthouse Chargers'],
+      ['6',  'AST', 'vs Bradleyville'],
+      ['4',  '3PM', 'vs OKC Flame'],
+    ],
+    badges: [],
+    badgesInProgress: [],
+    awards: [
+      { y: '25–26', t: 'NCHBC 14U · Finished 15th in the Nation' },
+    ],
+    academics: {
+      gpa: '3.9', gpaScale: 'unweighted (4.0)',
+      act: '—', sat: '—',
+      iready: '—',
+      interests: 'Science · History',
+      otherInterests: ['Baseball (SS · Pitcher · Catcher)', 'Fishing & making baits', 'Billiards', 'Piano', 'Clogging', 'Theater'],
+    },
+    socials: { hudl: '—', x: '—', ig: '—' },
+    highlight: { src: '', title: '' },
+    coachQuote: { text: '', attr: '' },
+    testimony: '',
+    contact: {
+      name: 'Coach Jason Hill',
+      role: '14u Head Coach · Inquiries on Howard',
+      email: 'jason@mo-warriors.com',
+      phone: '(417) 413-3305',
+    },
+  },
+
   'jordan-king': {
     id: 'jordan-king',
     name: 'Jordan King',
@@ -603,7 +663,7 @@ export const TEAMS = [
     id: 'team-14u', short: '14U', label: 'Boys 14U',
     tag: '', season: '2025–26', coach: 'Coach Jason Hill',
     blurb: 'The development engine — where shooters get built and recruiting profiles start to matter.',
-    players: ['brolen-hill', 'javion-rucker', 'preston-bishop', 'quincy-mboob'], openSpots: 3,
+    players: ['brolen-hill', 'javion-rucker', 'preston-bishop', 'howard-zeigenbein', 'quincy-mboob'], openSpots: 1,
   },
   {
     id: 'team-16u', short: '16U', label: 'Boys 16U',

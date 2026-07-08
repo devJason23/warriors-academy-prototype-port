@@ -34,7 +34,7 @@ export default function Nav() {
               {i.label}
             </Link>
           ))}
-          <Link href="https://warriors-basketball-eval.vercel.app" className="nav-cta">Book Eval →</Link>
+          <Link href="/experience" className="nav-cta">Book Eval →</Link>
         </div>
       </div>
     </nav>

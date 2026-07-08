@@ -606,7 +606,7 @@ export default function TrainingPage() {
             Specs and screenshots only go so far. Stand under the Dr. Dish. Watch an ATG warmup. Spend a day inside the stack.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="https://warriors-basketball-eval.vercel.app">Book an Evaluation</Btn>
+            <Btn kind="brass" href="/experience">Book an Evaluation</Btn>
             <Btn kind="ghost" href="/day">See the 4-day model</Btn>
           </div>
         </div>

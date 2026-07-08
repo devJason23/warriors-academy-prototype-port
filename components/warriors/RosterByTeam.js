@@ -6,8 +6,8 @@ import Eyebrow from '../ui/Eyebrow'
 import Btn from '../ui/Btn'
 import { PLAYERS, TEAMS } from './rosterData'
 
-const EVAL_HREF = 'https://warriors-basketball-eval.vercel.app'
-const CHEER_FORM_HREF = 'https://warriors-cheer-tryout.vercel.app'
+const EVAL_HREF = '/experience'
+const CHEER_FORM_HREF = '/cheer-tryout'
 
 function PlayerCard({ p }) {
   return (
