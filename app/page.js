@@ -786,7 +786,7 @@ export default function HomePage() {
                   {[
                     ['10u', 'Boys', '3–4'],
                     ['12u', 'Boys', '2–3'],
-                    ['14u', 'Boys', '1–2'],
+                    ['14u', 'Boys', '1'],
                     ['16u', 'Boys', '1–2'],
                     ['18u', 'Boys', '1–2'],
                   ].map(([age, sex, open], i) => (
