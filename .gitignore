@@ -33,3 +33,6 @@ pnpm-debug.log*
 .claude/
 
 .vercel
+
+# stray archives
+*.zip
