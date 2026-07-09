@@ -92,6 +92,11 @@ export default function WarriorsPage() {
         </div>
       </section>
 
+      {/* WARRIOR MENTALITY BAND */}
+      <figure style={{ margin: 0, aspectRatio: '5 / 2', maxHeight: 600, background: 'var(--ink)', overflow: 'hidden' }}>
+        <img src="/culture-warrior-gym.jpg" alt="Warrior Mentality — Not born a warrior, built by discipline" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+      </figure>
+
       {/* 3 · FOUNDER NOTE — lifted from /about. TODO(copy) preserved. */}
       <section className="section">
         <div className="wrap-narrow">
@@ -165,7 +170,7 @@ export default function WarriorsPage() {
               <Eyebrow style={{ color: 'var(--accent)' }}>The Badge Economy</Eyebrow>
               <h2 className="h-section" style={{ marginTop: 16, marginBottom: 24, color: 'var(--ink)' }}>
                 Earn the Badge.<br />
-                <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--accent)' }}>Earn the Reduction.</span>
+                <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--accent)' }}>Teach the Skill.</span>
               </h2>
               <p className="lead" style={{ color: 'rgba(11,11,13,0.72)', marginBottom: 12 }}>
                 Badges include passing written and on-court tests, then teaching the skill to a younger Warrior. Mastery comes from teaching. Leadership comes from serving.
@@ -198,7 +203,7 @@ export default function WarriorsPage() {
               <div style={{ marginTop: 28, padding: 24, background: 'rgba(4,149,75,0.06)', border: '1px solid rgba(4,149,75,0.2)', borderRadius: 4 }}>
                 <div className="mono" style={{ color: 'var(--accent)', marginBottom: 8 }}>How a badge is earned.</div>
                 <p className="body" style={{ fontSize: 14, lineHeight: 1.6, color: 'rgba(11,11,13,0.78)', margin: 0 }}>
-                  Each badge has a written test and an on-court test. When a Warrior passes both, they&apos;re certified — and from that point on, they can be booked as a Big Brother to teach younger Warriors the skill they&apos;ve earned.
+                  Each badge has a written test and an on-court test. When a Warrior passes both, they&apos;re certified — and from that point on, they step up as a Big Brother to teach younger Warriors the skill they&apos;ve earned.
                 </p>
               </div>
             </div>

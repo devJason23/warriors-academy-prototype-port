@@ -186,6 +186,9 @@ export default function RosterByTeam() {
       {/* ===== CHEER SQUAD ===== */}
       <section id="team-cheer" style={{ scrollMarginTop: 150, padding: '72px 0 100px', borderTop: '1px solid var(--ink-4)' }}>
         <div className="wrap">
+          <figure style={{ margin: '0 0 40px', aspectRatio: '16/9', background: 'var(--ink)', overflow: 'hidden', border: '1px solid var(--ink-4)' }}>
+            <img src="/cheer/cheer-gym.jpg" alt="Warriors Cheer — We Are Warriors" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+          </figure>
           <div className="team-head">
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>

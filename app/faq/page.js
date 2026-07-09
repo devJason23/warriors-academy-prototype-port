@@ -127,7 +127,7 @@ const FAQ_DATA = [
       },
       {
         q: 'What is the Big Brother Mentor Program?',
-        a: 'Badges include Shooting, Defense, IQ, Ball Handling, Passing, Finishing, and Rebounding — and the list will grow as the program does. Each badge has a written test and an on-court test. When a Warrior passes both, they’re certified — and from that point on, they can be booked as a Big Brother to teach younger Warriors the skill they’ve earned. It’s where the oldest kids become the best leaders and the youngest kids get real mentorship from athletes they already look up to.',
+        a: 'Badges include Shooting, Defense, IQ, Ball Handling, Passing, Finishing, and Rebounding — and the list will grow as the program does. Each badge has a written test and an on-court test. When a Warrior passes both, they’re certified — and from that point on, they step up as a Big Brother to teach younger Warriors the skill they’ve earned. It’s where the oldest kids become the best leaders and the youngest kids get real mentorship from athletes they already look up to.',
       },
     ],
   },

@@ -29,11 +29,9 @@ export default function TuitionPage() {
               </p>
             </div>
             <div>
-              <div className="placeholder" style={{ aspectRatio: '1/1', minHeight: 420 }}>
-                <div style={{ position: 'absolute', top: 16, left: 16 }}>
-                  <span className="placeholder-label">PHOTO · Warrior in uniform, ball on hip, championship ring / trophy framed background</span>
-                </div>
-              </div>
+              <figure style={{ margin: 0, aspectRatio: '1/1', minHeight: 420, background: 'var(--ink-2)', border: '1px solid var(--ink-4)', overflow: 'hidden' }}>
+                <img src="/tuition-champions.jpg" alt="Coach Jason and Brolen Hill with the NCHBC 2026 National Champion gold ball trophy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+              </figure>
             </div>
           </div>
         </div>
@@ -58,6 +56,22 @@ export default function TuitionPage() {
               <div className="price-eyebrow">$850 to Start</div>
               <div className="price-num">Balance<span className="per">spread over the year</span></div>
               <p className="body" style={{ fontSize: 14 }}>$850 starts your athlete. The remaining balance is paid across the year on a schedule that works for your family.</p>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 40, padding: '36px 40px', background: 'var(--ink-2)', border: '1px solid var(--brass)', borderRadius: 'var(--radius-lg)', display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 40, alignItems: 'center' }}>
+            <div>
+              <div className="price-eyebrow" style={{ color: 'var(--brass)' }}>Another Path · Sport Only</div>
+              <h3 style={{ fontFamily: 'var(--f-display)', fontSize: 28, color: 'var(--paper)', margin: '12px 0', lineHeight: 1.1 }}>Just the sport. Not the full academy.</h3>
+              <p className="body" style={{ fontSize: 14, color: 'rgba(245,242,236,0.78)', maxWidth: '48ch', margin: 0 }}>
+                Want elite cheer or basketball training without the 4-day homeschool academy? Same coaches, same standard &mdash; sport only, month to month.
+              </p>
+            </div>
+            <div style={{ textAlign: 'center', borderLeft: '1px solid var(--ink-4)', paddingLeft: 40 }}>
+              <div style={{ fontFamily: 'var(--f-display)', fontSize: 52, color: 'var(--paper)', lineHeight: 1 }}>$850</div>
+              <div className="mono" style={{ color: 'var(--muted)', fontSize: 11, marginTop: 4, letterSpacing: '0.14em', textTransform: 'uppercase' }}>to start</div>
+              <div style={{ fontFamily: 'var(--f-display)', fontSize: 34, color: 'var(--brass)', lineHeight: 1, marginTop: 18 }}>$100<span style={{ fontSize: 15, color: 'var(--muted)' }}> /month</span></div>
+              <div className="mono" style={{ color: 'var(--muted)', fontSize: 11, marginTop: 4, letterSpacing: '0.14em', textTransform: 'uppercase' }}>Cheer or Basketball</div>
             </div>
           </div>
 
