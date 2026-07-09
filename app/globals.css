@@ -211,6 +211,22 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
     repeating-linear-gradient(135deg, #16161A 0 2px, #121216 2px 14px);
   pointer-events: none;
 }
+.hero-photo {
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 50%; z-index: 1; pointer-events: none;
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 60% 42%;
+  display: block;
+}
+.hero-photo::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, var(--ink) 2%, rgba(11,11,13,0.5) 26%, transparent 62%),
+    linear-gradient(0deg, var(--ink) 3%, transparent 30%);
+}
+@media (max-width: 900px) { .hero-photo { display: none; } }
 .hero-content {
   position: relative; z-index: 2;
   max-width: 1440px; margin: 0 auto; width: 100%;

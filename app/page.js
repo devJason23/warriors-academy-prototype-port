@@ -93,6 +93,9 @@ export default function HomePage() {
       {/* 1 · HERO */}
       <section className="hero">
         <div className="hero-bg"></div>
+        <div className="hero-photo">
+          <img src="/hero-dunk.jpg" alt="Missouri Warriors athlete rising for a dunk" />
+        </div>
         <div className="hero-content">
           <div className="hero-eyebrow">
             <span className="hero-dot"></span>
@@ -115,7 +118,7 @@ export default function HomePage() {
             {/* <Btn kind="ghost" href="/experience">Experience a Day at Warriors</Btn> */}
           </div>
           <div className="hero-trust">
-            <div><strong>#2 Nationally</strong><br />HCHB 12U · 2025</div>
+            <div><strong>#2 Nationally</strong><br />NCHBC 12U · 2026</div>
             <div><strong>36,862 Shots</strong><br />Dr. Dish · Half Season</div>
             <div><strong>Only ATG Hub</strong><br />Within 200 Miles</div>
             <div><strong>4 Days a Week</strong><br />Fridays Off for Family</div>
@@ -127,10 +130,10 @@ export default function HomePage() {
       <section className="champions">
         <div className="champions-wrap">
           <div className="champions-photo">
-            <img src="/nationals-team.webp" alt="Warriors 12U team — 2025 Gold Ball Tournament Champions · #2 in the Nation · 12u" />
+            <img src="/nationals-team.webp" alt="Warriors 12U team — 2026 Gold Ball Tournament Champions · #2 in the Nation · 12u" />
           </div>
           <div className="champions-copy">
-            <div className="mono" style={{ color: 'var(--brass)', letterSpacing: '0.2em' }}>2025 · HCHB Nationals · Springfield, MO</div>
+            <div className="mono" style={{ color: 'var(--brass)', letterSpacing: '0.2em' }}>2026 · NCHBC Nationals · Springfield, MO</div>
             <h2 className="h-section" style={{ marginTop: 20, marginBottom: 20 }}>
               Gold Ball Tournament Champions ·<br />
               <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)', letterSpacing: '-0.02em' }}>Currently Ranked #2 in the Nation (12u)</span>
@@ -149,7 +152,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="mono" style={{ color: 'var(--muted)' }}>Tournament</div>
-                <div className="champions-stat" style={{ color: 'var(--brass)' }}>HCHB Nationals · 2025</div>
+                <div className="champions-stat" style={{ color: 'var(--brass)' }}>NCHBC Nationals · 2026</div>
               </div>
             </div>
           </div>
@@ -162,7 +165,7 @@ export default function HomePage() {
           <div className="receipts-row">
             <div className="receipt">
               <span className="receipt-stat">#2<span className="unit">nationally</span></span>
-              <span className="receipt-label">HCHB 12U Championship · 2025</span>
+              <span className="receipt-label">NCHBC 12U Championship · 2026</span>
             </div>
             <div className="receipt">
               <span className="receipt-stat">50+<span className="unit">games</span></span>

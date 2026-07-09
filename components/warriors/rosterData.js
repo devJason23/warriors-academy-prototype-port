@@ -67,7 +67,7 @@ export const PLAYERS = {
       references: ['Coach Dee Hamilton'],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: { src: '/players/brolen/highlight.mp4', title: 'Brolen Hill · 12u Highlights · NCHBC 2025–26' },
+    highlight: { id: 'QTJKJYNG9wU', title: 'Brolen Hill · 12u Highlights · NCHBC 2025–26' },
     coachQuote: {
       text: 'Brolen sees the play one beat ahead. Coachable. He’ll already be unselfish before he knows what unselfish is.',
       attr: 'Coach Dee Hamilton',
@@ -130,7 +130,7 @@ export const PLAYERS = {
       references: [],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: { src: '/players/jace-rucker/highlight.mp4', title: 'Jace Rucker · 10u Highlights · 2025–26' },
+    highlight: { id: 'DLN8V7QktqQ', title: 'Jace Rucker · 10u Highlights · 2025–26' },
     coachQuote: { text: '', attr: '' },
     testimony: '',
     contact: {
@@ -189,7 +189,7 @@ export const PLAYERS = {
       references: [],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: { src: '/players/javion-rucker/highlight.mp4', title: 'Javion · Highlights · 2025–26' },
+    highlight: { id: 'rtqQooOQaE0', title: 'Javion · Highlights · 2025–26' },
     coachQuote: { text: '', attr: '' },
     testimony: '',
     contact: {
@@ -248,7 +248,7 @@ export const PLAYERS = {
       references: [],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: { src: '/players/tre-rucker/highlight.mp4', title: 'Tre Rucker · 18u Highlights · 2025–26' },
+    highlight: { id: 'TrUtlYw1LBI', title: 'Tre Rucker · 18u Highlights · 2025–26' },
     coachQuote: { text: '', attr: '' },
     testimony: '',
     contact: {
@@ -307,7 +307,7 @@ export const PLAYERS = {
       otherInterests: ['Shows goats at livestock fairs', 'Cooking & baking', 'Volunteers with the elderly', 'Camping & zip-lining'],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: { src: '/players/clay-dinsmore/highlight.mp4', title: 'Clay Dinsmore · 16u Highlights · 2025–26' },
+    highlight: { id: 'l5bmrK6ZcSA', title: 'Clay Dinsmore · 16u Highlights · 2025–26' },
     coachQuote: { text: '', attr: '' },
     testimony: '',
     contact: {
@@ -367,7 +367,7 @@ export const PLAYERS = {
       otherInterests: ['Plays guitar at music school', 'Youth worship team', 'Jr. Fire Cadet program', 'Shows goats at livestock fairs'],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: { src: '/players/james-dinsmore/highlight.mp4', title: 'James Dinsmore · 18u Highlights · 2025–26' },
+    highlight: { id: 'LVIockY5Thc', title: 'James Dinsmore · 18u Highlights · 2025–26' },
     coachQuote: { text: '', attr: '' },
     testimony: '',
     contact: {
@@ -423,7 +423,7 @@ export const PLAYERS = {
       otherInterests: ['Singing', 'Video editing'],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: { src: '/players/cai-hamilton/highlight.mp4', title: 'Cai Hamilton · 16u Highlights · 2025–26' },
+    highlight: { id: 'cEoSwR22a70', title: 'Cai Hamilton · 16u Highlights · 2025–26' },
     coachQuote: { text: '', attr: '' },
     testimony: '',
     contact: {
@@ -541,7 +541,7 @@ export const PLAYERS = {
       otherInterests: ['Fishing', 'Hunting'],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: { src: '/players/preston-bishop/highlight.mp4', title: 'Preston · 14u Highlights · 2025–26' },
+    highlight: { id: 'dJ0stst9t9E', title: 'Preston · 14u Highlights · 2025–26' },
     coachQuote: { text: '', attr: '' },
     testimony: '',
     contact: {
