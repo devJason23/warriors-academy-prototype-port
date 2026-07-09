@@ -119,14 +119,14 @@ export default function WarriorsPage() {
             <Coach
               name="Don Hamilton"
               role="Athletic Director · 18u Head Coach · Architect of the Badge Economy"
-              bio="Don leads the athletic vision and operations of Warriors Academy, coaches our 18u team, and built the Badge Economy that turns character into earned tuition reduction. Outside Warriors he serves as Lead Musical Pastor at James River Church in Ozark."
+              bio="Don leads the athletic vision and operations of Warriors Academy, coaches our 18u team, and built the Badge Economy. Outside Warriors he serves as Lead Musical Pastor at James River Church in Ozark."
               verse="“Whatever you do, work at it with all your heart...” — Col. 3:23"
               img="/coach-don.jpg"
               imgPos="50% 25%"
             />
             <Coach
               name="Jason Hill"
-              role="12u Head Coach · Lead Entrepreneur · Multiple Business Owner"
+              role="12u Head Coach · Lead Entrepreneur · Director of Player Development"
               bio="Jason is a two-time National Champion as a coach. He coaches our 12u team — currently ranked #2 in the country — and leads the Entrepreneur Unschool. He runs multiple businesses and teaches our athletes how to do the same."
               verse="“As iron sharpens iron...” — Prov. 27:17"
               img="/coach-jason-tiffany.jpg"

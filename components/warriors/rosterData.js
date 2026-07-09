@@ -67,7 +67,7 @@ export const PLAYERS = {
       references: ['Coach Dee Hamilton'],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: { id: 'dQw4w9WgXcQ', title: 'Brolen Hill · 12u Highlights · NCHBC 2025–26' },
+    highlight: { src: '/players/brolen/highlight.mp4', title: 'Brolen Hill · 12u Highlights · NCHBC 2025–26' },
     coachQuote: {
       text: 'Brolen sees the play one beat ahead. Coachable. He’ll already be unselfish before he knows what unselfish is.',
       attr: 'Coach Dee Hamilton',
