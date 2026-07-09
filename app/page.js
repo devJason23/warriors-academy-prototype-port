@@ -822,18 +822,42 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <div
-                  style={{
-                    padding: 24,
-                    background: 'linear-gradient(135deg, rgba(176,138,62,0.12), transparent 80%)',
-                    borderLeft: '3px solid var(--brass)',
-                    borderRadius: '0 4px 4px 0',
-                  }}
-                >
-                  <div className="mono" style={{ color: 'var(--brass)', marginBottom: 8 }}>Girls Teams (all ages)</div>
-                  <div style={{ fontSize: 14, color: 'rgba(245,242,236,0.78)', lineHeight: 1.6 }}>
-                    Forming now.
-                  </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 8 }}>
+                  {[
+                    ['12u', 'Girls', '2–3'],
+                    ['16u', 'Girls', '2–3'],
+                  ].map(([age, sex, open], i) => (
+                    <div
+                      key={i}
+                      style={{
+                        padding: 20,
+                        background: 'var(--ink)',
+                        border: '1px solid var(--ink-4)',
+                        borderRadius: 4,
+                        textAlign: 'center',
+                      }}
+                    >
+                      <div style={{ fontFamily: 'var(--f-display)', fontSize: 36, color: 'var(--paper)', lineHeight: 1 }}>{age}</div>
+                      <div className="mono" style={{ color: 'var(--muted)', marginTop: 6, fontSize: 10 }}>{sex}</div>
+                      <div
+                        style={{
+                          marginTop: 12,
+                          paddingTop: 12,
+                          borderTop: '1px solid var(--ink-4)',
+                          fontFamily: 'var(--f-mono)',
+                          fontSize: 11,
+                          letterSpacing: '0.14em',
+                          color: 'var(--brass)',
+                          textTransform: 'uppercase',
+                        }}
+                      >
+                        {open} Open
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 11, letterSpacing: '0.1em' }}>
+                  Other girls age groups forming now · Evaluations open
                 </div>
               </div>
             </div>

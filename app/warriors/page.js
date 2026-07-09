@@ -127,7 +127,7 @@ export default function WarriorsPage() {
             <Coach
               name="Jason Hill"
               role="12u Head Coach · Lead Entrepreneur · Director of Player Development"
-              bio="Jason is a two-time National Champion as a coach. He coaches our 12u team — currently ranked #2 in the country — and leads the Entrepreneur Unschool. He runs multiple businesses and teaches our athletes how to do the same."
+              bio="Jason is a two-time NCHBC National Champion coach. He coaches our 12u boys team — currently ranked #2 in the country — and is our Director of Player Development. A competitor at heart and a lifelong entrepreneur, he teaches our athletes how to start and run real businesses of their own."
               verse="“As iron sharpens iron...” — Prov. 27:17"
               img="/coach-jason-tiffany.jpg"
               imgPos="30% 50%"
@@ -137,8 +137,8 @@ export default function WarriorsPage() {
               role="Head of Coaching Staff · 10u Head Coach · 16u Head Coach"
               bio="Dee oversees the entire Warriors coaching staff and coaches both our 10u and 16u teams. He's also building out a transportation business — bringing the entrepreneur ethos to his own life, not just teaching it."
               verse="“Train up a child in the way he should go...” — Prov. 22:6"
-              img="/coach-dee-jodian.jpg"
-              imgPos="35% 30%"
+              img="/coach-dee-hamilton.jpg"
+              imgPos="50% 25%"
             />
             {/* TODO(coaches): Tiffany Hill and Jodian Hamilton — Round 2 Final §6 lists them but says "keep existing title — confirm with user if unclear". They were not previously cards in the prototype, so titles/bios remain to be supplied by Jason. */}
           </div>

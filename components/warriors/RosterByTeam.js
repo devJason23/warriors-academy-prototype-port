@@ -164,16 +164,20 @@ export default function RosterByTeam() {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
                 <h3 className="team-title">Girls Warriors</h3>
-                <span className="team-flag">Forming · 25–26</span>
+                <span className="team-flag">Forming · 26–27</span>
               </div>
-              <div className="mono team-meta">All age groups · 10U–18U · Evaluations open</div>
-              <p className="team-blurb">We&rsquo;re building girls&rsquo; teams across every age group right now &mdash; same coaches, same Badge Economy, same recruiting-grade profiles. Be one of the founding Warriors.</p>
+              <div className="mono team-meta">Two teams · 12U &amp; 16U · 27 games scheduled · Evaluations open</div>
+              <p className="team-blurb">Our 12U and 16U girls teams are locked in for 26&ndash;27 with 27 games on the schedule &mdash; and we&rsquo;re filling the final roster spots now. Same coaches, same Badge Economy, same recruiting-grade profiles as the boys. Be one of the founding Warriors.</p>
             </div>
             <Btn kind="brass" href={EVAL_HREF}>Book an evaluation</Btn>
           </div>
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            {['10U', '12U', '14U', '16U', '18U'].map((a) => (
-              <div key={a} className="girls-pill">{a} · forming</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 16, maxWidth: 620 }}>
+            {['12U', '16U'].map((a) => (
+              <div key={a} style={{ background: 'var(--ink-2)', border: '1px solid var(--ink-4)', borderRadius: 6, padding: '28px 24px' }}>
+                <div style={{ fontFamily: 'var(--f-display)', fontSize: 30, color: 'var(--paper)', lineHeight: 1 }}>{a} Girls</div>
+                <div className="mono" style={{ color: 'var(--brass)', marginTop: 14, letterSpacing: '0.14em' }}>NEED 2&ndash;3 PLAYERS</div>
+                <div className="mono" style={{ color: 'var(--muted)', marginTop: 6, fontSize: 11 }}>Roster spots open · Evaluations now</div>
+              </div>
             ))}
           </div>
         </div>
