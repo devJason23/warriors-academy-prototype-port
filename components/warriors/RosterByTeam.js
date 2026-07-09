@@ -63,7 +63,7 @@ function OpenSpotCard({ short }) {
       </div>
       <div style={{ padding: 22, borderTop: '1px solid var(--ink-4)' }}>
         <div style={{ fontFamily: 'var(--f-display)', fontSize: 22, color: 'var(--paper)', lineHeight: 1, marginBottom: 8 }}>Open Spot</div>
-        <div className="mono" style={{ color: 'var(--brass)', marginBottom: 12 }}>{short} · 25–26</div>
+        <div className="mono" style={{ color: 'var(--brass)', marginBottom: 12 }}>{short} · 26–27</div>
         <div style={{ fontSize: 13, lineHeight: 1.55, color: 'rgba(245,242,236,0.66)' }}>Tryouts open. Inquire about an evaluation.</div>
         <div style={{ marginTop: 18, paddingTop: 14, borderTop: '1px solid var(--ink-4)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span className="mono" style={{ color: 'var(--muted)', fontSize: 10 }}>BOOK EVALUATION</span>
@@ -125,7 +125,7 @@ export default function RosterByTeam() {
       <section style={{ padding: '100px 0 0' }}>
         <div className="wrap">
           <div style={{ maxWidth: 720 }}>
-            <Eyebrow>The 25–26 Teams</Eyebrow>
+            <Eyebrow>The 26–27 Teams</Eyebrow>
             <h2 className="h-section" style={{ marginTop: 16, marginBottom: 16 }}>
               Five boys teams.<br />
               <span style={{ fontFamily: 'var(--f-serif)', fontStyle: 'italic', textTransform: 'none', color: 'var(--brass)' }}>Find your age.</span>
