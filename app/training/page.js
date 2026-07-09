@@ -506,10 +506,10 @@ export default function TrainingPage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
             {[
-              { num: '01', name: 'Teach It to Master It' },
-              { num: '02', name: 'Both Players Level Up' },
-              { num: '03', name: 'Servant Leadership' },
-              { num: '04', name: 'Life After Basketball' },
+              { num: '01', name: 'Teach It to Master It', body: `You don't fully own a skill until you can teach it. When a Warrior breaks a move down for a younger teammate, the holes in his own game surface — and get fixed. Reps become understanding; understanding becomes instinct.` },
+              { num: '02', name: 'Both Players Level Up', body: `Every rep of teaching lifts two athletes at once. The younger Warrior gains a mentor who's been exactly where he is. The older one sharpens his craft, his communication, and his confidence by putting it into words.` },
+              { num: '03', name: 'Servant Leadership', body: `We build leaders who serve, not stars who demand. Our oldest Warriors use what they've earned to pour into the kids behind them — leading the way Christ did, by lifting others up.` },
+              { num: '04', name: 'Life After Basketball', body: `The ball stops bouncing for everyone eventually. Teaching, leading, and communicating with humility are the skills that outlast the game — the ones that keep building a man long after the final buzzer.` },
             ].map((c, i) => (
               <div
                 key={i}
@@ -522,9 +522,8 @@ export default function TrainingPage() {
               >
                 <div className="mono" style={{ color: 'var(--accent)', fontSize: 11, letterSpacing: '0.18em', marginBottom: 12 }}>{c.num}</div>
                 <h3 style={{ fontFamily: 'var(--f-display)', fontSize: 22, color: 'var(--ink)', margin: '0 0 12px', lineHeight: 1.1, letterSpacing: '-0.005em' }}>{c.name}</h3>
-                {/* TODO(copy): mastery-through-teaching cards — body for "{c.name}" awaiting source copy from Jason. */}
-                <p className="body" style={{ fontSize: 14, color: 'rgba(11,11,13,0.55)', fontStyle: 'italic', margin: 0 }}>
-                  [Card body awaiting source copy.]
+                <p className="body" style={{ fontSize: 14, color: 'rgba(11,11,13,0.55)', margin: 0 }}>
+                  {c.body}
                 </p>
               </div>
             ))}
