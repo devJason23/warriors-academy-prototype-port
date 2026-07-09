@@ -10,6 +10,7 @@ const items = [
   { href: '/warrior-life-app', label: 'Warrior Life App' },
   { href: '/case', label: 'The Case' },
   { href: '/warriors', label: 'Warriors' },
+  { href: '/schedule', label: 'Schedule' },
   { href: '/tuition', label: 'Tuition' },
   { href: '/faq', label: 'FAQ' },
 ]
