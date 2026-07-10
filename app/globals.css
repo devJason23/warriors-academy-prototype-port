@@ -80,7 +80,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 h1, h2, h3, h4 { margin: 0; }
 
-.h-hero { font-family: var(--f-display); font-size: clamp(72px, 11vw, 184px); line-height: 0.88; letter-spacing: 0.005em; text-transform: uppercase; }
+.h-hero { font-family: var(--f-display); font-size: clamp(44px, 11vw, 184px); line-height: 0.88; letter-spacing: 0.005em; text-transform: uppercase; overflow-wrap: break-word; }
 .h-section { font-family: var(--f-display); font-size: clamp(48px, 7vw, 104px); line-height: 0.92; letter-spacing: 0.005em; text-transform: uppercase; }
 .h-sub { font-family: var(--f-display); font-size: clamp(28px, 3.2vw, 48px); line-height: 0.98; letter-spacing: 0.01em; text-transform: uppercase; }
 .h-card { font-family: var(--f-display); font-size: 28px; line-height: 1; letter-spacing: 0.01em; text-transform: uppercase; }
@@ -489,7 +489,7 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
 .footer h4 { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass); margin-bottom: 16px; }
 .footer a { display: block; font-size: 14px; color: rgba(245,242,236,0.7); padding: 4px 0; }
 .footer a:hover { color: var(--paper); }
-.footer-bottom { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--ink-4); display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+.footer-bottom { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--ink-4); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px; overflow-wrap: anywhere; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
 
 /* ===== Page transitions ===== */
 .page-enter { animation: pageIn 0.35s ease; }
@@ -664,3 +664,22 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
 @media (max-width: 520px) {
   .team-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   MOBILE SAFETY NET — inline grids & aspect-ratio figures
+   Inline `grid-template-columns` / figure `min-height` styles can't be
+   media-queried per element, so multi-column layouts never collapsed on
+   phones/tablets (caused horizontal overflow). These rules only touch
+   INLINE-styled elements; class-based grids keep their own responsive rules.
+   ============================================================ */
+@media (max-width: 900px) {
+  [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  figure[style*="aspect-ratio"] { min-height: 0 !important; width: 100% !important; }
+}
+/* Long unbreakable words (e.g. "compounding.", "socialization?") must never
+   push the layout wider than the screen. */
+.h-hero, .h-section, .h-sub, .h-card, h1, h2, h3, h4 { overflow-wrap: break-word; }
+/* Final catch-all: no page ever scrolls sideways. `clip` (not hidden) doesn't
+   create a scroll container, so the sticky nav keeps working. */
+html, body { overflow-x: clip; }
+@media (max-width: 560px) { .receipts-row { grid-template-columns: 1fr; } }

@@ -163,7 +163,7 @@ export const PLAYERS = {
     hometown: '',
     accolades: ['State Champion', 'Regional Champion', '#2 Nationally'],
     photos: [
-      { label: 'PORTRAIT',    sub: '// NCHBC NATIONALS', aspect: '3/4', src: '/players/javion-rucker/portrait.png' },
+      { label: 'PORTRAIT',    sub: '// NCHBC NATIONALS', aspect: '3/4', src: '/players/javion-rucker/portrait.webp' },
       { label: 'GAME ACTION', sub: '// RISE & FINISH',   aspect: '4/5', src: '/players/javion-rucker/action-1.jpg' },
       { label: 'CHARACTER',   sub: '// CELEBRATION',     aspect: '1/1', src: '/players/javion-rucker/action-2.jpg' },
     ],

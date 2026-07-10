@@ -486,7 +486,7 @@ export default function TrainingPage() {
             </h2>
           </div>
           <img
-            src="/real-business-real-money.png"
+            src="/real-business-real-money.webp"
             alt="Real businesses, real clients, real money — Warriors Entrepreneur Unschool"
             style={{ width: '100%', borderRadius: 4, margin: '48px 0' }}
           />
