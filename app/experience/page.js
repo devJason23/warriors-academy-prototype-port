@@ -35,6 +35,7 @@ export default function ExperiencePage() {
   const [form, setForm] = useState({
     parentName: '', parentEmail: '', parentPhone: '', athleteNameAge: '',
     competitiveExperience: '', educationSetup: '', additionalInfo: '',
+    website: '', // honeypot — must stay empty
   })
   const [status, setStatus] = useState('idle') // idle | submitting | success | error
   const [errorMsg, setErrorMsg] = useState('')
@@ -177,6 +178,12 @@ export default function ExperiencePage() {
                 </div>
               ) : (
                 <form onSubmit={onSubmit}>
+                  {/* Honeypot — hidden from humans; bots that fill it are silently dropped server-side */}
+                  <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+                    <label>Website
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={update('website')} />
+                    </label>
+                  </div>
                   <div className="form-row">
                     <div className="form-field">
                       <label>Parent / Guardian Name</label>

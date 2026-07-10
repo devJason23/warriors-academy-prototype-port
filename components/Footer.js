@@ -26,8 +26,9 @@ export default function Footer() {
             <h4>Learn</h4>
             <Link href="/case">The Case Against Traditional School</Link>
             <Link href="/faq">FAQ</Link>
-            <a href="#">Warrior Life App</a>
-            <a href="#">Big Brother Program</a>
+            <Link href="/warrior-life-app">Warrior Life App</Link>
+            {/* Big Brother Program — restore this link once the page exists:
+                <Link href="/big-brother">Big Brother Program</Link> */}
           </div>
           <div>
             <h4>Visit & Apply</h4>

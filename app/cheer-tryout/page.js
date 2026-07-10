@@ -12,6 +12,7 @@ export default function CheerTryoutPage() {
   const [form, setForm] = useState({
     cheerleaderName: '', age: '', grade: '', parentName: '', parentEmail: '',
     parentPhone: '', city: '', experience: '', schoolType: '', howHeard: '', questions: '',
+    website: '', // honeypot — must stay empty
   })
   const [status, setStatus] = useState('idle') // idle | submitting | success | error
   const [errorMsg, setErrorMsg] = useState('')
@@ -63,6 +64,12 @@ export default function CheerTryoutPage() {
                 </div>
               ) : (
                 <form onSubmit={onSubmit}>
+                  {/* Honeypot — hidden from humans; bots that fill it are silently dropped server-side */}
+                  <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+                    <label>Website
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={update('website')} />
+                    </label>
+                  </div>
                   <div className="form-row">
                     <div className="form-field">
                       <label>Cheerleader&apos;s Full Name</label>

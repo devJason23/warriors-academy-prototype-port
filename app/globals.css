@@ -191,6 +191,25 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
 }
 .nav-cta:hover { background: var(--accent-hi); }
 
+/* Mobile hamburger toggle — hidden on desktop, shown ≤960px */
+.nav-toggle {
+  display: none;
+  background: none; border: 0; padding: 8px; margin: -8px -8px -8px 0;
+  cursor: pointer; color: var(--paper);
+}
+.nav-toggle-bars { display: block; width: 24px; height: 16px; position: relative; }
+.nav-toggle-bars span {
+  position: absolute; left: 0; height: 2px; width: 100%;
+  background: currentColor; border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease, top .2s ease;
+}
+.nav-toggle-bars span:nth-child(1) { top: 0; }
+.nav-toggle-bars span:nth-child(2) { top: 7px; }
+.nav-toggle-bars span:nth-child(3) { top: 14px; }
+.nav-toggle-bars.is-open span:nth-child(1) { top: 7px; transform: rotate(45deg); }
+.nav-toggle-bars.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle-bars.is-open span:nth-child(3) { top: 7px; transform: rotate(-45deg); }
+
 /* ===== Hero ===== */
 .hero {
   position: relative;
@@ -553,7 +572,22 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
 
 /* Responsive */
 @media (max-width: 960px) {
-  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; align-items: center; }
+  /* Links collapse into a dropdown panel under the sticky bar. */
+  .nav-links {
+    display: none;
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 8px 0 16px;
+    background: rgba(11,11,13,0.97);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(245,242,236,0.08);
+    max-height: calc(100vh - 72px); overflow-y: auto;
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links .nav-link { padding: 14px 32px; font-size: 13px; }
+  .nav-links .nav-link.active::after { display: none; }
+  .nav-links .nav-cta { margin: 12px 32px 0; text-align: center; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .receipts-row { grid-template-columns: repeat(2, 1fr); }
   .receipt { border-bottom: 1px solid var(--ink-4); }

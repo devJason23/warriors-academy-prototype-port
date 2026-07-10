@@ -130,7 +130,7 @@ export default function HomePage() {
       <section className="champions">
         <div className="champions-wrap">
           <div className="champions-photo">
-            <img src="/nationals-team.webp" alt="Warriors 12U team — 2026 Gold Ball Tournament Champions · #2 in the Nation · 12u" />
+            <img src="/nationals-team.webp" loading="lazy" decoding="async" alt="Warriors 12U team — 2026 Gold Ball Tournament Champions · #2 in the Nation · 12u" />
           </div>
           <div className="champions-copy">
             <div className="mono" style={{ color: 'var(--brass)', letterSpacing: '0.2em' }}>2026 · NCHBC Nationals · Springfield, MO</div>
@@ -410,6 +410,8 @@ export default function HomePage() {
               >
                 <img
                   src="/nationals-coaches.webp"
+                  loading="lazy"
+                  decoding="async"
                   alt="Warriors coaching staff with the NCHBC Gold Ball trophy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 35%', display: 'block' }}
                 />

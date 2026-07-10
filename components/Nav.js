@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
 
 const items = [
   { href: '/', label: 'Home' },
@@ -17,7 +18,11 @@ const items = [
 
 export default function Nav() {
   const pathname = usePathname()
+  const [open, setOpen] = useState(false)
   const isActive = (href) => (href === '/' ? pathname === '/' : pathname?.startsWith(href))
+
+  // Close the mobile menu whenever the route changes.
+  useEffect(() => { setOpen(false) }, [pathname])
 
   return (
     <nav className="nav">
@@ -25,7 +30,21 @@ export default function Nav() {
         <Link href="/" className="nav-logo" aria-label="Warriors Academy">
           <img src="/waw-logo.png" alt="We Are Warriors" className="nav-logo-img" />
         </Link>
-        <div className="nav-links">
+
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls="primary-nav"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className={`nav-toggle-bars ${open ? 'is-open' : ''}`} aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+
+        <div id="primary-nav" className={`nav-links ${open ? 'is-open' : ''}`}>
           {items.map((i) => (
             <Link
               key={i.href}
