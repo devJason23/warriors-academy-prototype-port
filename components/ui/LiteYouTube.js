@@ -37,6 +37,14 @@ export default function LiteYouTube({ id, title, poster, aspect = '16/9', autopl
             src={thumb}
             alt={title}
             loading="lazy"
+            onLoad={(e) => {
+              // YouTube returns a 120x90 gray placeholder (HTTP 200, so onError
+              // never fires) when maxresdefault.jpg doesn't exist for a video.
+              // Detect it by natural size and fall back to hqdefault (always exists).
+              if (e.target.naturalWidth <= 121 && e.target.src !== fallbackThumb) {
+                e.target.src = fallbackThumb
+              }
+            }}
             onError={(e) => {
               if (e.target.src !== fallbackThumb) e.target.src = fallbackThumb
             }}
