@@ -562,6 +562,8 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
   .pillar.reverse .pillar-content { order: unset; }
   .compare { grid-template-columns: 1fr; }
   .people-grid { grid-template-columns: 1fr; }
+  .behind-scenes-card { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .behind-scenes-card > div:first-child { max-width: 240px; }
   .price-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }

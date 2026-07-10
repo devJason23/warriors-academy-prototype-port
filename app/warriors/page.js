@@ -94,7 +94,7 @@ export default function WarriorsPage() {
 
       {/* WARRIOR MENTALITY BAND */}
       <figure style={{ margin: 0, aspectRatio: '5 / 2', maxHeight: 600, background: 'var(--ink)', overflow: 'hidden' }}>
-        <img src="/culture-warrior-gym.jpg" alt="Warrior Mentality — Not born a warrior, built by discipline" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+        <img src="/culture-warrior-gym.jpg" alt="Warrior Mentality — Not born a warrior, built by discipline" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 28%', display: 'block' }} />
       </figure>
 
       {/* 3 · FOUNDER NOTE — lifted from /about. TODO(copy) preserved. */}
@@ -146,6 +146,62 @@ export default function WarriorsPage() {
               imgPos="50% 25%"
             />
             {/* TODO(coaches): Tiffany Hill and Jodian Hamilton — Round 2 Final §6 lists them but says "keep existing title — confirm with user if unclear". They were not previously cards in the prototype, so titles/bios remain to be supplied by Jason. */}
+          </div>
+
+          {/* Behind the Scenes — De'reon Hamilton */}
+          <div style={{ marginTop: 64 }}>
+            <Eyebrow>Behind the Scenes</Eyebrow>
+            <div
+              className="behind-scenes-card"
+              style={{
+                marginTop: 20,
+                maxWidth: 860,
+                display: 'grid',
+                gridTemplateColumns: '220px 1fr',
+                gap: 36,
+                alignItems: 'center',
+                padding: 28,
+                background: 'var(--ink-2)',
+                border: '1px solid rgba(245,242,236,0.1)',
+                borderRadius: 4,
+              }}
+            >
+              <div
+                style={{
+                  position: 'relative',
+                  aspectRatio: '3 / 4',
+                  overflow: 'hidden',
+                  borderRadius: 4,
+                  background: 'var(--ink)',
+                }}
+              >
+                <img
+                  src="/dereon-hamilton.jpg"
+                  alt="De&rsquo;reon Hamilton"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: '50% 22%',
+                    filter: 'saturate(0.92)',
+                  }}
+                />
+              </div>
+              <div>
+                <div className="person-name">De&rsquo;reon Hamilton</div>
+                <div className="person-role">Director of Program Operations &amp; Media</div>
+                <p className="person-bio">
+                  He does the work that rarely shows up in the box score but changes everything for our
+                  program. From filming every game to running the clock and scoreboard, to making sure
+                  waters and gear are ready, he keeps Warriors Academy running smoothly. Because of him,
+                  our players have highlights, stats, and game film to learn from. He&rsquo;s an essential
+                  part of our culture and we&rsquo;re grateful to have him on our team. Thanks for all you
+                  do, De&rsquo;reon.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
