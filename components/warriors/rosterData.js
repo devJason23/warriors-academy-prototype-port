@@ -69,7 +69,7 @@ export const PLAYERS = {
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { id: 'QTJKJYNG9wU', title: 'Brolen Hill · 12u Highlights · NCHBC 2025–26' },
     coachQuote: {
-      text: 'Brolen sees the play one beat ahead. Coachable. He’ll already be unselfish before he knows what unselfish is.',
+      text: 'Brolen’s got that dog in him — the bigger the moment, the more he wants it. His basketball IQ is off the charts, and when the game’s on the line, you want that three in his hands.',
       attr: 'Coach Dee Hamilton',
     },
     testimony: 'I want my teammates to score before I do. That’s the job.',
@@ -131,7 +131,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { id: 'DLN8V7QktqQ', title: 'Jace Rucker · 10u Highlights · 2025–26' },
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'Jace is ten years old, starting on our 12u and winning — that tells you everything. The motor never stops. He hit five threes in the state championship game to help secure the victory. Ten years old.',
+      attr: 'Coach Jason Hill',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -190,7 +193,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { id: 'rtqQooOQaE0', title: 'Javion · Highlights · 2025–26' },
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'Javion’s a dog. He sets the tone with his voice and his motor, and he’ll out-rebound guys bigger than him. He won’t let this group get quiet or comfortable.',
+      attr: 'Coach Jason Hill',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -249,7 +255,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { id: 'TrUtlYw1LBI', title: 'Tre Rucker · 18u Highlights · 2025–26' },
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'I call Tre “D1” — he’s got the body and the frame for it. It’s starting to come together for him now, and that should scare everyone. He’ll dunk on you one play and hit a step-back three the next. Watch out.',
+      attr: 'Coach Jason Hill',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -308,7 +317,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { id: 'l5bmrK6ZcSA', title: 'Clay Dinsmore · 16u Highlights · 2025–26' },
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'Clay is long, agile, and plays whatever role we need that night — no ego. Best teammate you’ll find, always smiling, and one of the prettiest threes on the roster.',
+      attr: 'Coach Dee Hamilton',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -368,7 +380,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { id: 'LVIockY5Thc', title: 'James Dinsmore · 18u Highlights · 2025–26' },
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'James is smooth. Earning all-region as a freshman is hard to do — most guys need years. He can stroke the three and he’s a true scorer.',
+      attr: 'Coach Don Hamilton',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -424,7 +439,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { id: 'cEoSwR22a70', title: 'Cai Hamilton · 16u Highlights · 2025–26' },
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'Cai has all the ability — super athletic, strong, our energy every night. When his attitude’s right, he’s the captain of this team. That’s how much talent we’re talking about.',
+      attr: 'Coach Jason Hill',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -483,7 +501,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: {},
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'Zane is the heart and soul of our 18u — a triple-double threat every night. He’ll lock down their best player and drop eleven assists on the other end. Guards one through five. I love his game.',
+      attr: 'Coach Jason Hill',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -542,7 +563,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { id: 'dJ0stst9t9E', title: 'Preston · 14u Highlights · 2025–26' },
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'Preston’s got one speed: turbo. Most kids that fast lose control — he plays it at a high level. He’ll lock up your best guard and drop 40 on you.',
+      attr: 'Coach Don Hamilton',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -601,7 +625,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { src: '', title: '' },
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'Howard joined us halfway through last season, still finding his rhythm. This summer he looks like a different player — comfortable, playing at a whole different speed. Scrappy, and he can score. Look out.',
+      attr: 'Coach Dee Hamilton',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -661,7 +688,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: {},
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'Adonis is the glue. He may not lead you in any one stat, but he does everything a winning team needs — boxes out, guards, moves it. Every champion has an Adonis.',
+      attr: 'Coach Dee Hamilton',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
@@ -720,7 +750,10 @@ export const PLAYERS = {
     },
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: {},
-    coachQuote: { text: '', attr: '' },
+    coachQuote: {
+      text: 'When JoJo’s locked into the game plan, he’s as dangerous as they come. He can shoot it, he can drive it, and he’s got a strong, grown basketball body. Focus is his superpower.',
+      attr: 'Coach Don Hamilton',
+    },
     testimony: '',
     contact: {
       name: 'Coach Jason Hill',
