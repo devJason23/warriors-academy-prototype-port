@@ -129,6 +129,7 @@ export default function SchedulePage() {
   const [coach, setCoach] = useState(false)
   const [selDay, setSelDay] = useState(null)     // ISO
   const [today, setToday] = useState(null)
+  const [data, setData] = useState(DATA)         // live sheet data, falls back to committed snapshot
 
   useEffect(() => {
     setToday(todayISO())
@@ -136,6 +137,11 @@ export default function SchedulePage() {
     l.rel = 'stylesheet'
     l.href = 'https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap'
     document.head.appendChild(l)
+    // live sync from the Google Sheet; keep the committed snapshot on any failure
+    fetch('https://warriors-schedule-api.vercel.app/api/schedule')
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('bad status'))))
+      .then((d) => { if (d && Array.isArray(d.games)) setData(d) })
+      .catch(() => {})
   }, [])
 
   const teams = DATA.teams
@@ -143,11 +149,11 @@ export default function SchedulePage() {
   // unified entries for the schedule list
   const entries = useMemo(() => {
     const list = []
-    for (const g of DATA.games) {
+    for (const g of data.games) {
       if (filter !== 'ALL' && g.team !== filter) continue
       list.push({ kind: 'game', sort: g.date + (g.time || 'zz'), date: g.date, game: g })
     }
-    for (const e of DATA.events) {
+    for (const e of data.events) {
       const inc = e.teams.filter((et) => filter === 'ALL' || et.team === filter)
       if (!inc.length) continue
       const dates = filter === 'ALL' ? e.teams.flatMap((et) => et.dates) : inc.flatMap((et) => et.dates)
@@ -157,23 +163,23 @@ export default function SchedulePage() {
     }
     list.sort((a, b) => (a.sort < b.sort ? -1 : 1))
     return list
-  }, [filter])
+  }, [filter, data])
 
   // summary strip
   const summary = useMemo(() => {
     if (filter === 'ALL') {
-      const totalGames = DATA.games.length + DATA.events.reduce((s, e) => s + e.teams.reduce((x, t) => x + t.dates.length, 0), 0)
-      const allDates = [...DATA.games.map((g) => g.date), ...DATA.events.flatMap((e) => e.teams.flatMap((t) => t.dates))]
+      const totalGames = data.games.length + data.events.reduce((s, e) => s + e.teams.reduce((x, t) => x + t.dates.length, 0), 0)
+      const allDates = [...data.games.map((g) => g.date), ...data.events.flatMap((e) => e.teams.flatMap((t) => t.dates))]
       const earliest = allDates.reduce((a, b) => (a < b ? a : b))
-      return [[totalGames, 'Games Scheduled'], [DATA.events.length, 'Tournaments & Events'], [fmtMonD(earliest), 'Season Tip-Off']]
+      return [[totalGames, 'Games Scheduled'], [data.events.length, 'Tournaments & Events'], [fmtMonD(earliest), 'Season Tip-Off']]
     }
-    const g = DATA.games.filter((x) => x.team === filter).length
-    const evs = DATA.events.filter((e) => e.teams.some((t) => t.team === filter))
+    const g = data.games.filter((x) => x.team === filter).length
+    const evs = data.events.filter((e) => e.teams.some((t) => t.team === filter))
     const eg = evs.reduce((s, e) => s + e.teams.find((t) => t.team === filter).dates.length, 0)
-    const dates = [...DATA.games.filter((x) => x.team === filter).map((x) => x.date), ...evs.flatMap((e) => e.teams.find((t) => t.team === filter).dates)]
+    const dates = [...data.games.filter((x) => x.team === filter).map((x) => x.date), ...evs.flatMap((e) => e.teams.find((t) => t.team === filter).dates)]
     const first = dates.length ? dates.reduce((a, b) => (a < b ? a : b)) : null
     return [[g + eg, 'Games'], [evs.length, 'Tournaments'], [first ? fmtMonD(first) : '—', 'First Game']]
-  }, [filter])
+  }, [filter, data])
 
   // up next
   const upNext = useMemo(() => {
@@ -253,8 +259,8 @@ export default function SchedulePage() {
 
         {/* 3.7 / 3.8 CONTENT */}
         {view === 'schedule'
-          ? <ScheduleView groups={groups} filter={filter} coach={coach} activeTeamLabel={activeTeamLabel} />
-          : <CalendarView filter={filter} coach={coach} selDay={selDay} setSelDay={setSelDay} />}
+          ? <ScheduleView data={data} groups={groups} filter={filter} coach={coach} activeTeamLabel={activeTeamLabel} />
+          : <CalendarView data={data} filter={filter} coach={coach} selDay={selDay} setSelDay={setSelDay} />}
 
         {/* 3.10 FOOTER */}
         <div style={{ fontFamily: MONO, fontSize: 10.5, color: C.muted, textAlign: 'center', marginTop: 48, lineHeight: 1.7, letterSpacing: '.08em' }}>
@@ -341,14 +347,14 @@ function UpNext({ entry, today, filter }) {
 }
 
 /* ============================ schedule view ============================ */
-function ScheduleView({ groups, filter, coach, activeTeamLabel }) {
+function ScheduleView({ data, groups, filter, coach, activeTeamLabel }) {
   if (!groups.length) {
     return <div style={{ textAlign: 'center', padding: '60px 0', color: C.muted }}>No games scheduled for this team yet.<br /><span style={{ color: C.green }}>Coming soon.</span></div>
   }
   // coach notes on All Teams only
   const notesByMonth = {}
   if (coach && filter === 'ALL') {
-    for (const n of DATA.coachNotes) {
+    for (const n of data.coachNotes) {
       const p = parts(n.date); const key = `${p.y}-${String(p.m).padStart(2, '0')}`
       ;(notesByMonth[key] ||= []).push(n)
     }
@@ -431,25 +437,25 @@ function EntryCard({ entry, filter }) {
 }
 
 /* ============================ calendar view ============================ */
-function CalendarView({ filter, coach, selDay, setSelDay }) {
+function CalendarView({ data, filter, coach, selDay, setSelDay }) {
   // map ISO day -> list of {type, color, entry}
   const dayMap = useMemo(() => {
     const m = {}
     const add = (iso, obj) => { (m[iso] ||= []).push(obj) }
-    for (const g of DATA.games) {
+    for (const g of data.games) {
       if (filter !== 'ALL' && g.team !== filter) continue
       add(g.date, { type: 'game', color: teamColor(teamById(g.team)), game: g })
     }
-    for (const e of DATA.events) {
+    for (const e of data.events) {
       const inc = e.teams.filter((et) => filter === 'ALL' || et.team === filter)
       if (!inc.length) continue
       const col = e.kind === 'postseason' ? C.goldHi : C.gold
       const dates = new Set(inc.flatMap((et) => et.dates))
       for (const iso of dates) add(iso, { type: e.kind === 'postseason' ? 'post' : 'tourn', color: col, event: e })
     }
-    if (coach && filter === 'ALL') for (const n of DATA.coachNotes) add(n.date, { type: 'note', color: C.amber, note: n })
+    if (coach && filter === 'ALL') for (const n of data.coachNotes) add(n.date, { type: 'note', color: C.amber, note: n })
     return m
-  }, [filter, coach])
+  }, [filter, coach, data])
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
