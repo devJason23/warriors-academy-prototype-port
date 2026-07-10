@@ -79,9 +79,6 @@ export default function ExperiencePage() {
             <Btn kind="primary" href="#evaluation">Book an Evaluation</Btn>
             <Btn kind="ghost" href="#register">Register for a Day</Btn>
           </div>
-          <p className="mono" style={{ marginTop: 20, fontSize: 12, color: 'var(--muted)' }}>
-            Here for cheer? <a href="/cheer-tryout/" style={{ color: 'var(--brass)', textDecoration: 'underline' }}>Cheer tryouts are over here →</a>
-          </p>
         </div>
       </section>
 
@@ -150,6 +147,9 @@ export default function ExperiencePage() {
               Coaches test vertical leap, 40-yard dash, Dr. Dish shooting, basketball skill, competitiveness, and coachability. Every athlete gets an evaluation, a walk-through of where they are, and a chance to see where they land on the Warriors tryout leaderboard. Evaluation athletes may also get a chance to compete against top Warriors when it fits the session.
             </p>
             <Btn kind="primary" href="#register">Book Evaluation / Register Interest</Btn>
+            <p className="mono" style={{ marginTop: 20, fontSize: 12, color: 'rgba(11,11,13,0.55)' }}>
+              Here for cheer? <a href="/cheer-tryout/" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>Cheer tryouts are over here →</a>
+            </p>
           </div>
         </div>
       </section>
