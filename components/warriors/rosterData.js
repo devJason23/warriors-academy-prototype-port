@@ -792,6 +792,36 @@ export const PLAYERS = {
       { label: 'PORTRAIT', sub: '// NEW WARRIOR', aspect: '3/4', src: '/players/quincy-mboob/portrait.jpg', position: 'center' },
     ],
   },
+
+  'diego-salazar': {
+    id: 'diego-salazar',
+    name: 'Diego Salazar',
+    jersey: '15',
+    classOf: 'Class of 2030',
+    ageGroup: '14u',
+    position: '',
+    height: '',
+    archetype: '',
+    comingSoon: true,
+    photos: [
+      { label: 'PORTRAIT', sub: '// NEW WARRIOR', aspect: '3/4', src: '/players/diego-salazar/portrait.jpg', position: 'center' },
+    ],
+  },
+
+  'barik-stalker': {
+    id: 'barik-stalker',
+    name: 'Barik Stalker',
+    jersey: '13',
+    classOf: '',
+    ageGroup: '16u',
+    position: '',
+    height: '',
+    archetype: '',
+    comingSoon: true,
+    photos: [
+      { label: 'PORTRAIT', sub: '// NEW WARRIOR', aspect: '3/4', src: '/players/barik-stalker/portrait.jpg', position: 'center' },
+    ],
+  },
 }
 
 // ============================================================
@@ -815,18 +845,18 @@ export const TEAMS = [
     id: 'team-14u', short: '14U', label: 'Boys 14U',
     tag: '', season: '2025–26', coach: 'Coach Jason Hill',
     blurb: 'The development engine — where shooters get built and recruiting profiles start to matter.',
-    players: ['brolen-hill', 'javion-rucker', 'preston-bishop', 'howard-zeigenbein', 'adonis-tennison', 'quincy-mboob'], openSpots: 1,
+    players: ['brolen-hill', 'javion-rucker', 'preston-bishop', 'howard-zeigenbein', 'adonis-tennison', 'quincy-mboob', 'diego-salazar'], openSpots: 1,
   },
   {
     id: 'team-16u', short: '16U', label: 'Boys 16U',
     tag: 'Roster forming', season: '2025–26', coach: 'Coach Dee Hamilton',
     blurb: 'College eyes start here. Every 16U Warrior carries a recruiting-ready profile.',
-    players: ['clay-dinsmore', 'cai-hamilton', 'jojo-curtis'], openSpots: 4,
+    players: ['clay-dinsmore', 'cai-hamilton', 'jojo-curtis', 'diego-salazar', 'barik-stalker'], openSpots: 4,
   },
   {
     id: 'team-18u', short: '18U', label: 'Boys 18U',
     tag: 'Recruiting class', season: '2025–26', coach: 'Coach Don Hamilton',
     blurb: 'Our oldest Warriors — the recruiting front line, with profiles built for college coaches.',
-    players: ['tre-rucker', 'james-dinsmore', 'zane-hamilton'], openSpots: 3,
+    players: ['tre-rucker', 'james-dinsmore', 'zane-hamilton', 'barik-stalker'], openSpots: 3,
   },
 ]

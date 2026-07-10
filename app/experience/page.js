@@ -79,6 +79,9 @@ export default function ExperiencePage() {
             <Btn kind="primary" href="#evaluation">Book an Evaluation</Btn>
             <Btn kind="ghost" href="#register">Register for a Day</Btn>
           </div>
+          <p className="mono" style={{ marginTop: 20, fontSize: 12, color: 'var(--muted)' }}>
+            Here for cheer? <a href="/cheer-tryout/" style={{ color: 'var(--brass)', textDecoration: 'underline' }}>Cheer tryouts are over here →</a>
+          </p>
         </div>
       </section>
 
