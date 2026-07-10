@@ -93,8 +93,8 @@ export default function WarriorsPage() {
       </section>
 
       {/* WARRIOR MENTALITY BAND */}
-      <figure style={{ margin: 0, aspectRatio: '5 / 2', maxHeight: 600, background: 'var(--ink)', overflow: 'hidden' }}>
-        <img src="/culture-warrior-gym.jpg" alt="Warrior Mentality — Not born a warrior, built by discipline" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 28%', display: 'block' }} />
+      <figure style={{ margin: '56px auto', width: '100%', maxWidth: 1040, aspectRatio: '3 / 2', background: 'var(--ink)', overflow: 'hidden', borderRadius: 4 }}>
+        <img src="/culture-warrior-gym.jpg" alt="Warrior Mentality — Not born a warrior, built by discipline" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
       </figure>
 
       {/* 3 · FOUNDER NOTE — lifted from /about. TODO(copy) preserved. */}
