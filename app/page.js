@@ -872,11 +872,11 @@ export default function HomePage() {
             <Eyebrow style={{ color: 'var(--accent)' }}>Three Ways In</Eyebrow>
             <h2 className="h-section" style={{ marginTop: 16, color: 'var(--ink)' }}>Pick your next step.</h2>
             <p className="lead" style={{ margin: '24px auto 0', color: 'rgba(11,11,13,0.72)' }}>
-              Most families don&apos;t apply on the first visit. That&apos;s by design. Here&apos;s how we meet you where you are.
+              Most families don&apos;t apply on the first visit. That&apos;s by design. The 1-hour evaluation is the next step for every family.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="cta-paths" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             <CtaPath
               num="01"
               stage="First Step"
@@ -901,6 +901,10 @@ export default function HomePage() {
               label="Start Application"
               href="/experience"
             />
+          </div>
+          {/* On phones we hide the 3 cards and point straight to the evaluation. */}
+          <div className="cta-mobile-cta">
+            <Btn kind="primary" href="/experience">Book an Evaluation</Btn>
           </div>
         </div>
       </section>
