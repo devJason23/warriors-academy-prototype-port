@@ -36,12 +36,12 @@ export default function Footer() {
             {/* Experience Day hidden — restore with SHOW_EXPERIENCE_DAY flag on /experience */}
             {/* <Link href="/experience">Experience Day</Link> */}
             <a href="https://wearewarriorsapparel.com">Team Shop ↗</a>
-            <a href="mailto:missouriwarriorsbasketball@gmail.com">Contact</a>
+            <a href="mailto:info@mo-warriors.com">Contact</a>
           </div>
         </div>
         <div className="footer-bottom">
           <span>© 2026 Warriors Academy</span>
-          <span>Springfield, MO &nbsp;·&nbsp; missouriwarriorsbasketball@gmail.com</span>
+          <span>Springfield, MO &nbsp;·&nbsp; info@mo-warriors.com</span>
         </div>
       </div>
     </footer>

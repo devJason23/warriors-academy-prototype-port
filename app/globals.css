@@ -245,7 +245,15 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
     linear-gradient(90deg, var(--ink) 2%, rgba(11,11,13,0.5) 26%, transparent 62%),
     linear-gradient(0deg, var(--ink) 3%, transparent 30%);
 }
-@media (max-width: 900px) { .hero-photo { display: none; } }
+@media (max-width: 900px) {
+  /* Show the Tre dunk on phones/tablets as a full-width backdrop (cover shows
+     his whole body); dark bottom gradient keeps the hero text readable. */
+  .hero-photo { display: block; width: 100%; }
+  .hero-photo img { object-position: 46% 45%; }
+  .hero-photo::after {
+    background: linear-gradient(0deg, var(--ink) 20%, rgba(11,11,13,0.64) 46%, rgba(11,11,13,0.12) 82%);
+  }
+}
 .hero-content {
   position: relative; z-index: 2;
   max-width: 1440px; margin: 0 auto; width: 100%;
@@ -682,4 +690,9 @@ hr.rule { border: none; border-top: 1px solid var(--ink-4); margin: 0; }
 /* Final catch-all: no page ever scrolls sideways. `clip` (not hidden) doesn't
    create a scroll container, so the sticky nav keeps working. */
 html, body { overflow-x: clip; }
-@media (max-width: 560px) { .receipts-row { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .receipts-row { grid-template-columns: 1fr; }
+  /* Stack the cramped 2-column footer + proof grids into a single column on phones */
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .proof-grid { grid-template-columns: 1fr; }
+}
