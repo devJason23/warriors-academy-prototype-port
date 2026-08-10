@@ -44,6 +44,18 @@ export default function TryoutsPage() {
           </div>
         </div>
       </section>
+
+      <section style={{ padding: '16px 0 110px', background: 'var(--ink)' }}>
+        <div className="wrap">
+          <img
+            src="/warriors-tryouts-aug14.jpg"
+            alt="Missouri Warriors Final Tryouts — Friday, August 14 at 931 N. Walnut Ave., Republic, MO. Boys 10U/12U/14U 9:00–11:00 AM, All Girls 11:30 AM–1:30 PM, Boys 16U/18U and Cheer 2:00–4:00 PM, Parent Meeting 4:30 PM."
+            style={{ width: '100%', maxWidth: 780, height: 'auto', display: 'block', margin: '0 auto', border: '1px solid var(--ink-4)' }}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </section>
     </div>
   )
 }

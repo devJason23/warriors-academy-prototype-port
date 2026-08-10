@@ -10,7 +10,7 @@ import Btn from '../../components/ui/Btn'
 import Eyebrow from '../../components/ui/Eyebrow'
 import LiteYouTube from '../../components/ui/LiteYouTube'
 import { PLAYERS, TEAMS, BADGES } from '../../components/warriors/rosterData'
-import scheduleData from '../../components/schedule/schedule-data.json'
+import { ScheduleExplorer } from '../schedule/page'
 
 const EVAL_API = 'https://warriors-basketball-eval.vercel.app/api/submissions'
 // Cheer submissions go to the cheer backend so Coach Lizzy's sheet + inbox
@@ -37,64 +37,8 @@ const FEATURED = [
 const SPOT_CAP = 3
 const capSpots = (n) => Math.min(n || 0, SPOT_CAP)
 
-// Season marquee — tournaments/nationals from the real 2026–27 schedule data.
-const fmtRange = (start, end) => {
-  const M = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
-  const [ys, ms, ds] = start.split('-').map(Number)
-  const [ye, me, de] = (end || start).split('-').map(Number)
-  if (ms === me && ds !== de) return `${M[ms - 1]} ${ds}–${de}`
-  if (ms === me && ds === de) return `${M[ms - 1]} ${ds}`
-  return `${M[ms - 1]} ${ds} – ${M[me - 1]} ${de}`
-}
-// Full schedule — every game and event, grouped by month (collapsed by default).
-const TEAM_LABEL = Object.fromEntries(scheduleData.teams.map((t) => [t.id, t.label]))
-const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
-const fmtDay = (iso) => {
-  const [, m, d] = iso.split('-').map(Number)
-  return `${MONTHS[m - 1]} ${d}`
-}
-const FULL_ROWS = [
-  ...scheduleData.games.map((g) => ({
-    sort: g.date,
-    when: fmtDay(g.date) + (g.time && !g.timeTBD ? ` · ${g.time}` : ''),
-    label: `${TEAM_LABEL[g.team] || g.team} ${g.homeAway === 'home' ? 'vs' : '@'} ${g.opponent}${g.tentative ? ' (tentative)' : ''}`,
-    loc: g.location,
-    isEvent: false,
-  })),
-  ...scheduleData.events.map((e) => ({
-    sort: e.startDate,
-    when: fmtRangeLite(e.startDate, e.endDate),
-    label: e.name,
-    teams: (e.teams || []).map((t) => (TEAM_LABEL[t.team] || t.team)).join(' · '),
-    loc: e.location,
-    isEvent: true,
-  })),
-].sort((a, b) => a.sort.localeCompare(b.sort))
-function fmtRangeLite(start, end) {
-  const [, ms, ds] = start.split('-').map(Number)
-  const [, me, de] = (end || start).split('-').map(Number)
-  if (ms === me && ds === de) return `${MONTHS[ms - 1]} ${ds}`
-  if (ms === me) return `${MONTHS[ms - 1]} ${ds}–${de}`
-  return `${MONTHS[ms - 1]} ${ds} – ${MONTHS[me - 1]} ${de}`
-}
-const SCHEDULE_BY_MONTH = FULL_ROWS.reduce((acc, r) => {
-  const [y, m] = r.sort.split('-').map(Number)
-  const key = `${MONTHS[m - 1]} ${y}`
-  ;(acc[key] = acc[key] || []).push(r)
-  return acc
-}, {})
-
-const MARQUEE = [...scheduleData.events]
-  .filter((e) => e.kind === 'tournament' || /national/i.test(e.name))
-  .sort((a, b) => (/national/i.test(b.name) ? 1 : 0) - (/national/i.test(a.name) ? 1 : 0) || a.startDate.localeCompare(b.startDate))
-  .slice(0, 5)
-  .sort((a, b) => a.startDate.localeCompare(b.startDate))
-const SEASON_FACTS = [
-  `${scheduleData.games.length} GAMES`,
-  `${scheduleData.events.length} TOURNAMENT WEEKENDS`,
-  `${scheduleData.teams.length} TEAMS`,
-  `${scheduleData.season} SEASON`,
-]
+// (Schedule rendering comes from the real schedule experience —
+// ScheduleExplorer, imported from app/schedule/page.js in embed mode.)
 
 // ── What separates a Warrior (differentiators grid) ──
 const SEPARATORS = [
@@ -228,8 +172,6 @@ export default function TryoutLanding() {
     })
     .filter(Boolean)
 
-  const [showSchedule, setShowSchedule] = useState(false)
-
   // Expanded in-page profile (the "menu" — tap a card, profile opens below).
   const [openProfile, setOpenProfile] = useState(null)
   const profileRef = useRef(null)
@@ -270,8 +212,6 @@ export default function TryoutLanding() {
         .lp-profile { padding: clamp(20px, 4vw, 36px); }
         .lp-profile-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: start; }
         .lp-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 20px; }
-        .lp-sched-toggle { margin-top: 16px; width: 100%; max-width: 780px; padding: 14px 18px; text-align: left; background: transparent; border: 1px solid var(--brass); color: var(--brass-hi); font-size: 12px; letter-spacing: 0.1em; cursor: pointer; }
-        .lp-sched-toggle:hover { background: rgba(4,97,49,0.14); }
         .lp-sessions { border: 1px solid var(--ink-4); max-width: 780px; }
         .lp-session-row { display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 20px 24px; align-items: baseline; }
         .lp-session-row + .lp-session-row { border-top: 1px solid var(--ink-4); }
@@ -520,52 +460,16 @@ export default function TryoutLanding() {
             </div>
           </div>
 
-          {/* Season marquee — the season they'd be joining, from the real schedule */}
+          {/* The real schedule experience, embedded (countdown, team filters, calendar) */}
           <div style={{ marginTop: 64 }}>
             <Eyebrow>The Season They&apos;re Walking Into</Eyebrow>
-            <div className="lp-proof-strip mono" style={{ margin: '20px 0 24px', color: 'var(--paper-2)', fontSize: 13 }}>
-              {SEASON_FACTS.map((f) => <span key={f}>{f}</span>)}
-            </div>
-            <div className="lp-sessions" style={{ maxWidth: 780 }}>
-              {MARQUEE.map((e) => (
-                <div key={e.id} className="lp-session-row">
-                  <div className="mono" style={{ color: 'var(--brass-hi)' }}>{fmtRange(e.startDate, e.endDate)}</div>
-                  <div style={{ color: 'var(--paper)', fontSize: 15 }}>
-                    {e.name} <span className="mono" style={{ fontSize: 12, color: 'var(--muted)' }}>· {e.location}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <button
-              type="button"
-              className="lp-sched-toggle mono"
-              onClick={() => setShowSchedule(!showSchedule)}
-              aria-expanded={showSchedule}
-            >
-              {showSchedule ? '— HIDE THE FULL SCHEDULE' : `+ SEE ALL ${FULL_ROWS.length} DATES — THE ENTIRE 2026–27 SCHEDULE`}
-            </button>
-            {showSchedule && (
-              <div className="lp-sessions" style={{ maxWidth: 780, marginTop: 12 }}>
-                {Object.entries(SCHEDULE_BY_MONTH).map(([month, rows]) => (
-                  <div key={month}>
-                    <div className="lp-session-row" style={{ background: 'var(--ink-3)' }}>
-                      <div className="mono" style={{ color: 'var(--paper)', letterSpacing: '0.12em' }}>{month}</div>
-                      <div />
-                    </div>
-                    {rows.map((r, i) => (
-                      <div key={i} className="lp-session-row" style={r.isEvent ? { background: 'rgba(4,97,49,0.10)' } : undefined}>
-                        <div className="mono" style={{ color: r.isEvent ? 'var(--brass-hi)' : 'var(--paper-2)', fontSize: 12 }}>{r.when}</div>
-                        <div style={{ color: 'var(--paper)', fontSize: 14 }}>
-                          {r.isEvent ? <strong>{r.label}</strong> : r.label}
-                          {r.teams ? <span className="mono" style={{ fontSize: 11, color: 'var(--paper-2)' }}> · {r.teams}</span> : null}
-                          <span className="mono" style={{ fontSize: 11, color: 'var(--muted)' }}> · {r.loc}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            )}
+            <h3 className="h-sub" style={{ margin: '14px 0 10px' }}>The real 2026–27 schedule. Live.</h3>
+            <p className="body" style={{ maxWidth: '62ch', marginBottom: 20 }}>
+              This isn&apos;t a brochure — it&apos;s the same live schedule the program runs on,
+              synced from the master sheet. Filter by team, flip to calendar view, and add
+              games straight to your own calendar.
+            </p>
+            <ScheduleExplorer embed />
             <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 12 }}>
               · PRINTED COPIES &amp; TEAM-BY-TEAM DETAIL AT THE PARENT MEETING — AUGUST 14, 4:30 PM
             </p>

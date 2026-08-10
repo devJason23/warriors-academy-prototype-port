@@ -123,7 +123,9 @@ function eventPillKind(e) {
 }
 
 /* ============================ page ============================ */
-export default function SchedulePage() {
+// `embed` mode: used by the /tryout landing page — hides the coach-view
+// button and the site footer line (closed ad funnel: no "Academy" text there).
+export function ScheduleExplorer({ embed = false }) {
   const [view, setView] = useState('schedule') // schedule | calendar
   const [filter, setFilter] = useState('ALL')   // 'ALL' or team id
   const [coach, setCoach] = useState(false)
@@ -216,9 +218,11 @@ export default function SchedulePage() {
               MASTER<br />SCHEDULE · {DATA.season}
             </div>
           </div>
-          <button onClick={() => setCoach((v) => !v)} style={{ fontFamily: MONO, fontSize: 11, textTransform: 'uppercase', letterSpacing: '.1em', padding: '8px 12px', borderRadius: 8, border: `1px solid ${coach ? C.amberBorder : '#202222'}`, background: coach ? C.amberBg : C.s1, color: coach ? C.amber : C.muted, cursor: 'pointer' }}>
-            {coach ? '✕ Coach view' : '🔒 Coach view'}
-          </button>
+          {!embed && (
+            <button onClick={() => setCoach((v) => !v)} style={{ fontFamily: MONO, fontSize: 11, textTransform: 'uppercase', letterSpacing: '.1em', padding: '8px 12px', borderRadius: 8, border: `1px solid ${coach ? C.amberBorder : '#202222'}`, background: coach ? C.amberBg : C.s1, color: coach ? C.amber : C.muted, cursor: 'pointer' }}>
+              {coach ? '✕ Coach view' : '🔒 Coach view'}
+            </button>
+          )}
         </div>
 
         {/* 3.2 SUMMARY STRIP */}
@@ -263,14 +267,24 @@ export default function SchedulePage() {
           : <CalendarView data={data} filter={filter} coach={coach} selDay={selDay} setSelDay={setSelDay} />}
 
         {/* 3.10 FOOTER */}
-        <div style={{ fontFamily: MONO, fontSize: 10.5, color: C.muted, textAlign: 'center', marginTop: 48, lineHeight: 1.7, letterSpacing: '.08em' }}>
-          WARRIORS ACADEMY · SPRINGFIELD, MO<br />
-          <span style={{ color: C.faint }}>Home games at {DATA.home} · Schedule subject to change</span>
-        </div>
+        {!embed ? (
+          <div style={{ fontFamily: MONO, fontSize: 10.5, color: C.muted, textAlign: 'center', marginTop: 48, lineHeight: 1.7, letterSpacing: '.08em' }}>
+            WARRIORS ACADEMY · SPRINGFIELD, MO<br />
+            <span style={{ color: C.faint }}>Home games at {DATA.home} · Schedule subject to change</span>
+          </div>
+        ) : (
+          <div style={{ fontFamily: MONO, fontSize: 10.5, color: C.faint, textAlign: 'center', marginTop: 32, letterSpacing: '.08em' }}>
+            Home games at {DATA.home} · Schedule subject to change
+          </div>
+        )}
       </div>
       <style>{`@keyframes schPulse{0%{box-shadow:0 0 0 0 rgba(228,195,106,.5)}70%{box-shadow:0 0 0 7px rgba(228,195,106,0)}100%{box-shadow:0 0 0 0 rgba(228,195,106,0)}}`}</style>
     </div>
   )
+}
+
+export default function SchedulePage() {
+  return <ScheduleExplorer />
 }
 
 /* ============================ chip ============================ */
