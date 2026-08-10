@@ -1,6 +1,12 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
+  const pathname = usePathname()
+  // /tryout is a closed ad-landing funnel — no site footer there.
+  if (pathname === '/tryout' || pathname === '/tryout/') return null
   return (
     <footer className="footer">
       <div className="wrap">

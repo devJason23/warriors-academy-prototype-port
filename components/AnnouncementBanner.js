@@ -1,17 +1,24 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 // ── Edit this block for the next tryout (or set show:false to hide) ──
 const TRYOUT = {
   show: true,
-  label: 'Warriors Tryouts · Friday, July 10',
-  detail: 'Cheer (ages 5–18) & Basketball (ages 10–18) · Betsy & Bobby Allison Sportstown, Springfield',
+  label: 'Final Tryouts · Friday, August 14',
+  detail: 'Basketball & Cheer · 931 N. Walnut Ave., Republic, MO · Free',
+  href: '/tryout',
 }
 // ────────────────────────────────────────────────────────────────────
 
 export default function AnnouncementBanner() {
+  const pathname = usePathname()
   if (!TRYOUT.show) return null
+  // The /tryout landing page advertises itself — no banner there.
+  if (pathname === '/tryout' || pathname === '/tryout/') return null
   return (
-    <Link href="/tryouts" className="announce-bar">
+    <Link href={TRYOUT.href || '/tryouts'} className="announce-bar">
       <span className="announce-inner">
         <span className="announce-pulse" aria-hidden="true" />
         <strong className="announce-label">{TRYOUT.label}</strong>

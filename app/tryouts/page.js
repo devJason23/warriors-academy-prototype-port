@@ -2,15 +2,16 @@ import Btn from '../../components/ui/Btn'
 import Eyebrow from '../../components/ui/Eyebrow'
 
 export const metadata = {
-  title: 'Tryouts — Missouri Warriors Basketball & Cheer · Springfield, MO',
+  title: 'Final Tryouts — Missouri Warriors Basketball & Cheer · Republic, MO',
   description:
-    'Missouri Warriors Basketball & Cheer — Parent Information Meeting & Tryouts, Friday, July 10 at Betsy & Bobby Allison Sportstown, Springfield, MO.',
+    'Missouri Warriors Basketball & Cheer — Final Tryouts & Parent Meeting, Friday, August 14 at 931 N. Walnut Ave., Republic, MO. Free to attend.',
 }
 
 const schedule = [
-  ['9:00 – 10:00 AM', 'Parent Information Meeting'],
-  ['10:00 AM – 12:00 PM', 'Cheer Tryouts (ages 5–18) · Boys Basketball Tryouts (ages 10–18)'],
-  ['12:00 – 2:00 PM', 'Girls Basketball Tryouts (ages 10–18)'],
+  ['9:00 – 11:00 AM', 'Boys Basketball · 10U / 12U / 14U'],
+  ['11:30 AM – 1:30 PM', 'All Girls Basketball · All Ages'],
+  ['2:00 – 4:00 PM', 'Boys Basketball · 16U / 18U · and Cheer · All Ages'],
+  ['4:30 PM', 'Parent Meeting — meet the coaches, hear the vision'],
 ]
 
 export default function TryoutsPage() {
@@ -20,10 +21,10 @@ export default function TryoutsPage() {
         <div className="wrap">
           <Eyebrow>Join the Warriors</Eyebrow>
           <h1 className="h-hero" style={{ marginTop: 20, marginBottom: 20, maxWidth: '18ch' }}>
-            Tryouts &amp; Parent Info Meeting
+            Final Tryouts &amp; Parent Meeting
           </h1>
           <p className="lead" style={{ maxWidth: '62ch', color: 'rgba(245,242,236,0.8)' }}>
-            Basketball &amp; Cheer · <strong style={{ color: 'var(--paper)' }}>Friday, July 10</strong> · Betsy &amp; Bobby Allison Sportstown, Springfield, MO. Come learn, meet the coaches, and be part of something bigger. Faith. Family. Competition. Character.
+            Basketball &amp; Cheer · <strong style={{ color: 'var(--paper)' }}>Friday, August 14</strong> · 931 N. Walnut Ave., Republic, MO 65738. Free to attend — come learn, meet the coaches, and be part of something bigger. Faith. Family. Competition. Character.
           </p>
 
           <div style={{ marginTop: 44, border: '1px solid var(--ink-4)', maxWidth: 780 }}>
@@ -35,21 +36,12 @@ export default function TryoutsPage() {
             ))}
           </div>
 
-          <p className="mono" style={{ marginTop: 20, color: 'var(--muted)' }}>· Cheer ages 5–18 · Basketball boys &amp; girls ages 10–18</p>
+          <p className="mono" style={{ marginTop: 20, color: 'var(--muted)' }}>· Free to attend · Pre-registration holds your athlete&apos;s spot</p>
 
           <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="/experience">Have a question? Reach a coach →</Btn>
+            <Btn kind="brass" href="/tryout">Pre-register for August 14 →</Btn>
+            <Btn kind="ghost" href="/experience">Can&apos;t make it? Book an evaluation →</Btn>
           </div>
-        </div>
-      </section>
-
-      <section style={{ padding: '16px 0 110px', background: 'var(--ink)' }}>
-        <div className="wrap">
-          <img
-            src="/warriors-tryouts.jpg"
-            alt="Missouri Warriors Basketball & Cheer — Parent Information Meeting & Tryouts, Friday July 10"
-            style={{ width: '100%', maxWidth: 780, height: 'auto', display: 'block', margin: '0 auto', border: '1px solid var(--ink-4)' }}
-          />
         </div>
       </section>
     </div>

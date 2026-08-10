@@ -24,6 +24,10 @@ export default function Nav() {
   // Close the mobile menu whenever the route changes.
   useEffect(() => { setOpen(false) }, [pathname])
 
+  // /tryout is a closed ad-landing funnel — render no site chrome there.
+  // (Exact match so /tryouts, the info page, keeps its nav.)
+  if (pathname === '/tryout' || pathname === '/tryout/') return null
+
   return (
     <nav className="nav">
       <div className="nav-inner">

@@ -47,7 +47,7 @@ export const PLAYERS = {
       gp: '42',
     },
     careerHighs: [
-      ['39', 'PTS',  'vs Springfield Lions'],
+      ['39', 'PTS',  'vs Greenfield'],
       ['13', 'REB',  'vs MHEA Eagles'],
       ['10', 'AST',  'vs Epps Elite'],
       ['9',  '3PM',  'vs KC East Lions'],
