@@ -56,7 +56,7 @@ const SEPARATORS = [
   },
   {
     k: 'A Recruiting-Ready Profile — Done for Them',
-    v: 'Every Warrior gets a pro-grade profile page — season and career stats flow in automatically, highlight film included. You raise the athlete; we handle the résumé. You’re looking at five of them below.',
+    v: `Every Warrior gets a pro-grade profile page — season and career stats flow in automatically, highlight film included. You raise the athlete; we handle the résumé. You’re looking at ${FEATURED.length} of them below.`,
   },
 ]
 
@@ -203,6 +203,10 @@ export default function TryoutLanding() {
         .lp-players { grid-template-columns: repeat(4, 1fr); }
         .lp-teams { grid-template-columns: repeat(4, 1fr); }
         .lp-badges { grid-template-columns: repeat(8, 1fr); gap: 10px; }
+        .lp-badge-card { padding: 14px 8px 12px; display: flex; flex-direction: column; align-items: center; }
+        .lp-badge-imgbox { height: 76px; width: 100%; display: flex; align-items: center; justify-content: center; }
+        .lp-badge-imgbox img { max-height: 76px; max-width: 100%; width: auto; height: auto; display: block; }
+        .lp-badge-label { font-size: 10px; letter-spacing: 0.08em; margin-top: 10px; color: var(--paper-2); text-transform: uppercase; text-align: center; min-height: 26px; display: flex; align-items: flex-start; justify-content: center; }
         .lp-card { border: 1px solid var(--ink-4); background: var(--ink-2); }
         .lp-player-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 25%; display: block; background: var(--ink-3); }
         .lp-seps { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
@@ -282,20 +286,25 @@ export default function TryoutLanding() {
           <h2 className="h-section" style={{ margin: '16px 0 20px' }}>
             This is not<br />rec ball.
           </h2>
-          <p className="lead" style={{ marginBottom: 40 }}>
+          <p className="lead" style={{ marginBottom: 20 }}>
             Warriors train like it matters — because it does. Elite skill development,
-            strength and bulletproof-knee work, film, and a badge system where nothing is
-            given and everything is earned. And here&apos;s the part that makes it different:
+            strength and bulletproof-knee work, daily film, and a badge system where
+            nothing is given and everything is earned.
+          </p>
+          <p className="lead" style={{ marginBottom: 40 }}>
+            And here&apos;s the part that makes it different:
             <strong style={{ color: 'var(--paper)' }}> when you earn a badge, you teach it.</strong>{' '}
-            Older badge-holders coach the younger Warriors — and any teammate grinding on
-            that skill — through what they&apos;ve already mastered. Leaders get built the
-            same way shooters do: on purpose. Faith first. Family always. Zero shortcuts.
+            Older badge-holders coach the younger Warriors through what they&apos;ve
+            mastered. Leaders get built the same way shooters do — on purpose.
+            Faith first. Family always. Zero shortcuts.
           </p>
           <div className="lp-grid lp-badges">
             {BADGES.map((b) => (
-              <div key={b.name} className="lp-card" style={{ padding: 12, textAlign: 'center' }}>
-                <img src={b.img} alt={b.name} style={{ width: '100%', maxWidth: 84, height: 'auto', margin: '0 auto', display: 'block' }} loading="lazy" decoding="async" />
-                <div className="mono" style={{ fontSize: 10, letterSpacing: '0.08em', marginTop: 8, color: 'var(--paper-2)', textTransform: 'uppercase' }}>{b.name}</div>
+              <div key={b.name} className="lp-card lp-badge-card">
+                <div className="lp-badge-imgbox">
+                  <img src={b.img} alt={b.name} loading="lazy" decoding="async" />
+                </div>
+                <div className="mono lp-badge-label">{b.name}</div>
               </div>
             ))}
           </div>
@@ -351,7 +360,7 @@ export default function TryoutLanding() {
                     </div>
                   )}
                   <div className="mono" style={{ fontSize: 10, color: openProfile === p.id ? 'var(--brass-hi)' : 'var(--muted)', marginTop: 10, letterSpacing: '0.1em' }}>
-                    {openProfile === p.id ? '— CLOSE PROFILE' : '+ FULL PROFILE'}
+                    {openProfile === p.id ? '— CLOSE' : '+ SNEAK PEEK'}
                   </div>
                 </div>
               </button>
@@ -363,7 +372,7 @@ export default function TryoutLanding() {
               <div className="lp-profile-grid">
                 <div>
                   <div className="mono" style={{ fontSize: 11, color: 'var(--brass-hi)', letterSpacing: '0.12em' }}>
-                    WARRIORS PLAYER PROFILE · {profile.stats.season}
+                    PLAYER PROFILE — SNEAK PEEK · {profile.stats.season}
                   </div>
                   <div className="h-sub" style={{ margin: '10px 0 2px' }}>{profile.name}</div>
                   <div className="mono" style={{ fontSize: 12, color: 'var(--paper-2)', letterSpacing: '0.08em' }}>
@@ -418,7 +427,7 @@ export default function TryoutLanding() {
             </div>
           )}
           <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 11, letterSpacing: '0.1em' }}>
-            · TAP ANY PLAYER FOR THE FULL PROFILE — STATS UPDATE AUTOMATICALLY ALL SEASON
+            · TAP ANY PLAYER FOR A SNEAK PEEK AT THEIR PROFILE — STATS UPDATE AUTOMATICALLY ALL SEASON
           </p>
         </div>
       </section>
@@ -443,8 +452,8 @@ export default function TryoutLanding() {
                 ) : (
                   <div className="mono" style={{ fontSize: 11, color: 'var(--muted)', marginTop: 6 }}>{t.season}</div>
                 )}
-                <div className="mono" style={{ marginTop: 14, fontSize: 12, color: capSpots(t.openSpots) <= 2 ? '#E8B84B' : 'var(--paper-2)', letterSpacing: '0.08em' }}>
-                  {capSpots(t.openSpots)} SPOT{capSpots(t.openSpots) === 1 ? '' : 'S'} LEFT
+                <div className="mono" style={{ marginTop: 14, fontSize: 12, color: t.openSpots <= 2 ? '#E8B84B' : 'var(--paper-2)', letterSpacing: '0.08em' }}>
+                  {t.openSpots >= SPOT_CAP ? '2–3 SPOTS' : `${t.openSpots} SPOT${t.openSpots === 1 ? '' : 'S'}`} LEFT
                 </div>
               </div>
             ))}
@@ -496,7 +505,7 @@ export default function TryoutLanding() {
         <div className="wrap">
           <div className="lp-homeschool" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 1fr) minmax(280px, 1fr)', gap: 40, alignItems: 'center' }}>
             <img
-              src="/cheer/squad-1.jpg"
+              src="/cheer/squad-2.jpg"
               alt="Warriors Cheer squad"
               style={{ width: '100%', height: 'auto', border: '1px solid var(--ink-4)' }}
               loading="lazy"
