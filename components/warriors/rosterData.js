@@ -232,7 +232,7 @@ export const PLAYERS = {
     stats: {
       season: '2025–26',
       ppg: '20.0', rpg: '10.0', apg: '7.0', spg: '1.1', bpg: '1.2',
-      fg: '41.7%', three: '31.3%', ft: '—',
+      fg: '41.7%', three: '31.3%', ft: '71%',
       gp: '44',
     },
     careerHighs: [

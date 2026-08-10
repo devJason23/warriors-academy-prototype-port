@@ -22,12 +22,15 @@ const CHEER_PROGRAM = 'Cheer (all ages)'
 // photo = index into that player's photos[] (0 = portrait, 1/2 = action shots).
 // Some portraits are small cutouts — game shots crop better on cards.
 const FEATURED = [
-  // Brolen's cutout portrait renders uncropped (fit: contain) — trading-card style.
+  // Cutout-style portraits (Brolen, Tre, Clay) render uncropped (fit: contain) —
+  // trading-card style. Normal photos crop to fill (cover).
   { slug: 'brolen-hill', photo: 0, fit: 'contain' },
   { slug: 'jace-rucker', photo: 0, pos: 'center 20%' },
-  { slug: 'tre-rucker', photo: 2, pos: 'center 42%' },
+  { slug: 'tre-rucker', photo: 0, fit: 'contain' },
+  { slug: 'clay-dinsmore', photo: 0, fit: 'contain' },
   { slug: 'preston-bishop', photo: 0, pos: 'center 25%' },
   { slug: 'james-dinsmore', photo: 0, pos: 'center 25%' },
+  { slug: 'zane-hamilton', photo: 0, pos: 'center 25%' },
 ]
 
 // Landing-page-only display cap on open spots (real counts stay in rosterData).
@@ -255,7 +258,7 @@ export default function TryoutLanding() {
         .lp-hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,7,7,0.3), var(--ink) 92%); }
         .lp-proof-strip { display: flex; flex-wrap: wrap; gap: 12px 28px; border-top: 1px solid var(--ink-4); border-bottom: 1px solid var(--ink-4); padding: 18px 0; }
         .lp-grid { display: grid; gap: 16px; }
-        .lp-players { grid-template-columns: repeat(5, 1fr); }
+        .lp-players { grid-template-columns: repeat(4, 1fr); }
         .lp-teams { grid-template-columns: repeat(4, 1fr); }
         .lp-badges { grid-template-columns: repeat(8, 1fr); gap: 10px; }
         .lp-card { border: 1px solid var(--ink-4); background: var(--ink-2); }
@@ -342,7 +345,11 @@ export default function TryoutLanding() {
           <p className="lead" style={{ marginBottom: 40 }}>
             Warriors train like it matters — because it does. Elite skill development,
             strength and bulletproof-knee work, film, and a badge system where nothing is
-            given and everything is earned. Faith first. Family always. Zero shortcuts.
+            given and everything is earned. And here&apos;s the part that makes it different:
+            <strong style={{ color: 'var(--paper)' }}> when you earn a badge, you teach it.</strong>{' '}
+            Older badge-holders coach the younger Warriors — and any teammate grinding on
+            that skill — through what they&apos;ve already mastered. Leaders get built the
+            same way shooters do: on purpose. Faith first. Family always. Zero shortcuts.
           </p>
           <div className="lp-grid lp-badges">
             {BADGES.map((b) => (
@@ -353,7 +360,7 @@ export default function TryoutLanding() {
             ))}
           </div>
           <p className="mono" style={{ marginTop: 18, color: 'var(--muted)', fontSize: 12 }}>
-            · THE BADGE ECONOMY — EVERY SKILL EARNED, TRACKED, AND PROVEN IN GAMES
+            · THE BADGE ECONOMY — EARN IT. PROVE IT IN GAMES. THEN TEACH IT.
           </p>
 
           <div style={{ marginTop: 56 }}>
@@ -580,8 +587,46 @@ export default function TryoutLanding() {
         </div>
       </section>
 
+      {/* ── WARRIORS CHEER ── */}
+      <section id="cheer" className="section-tight" style={{ background: 'var(--ink-2)', borderTop: '1px solid var(--ink-4)' }}>
+        <div className="wrap">
+          <div className="lp-homeschool" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 1fr) minmax(280px, 1fr)', gap: 40, alignItems: 'center' }}>
+            <img
+              src="/cheer/squad-1.jpg"
+              alt="Warriors Cheer squad"
+              style={{ width: '100%', height: 'auto', border: '1px solid var(--ink-4)' }}
+              loading="lazy"
+              decoding="async"
+            />
+            <div>
+              <Eyebrow>Warriors Cheer</Eyebrow>
+              <h3 className="h-sub" style={{ margin: '14px 0 14px' }}>Same family. Same fire. Pom-poms optional.</h3>
+              <p className="body">
+                Warriors Cheer is ages 5–18, every skill level — from first-time
+                cheerleaders to seasoned flyers. Real coaching, real routines, and the
+                same faith-first, family-always standard the basketball program runs on.
+                Squads are forming for 2026–27 right now, and cheer tries out the same
+                day: <strong style={{ color: 'var(--paper)' }}>2:00 – 4:00 PM on August 14</strong>.
+              </p>
+              <div style={{ marginTop: 22 }}>
+                <Btn
+                  kind="brass"
+                  href="#register"
+                  onClick={() => {
+                    setPath('tryout')
+                    setForm((f) => ({ ...f, program: CHEER_PROGRAM }))
+                  }}
+                >
+                  Claim a Cheer Spot
+                </Btn>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── AUG 14 DETAILS ── */}
-      <section id="aug14" className="section-tight" style={{ background: 'var(--ink-2)', borderTop: '1px solid var(--ink-4)' }}>
+      <section id="aug14" className="section-tight" style={{ background: 'var(--ink)', borderTop: '1px solid var(--ink-4)' }}>
         <div className="wrap">
           <Eyebrow>Friday · August 14</Eyebrow>
           <h2 className="h-section" style={{ margin: '16px 0 20px' }}>
