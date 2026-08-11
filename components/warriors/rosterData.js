@@ -500,7 +500,7 @@ export const PLAYERS = {
       otherInterests: [],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: {},
+    highlight: { id: 'xR0MRDTXHBM', title: 'Zane Hamilton · Highlights · 2025–26' },
     coachQuote: {
       text: 'Zane is the heart and soul of our 18u — a triple-double threat every night. He’ll lock down their best player and drop eleven assists on the other end. Guards one through five. I love his game.',
       attr: 'Coach Jason Hill',
@@ -687,7 +687,7 @@ export const PLAYERS = {
       otherInterests: ['Boxing', 'Fishing', 'Gaming'],
     },
     socials: { hudl: '—', x: '—', ig: '—' },
-    highlight: {},
+    highlight: { id: 'fAeUvNr_VkQ', title: 'Adonis Tennison · Highlights · 2025–26' },
     coachQuote: {
       text: 'Adonis is the glue. He may not lead you in any one stat, but he does everything a winning team needs — boxes out, guards, moves it. Every champion has an Adonis.',
       attr: 'Coach Dee Hamilton',
