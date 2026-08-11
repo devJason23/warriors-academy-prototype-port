@@ -16,7 +16,7 @@ export default function AnnouncementBanner() {
   const pathname = usePathname()
   if (!TRYOUT.show) return null
   // The /tryout landing page advertises itself — no banner there.
-  if (pathname === '/tryout' || pathname === '/tryout/') return null
+  if (['/tryout','/tryout/','/privacy','/privacy/'].includes(pathname)) return null
   return (
     <Link href={TRYOUT.href || '/tryouts'} className="announce-bar">
       <span className="announce-inner">

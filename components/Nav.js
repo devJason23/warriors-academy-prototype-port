@@ -26,7 +26,7 @@ export default function Nav() {
 
   // /tryout is a closed ad-landing funnel — render no site chrome there.
   // (Exact match so /tryouts, the info page, keeps its nav.)
-  if (pathname === '/tryout' || pathname === '/tryout/') return null
+  if (['/tryout','/tryout/','/privacy','/privacy/'].includes(pathname)) return null
 
   return (
     <nav className="nav">
