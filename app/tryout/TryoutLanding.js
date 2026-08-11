@@ -27,15 +27,20 @@ const FEATURED = [
   { slug: 'brolen-hill', photo: 0, fit: 'contain' },
   { slug: 'jace-rucker', photo: 0, pos: 'center 20%' },
   // Tre + Clay: skinny full-body cutouts cropped to head/torso closeups (cover, top-anchored)
-  { slug: 'tre-rucker', photo: 0, pos: 'center 6%' },
+  { slug: 'tre-rucker', photo: 0, pos: 'center 2%' },
   { slug: 'clay-dinsmore', photo: 0, pos: 'center 6%' },
   { slug: 'preston-bishop', photo: 0, pos: 'center 25%' },
-  { slug: 'james-dinsmore', photo: 0, pos: 'center 25%' },
+  // James: pre-cropped closeup file (src override), exact 3:4
+  { slug: 'james-dinsmore', src: '/players/james-dinsmore/portrait-close.jpg' },
   { slug: 'zane-hamilton', photo: 0, pos: 'center 25%' },
-  { slug: 'howard-zeigenbein', photo: 0, pos: 'center 20%' },
+  // Javion next to Zane, Howard next to Cai — pairs read more uniform on mobile (Jason's call)
   { slug: 'javion-rucker', photo: 0, pos: 'center 25%' },
+  { slug: 'howard-zeigenbein', photo: 0, pos: 'center 20%' },
   { slug: 'cai-hamilton', photo: 0, pos: 'center 25%' },
 ]
+
+// Tryout-page-only badge label tweaks (rosterData names untouched site-wide)
+const BADGE_LABEL = { Rebounding: 'Rebounder' }
 
 // Landing-page-only display cap on open spots (real counts stay in rosterData).
 const SPOT_CAP = 3
@@ -168,10 +173,10 @@ export default function TryoutLanding() {
 
   const chosen = PROGRAMS.find((p) => p.value === form.program) || PROGRAMS[1]
   const featured = FEATURED
-    .map(({ slug, photo, pos, fit }) => {
+    .map(({ slug, photo, pos, fit, src }) => {
       const p = PLAYERS[slug]
       return p
-        ? { ...p, cardPhoto: (p.photos[photo] || p.photos[0]).src, cardPos: pos || 'center 25%', cardFit: fit || 'cover' }
+        ? { ...p, cardPhoto: src || (p.photos[photo] || p.photos[0]).src, cardPos: pos || 'center 25%', cardFit: fit || 'cover' }
         : null
     })
     .filter(Boolean)
@@ -317,7 +322,7 @@ export default function TryoutLanding() {
                 <div className="lp-badge-imgbox">
                   <img src={b.img} alt={b.name} loading="lazy" decoding="async" />
                 </div>
-                <div className="mono lp-badge-label">{b.name}</div>
+                <div className="mono lp-badge-label">{BADGE_LABEL[b.name] || b.name}</div>
               </div>
             ))}
           </div>
