@@ -1,1030 +1,1114 @@
 {
-  "season": "2026–2027",
-  "home": "Springfield, MO",
-  "teams": [
+ "season": "2026\u20132027",
+ "home": "Springfield, MO",
+ "teams": [
+  {
+   "id": "10U-B",
+   "age": "10U",
+   "gender": "Boys",
+   "label": "10U Boys"
+  },
+  {
+   "id": "12U-B",
+   "age": "12U",
+   "gender": "Boys",
+   "label": "12U Boys"
+  },
+  {
+   "id": "14U-B",
+   "age": "14U",
+   "gender": "Boys",
+   "label": "14U Boys"
+  },
+  {
+   "id": "16U-B",
+   "age": "16U",
+   "gender": "Boys",
+   "label": "16U Boys"
+  },
+  {
+   "id": "18U-B",
+   "age": "18U",
+   "gender": "Boys",
+   "label": "18U Boys"
+  },
+  {
+   "id": "12U-G",
+   "age": "12U",
+   "gender": "Girls",
+   "label": "12U Girls"
+  },
+  {
+   "id": "16U-G",
+   "age": "16U",
+   "gender": "Girls",
+   "label": "16U Girls"
+  },
+  {
+   "id": "14U-G",
+   "age": "14U",
+   "gender": "Girls",
+   "label": "14U Girls",
+   "comingSoon": true
+  }
+ ],
+ "games": [
+  {
+   "id": "g20",
+   "date": "2026-09-18",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "12U-G",
+   "opponent": "Bradleyville Jr High",
+   "homeAway": "away",
+   "location": "Bradleyville",
+   "tentative": false
+  },
+  {
+   "id": "g21",
+   "date": "2026-09-18",
+   "time": "7:00 PM",
+   "timeTBD": false,
+   "team": "12U-B",
+   "opponent": "Bradleyville Jr High",
+   "homeAway": "away",
+   "location": "Bradleyville",
+   "tentative": false
+  },
+  {
+   "id": "g22",
+   "date": "2026-09-18",
+   "time": "7:30 PM",
+   "timeTBD": false,
+   "team": "14U-B",
+   "opponent": "Bradleyville Jr High",
+   "homeAway": "away",
+   "location": "Bradleyville",
+   "tentative": false
+  },
+  {
+   "id": "g43",
+   "date": "2026-10-09",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "12U-G",
+   "opponent": "Bradleyville Jr.High",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g44",
+   "date": "2026-10-09",
+   "time": "7:00 PM",
+   "timeTBD": false,
+   "team": "12U-B",
+   "opponent": "Bradleyville Jr. High",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g45",
+   "date": "2026-10-10",
+   "time": "7:30 PM",
+   "timeTBD": false,
+   "team": "14U-B",
+   "opponent": "Bradleyville Jr. High",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g51",
+   "date": "2026-10-16",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "12U-B",
+   "opponent": "12UB Lebanon Rockets",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g68",
+   "date": "2026-10-24",
+   "time": "",
+   "timeTBD": false,
+   "team": "10U-B",
+   "opponent": "NWA",
+   "homeAway": "away",
+   "location": "Arkansas",
+   "tentative": false
+  },
+  {
+   "id": "g69",
+   "date": "2026-10-24",
+   "time": "",
+   "timeTBD": false,
+   "team": "12U-B",
+   "opponent": "NWA",
+   "homeAway": "away",
+   "location": "Arkansas",
+   "tentative": false
+  },
+  {
+   "id": "g70",
+   "date": "2026-10-24",
+   "time": "",
+   "timeTBD": false,
+   "team": "14U-B",
+   "opponent": "NWA",
+   "homeAway": "away",
+   "location": "Arkansas",
+   "tentative": false
+  },
+  {
+   "id": "g71",
+   "date": "2026-10-24",
+   "time": "",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "NWA",
+   "homeAway": "away",
+   "location": "Arkansas",
+   "tentative": false
+  },
+  {
+   "id": "g72",
+   "date": "2026-10-24",
+   "time": "",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "NWA",
+   "homeAway": "away",
+   "location": "Arkansas",
+   "tentative": false
+  },
+  {
+   "id": "g73",
+   "date": "2026-10-24",
+   "time": "",
+   "timeTBD": false,
+   "team": "12U-G",
+   "opponent": "NWA",
+   "homeAway": "away",
+   "location": "Arkansas",
+   "tentative": false
+  },
+  {
+   "id": "g74",
+   "date": "2026-10-24",
+   "time": "",
+   "timeTBD": false,
+   "team": "16U-G",
+   "opponent": "NWA 16U",
+   "homeAway": "away",
+   "location": "Arkansas",
+   "tentative": false
+  },
+  {
+   "id": "g61",
+   "date": "2026-10-26",
+   "time": "5:00 PM",
+   "timeTBD": false,
+   "team": "12U-B",
+   "opponent": "Hartville Jr high B",
+   "homeAway": "away",
+   "location": "Hartville",
+   "tentative": false
+  },
+  {
+   "id": "g62",
+   "date": "2026-10-26",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "14U-B",
+   "opponent": "Hartville Jr High A",
+   "homeAway": "away",
+   "location": "Hartville",
+   "tentative": false
+  },
+  {
+   "id": "g102",
+   "date": "2026-11-12",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "12U-B",
+   "opponent": "12UB Lebanon Rockets",
+   "homeAway": "away",
+   "location": "Lebanon",
+   "tentative": false
+  },
+  {
+   "id": "g110",
+   "date": "2026-11-20",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "16U-G",
+   "opponent": "Bradleyville Varsity",
+   "homeAway": "away",
+   "location": "Bradleyville",
+   "tentative": false
+  },
+  {
+   "id": "g111",
+   "date": "2026-11-21",
+   "time": "",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Walnut Grove JV (2 quarters)",
+   "homeAway": "away",
+   "location": "Walnut Grove High",
+   "tentative": false
+  },
+  {
+   "id": "g112",
+   "date": "2026-11-21",
+   "time": "",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "Walnut Grove Varsity",
+   "homeAway": "away",
+   "location": "Walnut Grove High",
+   "tentative": false
+  },
+  {
+   "id": "g127",
+   "date": "2026-12-04",
+   "time": "",
+   "timeTBD": false,
+   "team": "16U-G",
+   "opponent": "Gloria Deo JV",
+   "homeAway": "away",
+   "location": "Elm Ln, Springfield, MO 65802 Ashcroft at Evangel",
+   "tentative": false
+  },
+  {
+   "id": "g130",
+   "date": "2026-12-07",
+   "time": "5:30 PM",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Lamar JV",
+   "homeAway": "away",
+   "location": "",
+   "tentative": false
+  },
+  {
+   "id": "g131",
+   "date": "2026-12-07",
+   "time": "7:00 PM",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "Lamar Varsity",
+   "homeAway": "away",
+   "location": "",
+   "tentative": false
+  },
+  {
+   "id": "g152",
+   "date": "2026-12-15",
+   "time": "",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Chadwick JV",
+   "homeAway": "away",
+   "location": "Chadwick",
+   "tentative": false
+  },
+  {
+   "id": "g153",
+   "date": "2026-12-15",
+   "time": "",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "Chadwick Varsity",
+   "homeAway": "away",
+   "location": "Chadwick",
+   "tentative": false
+  },
+  {
+   "id": "g155",
+   "date": "2026-12-18",
+   "time": "",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "Halfway Varsity",
+   "homeAway": "away",
+   "location": "2150 State hwy 32",
+   "tentative": false
+  },
+  {
+   "id": "g156",
+   "date": "2026-12-18",
+   "time": "",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Halfway JV",
+   "homeAway": "away",
+   "location": "2150 State hwy 32",
+   "tentative": false
+  },
+  {
+   "id": "g159",
+   "date": "2026-12-21",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "14U-B",
+   "opponent": "Lebanon Rockets",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g160",
+   "date": "2026-12-21",
+   "time": "7:00 PM",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Lebanon Rockets",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g167",
+   "date": "2026-12-28",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Revelation Lions 16UB",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g168",
+   "date": "2026-12-28",
+   "time": "7:00 PM",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "Revelation Lions 18UB",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g176",
+   "date": "2027-01-05",
+   "time": "5:30 PM",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Reed Springs",
+   "homeAway": "away",
+   "location": "Reed Springs",
+   "tentative": false
+  },
+  {
+   "id": "g177",
+   "date": "2027-01-05",
+   "time": "7:30 PM",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "Reed Springs",
+   "homeAway": "away",
+   "location": "Reed Springs",
+   "tentative": false
+  },
+  {
+   "id": "g180",
+   "date": "2027-01-08",
+   "time": "5:00 PM",
+   "timeTBD": false,
+   "team": "12U-B",
+   "opponent": "Crane 7th",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g181",
+   "date": "2027-01-08",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "14U-B",
+   "opponent": "Crane 8th",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g182",
+   "date": "2027-01-08",
+   "time": "7:00 PM",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "GDA",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": true
+  },
+  {
+   "id": "g183",
+   "date": "2027-01-08",
+   "time": "8:00 PM",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "GDA",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": true
+  },
+  {
+   "id": "g194",
+   "date": "2027-01-18",
+   "time": "5:30 PM",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Rolla JV",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g195",
+   "date": "2027-01-18",
+   "time": "7:00 PM",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "Rolla Varsity",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g201",
+   "date": "2027-01-22",
+   "time": "",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Bradleyville JV",
+   "homeAway": "away",
+   "location": "Bradleyville",
+   "tentative": false
+  },
+  {
+   "id": "g202",
+   "date": "2027-01-22",
+   "time": "",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "Bradleyville Varsity",
+   "homeAway": "away",
+   "location": "Bradleyville",
+   "tentative": false
+  },
+  {
+   "id": "g205",
+   "date": "2027-01-25",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "12U-B",
+   "opponent": "Crane 7th",
+   "homeAway": "away",
+   "location": "Crane",
+   "tentative": false
+  },
+  {
+   "id": "g206",
+   "date": "2027-01-25",
+   "time": "7:00 PM",
+   "timeTBD": false,
+   "team": "14U-B",
+   "opponent": "Crane 8th",
+   "homeAway": "away",
+   "location": "Crane",
+   "tentative": false
+  },
+  {
+   "id": "g216",
+   "date": "2027-02-01",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "16U-G",
+   "opponent": "Bradleyville Varsity",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g217",
+   "date": "2027-02-01",
+   "time": "7:00 PM",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Bradleyville JV 2 quarters",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g218",
+   "date": "2027-02-01",
+   "time": "8:00 PM",
+   "timeTBD": false,
+   "team": "18U-B",
+   "opponent": "Bradleyville Varsity",
+   "homeAway": "home",
+   "location": "Springfield, MO",
+   "tentative": false
+  },
+  {
+   "id": "g232",
+   "date": "2027-02-09",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "14U-B",
+   "opponent": "Lebanon Rockets",
+   "homeAway": "away",
+   "location": "Lebanon",
+   "tentative": false
+  },
+  {
+   "id": "g233",
+   "date": "2027-02-09",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "16U-B",
+   "opponent": "Lebanon Rockets",
+   "homeAway": "away",
+   "location": "Lebanon",
+   "tentative": false
+  },
+  {
+   "id": "g259",
+   "date": "2027-02-19",
+   "time": "6:00 PM",
+   "timeTBD": false,
+   "team": "14U-B",
+   "opponent": "McCauley Catholic JrHigh",
+   "homeAway": "away",
+   "location": "Joplin",
+   "tentative": false
+  }
+ ],
+ "events": [
+  {
+   "id": "e0",
+   "name": "Norwood Tournament",
+   "kind": "tournament",
+   "startDate": "2026-10-12",
+   "endDate": "2026-10-15",
+   "location": "Norwood, MO",
+   "teams": [
     {
-      "id": "10U-B",
-      "age": "10U",
-      "gender": "Boys",
-      "label": "10U Boys"
-    },
-    {
-      "id": "12U-B",
-      "age": "12U",
-      "gender": "Boys",
-      "label": "12U Boys"
-    },
-    {
-      "id": "14U-B",
-      "age": "14U",
-      "gender": "Boys",
-      "label": "14U Boys"
-    },
-    {
-      "id": "16U-B",
-      "age": "16U",
-      "gender": "Boys",
-      "label": "16U Boys"
-    },
-    {
-      "id": "18U-B",
-      "age": "18U",
-      "gender": "Boys",
-      "label": "18U Boys"
-    },
-    {
-      "id": "12U-G",
-      "age": "12U",
-      "gender": "Girls",
-      "label": "12U Girls"
-    },
-    {
-      "id": "16U-G",
-      "age": "16U",
-      "gender": "Girls",
-      "label": "16U Girls"
-    },
-    {
-      "id": "14U-G",
-      "age": "14U",
-      "gender": "Girls",
-      "label": "14U Girls",
-      "comingSoon": true
+     "team": "14U-B",
+     "dates": [
+      "2026-10-12",
+      "2026-10-13",
+      "2026-10-15"
+     ]
     }
-  ],
-  "games": [
+   ]
+  },
+  {
+   "id": "e1",
+   "name": "STL Tip-Off",
+   "kind": "tournament",
+   "startDate": "2026-11-05",
+   "endDate": "2026-11-07",
+   "location": "St. Louis, MO",
+   "teams": [
     {
-      "id": "g41",
-      "date": "2026-10-09",
-      "time": "6:00 PM",
-      "timeTBD": true,
-      "team": "14U-B",
-      "opponent": "Bradleyville",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
+     "team": "10U-B",
+     "dates": [
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07"
+     ]
     },
     {
-      "id": "g71",
-      "date": "2026-10-24",
-      "time": "",
-      "timeTBD": false,
-      "team": "10U-B",
-      "opponent": "NWA",
-      "homeAway": "away",
-      "location": "Arkansas",
-      "tentative": false
+     "team": "12U-B",
+     "dates": [
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07"
+     ]
     },
     {
-      "id": "g72",
-      "date": "2026-10-24",
-      "time": "",
-      "timeTBD": false,
-      "team": "12U-B",
-      "opponent": "NWA",
-      "homeAway": "away",
-      "location": "Arkansas",
-      "tentative": false
+     "team": "12U-G",
+     "dates": [
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07"
+     ]
     },
     {
-      "id": "g73",
-      "date": "2026-10-24",
-      "time": "",
-      "timeTBD": false,
-      "team": "14U-B",
-      "opponent": "NWA",
-      "homeAway": "away",
-      "location": "Arkansas",
-      "tentative": false
+     "team": "14U-B",
+     "dates": [
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07"
+     ]
     },
     {
-      "id": "g74",
-      "date": "2026-10-24",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "NWA",
-      "homeAway": "away",
-      "location": "Arkansas",
-      "tentative": false
+     "team": "16U-B",
+     "dates": [
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07"
+     ]
     },
     {
-      "id": "g75",
-      "date": "2026-10-24",
-      "time": "",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "NWA",
-      "homeAway": "away",
-      "location": "Arkansas",
-      "tentative": false
+     "team": "16U-G",
+     "dates": [
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07"
+     ]
     },
     {
-      "id": "g76",
-      "date": "2026-10-24",
-      "time": "",
-      "timeTBD": false,
-      "team": "12U-G",
-      "opponent": "NWA",
-      "homeAway": "away",
-      "location": "Arkansas",
-      "tentative": false
-    },
-    {
-      "id": "g77",
-      "date": "2026-10-24",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-G",
-      "opponent": "NWA 16U",
-      "homeAway": "away",
-      "location": "Arkansas",
-      "tentative": false
-    },
-    {
-      "id": "g58",
-      "date": "2026-10-26",
-      "time": "5:00 PM",
-      "timeTBD": false,
-      "team": "12U-B",
-      "opponent": "Hartville",
-      "homeAway": "away",
-      "location": "Hartville",
-      "tentative": false
-    },
-    {
-      "id": "g59",
-      "date": "2026-10-26",
-      "time": "6:00 PM",
-      "timeTBD": false,
-      "team": "14U-B",
-      "opponent": "Hartville",
-      "homeAway": "away",
-      "location": "Hartville",
-      "tentative": false
-    },
-    {
-      "id": "g102",
-      "date": "2026-11-12",
-      "time": "",
-      "timeTBD": false,
-      "team": "10U-B",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "tbd",
-      "location": "",
-      "tentative": false
-    },
-    {
-      "id": "g111",
-      "date": "2026-11-21",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Walnut Grove JV (2 quarters)",
-      "homeAway": "away",
-      "location": "Walnut Grove High",
-      "tentative": false
-    },
-    {
-      "id": "g112",
-      "date": "2026-11-21",
-      "time": "",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Walnut Grove Varsity",
-      "homeAway": "away",
-      "location": "Walnut Grove High",
-      "tentative": false
-    },
-    {
-      "id": "g130",
-      "date": "2026-12-07",
-      "time": "5:30 PM",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Lamar",
-      "homeAway": "away",
-      "location": "",
-      "tentative": false
-    },
-    {
-      "id": "g131",
-      "date": "2026-12-07",
-      "time": "7:00 PM",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Lamar",
-      "homeAway": "away",
-      "location": "",
-      "tentative": false
-    },
-    {
-      "id": "g152",
-      "date": "2026-12-15",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Chadwick",
-      "homeAway": "away",
-      "location": "Chadwick",
-      "tentative": false
-    },
-    {
-      "id": "g153",
-      "date": "2026-12-15",
-      "time": "",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Chadwick",
-      "homeAway": "away",
-      "location": "Chadwick",
-      "tentative": false
-    },
-    {
-      "id": "g155",
-      "date": "2026-12-18",
-      "time": "",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Halfway Varsity",
-      "homeAway": "away",
-      "location": "2150 State hwy 32",
-      "tentative": false
-    },
-    {
-      "id": "g156",
-      "date": "2026-12-18",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Halfway JV",
-      "homeAway": "away",
-      "location": "2150 State hwy 32",
-      "tentative": false
-    },
-    {
-      "id": "g159",
-      "date": "2026-12-21",
-      "time": "",
-      "timeTBD": false,
-      "team": "12U-B",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g160",
-      "date": "2026-12-21",
-      "time": "",
-      "timeTBD": false,
-      "team": "14U-B",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g161",
-      "date": "2026-12-21",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g162",
-      "date": "2026-12-21",
-      "time": "",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g163",
-      "date": "2026-12-21",
-      "time": "",
-      "timeTBD": false,
-      "team": "12U-G",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g164",
-      "date": "2026-12-21",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-G",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g179",
-      "date": "2027-01-05",
-      "time": "5:30 PM",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Reed Springs",
-      "homeAway": "away",
-      "location": "Reed Springs",
-      "tentative": false
-    },
-    {
-      "id": "g180",
-      "date": "2027-01-05",
-      "time": "7:30 PM",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Reed Springs",
-      "homeAway": "away",
-      "location": "Reed Springs",
-      "tentative": false
-    },
-    {
-      "id": "g183",
-      "date": "2027-01-08",
-      "time": "5:00 PM",
-      "timeTBD": false,
-      "team": "12U-B",
-      "opponent": "Crane 7th",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g184",
-      "date": "2027-01-08",
-      "time": "6:00 PM",
-      "timeTBD": false,
-      "team": "14U-B",
-      "opponent": "Crane 8th",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g185",
-      "date": "2027-01-08",
-      "time": "7:00 PM",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "GDA",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": true
-    },
-    {
-      "id": "g186",
-      "date": "2027-01-08",
-      "time": "8:00 PM",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "GDA",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": true
-    },
-    {
-      "id": "g197",
-      "date": "2027-01-18",
-      "time": "5:30 PM",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Rolla JV",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g198",
-      "date": "2027-01-18",
-      "time": "7:00 PM",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Rolla Varsity",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g204",
-      "date": "2027-01-22",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Bradleyville JV",
-      "homeAway": "away",
-      "location": "Bradleyville",
-      "tentative": false
-    },
-    {
-      "id": "g205",
-      "date": "2027-01-22",
-      "time": "",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Bradleyville Varsity",
-      "homeAway": "away",
-      "location": "Bradleyville",
-      "tentative": false
-    },
-    {
-      "id": "g208",
-      "date": "2027-01-25",
-      "time": "6:00 PM",
-      "timeTBD": false,
-      "team": "12U-B",
-      "opponent": "Crane 7th",
-      "homeAway": "away",
-      "location": "Crane",
-      "tentative": false
-    },
-    {
-      "id": "g209",
-      "date": "2027-01-25",
-      "time": "7:00 PM",
-      "timeTBD": false,
-      "team": "14U-B",
-      "opponent": "Crane 8th",
-      "homeAway": "away",
-      "location": "Crane",
-      "tentative": false
-    },
-    {
-      "id": "g219",
-      "date": "2027-02-01",
-      "time": "5:30 PM",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Bradleyville JV",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g220",
-      "date": "2027-02-01",
-      "time": "6:30 PM",
-      "timeTBD": false,
-      "team": "16U-G",
-      "opponent": "Bradleyville Varsity",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g221",
-      "date": "2027-02-01",
-      "time": "7:30 PM",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Bradleyville Varsity",
-      "homeAway": "home",
-      "location": "Springfield, MO",
-      "tentative": false
-    },
-    {
-      "id": "g235",
-      "date": "2027-02-09",
-      "time": "",
-      "timeTBD": false,
-      "team": "12U-B",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "away",
-      "location": "",
-      "tentative": false
-    },
-    {
-      "id": "g236",
-      "date": "2027-02-09",
-      "time": "",
-      "timeTBD": false,
-      "team": "14U-B",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "away",
-      "location": "",
-      "tentative": false
-    },
-    {
-      "id": "g237",
-      "date": "2027-02-09",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-B",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "away",
-      "location": "",
-      "tentative": false
-    },
-    {
-      "id": "g238",
-      "date": "2027-02-09",
-      "time": "",
-      "timeTBD": false,
-      "team": "18U-B",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "away",
-      "location": "",
-      "tentative": false
-    },
-    {
-      "id": "g239",
-      "date": "2027-02-09",
-      "time": "",
-      "timeTBD": false,
-      "team": "12U-G",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "away",
-      "location": "",
-      "tentative": false
-    },
-    {
-      "id": "g240",
-      "date": "2027-02-09",
-      "time": "",
-      "timeTBD": false,
-      "team": "16U-G",
-      "opponent": "Lebanon Rockets",
-      "homeAway": "away",
-      "location": "",
-      "tentative": false
-    },
-    {
-      "id": "g266",
-      "date": "2027-02-19",
-      "time": "6:00 PM",
-      "timeTBD": false,
-      "team": "14U-B",
-      "opponent": "McCauley Catholic JrHigh",
-      "homeAway": "away",
-      "location": "Joplin",
-      "tentative": false
+     "team": "18U-B",
+     "dates": [
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07"
+     ]
     }
-  ],
-  "events": [
+   ]
+  },
+  {
+   "id": "e2",
+   "name": "Reed Springs Tournament",
+   "kind": "tournament",
+   "startDate": "2026-12-01",
+   "endDate": "2026-12-05",
+   "location": "Reed Springs, MO \u00b7 20277 MO-413",
+   "teams": [
     {
-      "id": "e0",
-      "name": "Norwood Tournament",
-      "kind": "tournament",
-      "startDate": "2026-10-12",
-      "endDate": "2026-10-15",
-      "location": "Norwood, MO",
-      "teams": [
-        {
-          "team": "14U-B",
-          "dates": [
-            "2026-10-12",
-            "2026-10-13",
-            "2026-10-15"
-          ]
-        }
-      ]
+     "team": "16U-B",
+     "dates": [
+      "2026-12-01",
+      "2026-12-03",
+      "2026-12-05"
+     ]
     },
     {
-      "id": "e1",
-      "name": "STL Tip-Off",
-      "kind": "tournament",
-      "startDate": "2026-11-05",
-      "endDate": "2026-11-07",
-      "location": "St. Louis, MO",
-      "teams": [
-        {
-          "team": "10U-B",
-          "dates": [
-            "2026-11-05",
-            "2026-11-06",
-            "2026-11-07"
-          ]
-        },
-        {
-          "team": "12U-B",
-          "dates": [
-            "2026-11-07"
-          ]
-        },
-        {
-          "team": "14U-B",
-          "dates": [
-            "2026-11-07"
-          ]
-        },
-        {
-          "team": "16U-B",
-          "dates": [
-            "2026-11-07"
-          ]
-        },
-        {
-          "team": "16U-G",
-          "dates": [
-            "2026-11-07"
-          ]
-        },
-        {
-          "team": "18U-B",
-          "dates": [
-            "2026-11-07"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "e2",
-      "name": "Reed Springs Tournament",
-      "kind": "tournament",
-      "startDate": "2026-12-01",
-      "endDate": "2026-12-05",
-      "location": "Reed Springs, MO · 20277 MO-413",
-      "teams": [
-        {
-          "team": "16U-B",
-          "dates": [
-            "2026-12-01",
-            "2026-12-03",
-            "2026-12-05"
-          ]
-        },
-        {
-          "team": "18U-B",
-          "dates": [
-            "2026-12-01",
-            "2026-12-03",
-            "2026-12-05"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "e3",
-      "name": "Winter Slam",
-      "kind": "tournament",
-      "startDate": "2026-12-11",
-      "endDate": "2026-12-12",
-      "location": "Fieldhouse · Springfield, MO",
-      "teams": [
-        {
-          "team": "12U-B",
-          "dates": [
-            "2026-12-11",
-            "2026-12-12"
-          ]
-        },
-        {
-          "team": "14U-B",
-          "dates": [
-            "2026-12-11",
-            "2026-12-12"
-          ]
-        },
-        {
-          "team": "16U-B",
-          "dates": [
-            "2026-12-11",
-            "2026-12-12"
-          ]
-        },
-        {
-          "team": "16U-G",
-          "dates": [
-            "2026-12-11",
-            "2026-12-12"
-          ]
-        },
-        {
-          "team": "18U-B",
-          "dates": [
-            "2026-12-11",
-            "2026-12-12"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "e4",
-      "name": "Sparta Tournament",
-      "kind": "tournament",
-      "startDate": "2027-01-25",
-      "endDate": "2027-01-30",
-      "location": "Sparta, MO",
-      "teams": [
-        {
-          "team": "16U-B",
-          "dates": [
-            "2027-01-25",
-            "2027-01-27"
-          ]
-        },
-        {
-          "team": "18U-B",
-          "dates": [
-            "2027-01-25",
-            "2027-01-26",
-            "2027-01-27",
-            "2027-01-28",
-            "2027-01-29",
-            "2027-01-30"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "e5",
-      "name": "Mercy Warriors Classic",
-      "kind": "tournament",
-      "startDate": "2027-02-02",
-      "endDate": "2027-02-06",
-      "location": "McAuley Catholic HS · Joplin, MO",
-      "teams": [
-        {
-          "team": "18U-B",
-          "dates": [
-            "2027-02-02",
-            "2027-02-03",
-            "2027-02-04",
-            "2027-02-05",
-            "2027-02-06"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "e6",
-      "name": "Lady Cougar Classic",
-      "kind": "tournament",
-      "startDate": "2027-02-02",
-      "endDate": "2027-02-06",
-      "location": "College Heights Christian · Joplin, MO",
-      "teams": [
-        {
-          "team": "16U-G",
-          "dates": [
-            "2027-02-02",
-            "2027-02-03",
-            "2027-02-04",
-            "2027-02-05",
-            "2027-02-06"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "e7",
-      "name": "State Tournament",
-      "kind": "postseason",
-      "startDate": "2027-02-12",
-      "endDate": "2027-02-13",
-      "location": "Columbia Fieldhouse · Columbia, MO",
-      "teams": [
-        {
-          "team": "12U-B",
-          "dates": [
-            "2027-02-12",
-            "2027-02-13"
-          ]
-        },
-        {
-          "team": "12U-G",
-          "dates": [
-            "2027-02-12",
-            "2027-02-13"
-          ]
-        },
-        {
-          "team": "14U-B",
-          "dates": [
-            "2027-02-12",
-            "2027-02-13"
-          ]
-        },
-        {
-          "team": "16U-B",
-          "dates": [
-            "2027-02-12",
-            "2027-02-13"
-          ]
-        },
-        {
-          "team": "16U-G",
-          "dates": [
-            "2027-02-12",
-            "2027-02-13"
-          ]
-        },
-        {
-          "team": "18U-B",
-          "dates": [
-            "2027-02-12",
-            "2027-02-13"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "e8",
-      "name": "Regionals",
-      "kind": "postseason",
-      "startDate": "2027-02-25",
-      "endDate": "2027-02-27",
-      "location": "Wichita, KS",
-      "teams": [
-        {
-          "team": "10U-B",
-          "dates": [
-            "2027-02-26",
-            "2027-02-27"
-          ]
-        },
-        {
-          "team": "12U-B",
-          "dates": [
-            "2027-02-25",
-            "2027-02-26",
-            "2027-02-27"
-          ]
-        },
-        {
-          "team": "12U-G",
-          "dates": [
-            "2027-02-25",
-            "2027-02-26",
-            "2027-02-27"
-          ]
-        },
-        {
-          "team": "14U-B",
-          "dates": [
-            "2027-02-25",
-            "2027-02-26",
-            "2027-02-27"
-          ]
-        },
-        {
-          "team": "16U-B",
-          "dates": [
-            "2027-02-25",
-            "2027-02-26",
-            "2027-02-27"
-          ]
-        },
-        {
-          "team": "16U-G",
-          "dates": [
-            "2027-02-25",
-            "2027-02-26",
-            "2027-02-27"
-          ]
-        },
-        {
-          "team": "18U-B",
-          "dates": [
-            "2027-02-25",
-            "2027-02-26",
-            "2027-02-27"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "e9",
-      "name": "Nationals",
-      "kind": "postseason",
-      "startDate": "2027-03-15",
-      "endDate": "2027-03-19",
-      "location": "Springfield, MO · NCHBC",
-      "teams": [
-        {
-          "team": "10U-B",
-          "dates": [
-            "2027-03-15"
-          ]
-        },
-        {
-          "team": "12U-B",
-          "dates": [
-            "2027-03-16"
-          ]
-        },
-        {
-          "team": "12U-G",
-          "dates": [
-            "2027-03-15"
-          ]
-        },
-        {
-          "team": "14U-B",
-          "dates": [
-            "2027-03-17"
-          ]
-        },
-        {
-          "team": "16U-B",
-          "dates": [
-            "2027-03-18"
-          ]
-        },
-        {
-          "team": "16U-G",
-          "dates": [
-            "2027-03-15"
-          ]
-        },
-        {
-          "team": "18U-B",
-          "dates": [
-            "2027-03-19"
-          ]
-        }
-      ]
+     "team": "18U-B",
+     "dates": [
+      "2026-12-01",
+      "2026-12-03",
+      "2026-12-05"
+     ]
     }
-  ],
-  "holidays": [
+   ]
+  },
+  {
+   "id": "e3",
+   "name": "Winter Slam",
+   "kind": "tournament",
+   "startDate": "2026-12-11",
+   "endDate": "2026-12-12",
+   "location": "Fieldhouse \u00b7 Springfield, MO",
+   "teams": [
     {
-      "date": "2026-10-31",
-      "name": "Halloween"
+     "team": "12U-B",
+     "dates": [
+      "2026-12-11",
+      "2026-12-12",
+      "2026-12-12"
+     ]
     },
     {
-      "date": "2026-11-26",
-      "name": "Thanksgiving"
+     "team": "14U-B",
+     "dates": [
+      "2026-12-11",
+      "2026-12-12",
+      "2026-12-12"
+     ]
     },
     {
-      "date": "2026-12-24",
-      "name": "Christmas"
+     "team": "16U-B",
+     "dates": [
+      "2026-12-11",
+      "2026-12-12",
+      "2026-12-12"
+     ]
     },
     {
-      "date": "2026-12-25",
-      "name": "Christmas"
+     "team": "16U-G",
+     "dates": [
+      "2026-12-11",
+      "2026-12-12",
+      "2026-12-12"
+     ]
     },
     {
-      "date": "2027-01-01",
-      "name": "NEW YEAR'S DAY"
+     "team": "18U-B",
+     "dates": [
+      "2026-12-11",
+      "2026-12-12",
+      "2026-12-12"
+     ]
     }
-  ],
-  "coachNotes": [
+   ]
+  },
+  {
+   "id": "e4",
+   "name": "Sparta Tournament",
+   "kind": "tournament",
+   "startDate": "2027-01-25",
+   "endDate": "2027-01-30",
+   "location": "Sparta, MO",
+   "teams": [
     {
-      "date": "2026-11-17",
-      "text": "greenfield Jamboree?"
+     "team": "16U-B",
+     "dates": [
+      "2027-01-25",
+      "2027-01-27"
+     ]
     },
     {
-      "date": "2026-11-28",
-      "text": "Don working"
-    },
-    {
-      "date": "2026-11-29",
-      "text": "Don working"
-    },
-    {
-      "date": "2026-11-30",
-      "text": "Don working"
-    },
-    {
-      "date": "2026-12-02",
-      "text": "Don working"
-    },
-    {
-      "date": "2026-12-04",
-      "text": "Don working"
-    },
-    {
-      "date": "2027-01-18",
-      "text": "Buffalo tournament?"
-    },
-    {
-      "date": "2027-01-19",
-      "text": "Buffalo tournament?"
-    },
-    {
-      "date": "2027-01-21",
-      "text": "Buffalo tournament?"
-    },
-    {
-      "date": "2027-01-23",
-      "text": "JR Recording?"
-    },
-    {
-      "date": "2027-02-15",
-      "text": "ILLNESS WILL HIT"
-    },
-    {
-      "date": "2027-02-16",
-      "text": "ILLNESS WILL HIT"
-    },
-    {
-      "date": "2027-02-17",
-      "text": "ILLNESS WILL HIT"
-    },
-    {
-      "date": "2027-02-18",
-      "text": "ILLNESS WILL HIT"
+     "team": "18U-B",
+     "dates": [
+      "2027-01-25",
+      "2027-01-26",
+      "2027-01-27",
+      "2027-01-28",
+      "2027-01-29",
+      "2027-01-30"
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "id": "e5",
+   "name": "Mercy Warriors Classic",
+   "kind": "tournament",
+   "startDate": "2027-02-02",
+   "endDate": "2027-02-06",
+   "location": "McAuley Catholic HS \u00b7 Joplin, MO",
+   "teams": [
+    {
+     "team": "18U-B",
+     "dates": [
+      "2027-02-02",
+      "2027-02-03",
+      "2027-02-04",
+      "2027-02-05",
+      "2027-02-06"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "e6",
+   "name": "Lady Cougar Classic",
+   "kind": "tournament",
+   "startDate": "2027-02-02",
+   "endDate": "2027-02-06",
+   "location": "College Heights Christian \u00b7 Joplin, MO",
+   "teams": [
+    {
+     "team": "16U-G",
+     "dates": [
+      "2027-02-02",
+      "2027-02-03",
+      "2027-02-04",
+      "2027-02-05",
+      "2027-02-06",
+      "2027-02-06"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "e7",
+   "name": "State Tournament",
+   "kind": "postseason",
+   "startDate": "2027-02-12",
+   "endDate": "2027-02-13",
+   "location": "Columbia Fieldhouse \u00b7 Columbia, MO",
+   "teams": [
+    {
+     "team": "12U-B",
+     "dates": [
+      "2027-02-12",
+      "2027-02-13",
+      "2027-02-13"
+     ]
+    },
+    {
+     "team": "12U-G",
+     "dates": [
+      "2027-02-12",
+      "2027-02-13",
+      "2027-02-13"
+     ]
+    },
+    {
+     "team": "14U-B",
+     "dates": [
+      "2027-02-12",
+      "2027-02-13",
+      "2027-02-13"
+     ]
+    },
+    {
+     "team": "16U-B",
+     "dates": [
+      "2027-02-12",
+      "2027-02-13",
+      "2027-02-13"
+     ]
+    },
+    {
+     "team": "16U-G",
+     "dates": [
+      "2027-02-12",
+      "2027-02-13",
+      "2027-02-13"
+     ]
+    },
+    {
+     "team": "18U-B",
+     "dates": [
+      "2027-02-12",
+      "2027-02-13",
+      "2027-02-13"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "e8",
+   "name": "Regionals",
+   "kind": "postseason",
+   "startDate": "2027-02-25",
+   "endDate": "2027-02-27",
+   "location": "Wichita, KS",
+   "teams": [
+    {
+     "team": "10U-B",
+     "dates": [
+      "2027-02-26",
+      "2027-02-26",
+      "2027-02-27"
+     ]
+    },
+    {
+     "team": "12U-B",
+     "dates": [
+      "2027-02-25",
+      "2027-02-26",
+      "2027-02-26",
+      "2027-02-27"
+     ]
+    },
+    {
+     "team": "12U-G",
+     "dates": [
+      "2027-02-25",
+      "2027-02-26",
+      "2027-02-26",
+      "2027-02-27"
+     ]
+    },
+    {
+     "team": "14U-B",
+     "dates": [
+      "2027-02-25",
+      "2027-02-26",
+      "2027-02-26",
+      "2027-02-27"
+     ]
+    },
+    {
+     "team": "16U-B",
+     "dates": [
+      "2027-02-25",
+      "2027-02-26",
+      "2027-02-26",
+      "2027-02-27"
+     ]
+    },
+    {
+     "team": "16U-G",
+     "dates": [
+      "2027-02-25",
+      "2027-02-26",
+      "2027-02-26",
+      "2027-02-27"
+     ]
+    },
+    {
+     "team": "18U-B",
+     "dates": [
+      "2027-02-25",
+      "2027-02-26",
+      "2027-02-26",
+      "2027-02-27"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "e9",
+   "name": "Nationals",
+   "kind": "postseason",
+   "startDate": "2027-03-15",
+   "endDate": "2027-03-19",
+   "location": "Springfield, MO \u00b7 NCHBC",
+   "teams": [
+    {
+     "team": "10U-B",
+     "dates": [
+      "2027-03-16",
+      "2027-03-17",
+      "2027-03-18",
+      "2027-03-19"
+     ]
+    },
+    {
+     "team": "12U-B",
+     "dates": [
+      "2027-03-15",
+      "2027-03-16",
+      "2027-03-17",
+      "2027-03-18",
+      "2027-03-19"
+     ]
+    },
+    {
+     "team": "12U-G",
+     "dates": [
+      "2027-03-15",
+      "2027-03-16",
+      "2027-03-17",
+      "2027-03-18",
+      "2027-03-19"
+     ]
+    },
+    {
+     "team": "14U-B",
+     "dates": [
+      "2027-03-15",
+      "2027-03-16",
+      "2027-03-17",
+      "2027-03-18",
+      "2027-03-19"
+     ]
+    },
+    {
+     "team": "16U-B",
+     "dates": [
+      "2027-03-15",
+      "2027-03-16",
+      "2027-03-17",
+      "2027-03-18",
+      "2027-03-18",
+      "2027-03-19"
+     ]
+    },
+    {
+     "team": "16U-G",
+     "dates": [
+      "2027-03-15",
+      "2027-03-16",
+      "2027-03-17",
+      "2027-03-18",
+      "2027-03-19"
+     ]
+    },
+    {
+     "team": "18U-B",
+     "dates": [
+      "2027-03-15",
+      "2027-03-16",
+      "2027-03-17",
+      "2027-03-18",
+      "2027-03-19",
+      "2027-03-19"
+     ]
+    }
+   ]
+  }
+ ],
+ "holidays": [
+  {
+   "date": "2026-10-31",
+   "name": "Halloween"
+  },
+  {
+   "date": "2026-11-26",
+   "name": "Thanksgiving"
+  },
+  {
+   "date": "2026-12-24",
+   "name": "Christmas"
+  },
+  {
+   "date": "2026-12-25",
+   "name": "Christmas"
+  },
+  {
+   "date": "2027-01-01",
+   "name": "NEW YEAR'S DAY"
+  }
+ ],
+ "coachNotes": [
+  {
+   "date": "2026-11-17",
+   "text": "greenfield Jamboree?"
+  },
+  {
+   "date": "2026-11-28",
+   "text": "Don working"
+  },
+  {
+   "date": "2026-11-29",
+   "text": "Don working"
+  },
+  {
+   "date": "2026-11-30",
+   "text": "Don working"
+  },
+  {
+   "date": "2026-12-02",
+   "text": "Don working"
+  },
+  {
+   "date": "2027-01-18",
+   "text": "Buffalo tournament?"
+  },
+  {
+   "date": "2027-01-19",
+   "text": "Buffalo tournament?"
+  },
+  {
+   "date": "2027-01-21",
+   "text": "Buffalo tournament?"
+  },
+  {
+   "date": "2027-01-23",
+   "text": "JR Recording?"
+  },
+  {
+   "date": "2027-02-15",
+   "text": "ILLNESS WILL HIT"
+  },
+  {
+   "date": "2027-02-16",
+   "text": "ILLNESS WILL HIT"
+  },
+  {
+   "date": "2027-02-17",
+   "text": "ILLNESS WILL HIT"
+  },
+  {
+   "date": "2027-02-18",
+   "text": "ILLNESS WILL HIT"
+  }
+ ]
 }
