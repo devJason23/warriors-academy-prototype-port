@@ -173,7 +173,7 @@ export function ScheduleExplorer({ embed = false }) {
       const totalGames = data.games.length + data.events.reduce((s, e) => s + e.teams.reduce((x, t) => x + t.dates.length, 0), 0)
       const allDates = [...data.games.map((g) => g.date), ...data.events.flatMap((e) => e.teams.flatMap((t) => t.dates))]
       const earliest = allDates.reduce((a, b) => (a < b ? a : b))
-      return [[totalGames, 'Games Scheduled'], [data.events.length, 'Tournaments & Events'], [fmtMonD(earliest), 'Season Tip-Off']]
+      return [[totalGames, 'Games Scheduled'], [data.events.length, 'Tournaments & Events'], [fmtMonD(earliest), 'First Game']]
     }
     const g = data.games.filter((x) => x.team === filter).length
     const evs = data.events.filter((e) => e.teams.some((t) => t.team === filter))
@@ -235,19 +235,6 @@ export function ScheduleExplorer({ embed = false }) {
           ))}
         </div>
 
-        {/* 3.2b LEAGUE PLAY NOTE — 10U–14U also play Fieldhouse league (not yet on this schedule) */}
-        {(filter === 'ALL' || ['10U', '12U', '14U'].includes(teamById(filter)?.age)) && (
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, background: '#0F1613', border: `1px solid #1F3A2C`, borderRadius: 10, padding: '11px 14px', marginBottom: 16 }}>
-            <span style={{ fontFamily: MONO, fontSize: 11, color: C.greenHi, flex: 'none', paddingTop: 1 }}>＋</span>
-            <div style={{ fontSize: 13, lineHeight: 1.55, color: C.muted2 }}>
-              <span style={{ color: C.text, fontWeight: 700 }}>League play:</span> our younger teams
-              (through 14U) also compete in league play at the Fieldhouse in Springfield —
-              <span style={{ color: C.greenHi, fontWeight: 700 }}> 16+ additional games</span> not
-              yet on this schedule. Dates will be added as the league releases them.
-            </div>
-          </div>
-        )}
-
         {/* 3.3 COACH BANNER */}
         {coach && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: C.amberBg, border: `1px solid ${C.amberBorder}`, color: C.amber, borderRadius: 10, padding: '10px 14px', fontSize: 13, marginBottom: 16 }}>
@@ -278,6 +265,19 @@ export function ScheduleExplorer({ embed = false }) {
         {view === 'schedule'
           ? <ScheduleView data={data} groups={groups} filter={filter} coach={coach} activeTeamLabel={activeTeamLabel} />
           : <CalendarView data={data} filter={filter} coach={coach} selDay={selDay} setSelDay={setSelDay} />}
+
+        {/* 3.9 LEAGUE PLAY NOTE — 10U–14U also play Fieldhouse league (not yet on this schedule) */}
+        {(filter === 'ALL' || ['10U', '12U', '14U'].includes(teamById(filter)?.age)) && (
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, background: '#0F1613', border: `1px solid #1F3A2C`, borderRadius: 10, padding: '11px 14px', marginTop: 24 }}>
+            <span style={{ fontFamily: MONO, fontSize: 11, color: C.greenHi, flex: 'none', paddingTop: 1 }}>＋</span>
+            <div style={{ fontSize: 13, lineHeight: 1.55, color: C.muted2 }}>
+              <span style={{ color: C.text, fontWeight: 700 }}>League play:</span> our younger teams
+              (through 14U) also compete in league play at the Fieldhouse in Springfield —
+              <span style={{ color: C.greenHi, fontWeight: 700 }}> 16+ additional games</span> not
+              yet on this schedule. Dates will be added as the league releases them.
+            </div>
+          </div>
+        )}
 
         {/* 3.10 FOOTER */}
         {!embed ? (

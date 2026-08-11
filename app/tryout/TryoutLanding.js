@@ -224,7 +224,7 @@ export default function TryoutLanding() {
         .lp-card { border: 1px solid var(--ink-4); background: var(--ink-2); }
         .lp-player-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 25%; display: block; background: var(--ink-3); }
         .lp-seps { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
-        .lp-player-card { text-align: left; padding: 0; cursor: pointer; font: inherit; color: inherit; transition: border-color .15s ease, transform .15s ease; }
+        .lp-player-card { text-align: left; padding: 0; cursor: pointer; font: inherit; color: inherit; transition: border-color .15s ease, transform .15s ease; display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; }
         .lp-player-card:hover { border-color: rgba(245,242,236,0.35); transform: translateY(-2px); }
         .lp-player-card.is-open { border-color: var(--brass); }
         .lp-profile { padding: clamp(20px, 4vw, 36px); }

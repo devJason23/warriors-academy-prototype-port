@@ -440,7 +440,7 @@ export const PLAYERS = {
     socials: { hudl: '—', x: '—', ig: '—' },
     highlight: { id: 'cEoSwR22a70', title: 'Cai Hamilton · 16u Highlights · 2025–26' },
     coachQuote: {
-      text: 'Cai has all the ability — super athletic, strong, our energy every night. When his attitude’s right, he’s the captain of this team. That’s how much talent we’re talking about.',
+      text: 'Cai has all the ability — super athletic, strong, our energy every night. When his mental game is on, he’s the captain of this team. That’s how much talent we’re talking about.',
       attr: 'Coach Jason Hill',
     },
     testimony: '',
