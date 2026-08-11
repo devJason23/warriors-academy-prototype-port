@@ -26,8 +26,9 @@ const FEATURED = [
   // trading-card style. Normal photos crop to fill (cover).
   { slug: 'brolen-hill', photo: 0, fit: 'contain' },
   { slug: 'jace-rucker', photo: 0, pos: 'center 20%' },
-  { slug: 'tre-rucker', photo: 0, fit: 'contain' },
-  { slug: 'clay-dinsmore', photo: 0, fit: 'contain' },
+  // Tre + Clay: skinny full-body cutouts cropped to head/torso closeups (cover, top-anchored)
+  { slug: 'tre-rucker', photo: 0, pos: 'center 6%' },
+  { slug: 'clay-dinsmore', photo: 0, pos: 'center 6%' },
   { slug: 'preston-bishop', photo: 0, pos: 'center 25%' },
   { slug: 'james-dinsmore', photo: 0, pos: 'center 25%' },
   { slug: 'zane-hamilton', photo: 0, pos: 'center 25%' },
@@ -210,8 +211,8 @@ export default function TryoutLanding() {
         .lp-teams { grid-template-columns: repeat(4, 1fr); }
         .lp-badges { grid-template-columns: repeat(8, 1fr); gap: 10px; }
         .lp-badge-card { padding: 14px 8px 12px; display: flex; flex-direction: column; align-items: center; min-width: 0; }
-        .lp-badge-imgbox { height: 76px; width: 100%; display: flex; align-items: center; justify-content: center; }
-        .lp-badge-imgbox img { max-height: 76px; max-width: 100%; width: auto; height: auto; display: block; }
+        .lp-badge-imgbox { height: 108px; width: 100%; display: flex; align-items: center; justify-content: center; }
+        .lp-badge-imgbox img { max-height: 108px; max-width: 100%; width: auto; height: auto; display: block; }
         .lp-badge-label { font-size: 10px; letter-spacing: 0.08em; margin-top: 10px; color: var(--paper-2); text-transform: uppercase; text-align: center; min-height: 26px; display: flex; align-items: flex-start; justify-content: center; overflow-wrap: anywhere; max-width: 100%; }
         .lp-sched-toggle { margin-top: 8px; width: 100%; max-width: 760px; padding: 15px 18px; text-align: center; background: rgba(4,97,49,0.14); border: 1px solid var(--brass); color: var(--brass-hi); font-size: 13px; letter-spacing: 0.1em; cursor: pointer; font-weight: 700; }
         .lp-sched-toggle:hover { background: rgba(4,97,49,0.26); }
@@ -237,6 +238,8 @@ export default function TryoutLanding() {
           .lp-teams { grid-template-columns: repeat(2, 1fr); }
           .lp-badges { grid-template-columns: repeat(4, 1fr); gap: 8px; }
           .lp-badge-card { padding: 12px 4px 10px; }
+          .lp-badge-imgbox { height: 86px; }
+          .lp-badge-imgbox img { max-height: 86px; }
           .lp-badge-label { font-size: 9px; letter-spacing: 0.04em; }
           .lp-seps { grid-template-columns: 1fr; }
           .lp-profile-grid { grid-template-columns: 1fr; gap: 24px; }

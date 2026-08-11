@@ -533,7 +533,7 @@ export const PLAYERS = {
     hometown: '',
     accolades: [],
     photos: [
-      { label: 'PORTRAIT',    sub: '// RISE',       aspect: '3/4', src: '/players/preston-bishop/portrait.jpg', position: 'center' },
+      { label: 'PORTRAIT',    sub: '// RISE',       aspect: '3/4', src: '/players/preston-bishop/portrait-b.jpg', position: 'center' },
       { label: 'CHARACTER',   sub: '// HAND UP',    aspect: '4/5', src: '/players/preston-bishop/action-1.jpg', position: 'center' },
       { label: 'GAME ACTION', sub: '// FAST BREAK', aspect: '1/1', src: '/players/preston-bishop/action-2.jpg', position: 'center' },
     ],
