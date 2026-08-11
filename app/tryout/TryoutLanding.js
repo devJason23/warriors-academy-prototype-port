@@ -31,6 +31,9 @@ const FEATURED = [
   { slug: 'preston-bishop', photo: 0, pos: 'center 25%' },
   { slug: 'james-dinsmore', photo: 0, pos: 'center 25%' },
   { slug: 'zane-hamilton', photo: 0, pos: 'center 25%' },
+  { slug: 'howard-zeigenbein', photo: 0, pos: 'center 20%' },
+  { slug: 'javion-rucker', photo: 0, pos: 'center 25%' },
+  { slug: 'cai-hamilton', photo: 0, pos: 'center 25%' },
 ]
 
 // Landing-page-only display cap on open spots (real counts stay in rosterData).
@@ -172,6 +175,9 @@ export default function TryoutLanding() {
     })
     .filter(Boolean)
 
+  // Full schedule embed is heavy — collapsed behind a button by default.
+  const [showSched, setShowSched] = useState(false)
+
   // Expanded in-page profile (the "menu" — tap a card, profile opens below).
   const [openProfile, setOpenProfile] = useState(null)
   const profileRef = useRef(null)
@@ -200,13 +206,15 @@ export default function TryoutLanding() {
         .lp-hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,7,7,0.3), var(--ink) 92%); }
         .lp-proof-strip { display: flex; flex-wrap: wrap; gap: 12px 28px; border-top: 1px solid var(--ink-4); border-bottom: 1px solid var(--ink-4); padding: 18px 0; }
         .lp-grid { display: grid; gap: 16px; }
-        .lp-players { grid-template-columns: repeat(4, 1fr); }
+        .lp-players { grid-template-columns: repeat(5, 1fr); }
         .lp-teams { grid-template-columns: repeat(4, 1fr); }
         .lp-badges { grid-template-columns: repeat(8, 1fr); gap: 10px; }
-        .lp-badge-card { padding: 14px 8px 12px; display: flex; flex-direction: column; align-items: center; }
+        .lp-badge-card { padding: 14px 8px 12px; display: flex; flex-direction: column; align-items: center; min-width: 0; }
         .lp-badge-imgbox { height: 76px; width: 100%; display: flex; align-items: center; justify-content: center; }
         .lp-badge-imgbox img { max-height: 76px; max-width: 100%; width: auto; height: auto; display: block; }
-        .lp-badge-label { font-size: 10px; letter-spacing: 0.08em; margin-top: 10px; color: var(--paper-2); text-transform: uppercase; text-align: center; min-height: 26px; display: flex; align-items: flex-start; justify-content: center; }
+        .lp-badge-label { font-size: 10px; letter-spacing: 0.08em; margin-top: 10px; color: var(--paper-2); text-transform: uppercase; text-align: center; min-height: 26px; display: flex; align-items: flex-start; justify-content: center; overflow-wrap: anywhere; max-width: 100%; }
+        .lp-sched-toggle { margin-top: 8px; width: 100%; max-width: 760px; padding: 15px 18px; text-align: center; background: rgba(4,97,49,0.14); border: 1px solid var(--brass); color: var(--brass-hi); font-size: 13px; letter-spacing: 0.1em; cursor: pointer; font-weight: 700; }
+        .lp-sched-toggle:hover { background: rgba(4,97,49,0.26); }
         .lp-card { border: 1px solid var(--ink-4); background: var(--ink-2); }
         .lp-player-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 25%; display: block; background: var(--ink-3); }
         .lp-seps { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
@@ -227,7 +235,9 @@ export default function TryoutLanding() {
           .lp-homeschool { grid-template-columns: 1fr !important; }
           .lp-players { grid-template-columns: repeat(2, 1fr); }
           .lp-teams { grid-template-columns: repeat(2, 1fr); }
-          .lp-badges { grid-template-columns: repeat(4, 1fr); }
+          .lp-badges { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+          .lp-badge-card { padding: 12px 4px 10px; }
+          .lp-badge-label { font-size: 9px; letter-spacing: 0.04em; }
           .lp-seps { grid-template-columns: 1fr; }
           .lp-profile-grid { grid-template-columns: 1fr; gap: 24px; }
           .lp-hero { padding: 64px 0 48px; }
@@ -478,7 +488,15 @@ export default function TryoutLanding() {
               synced from the master sheet. Filter by team, flip to calendar view, and add
               games straight to your own calendar.
             </p>
-            <ScheduleExplorer embed />
+            <button
+              type="button"
+              className="lp-sched-toggle mono"
+              onClick={() => setShowSched(!showSched)}
+              aria-expanded={showSched}
+            >
+              {showSched ? '— HIDE THE SCHEDULE' : '＋ SHOW THE FULL 2026–27 SCHEDULE'}
+            </button>
+            {showSched && <div style={{ marginTop: 12 }}><ScheduleExplorer embed /></div>}
             <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 12 }}>
               · PRINTED COPIES &amp; TEAM-BY-TEAM DETAIL AT THE PARENT MEETING — AUGUST 14, 4:30 PM
             </p>
