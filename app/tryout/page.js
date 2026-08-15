@@ -2,9 +2,9 @@ import Script from 'next/script'
 import TryoutLanding from './TryoutLanding'
 
 export const metadata = {
-  title: 'Final Tryouts · Friday, August 14 — Missouri Warriors Basketball & Cheer · Republic, MO',
+  title: 'Roster Spots Open — Missouri Warriors Basketball & Cheer · Republic, MO',
   description:
-    'Missouri Warriors Final Tryouts — Friday, August 14 at 931 N. Walnut Ave., Republic, MO. Boys & girls basketball + cheer. Free to attend, limited roster spots. Pre-register now.',
+    'Missed tryouts? Missouri Warriors roster spots are still forming for 2026–27. Boys & girls basketball + cheer in Republic, MO. Free private evaluation — a coach reaches out within 24 hours.',
   robots: { index: false, follow: false },
 }
 
