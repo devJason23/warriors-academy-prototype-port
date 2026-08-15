@@ -107,15 +107,34 @@ const statLine = (p) =>
   `${p.stats.ppg} PPG · ${p.stats.rpg} RPG · ${p.stats.apg} APG`
 
 export default function TryoutLanding() {
-  const [path, setPath] = useState('tryout') // 'tryout' | 'eval'
+  // The Aug 14 tryout has passed. The page is now a rolling roster-spot /
+  // private-evaluation funnel, so the 'tryout' path (RSVP to a dated event,
+  // calendar links, session times) is no longer reachable. Left in place
+  // rather than deleted so it can be revived for the next tryout date.
+  const [path, setPath] = useState('eval') // 'tryout' | 'eval'
   const [form, setForm] = useState({
     parentName: '', parentEmail: '', parentPhone: '',
     athleteNameAge: '', cheerName: '', cheerAge: '',
-    program: PROGRAMS[1].value, message: '',
+    program: PROGRAMS[1].value, schoolType: '', message: '',
   })
   const [status, setStatus] = useState('idle')
   const [errorMsg, setErrorMsg] = useState('')
-  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
+  // Fires once, the first time anyone touches any field. Combined with PageView
+  // this separates three very different failure modes: never reached the form,
+  // reached it but never started, or started and abandoned partway.
+  const startedRef = useRef(false)
+  const trackFormStart = () => {
+    if (startedRef.current || typeof window === 'undefined') return
+    startedRef.current = true
+    if (typeof window.fbq === 'function') window.fbq('trackCustom', 'FormStart')
+    if (typeof window.gtag === 'function') window.gtag('event', 'form_start')
+    if (typeof window.clarity === 'function') window.clarity('event', 'form_start')
+  }
+
+  const update = (k) => (e) => {
+    trackFormStart()
+    setForm((f) => ({ ...f, [k]: e.target.value }))
+  }
 
   const isCheer = form.program === CHEER_PROGRAM
 
@@ -125,7 +144,7 @@ export default function TryoutLanding() {
     setErrorMsg('')
     const tag = path === 'tryout'
       ? `[TRYOUT RSVP · AUG 14] Program: ${form.program}`
-      : `[EVAL REQUEST — can't make Aug 14 tryout] Program: ${form.program}`
+      : `[ROSTER SPOT — private evaluation] Program: ${form.program}`
     const url = isCheer ? CHEER_API : EVAL_API
     const payload = isCheer
       ? {
@@ -137,7 +156,7 @@ export default function TryoutLanding() {
           parentPhone: form.parentPhone,
           city: '',
           experience: '',
-          schoolType: '',
+          schoolType: form.schoolType,
           howHeard: 'Other',
           questions: form.message ? `${tag}\n${form.message}` : tag,
         }
@@ -147,7 +166,7 @@ export default function TryoutLanding() {
           parentPhone: form.parentPhone,
           athleteNameAge: form.athleteNameAge,
           competitiveExperience: '',
-          educationSetup: '',
+          educationSetup: form.schoolType,
           additionalInfo: form.message ? `${tag}\n${form.message}` : tag,
         }
     try {
@@ -264,8 +283,8 @@ export default function TryoutLanding() {
             <a href="#standard">The Standard</a>
             <a href="#players">The Proof</a>
             <a href="#teams">Teams</a>
-            <a href="#aug14">Aug 14</a>
-            <a className="lp-cta" href="#register">Claim a Spot →</a>
+            <a href="#aug14">Visit</a>
+            <a className="lp-cta" href="#register">Schedule an Eval →</a>
           </div>
         </div>
       </div>
@@ -274,19 +293,18 @@ export default function TryoutLanding() {
       <section className="lp-hero">
         <div className="lp-hero-bg" aria-hidden="true" />
         <div className="wrap" style={{ position: 'relative' }}>
-          <Eyebrow>Friday, August 14 · Republic, MO · Free</Eyebrow>
-          <h1 className="h-hero" style={{ margin: '20px 0', maxWidth: '12ch' }}>
-            Final<br />Tryouts.
+          <Eyebrow>Republic, MO · Free evaluation · Season starting soon</Eyebrow>
+          <h1 className="h-hero" style={{ margin: '20px 0', maxWidth: '14ch' }}>
+            Missed<br />Tryouts?
           </h1>
-          <p className="lead" style={{ maxWidth: '54ch' }}>
-            The last chance to earn a Warriors jersey for the 2026–27 season.
-            Boys &amp; girls basketball. Cheer. One day, one gym — and{' '}
-            <strong style={{ color: 'var(--paper)' }}>{boysSpots} boys roster spots</strong> left
-            across five teams, with girls &amp; cheer rosters forming now.
+          <p className="lead" style={{ maxWidth: '56ch' }}>
+            <strong style={{ color: 'var(--paper)' }}>2 spots left on the 12U Warriors</strong> —
+            the #2 ranked team in the nation. Every other age group, 10U through 18U,
+            has room for the right fit, and girls &amp; cheer rosters are forming now.
+            If your athlete loves the game, we&apos;ll set up a private evaluation.
           </p>
           <div style={{ marginTop: 36, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="#register">Claim a Tryout Spot</Btn>
-            <Btn kind="ghost" href="#register" onClick={() => setPath('eval')}>Can&apos;t make the 14th?</Btn>
+            <Btn kind="brass" href="#register">Schedule an Evaluation</Btn>
           </div>
           <div className="lp-proof-strip mono" style={{ marginTop: 56, color: 'var(--paper-2)', fontSize: 13 }}>
             <span style={{ color: 'var(--brass-hi)' }}>#2 IN THE NATION · 12U</span>
@@ -459,7 +477,7 @@ export default function TryoutLanding() {
           </h2>
           <p className="lead" style={{ marginBottom: 40 }}>
             We&apos;re not rebuilding — we&apos;re reloading. Every team needs its last
-            few pieces, and the 14th is where they get found.
+            few pieces, and a private evaluation is where they get found.
           </p>
           <div className="lp-grid lp-teams">
             {TEAMS.map((t) => (
@@ -506,7 +524,7 @@ export default function TryoutLanding() {
             </button>
             {showSched && <div style={{ marginTop: 12 }}><ScheduleExplorer embed /></div>}
             <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 12 }}>
-              · PRINTED COPIES &amp; TEAM-BY-TEAM DETAIL AT THE PARENT MEETING — AUGUST 14, 4:30 PM
+              · TEAM-BY-TEAM DETAIL COVERED AT YOUR EVALUATION
             </p>
           </div>
 
@@ -544,8 +562,8 @@ export default function TryoutLanding() {
                 Warriors Cheer is ages 5–18, every skill level — from first-time
                 cheerleaders to seasoned flyers. Real coaching, real routines, and the
                 same faith-first, family-always standard the basketball program runs on.
-                Squads are forming for 2026–27 right now, and cheer tries out the same
-                day: <strong style={{ color: 'var(--paper)' }}>2:00 – 4:00 PM on August 14</strong>.
+                Squads are forming for 2026–27 right now, and Coach Lizzy will set up a time
+                for your cheerleader to come meet the squad.
               </p>
               <div style={{ marginTop: 22 }}>
                 <Btn
@@ -567,7 +585,7 @@ export default function TryoutLanding() {
       {/* ── AUG 14 DETAILS ── */}
       <section id="aug14" className="section-tight" style={{ background: 'var(--ink)', borderTop: '1px solid var(--ink-4)' }}>
         <div className="wrap">
-          <Eyebrow>Friday · August 14</Eyebrow>
+          <Eyebrow>Republic, MO</Eyebrow>
           <h2 className="h-section" style={{ margin: '16px 0 20px' }}>
             One day.<br />One gym.
           </h2>
@@ -604,12 +622,12 @@ export default function TryoutLanding() {
         <div className="wrap" style={{ maxWidth: 860 }}>
           <Eyebrow>{path === 'tryout' ? 'Claim Your Spot · Free' : 'Book a Private Eval · Free'}</Eyebrow>
           <h2 className="h-section" style={{ margin: '16px 0 16px' }}>
-            {path === 'tryout' ? <>See you on<br />the 14th.</> : <>Can&apos;t make it?<br />No problem.</>}
+            {path === 'tryout' ? <>See you on<br />the 14th.</> : <>Let&apos;s get them<br />in the gym.</>}
           </h2>
           <p className="lead" style={{ marginBottom: 36 }}>
             {path === 'tryout'
               ? 'Lock in your athlete’s tryout spot. Takes 30 seconds — a coach will confirm by email.'
-              : 'Life happens. Book a private evaluation instead and a Warriors coach will reach out within 24 hours to find a time that works.'}
+              : 'Tell us about your athlete and a Warriors coach will reach out within 24 hours to set up a private evaluation at a time that works.'}
           </p>
 
           <div style={{ background: 'var(--ink-2)', border: '1px solid var(--ink-4)', padding: 'clamp(24px, 5vw, 48px)' }}>
@@ -642,14 +660,19 @@ export default function TryoutLanding() {
               </div>
             ) : (
               <>
-                <div className="lp-toggle" role="tablist">
-                  <button type="button" className={path === 'tryout' ? 'on' : ''} onClick={() => setPath('tryout')}>
-                    I&apos;ll be there Aug 14
-                  </button>
-                  <button type="button" className={path === 'eval' ? 'on' : ''} onClick={() => setPath('eval')}>
-                    Can&apos;t make it — book an eval
-                  </button>
-                </div>
+                {/* Path toggle hidden: the Aug 14 tryout has passed, so there is
+                    only one path now (private evaluation). Restore this block
+                    when the next dated tryout is announced. */}
+                {false && (
+                  <div className="lp-toggle" role="tablist">
+                    <button type="button" className={path === 'tryout' ? 'on' : ''} onClick={() => setPath('tryout')}>
+                      I&apos;ll be there Aug 14
+                    </button>
+                    <button type="button" className={path === 'eval' ? 'on' : ''} onClick={() => setPath('eval')}>
+                      Can&apos;t make it — book an eval
+                    </button>
+                  </div>
+                )}
                 <form onSubmit={onSubmit}>
                   <div className="form-row">
                     <div className="form-field">
@@ -695,6 +718,20 @@ export default function TryoutLanding() {
                     </select>
                   </div>
                   <div className="form-field" style={{ marginBottom: 24 }}>
+                    <label>Athlete&apos;s Current Schooling</label>
+                    <select
+                      value={form.schoolType}
+                      onChange={update('schoolType')}
+                      required
+                      style={{ width: '100%', background: 'var(--ink)', color: 'var(--paper)', border: '1px solid var(--ink-4)', padding: '12px 14px', fontSize: 15, marginBottom: 20 }}
+                    >
+                      <option value="" disabled>Select one…</option>
+                      <option value="Homeschool">Homeschool</option>
+                      <option value="Public">Public school</option>
+                      <option value="Private">Private school</option>
+                      <option value="Other">Other</option>
+                    </select>
+
                     <label>Anything we should know? (optional)</label>
                     <textarea rows={3} placeholder="Experience, questions, sibling athletes..." value={form.message} onChange={update('message')} />
                   </div>
