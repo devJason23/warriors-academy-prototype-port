@@ -115,7 +115,22 @@ export default function TryoutLanding() {
   })
   const [status, setStatus] = useState('idle')
   const [errorMsg, setErrorMsg] = useState('')
-  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
+  // Fires once, the first time anyone touches any field. Combined with PageView
+  // this separates three very different failure modes: never reached the form,
+  // reached it but never started, or started and abandoned partway.
+  const startedRef = useRef(false)
+  const trackFormStart = () => {
+    if (startedRef.current || typeof window === 'undefined') return
+    startedRef.current = true
+    if (typeof window.fbq === 'function') window.fbq('trackCustom', 'FormStart')
+    if (typeof window.gtag === 'function') window.gtag('event', 'form_start')
+    if (typeof window.clarity === 'function') window.clarity('event', 'form_start')
+  }
+
+  const update = (k) => (e) => {
+    trackFormStart()
+    setForm((f) => ({ ...f, [k]: e.target.value }))
+  }
 
   const isCheer = form.program === CHEER_PROGRAM
 

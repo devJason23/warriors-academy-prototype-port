@@ -8,10 +8,15 @@ export const metadata = {
   robots: { index: false, follow: false },
 }
 
-// ── Meta Pixel: paste the ID from Events Manager → Data sources, then deploy.
-// Empty string = pixel fully disabled (no scripts load). The landing form
-// already fires fbq('track','Lead') on submit whenever the pixel is present.
-const FB_PIXEL_ID = ''
+// ── Analytics IDs. Empty string disables that tracker entirely (no script loads).
+//
+// IMPORTANT: these were previously edited in a working copy and deployed WITHOUT
+// being committed, so git and production drifted apart — deploying from git would
+// silently switch the Pixel off. Keep real values committed here so that can't
+// happen again.
+const FB_PIXEL_ID = '2921125477925922' // Events Manager → "Jason's Pixel"
+const CLARITY_ID = 'y2m4b9bdoo' // clarity.microsoft.com → Settings → Project ID
+const GA4_ID = 'G-F38S85R5PS' // analytics.google.com → Admin → Data streams
 
 export default function TryoutPage() {
   return (
@@ -26,6 +31,36 @@ export default function TryoutPage() {
           fbq('init', '${FB_PIXEL_ID}'); fbq('track', 'PageView');
         `}</Script>
       ) : null}
+
+      {/* Microsoft Clarity — session recordings, scroll heatmaps, click maps,
+          rage-click detection. This is what answers "where did they drop off". */}
+      {CLARITY_ID ? (
+        <Script id="ms-clarity" strategy="afterInteractive">{`
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "${CLARITY_ID}");
+        `}</Script>
+      ) : null}
+
+      {/* GA4 — traffic sources, channel attribution, time on page. */}
+      {GA4_ID ? (
+        <>
+          <Script
+            id="ga4-src"
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
+          />
+          <Script id="ga4-init" strategy="afterInteractive">{`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA4_ID}');
+          `}</Script>
+        </>
+      ) : null}
+
       <TryoutLanding />
     </>
   )
