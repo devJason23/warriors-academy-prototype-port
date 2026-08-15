@@ -72,11 +72,12 @@ const SEPARATORS = [
 // ── Tryout facts (from the Aug 14 flyer) ──
 const VENUE = { name: '931 N. Walnut Ave.', city: 'Republic, MO 65738' }
 const MAPS_URL = 'https://maps.google.com/?q=931+N+Walnut+Ave+Republic+MO+65738'
-const SESSIONS = [
-  { time: '9:00 – 11:00 AM', who: 'Boys · 10U / 12U / 14U' },
-  { time: '11:30 AM – 1:30 PM', who: 'All Girls · All Ages' },
-  { time: '2:00 – 4:00 PM', who: 'Boys · 16U / 18U' },
-  { time: '2:00 – 4:00 PM', who: 'Cheer · All Ages' },
+// Replaced the Aug 14 tryout-day session blocks. Evaluations are now rolling
+// and scheduled per family, so nothing here can carry a date that goes stale.
+const EVAL_STEPS = [
+  { step: 'STEP 1', what: 'You tell us about your athlete below. Takes about 30 seconds.' },
+  { step: 'STEP 2', what: 'A coach calls you to set a time that actually works for your family.' },
+  { step: 'STEP 3', what: 'Your athlete works out with the team while you watch. Ask us anything.' },
 ]
 const PROGRAMS = [
   { value: 'Boys 10U', session: '9:00 – 11:00 AM', cal: ['090000', '110000'] },
@@ -283,7 +284,7 @@ export default function TryoutLanding() {
             <a href="#standard">The Standard</a>
             <a href="#players">The Proof</a>
             <a href="#teams">Teams</a>
-            <a href="#aug14">Visit</a>
+            <a href="#visit">Visit</a>
             <a className="lp-cta" href="#register">Schedule an Eval →</a>
           </div>
         </div>
@@ -583,11 +584,11 @@ export default function TryoutLanding() {
       </section>
 
       {/* ── AUG 14 DETAILS ── */}
-      <section id="aug14" className="section-tight" style={{ background: 'var(--ink)', borderTop: '1px solid var(--ink-4)' }}>
+      <section id="visit" className="section-tight" style={{ background: 'var(--ink)', borderTop: '1px solid var(--ink-4)' }}>
         <div className="wrap">
           <Eyebrow>Republic, MO</Eyebrow>
           <h2 className="h-section" style={{ margin: '16px 0 20px' }}>
-            One day.<br />One gym.
+            How the<br />eval works.
           </h2>
           <p className="lead" style={{ marginBottom: 8 }}>
             <a href={MAPS_URL} target="_blank" rel="noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', textUnderlineOffset: 4 }}>
@@ -595,19 +596,20 @@ export default function TryoutLanding() {
             </a>
           </p>
           <p className="mono" style={{ color: 'var(--muted)', marginBottom: 32, fontSize: 12 }}>
-            · FREE TO ATTEND · PRE-REGISTRATION HOLDS YOUR ATHLETE&apos;S SPOT
+            · FREE · NO COMMITMENT · EVERY AGE GROUP, BOYS &amp; GIRLS &amp; CHEER
           </p>
           <div className="lp-sessions">
-            {SESSIONS.map((s, i) => (
+            {EVAL_STEPS.map((s, i) => (
               <div key={i} className="lp-session-row">
-                <div className="mono" style={{ color: 'var(--brass-hi)' }}>{s.time}</div>
-                <div style={{ color: 'var(--paper)', fontSize: 15 }}>{s.who}</div>
+                <div className="mono" style={{ color: 'var(--brass-hi)' }}>{s.step}</div>
+                <div style={{ color: 'var(--paper)', fontSize: 15 }}>{s.what}</div>
               </div>
             ))}
             <div className="lp-session-row" style={{ background: 'rgba(4,97,49,0.12)' }}>
-              <div className="mono" style={{ color: 'var(--brass-hi)' }}>4:30 PM</div>
+              <div className="mono" style={{ color: 'var(--brass-hi)' }}>THEN</div>
               <div style={{ color: 'var(--paper)', fontSize: 15 }}>
-                <strong>Parent Meeting</strong> — meet the coaches, hear the vision, get your questions answered.
+                <strong>You get a straight answer</strong> — where your athlete fits, what the
+                season looks like, and what it costs. No pressure either way.
               </div>
             </div>
           </div>
