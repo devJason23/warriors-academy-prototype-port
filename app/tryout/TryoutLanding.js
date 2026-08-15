@@ -712,7 +712,7 @@ export default function TryoutLanding() {
                     <select value={form.program} onChange={update('program')} style={{ width: '100%', background: 'var(--ink)', color: 'var(--paper)', border: '1px solid var(--ink-4)', padding: '12px 14px', fontSize: 15 }}>
                       {PROGRAMS.map((p) => (
                         <option key={p.value} value={p.value}>
-                          {p.value} — {p.session}
+                          {p.value}
                         </option>
                       ))}
                     </select>
