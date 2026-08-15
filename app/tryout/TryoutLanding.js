@@ -297,11 +297,11 @@ export default function TryoutLanding() {
           <h1 className="h-hero" style={{ margin: '20px 0', maxWidth: '14ch' }}>
             Missed<br />Tryouts?
           </h1>
-          <p className="lead" style={{ maxWidth: '54ch' }}>
-            Roster spots are still forming for the 2026–27 season. If your athlete
-            loves the game and wants to get better, we&apos;ll set up a private
-            evaluation — <strong style={{ color: 'var(--paper)' }}>{boysSpots} boys spots</strong> left
-            across five teams, with girls &amp; cheer rosters forming now.
+          <p className="lead" style={{ maxWidth: '56ch' }}>
+            <strong style={{ color: 'var(--paper)' }}>2 spots left on the 12U Warriors</strong> —
+            the #2 ranked team in the nation. Every other age group, 10U through 18U,
+            has room for the right fit, and girls &amp; cheer rosters are forming now.
+            If your athlete loves the game, we&apos;ll set up a private evaluation.
           </p>
           <div style={{ marginTop: 36, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Btn kind="brass" href="#register">Schedule an Evaluation</Btn>
