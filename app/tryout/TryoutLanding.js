@@ -111,7 +111,7 @@ export default function TryoutLanding() {
   const [form, setForm] = useState({
     parentName: '', parentEmail: '', parentPhone: '',
     athleteNameAge: '', cheerName: '', cheerAge: '',
-    program: PROGRAMS[1].value, message: '',
+    program: PROGRAMS[1].value, schoolType: '', message: '',
   })
   const [status, setStatus] = useState('idle')
   const [errorMsg, setErrorMsg] = useState('')
@@ -152,7 +152,7 @@ export default function TryoutLanding() {
           parentPhone: form.parentPhone,
           city: '',
           experience: '',
-          schoolType: '',
+          schoolType: form.schoolType,
           howHeard: 'Other',
           questions: form.message ? `${tag}\n${form.message}` : tag,
         }
@@ -162,7 +162,7 @@ export default function TryoutLanding() {
           parentPhone: form.parentPhone,
           athleteNameAge: form.athleteNameAge,
           competitiveExperience: '',
-          educationSetup: '',
+          educationSetup: form.schoolType,
           additionalInfo: form.message ? `${tag}\n${form.message}` : tag,
         }
     try {
@@ -710,6 +710,20 @@ export default function TryoutLanding() {
                     </select>
                   </div>
                   <div className="form-field" style={{ marginBottom: 24 }}>
+                    <label>Athlete&apos;s Current Schooling</label>
+                    <select
+                      value={form.schoolType}
+                      onChange={update('schoolType')}
+                      required
+                      style={{ width: '100%', background: 'var(--ink)', color: 'var(--paper)', border: '1px solid var(--ink-4)', padding: '12px 14px', fontSize: 15, marginBottom: 20 }}
+                    >
+                      <option value="" disabled>Select one…</option>
+                      <option value="Homeschool">Homeschool</option>
+                      <option value="Public">Public school</option>
+                      <option value="Private">Private school</option>
+                      <option value="Other">Other</option>
+                    </select>
+
                     <label>Anything we should know? (optional)</label>
                     <textarea rows={3} placeholder="Experience, questions, sibling athletes..." value={form.message} onChange={update('message')} />
                   </div>
