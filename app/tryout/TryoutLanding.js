@@ -42,6 +42,18 @@ const FEATURED = [
 // Tryout-page-only badge label tweaks (rosterData names untouched site-wide)
 const BADGE_LABEL = { Rebounding: 'Rebounder' }
 
+// A card has room for exactly ONE accolade. Jason's ruling: Regional Champion
+// outranks State Champion, so it leads for everyone who holds both. Brolen is
+// the exception — 2× National Champion is the strongest claim on the page and
+// stays. rosterData order is left untouched so the main site is unaffected;
+// the expanded profile still lists every accolade.
+const CARD_ACCOLADE = {
+  'jace-rucker': 'Regional Champion',
+  'javion-rucker': 'Regional Champion',
+  'preston-bishop': 'Regional Champion',
+}
+const cardAccolade = (p) => CARD_ACCOLADE[p.slug] || p.accolades[0]
+
 const COACH = { name: 'Coach Jason', phone: '(417) 413-3305', tel: '+14174133305' }
 
 // Landing-page-only display cap on open spots (real counts stay in rosterData).
@@ -262,7 +274,7 @@ export default function TryoutLanding() {
     .map(({ slug, photo, pos, fit, src }) => {
       const p = PLAYERS[slug]
       return p
-        ? { ...p, cardPhoto: src || (p.photos[photo] || p.photos[0]).src, cardPos: pos || 'center 25%', cardFit: fit || 'cover' }
+        ? { ...p, slug, cardPhoto: src || (p.photos[photo] || p.photos[0]).src, cardPos: pos || 'center 25%', cardFit: fit || 'cover' }
         : null
     })
     .filter(Boolean)
@@ -508,9 +520,9 @@ export default function TryoutLanding() {
                     #{p.jersey} · {p.ageGroup.toUpperCase()} · {p.position.toUpperCase()}
                   </div>
                   <div className="mono" style={{ fontSize: 12, color: 'var(--paper-2)' }}>{statLine(p)}</div>
-                  {p.accolades[0] && (
+                  {cardAccolade(p) && (
                     <div className="mono" style={{ fontSize: 11, color: 'var(--paper)', marginTop: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                      ★ {p.accolades[0]}
+                      ★ {cardAccolade(p)}
                     </div>
                   )}
                   <div className="mono" style={{ fontSize: 10, color: openProfile === p.id ? 'var(--brass-hi)' : 'var(--muted)', marginTop: 10, letterSpacing: '0.1em' }}>

@@ -531,7 +531,7 @@ export const PLAYERS = {
     archetype: '',
     nickname: '',
     hometown: '',
-    accolades: [],
+    accolades: ['Regional Champion', 'State Champion'],
     photos: [
       { label: 'PORTRAIT',    sub: '// RISE',       aspect: '3/4', src: '/players/preston-bishop/portrait-b.jpg', position: 'center' },
       { label: 'CHARACTER',   sub: '// HAND UP',    aspect: '4/5', src: '/players/preston-bishop/action-1.jpg', position: 'center' },
