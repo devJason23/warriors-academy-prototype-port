@@ -42,6 +42,8 @@ const FEATURED = [
 // Tryout-page-only badge label tweaks (rosterData names untouched site-wide)
 const BADGE_LABEL = { Rebounding: 'Rebounder' }
 
+const COACH = { name: 'Coach Jason', phone: '(417) 413-3305', tel: '+14174133305' }
+
 // Landing-page-only display cap on open spots (real counts stay in rosterData).
 const SPOT_CAP = 3
 const capSpots = (n) => Math.min(n || 0, SPOT_CAP)
@@ -107,6 +109,31 @@ const EVAL_STATIONS = [
     station: 'DR. DISH CHALLENGE',
     what: 'Shooting scored on the Dr. Dish machine, then posted against every athlete who has tested here — and against the current Warriors.',
   },
+  {
+    station: 'COMPETITIVENESS',
+    what: 'How they respond when it gets hard, and how they take coaching. Honestly, this is the one we care about most.',
+  },
+]
+
+// Naming the adults. The page was asking a parent to hand their kid to
+// strangers without naming one of them — the coaches existed only as quote
+// attributions buried inside tap-to-expand player cards.
+const COACHES = [
+  {
+    name: 'Don Hamilton',
+    role: 'Athletic Director · 18U Head Coach',
+    note: 'Lead Musical Pastor at James River Church in Ozark.',
+  },
+  {
+    name: 'Jason Hill',
+    role: '12U Head Coach · Director of Player Development',
+    note: 'Two-time NCHBC National Champion coach. Coaches the 12U team ranked #2 in the country.',
+  },
+  {
+    name: 'Dee Hamilton',
+    role: 'Head of Coaching Staff · 10U & 16U Head Coach',
+    note: 'Oversees the entire Warriors coaching staff.',
+  },
 ]
 const PROGRAMS = [
   { value: 'Boys 10U', session: '9:00 – 11:00 AM', cal: ['090000', '110000'] },
@@ -159,6 +186,16 @@ export default function TryoutLanding() {
     if (typeof window.fbq === 'function') window.fbq('trackCustom', 'FormStart')
     if (typeof window.gtag === 'function') window.gtag('event', 'form_start')
     if (typeof window.clarity === 'function') window.clarity('event', 'form_start')
+  }
+
+  // A tap on the phone number is a lead — arguably a better one than the form,
+  // since it skips straight to the conversation. Counts as a Lead for the Pixel
+  // so Meta optimizes toward callers too, not only form submitters.
+  const trackCall = () => {
+    if (typeof window === 'undefined') return
+    if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { lead_type: 'phone_call' })
+    if (typeof window.gtag === 'function') window.gtag('event', 'phone_call_click')
+    if (typeof window.clarity === 'function') window.clarity('event', 'phone_call_click')
   }
 
   const update = (k) => (e) => {
@@ -323,7 +360,7 @@ export default function TryoutLanding() {
       <section className="lp-hero">
         <div className="lp-hero-bg" aria-hidden="true" />
         <div className="wrap" style={{ position: 'relative' }}>
-          <Eyebrow>Republic, MO · Free evaluation · Season starting soon</Eyebrow>
+          <Eyebrow>Springfield &amp; Republic, MO · Free evaluation · Season starting soon</Eyebrow>
           <h1 className="h-hero" style={{ margin: '20px 0', maxWidth: '14ch' }}>
             Missed<br />Tryouts?
           </h1>
@@ -333,9 +370,32 @@ export default function TryoutLanding() {
             10U through 18U, plus girls &amp; cheer. If your athlete loves the game,
             we&apos;ll set up a private evaluation.
           </p>
+          {/* The proof section is a wall of national champions, which reads to a
+              first-time parent as "my kid would embarrass himself." Say plainly,
+              before they scroll into it, that we are looking for kids who love
+              the game — not only kids with a highlight reel. */}
+          <p className="lead" style={{ maxWidth: '56ch', marginTop: 16 }}>
+            Public school, private school, or homeschool. Never played on a real
+            team before? That&apos;s a lot of the kids we&apos;re looking for — we care
+            more about how bad they want it than what they can already do.
+          </p>
           <div style={{ marginTop: 36, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Btn kind="brass" href="#register">Schedule an Evaluation</Btn>
           </div>
+          {/* Click-to-call. The phone number lived in rosterData and had never
+              been rendered on this page — so the highest-intent visitor, the
+              parent ready to talk right now, had nothing to tap and no way to
+              reach the person who actually closes. */}
+          <p className="lead" style={{ marginTop: 20, marginBottom: 0, fontSize: 16 }}>
+            Rather just talk to somebody? Call or text {COACH.name} —{' '}
+            <a
+              href={`tel:${COACH.tel}`}
+              onClick={trackCall}
+              style={{ color: 'var(--brass-hi)', textDecoration: 'underline', textUnderlineOffset: 4, whiteSpace: 'nowrap' }}
+            >
+              {COACH.phone}
+            </a>
+          </p>
           <div className="lp-proof-strip mono" style={{ marginTop: 56, color: 'var(--paper-2)', fontSize: 13 }}>
             <span style={{ color: 'var(--brass-hi)' }}>#2 IN THE NATION · 12U</span>
             <span>GOLD BALL CHAMPIONS</span>
@@ -585,15 +645,26 @@ export default function TryoutLanding() {
             </p>
           </div>
 
-          {/* Homeschool advantage — one tight block, no “academy” anywhere */}
+          {/* This block used to read "Homeschool families — this was built for
+              you" over "daytime training while other kids sit in a classroom."
+              We are now buying Springfield PUBLIC-school parents, and that copy
+              told them, twice, that they were the other kids. It was the only
+              audience-definition statement on the page, so it silently
+              disqualified the exact people the ads are paying for. */}
           <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'minmax(280px, 1fr) minmax(280px, 1fr)', gap: 40, alignItems: 'center', flexWrap: 'wrap' }} className="lp-homeschool">
             <div>
-              <Eyebrow>Built Different</Eyebrow>
-              <h3 className="h-sub" style={{ margin: '14px 0 14px' }}>Homeschool families — this was built for you.</h3>
+              <Eyebrow>Who Plays Here</Eyebrow>
+              <h3 className="h-sub" style={{ margin: '14px 0 14px' }}>Public school, private school, homeschool — all of them.</h3>
               <p className="body">
-                Daytime training while other kids sit in a classroom. A schedule that works
-                with your family, not against it. Christ-centered coaching, real competition
-                on a national stage, and a locker room that feels like family — because it is.
+                Around here a lot of kids can&apos;t play school ball until sixth or seventh
+                grade. If your son is 9, 10, 11 and loves this game, he doesn&apos;t have to
+                wait for somebody to let him play. Warriors practice around school hours, and
+                we have homeschool, public school, and private school kids on the floor
+                together every week.
+              </p>
+              <p className="body" style={{ marginTop: 14 }}>
+                Christ-centered coaching, real competition on a national stage, and a locker
+                room that feels like family — because it is.
               </p>
             </div>
             <img src="/culture-warrior-gym.jpg" alt="Warriors culture in the gym" style={{ width: '100%', height: 'auto', border: '1px solid var(--ink-4)' }} loading="lazy" decoding="async" />
@@ -627,7 +698,10 @@ export default function TryoutLanding() {
                   kind="brass"
                   href="#register"
                   onClick={() => {
-                    setPath('tryout')
+                    // Was setPath('tryout') — that flipped the whole register
+                    // section back to the retired Aug 14 copy and confirmed the
+                    // family for a tryout that has already happened, complete
+                    // with an "Add to Calendar" link for 20260814. Stay on 'eval'.
                     setForm((f) => ({ ...f, program: CHEER_PROGRAM }))
                   }}
                 >
@@ -679,6 +753,26 @@ export default function TryoutLanding() {
           <p className="mono" style={{ marginTop: 20, color: 'var(--muted)', fontSize: 12 }}>
             · BRING: BASKETBALL SHOES / ATHLETIC WEAR · WATER · YOUR BEST EFFORT
           </p>
+
+          <div style={{ marginTop: 56 }}>
+            <h3 className="h-sub" style={{ marginBottom: 8 }}>Who your kid would be with.</h3>
+            <p className="lead" style={{ marginBottom: 24 }}>
+              You&apos;re thinking about handing your child to people you&apos;ve never met.
+              Here&apos;s who we are.
+            </p>
+            <div className="lp-sessions">
+              {COACHES.map((c) => (
+                <div key={c.name} className="lp-session-row">
+                  <div className="mono" style={{ color: 'var(--brass-hi)' }}>{c.name.toUpperCase()}</div>
+                  <div style={{ color: 'var(--paper)', fontSize: 15 }}>
+                    <strong>{c.role}</strong>
+                    <br />
+                    {c.note}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           <div style={{ marginTop: 48 }}>
             <h3 className="h-sub" style={{ marginBottom: 20 }}>Getting them in takes 30 seconds.</h3>
@@ -763,17 +857,17 @@ export default function TryoutLanding() {
                   <div className="form-row">
                     <div className="form-field">
                       <label>Parent / Guardian Name</label>
-                      <input placeholder="Full name" value={form.parentName} onChange={update('parentName')} required />
+                      <input autoComplete="name" placeholder="First and last name" value={form.parentName} onChange={update('parentName')} required />
                     </div>
                     <div className="form-field">
                       <label>Email</label>
-                      <input type="email" placeholder="you@example.com" value={form.parentEmail} onChange={update('parentEmail')} required />
+                      <input type="email" autoComplete="email" placeholder="you@example.com" value={form.parentEmail} onChange={update('parentEmail')} required />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="form-field">
                       <label>Phone</label>
-                      <input type="tel" placeholder="(417) 555-0000" value={form.parentPhone} onChange={update('parentPhone')} required />
+                      <input type="tel" autoComplete="tel" placeholder="(417) 555-0000" value={form.parentPhone} onChange={update('parentPhone')} required />
                     </div>
                     {isCheer ? (
                       <div className="form-field" style={{ display: 'grid', gridTemplateColumns: '1fr 90px', gap: 10 }}>
@@ -789,7 +883,7 @@ export default function TryoutLanding() {
                     ) : (
                       <div className="form-field">
                         <label>Athlete&apos;s Name + Age</label>
-                        <input placeholder="e.g. Micah · 13" value={form.athleteNameAge} onChange={update('athleteNameAge')} required />
+                        <input placeholder="Micah, age 11" value={form.athleteNameAge} onChange={update('athleteNameAge')} required />
                       </div>
                     )}
                   </div>
@@ -824,13 +918,13 @@ export default function TryoutLanding() {
                   <Btn kind="brass" type="submit" disabled={status === 'submitting'}>
                     {status === 'submitting'
                       ? 'Sending…'
-                      : path === 'tryout' ? 'Claim My Athlete’s Spot' : 'Book My Free Eval'}
+                      : path === 'tryout' ? 'Claim My Athlete’s Spot' : 'Have Coach Jason Call Me'}
                   </Btn>
                   {status === 'error' && (
                     <div style={{ marginTop: 16, color: '#ff8a8a', fontSize: 14 }}>{errorMsg}</div>
                   )}
                   <div className="mono" style={{ marginTop: 16, fontSize: 11, letterSpacing: '0.12em', color: 'var(--muted)', textTransform: 'uppercase' }}>
-                    Free · No commitment · A coach confirms by email
+                    Free · No commitment · A coach calls you within 24 hours
                   </div>
                 </form>
               </>
