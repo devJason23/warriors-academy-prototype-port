@@ -46,6 +46,20 @@ const BADGE_LABEL = { Rebounding: 'Rebounder' }
 const SPOT_CAP = 3
 const capSpots = (n) => Math.min(n || 0, SPOT_CAP)
 
+// Roster-spot labels are a deliberate sales posture, NOT a live count off
+// rosterData.openSpots. Two things we learned the hard way: printing the real
+// numbers ("4 SPOTS LEFT" on 10U and 16U) reads as an empty program, and
+// showing a team as full with no qualifier makes a genuinely elite prospect in
+// that age group close the tab. So 14U reads FULL with an asterisk that keeps
+// the door open for the right kid, 12U carries the campaign's scarcity hook,
+// and everything else reads "1–2" — scarce, but never closed.
+const SPOT_DISPLAY = {
+  'team-12u': { text: 'ONLY 2 SPOTS LEFT', color: '#E8B84B' },
+  'team-14u': { text: 'FULL *', color: '#E5484D' },
+}
+const DEFAULT_SPOT_DISPLAY = { text: '1–2 PLAYERS', color: 'var(--paper-2)' }
+const spotDisplay = (t) => SPOT_DISPLAY[t.id] || DEFAULT_SPOT_DISPLAY
+
 // (Schedule rendering comes from the real schedule experience —
 // ScheduleExplorer, imported from app/schedule/page.js in embed mode.)
 
@@ -60,7 +74,7 @@ const SEPARATORS = [
     v: 'ATG-based strength work that bulletproofs knees, builds bounce, and keeps athletes on the floor — from day one.',
   },
   {
-    k: 'Daily Film Study',
+    k: 'Mandatory Film Study',
     v: 'Pros watch film. So do Warriors. IQ is trained on a screen before it shows up on the scoreboard.',
   },
   {
@@ -77,7 +91,22 @@ const MAPS_URL = 'https://maps.google.com/?q=931+N+Walnut+Ave+Republic+MO+65738'
 const EVAL_STEPS = [
   { step: 'STEP 1', what: 'You tell us about your athlete below. Takes about 30 seconds.' },
   { step: 'STEP 2', what: 'A coach calls you to set a time that actually works for your family.' },
-  { step: 'STEP 3', what: 'Your athlete works out with the team while you watch. Ask us anything.' },
+  { step: 'STEP 3', what: 'Your athlete tests and runs while you watch. Ask us anything.' },
+]
+
+// The actual combine. This is the page's strongest asset and it was missing
+// entirely — a parent had no idea the eval is a measured, competitive event
+// rather than a coach glancing at their kid. The leaderboard is the hook: the
+// athlete's numbers get ranked against everyone who has tested here, current
+// Warriors included, which gives a kid a reason to want to come.
+const EVAL_STATIONS = [
+  { station: '40-YARD DASH', what: 'Timed. Same test college and pro programs run.' },
+  { station: 'VERTICAL LEAP', what: 'Measured and recorded — a number they can chase all season.' },
+  { station: 'BALL-HANDLING', what: 'A live handling gauntlet under real defensive pressure.' },
+  {
+    station: 'DR. DISH CHALLENGE',
+    what: 'Shooting scored on the Dr. Dish machine, then posted against every athlete who has tested here — and against the current Warriors.',
+  },
 ]
 const PROGRAMS = [
   { value: 'Boys 10U', session: '9:00 – 11:00 AM', cal: ['090000', '110000'] },
@@ -299,10 +328,10 @@ export default function TryoutLanding() {
             Missed<br />Tryouts?
           </h1>
           <p className="lead" style={{ maxWidth: '56ch' }}>
-            <strong style={{ color: 'var(--paper)' }}>2 spots left on the 12U Warriors</strong> —
-            the #2 ranked team in the nation. Every other age group, 10U through 18U,
-            has room for the right fit, and girls &amp; cheer rosters are forming now.
-            If your athlete loves the game, we&apos;ll set up a private evaluation.
+            <strong style={{ color: 'var(--paper)' }}>Only 2 spots left on the #2 ranked 12U team in the nation.</strong>{' '}
+            Every other team could still use a player if they&apos;re the perfect fit —
+            10U through 18U, plus girls &amp; cheer. If your athlete loves the game,
+            we&apos;ll set up a private evaluation.
           </p>
           <div style={{ marginTop: 36, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Btn kind="brass" href="#register">Schedule an Evaluation</Btn>
@@ -325,8 +354,8 @@ export default function TryoutLanding() {
           </h2>
           <p className="lead" style={{ marginBottom: 20 }}>
             Warriors train like it matters — because it does. Elite skill development,
-            strength and bulletproof-knee work, daily film, and a badge system where
-            nothing is given and everything is earned.
+            strength and bulletproof-knee work, mandatory film study, and a badge system
+            where nothing is given and everything is earned.
           </p>
           <p className="lead" style={{ marginBottom: 40 }}>
             And here&apos;s the part that makes it different:
@@ -348,6 +377,30 @@ export default function TryoutLanding() {
           <p className="mono" style={{ marginTop: 18, color: 'var(--muted)', fontSize: 12 }}>
             · THE BADGE ECONOMY — EARN IT. PROVE IT IN GAMES. THEN TEACH IT.
           </p>
+
+          {/* The verse the whole badge economy is built on: a Warrior earns a
+              badge, then teaches it to a younger Warrior. Jason's non-negotiable
+              — the program plays to win, but honoring God comes first. */}
+          <blockquote
+            style={{
+              marginTop: 40,
+              padding: '28px 30px',
+              background: 'rgba(4,97,49,0.10)',
+              borderLeft: '3px solid var(--brass-hi)',
+            }}
+          >
+            <p style={{ color: 'var(--paper)', fontSize: 'clamp(19px, 2.6vw, 25px)', lineHeight: 1.45, marginBottom: 14 }}>
+              “As iron sharpens iron, so one person sharpens another.”
+            </p>
+            <div className="mono" style={{ color: 'var(--brass-hi)', fontSize: 12, letterSpacing: '0.14em' }}>
+              · PROVERBS 27:17
+            </div>
+            <p className="lead" style={{ marginTop: 18, marginBottom: 0 }}>
+              It&apos;s the verse the badge economy is built on, and it&apos;s the
+              reason we do this. We want to win badly — but more than that, we want
+              to honor God in everything we do, on the floor and off it.
+            </p>
+          </blockquote>
 
           <div style={{ marginTop: 56 }}>
             <h3 className="h-sub" style={{ marginBottom: 24 }}>What separates a Warrior.</h3>
@@ -489,8 +542,8 @@ export default function TryoutLanding() {
                 ) : (
                   <div className="mono" style={{ fontSize: 11, color: 'var(--muted)', marginTop: 6 }}>{t.season}</div>
                 )}
-                <div className="mono" style={{ marginTop: 14, fontSize: 12, color: t.openSpots <= 2 ? '#E8B84B' : 'var(--paper-2)', letterSpacing: '0.08em' }}>
-                  {t.openSpots >= SPOT_CAP ? '2–3 SPOTS' : `${t.openSpots} SPOT${t.openSpots === 1 ? '' : 'S'}`} LEFT
+                <div className="mono" style={{ marginTop: 14, fontSize: 12, color: spotDisplay(t).color, letterSpacing: '0.08em' }}>
+                  {spotDisplay(t).text}
                 </div>
               </div>
             ))}
@@ -505,6 +558,9 @@ export default function TryoutLanding() {
               <div className="mono" style={{ marginTop: 14, fontSize: 12, color: 'var(--paper-2)', letterSpacing: '0.08em' }}>ALL AGES WELCOME</div>
             </div>
           </div>
+          <p className="mono" style={{ marginTop: 18, color: 'var(--muted)', fontSize: 12, letterSpacing: '0.06em' }}>
+            <span style={{ color: '#E5484D' }}>*</span> 14U IS FULL — WE&apos;LL STILL LOOK AT AN ELITE, PERFECT-FIT PLAYER.
+          </p>
 
           {/* The real schedule experience, embedded (countdown, team filters, calendar) */}
           <div style={{ marginTop: 64 }}>
@@ -598,24 +654,52 @@ export default function TryoutLanding() {
           <p className="mono" style={{ color: 'var(--muted)', marginBottom: 32, fontSize: 12 }}>
             · FREE · NO COMMITMENT · EVERY AGE GROUP, BOYS &amp; GIRLS &amp; CHEER
           </p>
+          <p className="lead" style={{ marginBottom: 28 }}>
+            This isn&apos;t a coach watching your kid shoot around for ten minutes.
+            It&apos;s a real combine — <strong style={{ color: 'var(--paper)' }}>we put them
+            through the ringer</strong>, we put numbers on it, and those numbers go on the
+            board against every athlete who&apos;s ever tested here.
+          </p>
           <div className="lp-sessions">
-            {EVAL_STEPS.map((s, i) => (
+            {EVAL_STATIONS.map((s, i) => (
               <div key={i} className="lp-session-row">
-                <div className="mono" style={{ color: 'var(--brass-hi)' }}>{s.step}</div>
+                <div className="mono" style={{ color: 'var(--brass-hi)' }}>{s.station}</div>
                 <div style={{ color: 'var(--paper)', fontSize: 15 }}>{s.what}</div>
               </div>
             ))}
             <div className="lp-session-row" style={{ background: 'rgba(4,97,49,0.12)' }}>
-              <div className="mono" style={{ color: 'var(--brass-hi)' }}>THEN</div>
+              <div className="mono" style={{ color: 'var(--brass-hi)' }}>THEN THEY RUN</div>
               <div style={{ color: 'var(--paper)', fontSize: 15 }}>
-                <strong>You get a straight answer</strong> — where your athlete fits, what the
-                season looks like, and what it costs. No pressure either way.
+                <strong>They play with and against our best players.</strong> Not a drill line —
+                live basketball with nationally ranked Warriors. Most kids never get to find out
+                how they measure up against that. Your athlete will, in one afternoon.
               </div>
             </div>
           </div>
           <p className="mono" style={{ marginTop: 20, color: 'var(--muted)', fontSize: 12 }}>
             · BRING: BASKETBALL SHOES / ATHLETIC WEAR · WATER · YOUR BEST EFFORT
           </p>
+
+          <div style={{ marginTop: 48 }}>
+            <h3 className="h-sub" style={{ marginBottom: 20 }}>Getting them in takes 30 seconds.</h3>
+            <div className="lp-sessions">
+              {EVAL_STEPS.map((s, i) => (
+                <div key={i} className="lp-session-row">
+                  <div className="mono" style={{ color: 'var(--brass-hi)' }}>{s.step}</div>
+                  <div style={{ color: 'var(--paper)', fontSize: 15 }}>{s.what}</div>
+                </div>
+              ))}
+              <div className="lp-session-row" style={{ background: 'rgba(4,97,49,0.12)' }}>
+                <div className="mono" style={{ color: 'var(--brass-hi)' }}>AFTER</div>
+                <div style={{ color: 'var(--paper)', fontSize: 15 }}>
+                  <strong>You get a straight answer</strong> — their numbers, where they&apos;d
+                  fit, what the season looks like, and what it costs. If they&apos;re not a fit
+                  we&apos;ll tell you that too, and you&apos;ll still leave with their testing
+                  results. No pressure either way.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
