@@ -370,14 +370,18 @@ export default function TryoutLanding() {
             10U through 18U, plus girls &amp; cheer. If your athlete loves the game,
             we&apos;ll set up a private evaluation.
           </p>
-          {/* The proof section is a wall of national champions, which reads to a
-              first-time parent as "my kid would embarrass himself." Say plainly,
-              before they scroll into it, that we are looking for kids who love
-              the game — not only kids with a highlight reel. */}
+          {/* Do NOT claim public-school kids can play as-is — they can't.
+              Warriors train during the school day, so a roster spot requires
+              homeschool, a co-op, or a part-time school schedule. The honest
+              requirement lives in the "Warriors train during the day" section
+              below. This line stays on the pain point and on effort over
+              résumé, without making an eligibility promise we can't keep. */}
           <p className="lead" style={{ maxWidth: '56ch', marginTop: 16 }}>
-            Public school, private school, or homeschool. Never played on a real
-            team before? That&apos;s a lot of the kids we&apos;re looking for — we care
-            more about how bad they want it than what they can already do.
+            Springfield public schools don&apos;t start basketball until 7th grade.
+            If your son is 10, 11, 12 and loves this game, he shouldn&apos;t have to
+            sit and wait three years for somebody to let him play. Never been on a
+            real team? That&apos;s a lot of who we&apos;re looking for — we care more
+            about how bad they want it than what they can already do.
           </p>
           <div style={{ marginTop: 36, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Btn kind="brass" href="#register">Schedule an Evaluation</Btn>
@@ -654,13 +658,33 @@ export default function TryoutLanding() {
           <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'minmax(280px, 1fr) minmax(280px, 1fr)', gap: 40, alignItems: 'center', flexWrap: 'wrap' }} className="lp-homeschool">
             <div>
               <Eyebrow>Who Plays Here</Eyebrow>
-              <h3 className="h-sub" style={{ margin: '14px 0 14px' }}>Public school, private school, homeschool — all of them.</h3>
+              <h3 className="h-sub" style={{ margin: '14px 0 14px' }}>Warriors train during the day.</h3>
               <p className="body">
-                Around here a lot of kids can&apos;t play school ball until sixth or seventh
-                grade. If your son is 9, 10, 11 and loves this game, he doesn&apos;t have to
-                wait for somebody to let him play. Warriors practice around school hours, and
-                we have homeschool, public school, and private school kids on the floor
-                together every week.
+                So our players are homeschool families, co-op families, or kids on a
+                part-time school schedule. If your son is in public school full time right
+                now, playing here means changing that — and we know exactly how big that
+                sounds the first time you hear it.
+              </p>
+              <p className="body" style={{ marginTop: 14 }}>
+                Here&apos;s what almost every parent says next: <strong style={{ color: 'var(--paper)' }}>&ldquo;I&apos;m
+                not a teacher.&rdquo;</strong> You don&apos;t have to be. Most homeschool
+                families spend one to two focused hours a day on core academics — not seven.
+                And every Warriors family gets a partner discount on Numerade, an AI video
+                tutor library with expert-led walkthroughs for any K–12 subject. When your
+                kid hits a wall on algebra at 9 PM on a Tuesday, an expert walks them
+                through it on video, right then.
+              </p>
+              <p className="body" style={{ marginTop: 14 }}>
+                That&apos;s the part nobody tells you, and it&apos;s the reason families make
+                this switch and don&apos;t look back. Call {COACH.name} and ask him anything
+                about it —{' '}
+                <a
+                  href={`tel:${COACH.tel}`}
+                  onClick={trackCall}
+                  style={{ color: 'var(--brass-hi)', textDecoration: 'underline', textUnderlineOffset: 4, whiteSpace: 'nowrap' }}
+                >
+                  {COACH.phone}
+                </a>.
               </p>
               <p className="body" style={{ marginTop: 14 }}>
                 Christ-centered coaching, real competition on a national stage, and a locker
