@@ -10,7 +10,6 @@ import Btn from '../../components/ui/Btn'
 import Eyebrow from '../../components/ui/Eyebrow'
 import LiteYouTube from '../../components/ui/LiteYouTube'
 import { PLAYERS, TEAMS, BADGES } from '../../components/warriors/rosterData'
-import { ScheduleExplorer } from '../schedule/page'
 
 const EVAL_API = 'https://warriors-basketball-eval.vercel.app/api/submissions'
 // Cheer submissions go to the cheer backend so Coach Lizzy's sheet + inbox
@@ -74,8 +73,6 @@ const SPOT_DISPLAY = {
 const DEFAULT_SPOT_DISPLAY = { text: '1–2 PLAYERS', color: 'var(--paper-2)' }
 const spotDisplay = (t) => SPOT_DISPLAY[t.id] || DEFAULT_SPOT_DISPLAY
 
-// (Schedule rendering comes from the real schedule experience —
-// ScheduleExplorer, imported from app/schedule/page.js in embed mode.)
 
 // ── What separates a Warrior (differentiators grid) ──
 const SEPARATORS = [
@@ -147,6 +144,23 @@ const COACHES = [
     note: 'Oversees the entire Warriors coaching staff.',
   },
 ]
+// Season arc, straight off components/schedule/schedule-data.json (2026–27).
+// School ball runs Sept 18 – Feb 19 alongside the tournaments; the postseason
+// rows are highlighted because State → Regionals → Nationals is the story, and
+// Nationals landing in Springfield is the single best fact on this page.
+const SEASON_STOPS = [
+  { when: 'SEP – FEB', what: 'School ball — home & away', note: 'Bradleyville, Lebanon, Crane, Reed Springs, Hartville, NWA' },
+  { when: 'OCT', what: 'Norwood Tournament', note: 'Norwood, MO' },
+  { when: 'NOV', what: 'STL Tip-Off', note: 'St. Louis, MO' },
+  { when: 'DEC', what: 'Reed Springs Tournament', note: 'Reed Springs, MO' },
+  { when: 'DEC', what: 'Winter Slam', note: 'The Fieldhouse · Springfield, MO' },
+  { when: 'JAN', what: 'Sparta Tournament', note: 'Sparta, MO' },
+  { when: 'FEB', what: 'Mercy Warriors Classic', note: 'Joplin, MO' },
+  { when: 'FEB', what: 'STATE TOURNAMENT', note: 'Columbia, MO', big: true },
+  { when: 'FEB', what: 'REGIONALS', note: 'Wichita, KS', big: true },
+  { when: 'MAR', what: 'NATIONALS', note: 'Springfield, MO — ten minutes from our gym', big: true },
+]
+
 const PROGRAMS = [
   { value: 'Boys 10U', session: '9:00 – 11:00 AM', cal: ['090000', '110000'] },
   { value: 'Boys 12U', session: '9:00 – 11:00 AM', cal: ['090000', '110000'] },
@@ -278,9 +292,6 @@ export default function TryoutLanding() {
         : null
     })
     .filter(Boolean)
-
-  // Full schedule embed is heavy — collapsed behind a button by default.
-  const [showSched, setShowSched] = useState(false)
 
   // Expanded in-page profile (the "menu" — tap a card, profile opens below).
   const [openProfile, setOpenProfile] = useState(null)
@@ -638,26 +649,45 @@ export default function TryoutLanding() {
             <span style={{ color: '#E5484D' }}>*</span> 14U IS FULL — WE&apos;LL STILL LOOK AT AN ELITE, PERFECT-FIT PLAYER.
           </p>
 
-          {/* The real schedule experience, embedded (countdown, team filters, calendar) */}
+          {/* Season proof — static, always visible, nothing to click.
+              This replaced a "+ SHOW THE FULL SCHEDULE" button that mounted the
+              full ScheduleExplorer app. Two problems with that: a cold visitor
+              who never tapped saw no proof at all, and one who did tap landed in
+              a filterable calendar and stopped being on the page that asks them
+              to call. The interactive explorer still lives at /schedule for
+              current families, who are who it was actually built for.
+
+              Shows BOTH halves deliberately — Warriors play a real school-ball
+              season of home and away games, not just a tournament circuit, and
+              the old block implied otherwise. */}
           <div style={{ marginTop: 64 }}>
             <Eyebrow>The Season They&apos;re Walking Into</Eyebrow>
-            <h3 className="h-sub" style={{ margin: '14px 0 10px' }}>The real 2026–27 schedule. Live.</h3>
-            <p className="body" style={{ maxWidth: '62ch', marginBottom: 20 }}>
-              This isn&apos;t a brochure — it&apos;s the same live schedule the program runs on,
-              synced from the master sheet. Filter by team, flip to calendar view, and add
-              games straight to your own calendar.
+            <h3 className="h-sub" style={{ margin: '14px 0 10px' }}>A real school-ball season.</h3>
+            <p className="body" style={{ maxWidth: '62ch', marginBottom: 24 }}>
+              Home and away games from September through February against area schools —
+              Bradleyville, Lebanon, Crane, Reed Springs, Hartville, NWA and more — plus a
+              full tournament run and the postseason. This is a scheduled season, not a
+              handful of weekend brackets.
             </p>
-            <button
-              type="button"
-              className="lp-sched-toggle mono"
-              onClick={() => setShowSched(!showSched)}
-              aria-expanded={showSched}
-            >
-              {showSched ? '— HIDE THE SCHEDULE' : '＋ SHOW THE FULL 2026–27 SCHEDULE'}
-            </button>
-            {showSched && <div style={{ marginTop: 12 }}><ScheduleExplorer embed /></div>}
-            <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 12 }}>
-              · TEAM-BY-TEAM DETAIL COVERED AT YOUR EVALUATION
+            <div className="lp-sessions">
+              {SEASON_STOPS.map((s, i) => (
+                <div
+                  key={i}
+                  className="lp-session-row"
+                  style={s.big ? { background: 'rgba(4,97,49,0.12)' } : undefined}
+                >
+                  <div className="mono" style={{ color: 'var(--brass-hi)' }}>{s.when}</div>
+                  <div style={{ color: 'var(--paper)', fontSize: 15 }}>
+                    {s.big ? <strong>{s.what}</strong> : s.what}
+                    {s.note ? (
+                      <span style={{ color: 'var(--paper-2)' }}> — {s.note}</span>
+                    ) : null}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 12, letterSpacing: '0.06em' }}>
+              · MOST GAMES ARE A DAY DRIVE · ALL TOURNAMENT ENTRY FEES INCLUDED IN TUITION
             </p>
           </div>
 
