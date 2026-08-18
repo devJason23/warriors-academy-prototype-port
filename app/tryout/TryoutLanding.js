@@ -384,27 +384,32 @@ export default function TryoutLanding() {
         <div className="lp-hero-bg" aria-hidden="true" />
         <div className="wrap" style={{ position: 'relative' }}>
           <Eyebrow>Springfield &amp; Republic, MO · Free evaluation · Season starting soon</Eyebrow>
+          {/* "Missed Tryouts?" presupposed the reader knew about a tryout and
+              opened on a loss — meaningless to cold ad traffic. This states the
+              whole positioning in three words and self-qualifies: a devoted
+              family leans in, a casual one leaves, which is the sort we want
+              happening early. "Up to four hours a day" sits directly beneath it so it
+              reads as a description of how we train, not a destination. */}
           <h1 className="h-hero" style={{ margin: '20px 0', maxWidth: '14ch' }}>
-            Missed<br />Tryouts?
+            Train like an<br />Olympian.
           </h1>
           <p className="lead" style={{ maxWidth: '56ch' }}>
-            <strong style={{ color: 'var(--paper)' }}>Only 2 spots left on the #2 ranked 12U team in the nation.</strong>{' '}
-            Every other team could still use a player if they&apos;re the perfect fit —
-            10U through 18U, plus girls &amp; cheer. If your athlete loves the game,
-            we&apos;ll set up a private evaluation.
+            Springfield kids can&apos;t play school ball until 7th grade. If your son is
+            10, 11, or 12 and lives for this game, he&apos;s got nowhere to go — and
+            nowhere within 200 miles trains the way we do.{' '}
+            <strong style={{ color: 'var(--paper)' }}>Up to four hours a day, four days a week.</strong>
           </p>
           {/* Do NOT claim public-school kids can play as-is — they can't.
               Warriors train during the school day, so a roster spot requires
               homeschool, a co-op, or a part-time school schedule. The honest
               requirement lives in the "Warriors train during the day" section
-              below. This line stays on the pain point and on effort over
-              résumé, without making an eligibility promise we can't keep. */}
+              below. */}
           <p className="lead" style={{ maxWidth: '56ch', marginTop: 16 }}>
-            Springfield public schools don&apos;t start basketball until 7th grade.
-            If your son is 10, 11, 12 and loves this game, he shouldn&apos;t have to
-            sit and wait three years for somebody to let him play. Never been on a
-            real team? That&apos;s a lot of who we&apos;re looking for — we care more
-            about how bad they want it than what they can already do.
+            <strong style={{ color: 'var(--paper)' }}>Only 2 spots left on the #2 ranked 12U team in the nation.</strong>{' '}
+            Every other team could still use a player if they&apos;re the perfect fit —
+            10U through 18U, plus girls &amp; cheer. Never been on a real team? That&apos;s
+            a lot of who we&apos;re looking for — we care more about how bad they want it
+            than what they can already do.
           </p>
           <div style={{ marginTop: 36, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Btn kind="brass" href="#register">Schedule an Evaluation</Btn>
@@ -436,13 +441,23 @@ export default function TryoutLanding() {
       <section id="standard" className="section-tight" style={{ background: 'var(--ink)' }}>
         <div className="wrap">
           <Eyebrow>The Standard</Eyebrow>
+          {/* Was "This is not rec ball." Defined the program by what it isn't,
+              and took a swipe at the thing many prospects' kids currently play —
+              a parent whose son is in rec ball felt judged before hearing the
+              offer. The arithmetic makes the same point harder and insults
+              nobody; the parent draws the conclusion themselves. */}
           <h2 className="h-section" style={{ margin: '16px 0 20px' }}>
-            This is not<br />rec ball.
+            Up to four<br />hours a day.
           </h2>
           <p className="lead" style={{ marginBottom: 20 }}>
-            Warriors train like it matters — because it does. Elite skill development,
-            strength and bulletproof-knee work, mandatory film study, and a badge system
-            where nothing is given and everything is earned.
+            Most club programs get 90 minutes, twice a week. Between the commute, the
+            warmup, and the scrimmage, real coached development is maybe 40 minutes a
+            session. <strong style={{ color: 'var(--paper)' }}>We coach up to four hours a
+            day, four days a week.</strong>
+          </p>
+          <p className="lead" style={{ marginBottom: 20 }}>
+            Elite skill development, strength and bulletproof-knee work, mandatory film
+            study, and a badge system where nothing is given and everything is earned.
           </p>
           <p className="lead" style={{ marginBottom: 40 }}>
             And here&apos;s the part that makes it different:
