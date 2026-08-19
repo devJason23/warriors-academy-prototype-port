@@ -2,9 +2,12 @@ import Script from 'next/script'
 import TryoutLanding from './TryoutLanding'
 
 export const metadata = {
-  title: 'Roster Spots Open — Missouri Warriors Basketball & Cheer · Republic, MO',
+  title: 'Train Like an Olympian — Missouri Warriors Basketball · Springfield & Republic, MO',
+  // This is the link-preview text when the URL gets shared in a text message or
+  // on Facebook — the page is noindex, so that sharing case is the only place it
+  // is ever read. Matches the hero rather than the retired tryout framing.
   description:
-    'Missed tryouts? Missouri Warriors roster spots are still forming for 2026–27. Boys & girls basketball + cheer in Republic, MO. Free private evaluation — a coach reaches out within 24 hours.',
+    'Springfield kids can\u2019t play school ball until 7th grade. Missouri Warriors train up to four hours a day, four days a week \u2014 nothing like it within 200 miles. Only 2 spots left on the #2 ranked 12U team in the nation. Free evaluation.',
   robots: { index: false, follow: false },
 }
 
