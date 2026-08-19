@@ -5,7 +5,8 @@ import { usePathname } from 'next/navigation'
 
 // ── Edit this block for the next tryout (or set show:false to hide) ──
 const TRYOUT = {
-  show: true,
+  // Aug 14 has passed — banner off until there's a new event to announce.
+  show: false,
   label: 'Final Tryouts · Friday, August 14',
   detail: 'Basketball & Cheer · 931 N. Walnut Ave., Republic, MO · Free',
   href: '/tryout',

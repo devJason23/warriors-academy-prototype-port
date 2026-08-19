@@ -101,7 +101,7 @@ const MAPS_URL = 'https://maps.google.com/?q=931+N+Walnut+Ave+Republic+MO+65738'
 // and scheduled per family, so nothing here can carry a date that goes stale.
 const EVAL_STEPS = [
   { step: 'STEP 1', what: 'You tell us about your athlete below. Takes about 30 seconds.' },
-  { step: 'STEP 2', what: 'A coach calls you to set a time that actually works for your family.' },
+  { step: 'STEP 2', what: 'A coach contacts you — text, call, or email — to set a time that works for your family.' },
   { step: 'STEP 3', what: 'Your athlete tests and runs while you watch. Ask us anything.' },
 ]
 
@@ -726,8 +726,9 @@ export default function TryoutLanding() {
                 Here&apos;s what almost every parent says next: <strong style={{ color: 'var(--paper)' }}>&ldquo;I&apos;m
                 not a teacher.&rdquo;</strong> You don&apos;t have to be. Most homeschool
                 families spend one to two focused hours a day on core academics — not seven.
-                And every Warriors family gets a partner discount on Numerade, an AI video
-                tutor library with expert-led walkthroughs for any K–12 subject. When your
+                And we&apos;ve partnered with Numerade — an AI tutoring company more than
+                15 million students have learned from — so every Warriors family gets its
+                full library of expert-led video lessons for any K–12 subject. When your
                 kid hits a wall on algebra at 9 PM on a Tuesday, an expert walks them
                 through it on video, right then.
               </p>
@@ -1005,7 +1006,7 @@ export default function TryoutLanding() {
                     <div style={{ marginTop: 16, color: '#ff8a8a', fontSize: 14 }}>{errorMsg}</div>
                   )}
                   <div className="mono" style={{ marginTop: 16, fontSize: 11, letterSpacing: '0.12em', color: 'var(--muted)', textTransform: 'uppercase' }}>
-                    Free · No commitment · A coach calls you within 24 hours
+                    Free · No commitment · A coach contacts you within 24 hours
                   </div>
                 </form>
               </>
