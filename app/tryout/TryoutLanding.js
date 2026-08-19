@@ -10,6 +10,7 @@ import Btn from '../../components/ui/Btn'
 import Eyebrow from '../../components/ui/Eyebrow'
 import LiteYouTube from '../../components/ui/LiteYouTube'
 import { PLAYERS, TEAMS, BADGES } from '../../components/warriors/rosterData'
+import { ScheduleExplorer } from '../schedule/page'
 
 const EVAL_API = 'https://warriors-basketball-eval.vercel.app/api/submissions'
 // Cheer submissions go to the cheer backend so Coach Lizzy's sheet + inbox
@@ -292,6 +293,9 @@ export default function TryoutLanding() {
         : null
     })
     .filter(Boolean)
+
+  // Full game-by-game explorer, collapsed under the season strip.
+  const [showSched, setShowSched] = useState(false)
 
   // Expanded in-page profile (the "menu" — tap a card, profile opens below).
   const [openProfile, setOpenProfile] = useState(null)
@@ -704,6 +708,20 @@ export default function TryoutLanding() {
             <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 12, letterSpacing: '0.06em' }}>
               · MOST GAMES ARE A DAY DRIVE · ALL TOURNAMENT ENTRY FEES INCLUDED IN TUITION
             </p>
+            {/* Full explorer for the warm lead who wants exact games — e.g. the
+                12U girls schedule. Expands IN PLACE (embed mode, no site chrome),
+                so nobody leaves the funnel. The strip above stays the always-
+                visible proof; this is detail on demand. */}
+            <button
+              type="button"
+              className="lp-sched-toggle mono"
+              style={{ marginTop: 20 }}
+              onClick={() => setShowSched(!showSched)}
+              aria-expanded={showSched}
+            >
+              {showSched ? '— HIDE THE GAME-BY-GAME SCHEDULE' : '＋ VIEW EVERY GAME, TEAM BY TEAM'}
+            </button>
+            {showSched && <div style={{ marginTop: 12 }}><ScheduleExplorer embed /></div>}
           </div>
 
           {/* This block used to read "Homeschool families — this was built for
@@ -726,11 +744,20 @@ export default function TryoutLanding() {
                 Here&apos;s what almost every parent says next: <strong style={{ color: 'var(--paper)' }}>&ldquo;I&apos;m
                 not a teacher.&rdquo;</strong> You don&apos;t have to be. Most homeschool
                 families spend one to two focused hours a day on core academics — not seven.
-                And we&apos;ve partnered with Numerade — an AI tutoring company more than
-                15 million students have learned from — so every Warriors family gets its
-                full library of expert-led video lessons for any K–12 subject. When your
+                And we&apos;ve partnered with Numerade — an AI tutoring company with almost a
+                decade behind it and more than 15 million students taught — so every
+                Warriors family gets its full library of expert-led video lessons for any
+                K–12 subject. When your
                 kid hits a wall on algebra at 9 PM on a Tuesday, an expert walks them
                 through it on video, right then.
+              </p>
+              {/* True today per Jason — he's there most days and other parents
+                  are too; if a parent can't help with a subject, they point the
+                  kid to Numerade. */}
+              <p className="body" style={{ marginTop: 14 }}>
+                And your athlete won&apos;t be figuring it out alone at the gym either —
+                parents are there through the day helping kids work through their
+                schoolwork between training blocks.
               </p>
               <p className="body" style={{ marginTop: 14 }}>
                 That&apos;s the part nobody tells you, and it&apos;s the reason families make
