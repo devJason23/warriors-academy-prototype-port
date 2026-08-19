@@ -524,110 +524,6 @@ export default function TryoutLanding() {
         </div>
       </section>
 
-      {/* ── PLAYER PROOF ── */}
-      <section id="players" className="section-tight" style={{ background: 'var(--ink-2)', borderTop: '1px solid var(--ink-4)', borderBottom: '1px solid var(--ink-4)' }}>
-        <div className="wrap">
-          <Eyebrow>The Proof</Eyebrow>
-          <h2 className="h-section" style={{ margin: '16px 0 20px' }}>
-            Warriors get<br />built here.
-          </h2>
-          <p className="lead" style={{ marginBottom: 40 }}>
-            Real athletes. Real numbers. This is what a season in the program does.
-          </p>
-          <div className="lp-grid lp-players">
-            {featured.map((p) => (
-              <button
-                key={p.id}
-                type="button"
-                className={`lp-card lp-player-card${openProfile === p.id ? ' is-open' : ''}`}
-                onClick={() => setOpenProfile(openProfile === p.id ? null : p.id)}
-                aria-expanded={openProfile === p.id}
-              >
-                <img className="lp-player-img" src={p.cardPhoto} alt={p.name} style={{ objectPosition: p.cardPos, objectFit: p.cardFit }} loading="lazy" decoding="async" />
-                <div style={{ padding: '14px 14px 16px' }}>
-                  <div className="h-card" style={{ fontSize: 20 }}>{p.name}</div>
-                  <div className="mono" style={{ fontSize: 11, color: 'var(--brass-hi)', margin: '6px 0 8px', letterSpacing: '0.08em' }}>
-                    #{p.jersey} · {p.ageGroup.toUpperCase()} · {p.position.toUpperCase()}
-                  </div>
-                  <div className="mono" style={{ fontSize: 12, color: 'var(--paper-2)' }}>{statLine(p)}</div>
-                  {cardAccolade(p) && (
-                    <div className="mono" style={{ fontSize: 11, color: 'var(--paper)', marginTop: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                      ★ {cardAccolade(p)}
-                    </div>
-                  )}
-                  <div className="mono" style={{ fontSize: 10, color: openProfile === p.id ? 'var(--brass-hi)' : 'var(--muted)', marginTop: 10, letterSpacing: '0.1em' }}>
-                    {openProfile === p.id ? '— CLOSE' : '+ SNEAK PEEK'}
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-
-          {profile && (
-            <div ref={profileRef} className="lp-card lp-profile" style={{ marginTop: 18, borderColor: 'var(--brass)' }}>
-              <div className="lp-profile-grid">
-                <div>
-                  <div className="mono" style={{ fontSize: 11, color: 'var(--brass-hi)', letterSpacing: '0.12em' }}>
-                    PLAYER PROFILE — SNEAK PEEK · {profile.stats.season}
-                  </div>
-                  <div className="h-sub" style={{ margin: '10px 0 2px' }}>{profile.name}</div>
-                  <div className="mono" style={{ fontSize: 12, color: 'var(--paper-2)', letterSpacing: '0.08em' }}>
-                    #{profile.jersey} · {profile.ageGroup.toUpperCase()} · {profile.position.toUpperCase()} · {profile.height} · {profile.classOf.toUpperCase()}
-                  </div>
-
-                  <div className="lp-stat-grid">
-                    {[['PPG', profile.stats.ppg], ['RPG', profile.stats.rpg], ['APG', profile.stats.apg], ['SPG', profile.stats.spg], ['FG%', profile.stats.fg], ['3PT', profile.stats.three], ['FT%', profile.stats.ft], ['GP', profile.stats.gp]].map(([l, v]) => (
-                      <div key={l} style={{ padding: '12px 8px', border: '1px solid var(--ink-4)', textAlign: 'center' }}>
-                        <div className="h-card" style={{ fontSize: 22 }}>{v}</div>
-                        <div className="mono" style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '0.1em', marginTop: 2 }}>{l}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {profile.careerHighs?.length > 0 && (
-                    <div style={{ marginTop: 18 }}>
-                      <div className="mono" style={{ fontSize: 11, color: 'var(--muted)', letterSpacing: '0.12em', marginBottom: 8 }}>· CAREER HIGHS</div>
-                      <div className="mono" style={{ fontSize: 12, color: 'var(--paper-2)', lineHeight: 1.9 }}>
-                        {profile.careerHighs.map(([n, l, ctx]) => `${n} ${l} (${ctx})`).join(' · ')}
-                      </div>
-                    </div>
-                  )}
-
-                  {profile.accolades?.length > 0 && (
-                    <div className="mono" style={{ marginTop: 14, fontSize: 11, color: 'var(--brass-hi)', letterSpacing: '0.06em', textTransform: 'uppercase', lineHeight: 2 }}>
-                      {profile.accolades.map((a) => `★ ${a}`).join('  ')}
-                    </div>
-                  )}
-
-                  {profile.coachQuote?.text && (
-                    <p className="body" style={{ marginTop: 18, fontStyle: 'italic', borderLeft: '2px solid var(--brass)', paddingLeft: 14 }}>
-                      “{profile.coachQuote.text}” <span className="mono" style={{ fontSize: 11, color: 'var(--muted)' }}>— {profile.coachQuote.attr}</span>
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  {profile.highlight?.id ? (
-                    <>
-                      <div className="mono" style={{ fontSize: 11, color: 'var(--muted)', letterSpacing: '0.12em', marginBottom: 8 }}>· HIGHLIGHT FILM</div>
-                      <LiteYouTube id={profile.highlight.id} title={profile.highlight.title} />
-                    </>
-                  ) : (
-                    <img src={profile.cardPhoto} alt={profile.name} style={{ width: '100%', height: 'auto', border: '1px solid var(--ink-4)' }} loading="lazy" decoding="async" />
-                  )}
-                  <div style={{ marginTop: 16, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-                    <Btn kind="brass" href="#register">Get Your Athlete a Profile</Btn>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-          <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 11, letterSpacing: '0.1em' }}>
-            · TAP ANY PLAYER FOR A SNEAK PEEK AT THEIR PROFILE — STATS UPDATE AUTOMATICALLY ALL SEASON
-          </p>
-        </div>
-      </section>
-
       {/* ── TEAMS + OPEN SPOTS ── */}
       <section id="teams" className="section-tight" style={{ background: 'var(--ink)' }}>
         <div className="wrap">
@@ -903,6 +799,111 @@ export default function TryoutLanding() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── PLAYER PROOF ── */}
+      <section id="players" className="section-tight" style={{ background: 'var(--ink-2)', borderTop: '1px solid var(--ink-4)', borderBottom: '1px solid var(--ink-4)' }}>
+        <div className="wrap">
+          <Eyebrow>The Proof</Eyebrow>
+          <h2 className="h-section" style={{ margin: '16px 0 20px' }}>
+            Warriors get<br />built here.
+          </h2>
+          <p className="lead" style={{ marginBottom: 40 }}>
+            Real athletes. Real numbers. This is what a season in the program does —
+            and these are the players your athlete runs with at the evaluation.
+          </p>
+          <div className="lp-grid lp-players">
+            {featured.map((p) => (
+              <button
+                key={p.id}
+                type="button"
+                className={`lp-card lp-player-card${openProfile === p.id ? ' is-open' : ''}`}
+                onClick={() => setOpenProfile(openProfile === p.id ? null : p.id)}
+                aria-expanded={openProfile === p.id}
+              >
+                <img className="lp-player-img" src={p.cardPhoto} alt={p.name} style={{ objectPosition: p.cardPos, objectFit: p.cardFit }} loading="lazy" decoding="async" />
+                <div style={{ padding: '14px 14px 16px' }}>
+                  <div className="h-card" style={{ fontSize: 20 }}>{p.name}</div>
+                  <div className="mono" style={{ fontSize: 11, color: 'var(--brass-hi)', margin: '6px 0 8px', letterSpacing: '0.08em' }}>
+                    #{p.jersey} · {p.ageGroup.toUpperCase()} · {p.position.toUpperCase()}
+                  </div>
+                  <div className="mono" style={{ fontSize: 12, color: 'var(--paper-2)' }}>{statLine(p)}</div>
+                  {cardAccolade(p) && (
+                    <div className="mono" style={{ fontSize: 11, color: 'var(--paper)', marginTop: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                      ★ {cardAccolade(p)}
+                    </div>
+                  )}
+                  <div className="mono" style={{ fontSize: 10, color: openProfile === p.id ? 'var(--brass-hi)' : 'var(--muted)', marginTop: 10, letterSpacing: '0.1em' }}>
+                    {openProfile === p.id ? '— CLOSE' : '+ SNEAK PEEK'}
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {profile && (
+            <div ref={profileRef} className="lp-card lp-profile" style={{ marginTop: 18, borderColor: 'var(--brass)' }}>
+              <div className="lp-profile-grid">
+                <div>
+                  <div className="mono" style={{ fontSize: 11, color: 'var(--brass-hi)', letterSpacing: '0.12em' }}>
+                    PLAYER PROFILE — SNEAK PEEK · {profile.stats.season}
+                  </div>
+                  <div className="h-sub" style={{ margin: '10px 0 2px' }}>{profile.name}</div>
+                  <div className="mono" style={{ fontSize: 12, color: 'var(--paper-2)', letterSpacing: '0.08em' }}>
+                    #{profile.jersey} · {profile.ageGroup.toUpperCase()} · {profile.position.toUpperCase()} · {profile.height} · {profile.classOf.toUpperCase()}
+                  </div>
+
+                  <div className="lp-stat-grid">
+                    {[['PPG', profile.stats.ppg], ['RPG', profile.stats.rpg], ['APG', profile.stats.apg], ['SPG', profile.stats.spg], ['FG%', profile.stats.fg], ['3PT', profile.stats.three], ['FT%', profile.stats.ft], ['GP', profile.stats.gp]].map(([l, v]) => (
+                      <div key={l} style={{ padding: '12px 8px', border: '1px solid var(--ink-4)', textAlign: 'center' }}>
+                        <div className="h-card" style={{ fontSize: 22 }}>{v}</div>
+                        <div className="mono" style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '0.1em', marginTop: 2 }}>{l}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {profile.careerHighs?.length > 0 && (
+                    <div style={{ marginTop: 18 }}>
+                      <div className="mono" style={{ fontSize: 11, color: 'var(--muted)', letterSpacing: '0.12em', marginBottom: 8 }}>· CAREER HIGHS</div>
+                      <div className="mono" style={{ fontSize: 12, color: 'var(--paper-2)', lineHeight: 1.9 }}>
+                        {profile.careerHighs.map(([n, l, ctx]) => `${n} ${l} (${ctx})`).join(' · ')}
+                      </div>
+                    </div>
+                  )}
+
+                  {profile.accolades?.length > 0 && (
+                    <div className="mono" style={{ marginTop: 14, fontSize: 11, color: 'var(--brass-hi)', letterSpacing: '0.06em', textTransform: 'uppercase', lineHeight: 2 }}>
+                      {profile.accolades.map((a) => `★ ${a}`).join('  ')}
+                    </div>
+                  )}
+
+                  {profile.coachQuote?.text && (
+                    <p className="body" style={{ marginTop: 18, fontStyle: 'italic', borderLeft: '2px solid var(--brass)', paddingLeft: 14 }}>
+                      “{profile.coachQuote.text}” <span className="mono" style={{ fontSize: 11, color: 'var(--muted)' }}>— {profile.coachQuote.attr}</span>
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  {profile.highlight?.id ? (
+                    <>
+                      <div className="mono" style={{ fontSize: 11, color: 'var(--muted)', letterSpacing: '0.12em', marginBottom: 8 }}>· HIGHLIGHT FILM</div>
+                      <LiteYouTube id={profile.highlight.id} title={profile.highlight.title} />
+                    </>
+                  ) : (
+                    <img src={profile.cardPhoto} alt={profile.name} style={{ width: '100%', height: 'auto', border: '1px solid var(--ink-4)' }} loading="lazy" decoding="async" />
+                  )}
+                  <div style={{ marginTop: 16, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                    <Btn kind="brass" href="#register">Get Your Athlete a Profile</Btn>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          <p className="mono" style={{ marginTop: 16, color: 'var(--muted)', fontSize: 11, letterSpacing: '0.1em' }}>
+            · TAP ANY PLAYER FOR A SNEAK PEEK AT THEIR PROFILE — STATS UPDATE AUTOMATICALLY ALL SEASON
+          </p>
         </div>
       </section>
 
