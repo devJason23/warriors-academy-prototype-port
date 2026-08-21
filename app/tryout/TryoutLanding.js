@@ -387,7 +387,7 @@ export default function TryoutLanding() {
       <section className="lp-hero">
         <div className="lp-hero-bg" aria-hidden="true" />
         <div className="wrap" style={{ position: 'relative' }}>
-          <Eyebrow>Springfield &amp; Republic, MO · Free evaluation · Season starting soon</Eyebrow>
+          <Eyebrow>Springfield, MO · Free evaluation · Season starting soon</Eyebrow>
           {/* "Missed Tryouts?" presupposed the reader knew about a tryout and
               opened on a loss — meaningless to cold ad traffic. This states the
               whole positioning in three words and self-qualifies: a devoted
@@ -721,7 +721,7 @@ export default function TryoutLanding() {
       {/* ── AUG 14 DETAILS ── */}
       <section id="visit" className="section-tight" style={{ background: 'var(--ink)', borderTop: '1px solid var(--ink-4)' }}>
         <div className="wrap">
-          <Eyebrow>Republic, MO</Eyebrow>
+          <Eyebrow>Springfield, MO</Eyebrow>
           <h2 className="h-section" style={{ margin: '16px 0 20px' }}>
             How the<br />eval works.
           </h2>

@@ -2,7 +2,7 @@ import Script from 'next/script'
 import TryoutLanding from './TryoutLanding'
 
 export const metadata = {
-  title: 'Train Like an Olympian — Missouri Warriors Basketball · Springfield & Republic, MO',
+  title: 'Train Like an Olympian — Missouri Warriors Basketball · Springfield, MO',
   // This is the link-preview text when the URL gets shared in a text message or
   // on Facebook — the page is noindex, so that sharing case is the only place it
   // is ever read. Matches the hero rather than the retired tryout framing.
