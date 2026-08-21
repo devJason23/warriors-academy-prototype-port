@@ -725,10 +725,13 @@ export default function TryoutLanding() {
           <h2 className="h-section" style={{ margin: '16px 0 20px' }}>
             How the<br />eval works.
           </h2>
+          {/* No venue here on purpose. Evals currently run at the James River
+              Church gym in Ozark — NOT the Republic address — and Jason shares
+              the location personally when the time gets set. Don't re-add an
+              address; whatever we print will be wrong for someone. */}
           <p className="lead" style={{ marginBottom: 8 }}>
-            <a href={MAPS_URL} target="_blank" rel="noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', textUnderlineOffset: 4 }}>
-              {VENUE.name} · {VENUE.city}
-            </a>
+            We&apos;ll send you the gym address and directions when we set your
+            athlete&apos;s time.
           </p>
           <p className="mono" style={{ color: 'var(--muted)', marginBottom: 32, fontSize: 12 }}>
             · FREE · NO COMMITMENT · EVERY AGE GROUP, BOYS &amp; GIRLS &amp; CHEER
