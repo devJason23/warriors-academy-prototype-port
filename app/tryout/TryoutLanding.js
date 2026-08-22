@@ -332,6 +332,14 @@ export default function TryoutLanding() {
         .lp-badge-imgbox { height: 108px; width: 100%; display: flex; align-items: center; justify-content: center; }
         .lp-badge-imgbox img { max-height: 108px; max-width: 100%; width: auto; height: auto; display: block; }
         .lp-badge-label { font-size: 10px; letter-spacing: 0.08em; margin-top: 10px; color: var(--paper-2); text-transform: uppercase; text-align: center; min-height: 26px; display: flex; align-items: flex-start; justify-content: center; overflow-wrap: anywhere; max-width: 100%; }
+        .lp-callbar { display: none; }
+        @media (max-width: 768px) {
+          .lp-callbar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; display: flex; border-top: 1px solid var(--ink-4); }
+          .lp-callbar a { flex: 1; text-align: center; padding: 17px 8px calc(17px + env(safe-area-inset-bottom)); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-decoration: none; }
+          .lp-callbar-call { background: var(--ink); color: var(--brass-hi); border-right: 1px solid var(--ink-4); }
+          .lp-callbar-book { background: var(--brass); color: var(--ink); }
+          .lp { padding-bottom: 64px; }
+        }
         .lp-sched-toggle { margin-top: 8px; width: 100%; max-width: 760px; padding: 15px 18px; text-align: center; background: rgba(4,97,49,0.14); border: 1px solid var(--brass); color: var(--brass-hi); font-size: 13px; letter-spacing: 0.1em; cursor: pointer; font-weight: 700; }
         .lp-sched-toggle:hover { background: rgba(4,97,49,0.26); }
         .lp-card { border: 1px solid var(--ink-4); background: var(--ink-2); }
@@ -416,22 +424,11 @@ export default function TryoutLanding() {
             than what they can already do.
           </p>
           <div style={{ marginTop: 36, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Btn kind="brass" href="#register">Schedule an Evaluation</Btn>
+            <Btn kind="brass" href="#register">Book Your Free Evaluation</Btn>
+            <Btn kind="ghost" href={`tel:${COACH.tel}`} onClick={trackCall}>
+              Call or Text {COACH.phone}
+            </Btn>
           </div>
-          {/* Click-to-call. The phone number lived in rosterData and had never
-              been rendered on this page — so the highest-intent visitor, the
-              parent ready to talk right now, had nothing to tap and no way to
-              reach the person who actually closes. */}
-          <p className="lead" style={{ marginTop: 20, marginBottom: 0, fontSize: 16 }}>
-            Rather just talk to somebody? Call or text {COACH.name} —{' '}
-            <a
-              href={`tel:${COACH.tel}`}
-              onClick={trackCall}
-              style={{ color: 'var(--brass-hi)', textDecoration: 'underline', textUnderlineOffset: 4, whiteSpace: 'nowrap' }}
-            >
-              {COACH.phone}
-            </a>
-          </p>
           <div className="lp-proof-strip mono" style={{ marginTop: 56, color: 'var(--paper-2)', fontSize: 13 }}>
             <span style={{ color: 'var(--brass-hi)' }}>#2 IN THE NATION · 12U</span>
             <span>GOLD BALL CHAMPIONS</span>
@@ -458,6 +455,17 @@ export default function TryoutLanding() {
             warmup, and the scrimmage, real coached development is maybe 40 minutes a
             session. <strong style={{ color: 'var(--paper)' }}>We coach up to four hours a
             day, four days a week.</strong>
+          </p>
+          {/* Jason's positioning, category-level on purpose: no stats about
+              either program, just the model everyone local already recognizes.
+              Link Academy is ~30 min away in Branson and every Springfield
+              hoops family has watched what it became in a few years. */}
+          <p className="lead" style={{ marginBottom: 20 }}>
+            Specialty sports academies are rising all over the country — IMG in Florida,
+            Link Academy thirty minutes down the road. Everyone around here has watched
+            what Link built in just a few years. Nobody has built that for the homeschool
+            world. <strong style={{ color: 'var(--paper)' }}>That&apos;s exactly what
+            we&apos;re building.</strong>
           </p>
           <p className="lead" style={{ marginBottom: 20 }}>
             Elite skill development, strength and bulletproof-knee work, mandatory film
@@ -1031,7 +1039,7 @@ export default function TryoutLanding() {
                   <Btn kind="brass" type="submit" disabled={status === 'submitting'}>
                     {status === 'submitting'
                       ? 'Sending…'
-                      : path === 'tryout' ? 'Claim My Athlete’s Spot' : 'Have Coach Jason Call Me'}
+                      : path === 'tryout' ? 'Claim My Athlete’s Spot' : 'Book Your Free Evaluation'}
                   </Btn>
                   {status === 'error' && (
                     <div style={{ marginTop: 16, color: '#ff8a8a', fontSize: 14 }}>{errorMsg}</div>
@@ -1045,6 +1053,19 @@ export default function TryoutLanding() {
           </div>
         </div>
       </section>
+
+      {/* Sticky mobile action bar — Jason's ask: parents on a phone should
+          always be one thumb-tap from calling him or booking the eval. Mobile
+          only (the desktop hero already shows both buttons); page bottom gets
+          extra padding via .lp-callbar-pad so the bar never covers content. */}
+      <div className="lp-callbar mono" aria-hidden="false">
+        <a href={`tel:${COACH.tel}`} onClick={trackCall} className="lp-callbar-call">
+          CALL / TEXT COACH
+        </a>
+        <a href="#register" className="lp-callbar-book">
+          BOOK YOUR EVAL
+        </a>
+      </div>
 
       {/* ── Minimal footer — no site links, funnel stays closed ── */}
       <div style={{ borderTop: '1px solid var(--ink-4)', padding: '40px 0 48px', background: 'var(--ink)' }}>
